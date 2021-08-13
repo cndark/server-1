@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [14700, 14800)
+// ============================================================================
+
+// import "c_gs.00.structs.proto";
+
+// ============================================================================
+
+// 英雄皮肤库
+message HeroSkinData {
+    map<int32, int32> Skins = 1; // 英雄皮肤
+}
+
+// ============================================================================
+
+// 英雄激活
+message C_HeroSkinAdd { // msgid: 14712
+    int32 Skin = 1;
+}
+
+message GS_HeroSkinAdd_R { // msgid: 14713
+    int32 ErrorCode = 1;
+}
+
+// 英雄皮肤升级
+message C_HeroSkinLvUp { // msgid: 14714
+    int32 Skin = 1;
+}
+
+message GS_HeroSkinLvUp_R { // msgid: 14715
+    int32 ErrorCode = 1;
+}

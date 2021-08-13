@@ -1,0 +1,7 @@
+id,txt_Des
+int32,string
+1,$player 加入了公会，欢迎新伙伴加入！
+2,$player 离开了公会，有缘再见！
+3,$player 被会长变更职务为 $gldRank
+4,会长超过七日未登录，$player 众望所归的成为新的会长！
+5,$player创建了公会

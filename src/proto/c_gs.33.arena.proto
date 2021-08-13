@@ -1,0 +1,111 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [9300, 9400)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+import "c_gs.24.rank.proto";
+
+// ============================================================================
+
+// 竞技场数据
+message ArenaData {
+    int32  Score = 1; // 分数
+    string Stage = 2; // 阶段
+    int64  Ts1   = 3; // 阶段开始时间
+    int64  Ts2   = 4; // 阶段结束时间
+}
+
+// 对手信息
+message ArenaEnemy {
+    int32            Score = 1; // 分数
+    PlayerSimpleInfo Plr   = 2; // 信息
+}
+
+// 对战记录
+message ArenaRecord {
+    string           ReplayId   = 1; // 战报id
+    int32            Revenge    = 2; // 复仇次数
+    int32            SelfScore  = 3; // 自己分数
+    int32            EnemyScore = 4; // 对手分数
+    int32            AddScore   = 5; // 自己的分数增减
+    int64            Ts         = 6; // 时间
+    PlayerSimpleInfo Enemy      = 7; // 对手信息
+}
+
+// ============================================================================
+
+// 推送: 版本推送
+message GS_ArenaStageUpdate { // msgid: 9300
+    string Stage = 1;         // 阶段
+    int64  Ts1   = 2;         // 阶段开始时间
+    int64  Ts2   = 3;         // 阶段结束时间
+}
+
+// 被打通知
+message GS_ArenaFighted { // msgid: 9301
+    int32 AddScore = 1;
+}
+
+// ============================================================================
+
+// 刷新对手
+message C_ArenaUpdateEnemy { // msgid: 9310
+}
+
+message GS_ArenaUpdateEnemy_R { // msgid: 9311
+    int32               ErrorCode = 1;
+    repeated ArenaEnemy Enemies   = 2;
+}
+
+// 打架
+message C_ArenaFight { // msgid: 9312
+    string PlrId      = 1;
+    bool   IsOneKey   = 2; // 是否一键
+    int32  RevengeIdx = 3; // 反击,记录数组下标0-n; 负数正常打
+    TeamFormation T   = 4;
+}
+
+message GS_ArenaFight_R { // msgid: 9313
+    int32        ErrorCode = 1;
+    bool         IsOneKey  = 2; // 是否一键
+    BattleReplay Replay    = 3;
+    Rewards      Rewards   = 4;
+    int32        AddScore1 = 5; // 自己积分变化
+    int32        AddScore2 = 6; // 对手积分变化
+}
+
+// 获取战报
+message C_ArenaRecordInfo { // msgid: 9314
+}
+
+message GS_ArenaRecordInfo_R { // msgid: 9315
+    repeated ArenaRecord Records = 1;
+}
+
+// 获取排名
+message C_ArenaRank { // msgid: 9316
+    int32 Top = 1;    // 1-N
+}
+
+message GS_ArenaRank_R {           // msgid: 9317
+    int32            SelfRank = 1; // 自己排名, 1开始
+    repeated RankRow Rows     = 2;
+}
+
+// 获取战报
+message C_ArenaReplayGet { // msgid: 9318
+    string ReplayId = 1;
+}
+
+message GS_ArenaReplayGet_R { // msgid: 9319
+    int32        ErrorCode = 1;
+    BattleReplay Replay    = 2;
+}

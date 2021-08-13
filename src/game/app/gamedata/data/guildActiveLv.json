@@ -1,0 +1,62 @@
+[
+    {
+        "lv": 1,
+        "needActScore": 2000,
+        "rewardDonate": 5500,
+        "rewardFund": 100
+    },
+    {
+        "lv": 2,
+        "needActScore": 3500,
+        "rewardDonate": 6800,
+        "rewardFund": 200
+    },
+    {
+        "lv": 3,
+        "needActScore": 5000,
+        "rewardDonate": 8400,
+        "rewardFund": 350
+    },
+    {
+        "lv": 4,
+        "needActScore": 6500,
+        "rewardDonate": 10000,
+        "rewardFund": 500
+    },
+    {
+        "lv": 5,
+        "needActScore": 8000,
+        "rewardDonate": 11900,
+        "rewardFund": 650
+    },
+    {
+        "lv": 6,
+        "needActScore": 9500,
+        "rewardDonate": 14100,
+        "rewardFund": 800
+    },
+    {
+        "lv": 7,
+        "needActScore": 11000,
+        "rewardDonate": 16600,
+        "rewardFund": 950
+    },
+    {
+        "lv": 8,
+        "needActScore": 12500,
+        "rewardDonate": 19400,
+        "rewardFund": 1100
+    },
+    {
+        "lv": 9,
+        "needActScore": 14000,
+        "rewardDonate": 22500,
+        "rewardFund": 1250
+    },
+    {
+        "lv": 10,
+        "needActScore": 0,
+        "rewardDonate": 25900,
+        "rewardFund": 1400
+    }
+]

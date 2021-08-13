@@ -1,0 +1,59 @@
+extends ../base.pug
+
+block css
+    link(href='/css/page.css', rel='stylesheet')
+
+block content
+    .container-fluid
+        .row
+            .col-md-6.col-md-offset-3
+                .panel.panel-info
+                    .panel-heading.head
+                        | 礼包码生成
+                        button#btn_gen.btn.btn-default 生成
+                        button#btn_load.btn.btn-default 查看
+                        span.alert
+                    .panel-body
+                        .row
+                            .col-md-6
+                                | 批次号
+                                input.form-control(type='text', name='grpid')
+                            .col-md-6
+                                | 数量
+                                input.form-control(type='text', name='count')
+                        .row
+                            .col-md-6
+                                | 区域限定
+                                select.form-control(name='area')
+                                    option(value="-1") 所有区域
+                                    - for (var v of areas)
+                                        option(value=v[0]) #{v[1]}
+                            .col-md-6
+                                |是否多玩家领取
+                                select.form-control(name='reuse')
+                                    option(value=0) 否
+                                    option(value=1) 是
+                        .row
+                            .col-md-6
+                                | 过期日期
+                                input.form-control(type='text', name='expire', placeholder='yyyy-mm-dd HH:MM:SS')
+                            .col-md-6
+                                | 礼包类备注
+                                input.form-control(type='text', name='memo')
+                        .row
+                            .col-md-12
+                                |礼品
+                            - for (var i = 0;  i < 10; i++)
+                                .col-md-6
+                                    input.form-control(type='text', name='res_k')
+                                .col-md-6
+                                    input.form-control(type='text', name='res_v')
+                        .row
+                            .col-md-12
+                                | 结果
+                                textarea.form-control(rows=20)
+
+
+
+block script
+    script(src='/scripts/gift/gen.js')

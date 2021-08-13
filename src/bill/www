@@ -1,0 +1,104 @@
+#!/usr/bin/env node
+
+require('./lib/ext');
+
+var cluster = require('cluster');
+
+var config  = require('../config.json');
+var dbpool  = require('./lib/dbpool');
+
+// ====================================
+
+async function init_master() {
+    cluster.broadcast = msg => {
+        for (let i in cluster.workers) {
+            cluster.workers[i].send(msg);
+        }
+    }
+
+    await dbpool.init([
+        ["share",  config.common.db_share,  1],
+        ["bill",   config.common.db_bill,   1],
+    ]);
+
+    // make sure db-indexes are created
+    {
+        let db = dbpool.get('bill');
+        let coll;
+
+        coll = db.collection('order');
+        await dbpool.create_index([
+            [coll, 'idx_sdk',       {sdk:       1}, false],
+            [coll, 'idx_orderid',   {orderid:   1}, false],
+            [coll, 'idx_userid',    {userid:    1}, false],
+            [coll, 'idx_prod_id',   {prod_id:   1}, false],
+            [coll, 'idx_create_ts', {create_ts: 1}, false],
+            [coll, 'idx_status',    {status:    1}, false],
+        ]);
+
+        // coll = db.collection('yyb_deduct');
+        // await dbpool.create_index([
+        //     [coll, 'idx_uid',       {uid:       1}, false],
+        //     [coll, 'idx_status',    {status:    1}, false],
+        // ]);
+    };
+
+    // incomplete order arrangement
+    {
+        let bill  = require('./models/bill');
+        setInterval(function () {
+            bill.arrange_incomplete_orders().catch(console.error);
+        }, 3 * 60 * 1000);
+    }
+
+    // reload
+    process.on('SIGHUP', () => {
+        cluster.broadcast({op: 'reload'});
+        console.log("reloaded");
+    });
+}
+
+async function init_worker() {
+    await dbpool.init([
+        ["share",  config.common.db_share,  1],
+        ["bill",   config.common.db_bill,   1],
+    ]);
+
+    let server = require('./server');
+    let app    = require('./app');
+
+    server.run(app, config.bill.port);
+
+    // reload
+    cluster.worker.on('message', msg => {
+        if (msg.op == 'reload') {
+            var keys = [];
+            for (k in require.cache) {
+                if (k.match(/config\.json$/)) {
+                    keys.push(k);
+                }
+            }
+
+            keys.forEach(v => {
+                delete require.cache[v];
+            });
+        }
+    });
+}
+
+// ====================================
+
+(async () => {
+    if (cluster.isMaster) {
+        // init master
+        await init_master();
+
+        // fork workers
+        for (let i = 0; i < config.bill.threads; i++) {
+            cluster.fork();
+        }
+    } else {
+        // init worker
+        await init_worker();
+    }
+})().catch(console.error);

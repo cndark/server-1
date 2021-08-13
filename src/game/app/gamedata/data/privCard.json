@@ -1,0 +1,154 @@
+[
+    {
+        "id": 1001,
+        "counterTimeLimit": [
+            {
+                "id": 1000011,
+                "n": 30
+            },
+            {
+                "id": 1100006,
+                "n": 50
+            }
+        ],
+        "counterOnce": [
+        ],
+        "reward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "dailyReward": [
+        ],
+        "expireDay": 7,
+        "extNeedAddCnt": 2,
+        "extDay": 0,
+        "extReward": [
+        ],
+        "extCounter": [
+        ],
+        "disPayId": 0,
+        "payId": 2002
+    },
+    {
+        "id": 2001,
+        "counterTimeLimit": [
+        ],
+        "counterOnce": [
+        ],
+        "reward": [
+            {
+                "id": 10002,
+                "n": 300
+            }
+        ],
+        "dailyReward": [
+            {
+                "id": 10002,
+                "n": 100
+            },
+            {
+                "id": 21051,
+                "n": 1
+            }
+        ],
+        "expireDay": 30,
+        "extNeedAddCnt": 1,
+        "extDay": 3,
+        "extReward": [
+        ],
+        "extCounter": [
+            {
+                "id": 1100006,
+                "n": 50
+            }
+        ],
+        "disPayId": 0,
+        "payId": 2004
+    },
+    {
+        "id": 3001,
+        "counterTimeLimit": [
+        ],
+        "counterOnce": [
+            {
+                "id": 1000012,
+                "n": 1
+            }
+        ],
+        "reward": [
+            {
+                "id": 10002,
+                "n": 1280
+            },
+            {
+                "id": 10001,
+                "n": 2000000
+            },
+            {
+                "id": 10005,
+                "n": 2000000
+            },
+            {
+                "id": 10006,
+                "n": 2000
+            },
+            {
+                "id": 23107,
+                "n": 1
+            },
+            {
+                "id": 23207,
+                "n": 1
+            },
+            {
+                "id": 23307,
+                "n": 1
+            },
+            {
+                "id": 23407,
+                "n": 1
+            }
+        ],
+        "dailyReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "expireDay": 9999,
+        "extNeedAddCnt": 0,
+        "extDay": 0,
+        "extReward": [
+        ],
+        "extCounter": [
+        ],
+        "disPayId": 0,
+        "payId": 2006
+    },
+    {
+        "id": 4001,
+        "counterTimeLimit": [
+        ],
+        "counterOnce": [
+            {
+                "id": 1100006,
+                "n": 50
+            }
+        ],
+        "reward": [
+        ],
+        "dailyReward": [
+        ],
+        "expireDay": 9999,
+        "extNeedAddCnt": 0,
+        "extDay": 0,
+        "extReward": [
+        ],
+        "extCounter": [
+        ],
+        "disPayId": 0,
+        "payId": 2007
+    }
+]

@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [5500, 5600)
+// ============================================================================
+
+// import "c_gs.00.structs.proto";
+
+// ============================================================================
+
+// 神器更新
+message GS_RelicUpdate_HeroSeq { // msgid: 5500
+    int64 Seq     = 1;           // 神器 seq
+    int64 HeroSeq = 2;
+}
+
+message GS_RelicUpdate_Star { // msgid: 5501
+    int64 Seq  = 1;           // 神器 seq
+    int32 Star = 2;           // -1: 无变化
+    int32 Xp   = 3;
+}
+
+// ============================================================================
+
+// 穿
+message C_RelicEquip { // msgid: 5510
+    int64 HeroSeq = 1; // 目标英雄
+    int64 Seq     = 2; // 神器seq
+}
+
+message GS_RelicEquip_R { // msgid: 5511
+    int32 ErrorCode = 1;
+}
+
+// 卸
+message C_RelicUnequip { // msgid: 5512
+    int64 HeroSeq = 1;   // 目标英雄
+}
+
+message GS_RelicUnequip_R { // msgid: 5513
+    int32 ErrorCode = 1;
+}
+
+// 神器吃
+message C_RelicEat { // msgid: 5514
+    int64          Seq     = 1;
+    repeated int64 EatSeqs = 2;
+}
+
+message GS_RelicEat_R { // msgid: 5515
+    int32 ErrorCode = 1;
+}

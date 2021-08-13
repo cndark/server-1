@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [13000, 13100)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+// 聊天
+
+// 历史聊天记录(公共)
+message ChatData { repeated ChatOne Data = 1; }
+
+// 单条记录
+message ChatOne {
+    int32 Tp = 1; // 消息类型 1:世界; 2:跨服; 3:公会; 4:好友; 5:工会招募
+    PlayerSimpleInfo From    = 2; // 发送者信息
+    string           Content = 3; // 内容
+    int64            Ts      = 4; // 时间
+    string           ToId    = 5; // 收id
+    string           GId     = 6; // 招募公会的id
+    int32            GLv     = 7; //招募公会的等级
+}
+
+// ============================================================================
+
+// 聊天推送
+message GS_ChatMsg { // msgid: 13000
+    ChatOne One = 1;
+}
+
+// ============================================================================
+
+// 聊天发送信息
+message C_ChatSend { // msgid: 13010
+    int32  Tp      = 1;
+    string ToPlrId = 2; // 发往玩家id(tp=4有效)
+    string Content = 3;
+}
+
+message GS_ChatSend_R { // msgid: 13011
+    int32 ErrorCode = 1;
+}

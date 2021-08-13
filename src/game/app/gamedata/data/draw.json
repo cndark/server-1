@@ -1,0 +1,156 @@
+[
+    {
+        "drawGroup": "normal",
+        "moduleId": 30,
+        "cost": [
+            {
+                "id": 20001,
+                "n": 1
+            }
+        ],
+        "equilCost": [
+        ],
+        "discount": 10000,
+        "costFreeTime": 300,
+        "initialTimes": 0,
+        "initialOdds": 0,
+        "initialGroup": "",
+        "InitialBaseGroup": "",
+        "fixedTimes": [
+            
+        ],
+        "fixedGroup": "",
+        "extraTimes": 10,
+        "extraGroup": "normalTen",
+        "score": 0
+    },
+    {
+        "drawGroup": "senior",
+        "moduleId": 31,
+        "cost": [
+            {
+                "id": 20002,
+                "n": 1
+            }
+        ],
+        "equilCost": [
+            {
+                "id": 10002,
+                "n": 300
+            }
+        ],
+        "discount": 9000,
+        "costFreeTime": 0,
+        "initialTimes": 10,
+        "initialOdds": 0.1,
+        "initialGroup": "ten",
+        "InitialBaseGroup": "extraTenLow",
+        "fixedTimes": [
+            
+        ],
+        "fixedGroup": "",
+        "extraTimes": 20,
+        "extraGroup": "extra",
+        "score": 10
+    },
+    {
+        "drawGroup": "water",
+        "moduleId": 32,
+        "cost": [
+            {
+                "id": 20003,
+                "n": 1
+            }
+        ],
+        "equilCost": [
+        ],
+        "discount": 10000,
+        "costFreeTime": 0,
+        "initialTimes": 0,
+        "initialOdds": 0,
+        "initialGroup": "",
+        "InitialBaseGroup": "",
+        "fixedTimes": [
+            
+        ],
+        "fixedGroup": "",
+        "extraTimes": 20,
+        "extraGroup": "extraWater",
+        "score": 0
+    },
+    {
+        "drawGroup": "thunder",
+        "moduleId": 32,
+        "cost": [
+            {
+                "id": 20003,
+                "n": 1
+            }
+        ],
+        "equilCost": [
+        ],
+        "discount": 10000,
+        "costFreeTime": 0,
+        "initialTimes": 0,
+        "initialOdds": 0,
+        "initialGroup": "",
+        "InitialBaseGroup": "",
+        "fixedTimes": [
+            
+        ],
+        "fixedGroup": "",
+        "extraTimes": 20,
+        "extraGroup": "extraThunder",
+        "score": 0
+    },
+    {
+        "drawGroup": "fire",
+        "moduleId": 32,
+        "cost": [
+            {
+                "id": 20003,
+                "n": 1
+            }
+        ],
+        "equilCost": [
+        ],
+        "discount": 10000,
+        "costFreeTime": 0,
+        "initialTimes": 0,
+        "initialOdds": 0,
+        "initialGroup": "",
+        "InitialBaseGroup": "",
+        "fixedTimes": [
+            
+        ],
+        "fixedGroup": "",
+        "extraTimes": 20,
+        "extraGroup": "extraFire",
+        "score": 0
+    },
+    {
+        "drawGroup": "blend",
+        "moduleId": 32,
+        "cost": [
+            {
+                "id": 20003,
+                "n": 1
+            }
+        ],
+        "equilCost": [
+        ],
+        "discount": 10000,
+        "costFreeTime": 0,
+        "initialTimes": 0,
+        "initialOdds": 0,
+        "initialGroup": "",
+        "InitialBaseGroup": "",
+        "fixedTimes": [
+            
+        ],
+        "fixedGroup": "",
+        "extraTimes": 30,
+        "extraGroup": "extraBlend",
+        "score": 0
+    }
+]

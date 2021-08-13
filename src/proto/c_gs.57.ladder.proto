@@ -1,0 +1,99 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option (gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [14600, 14700)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+
+message LadderData {
+    int32 Stage = 1;
+    int64 Ts2   = 2;
+}
+
+message LadderPlayerInfo {
+    PlayerSimpleInfo Info = 1;
+    int32            Rank = 2;
+}
+
+message LadderReplayRec {
+    string           ReplayId = 1;
+    PlayerSimpleInfo Attacker = 2;
+    int32            Winner   = 3;
+    int64            Ts       = 4;
+    int32            RkFrom   = 5;
+    int32            RkTo     = 6;
+}
+
+// ============================================================================
+
+message GS_LadderStageChange { // msgid: 14600
+    int32 Stage = 1;
+    int64 Ts2   = 2;
+}
+
+// ============================================================================
+
+// 拉取概要信息
+message C_LadderGetSummary { // msgid: 14610
+}
+
+message GS_LadderGetSummary_R { // msgid: 14611
+    int32 SelfRank = 1;
+}
+
+// 匹配
+message C_LadderMatch { // msgid: 14612
+}
+
+message GS_LadderMatch_R { // msgid: 14613
+    int32                     ErrorCode = 1;
+    repeated LadderPlayerInfo Plrs      = 2;
+}
+
+// 打架
+message C_LadderFight { // msgid: 14614
+    TeamFormation Team    = 1;
+    string        TarId   = 2;
+    int32         TarRank = 3;
+}
+
+message GS_LadderFight_R { // msgid: 14615
+    int32        ErrorCode = 1;
+    BattleReplay Replay    = 2;
+    Rewards      Rewards   = 3;
+}
+
+// 拉取排行榜
+message C_LadderGetRank { // msgid: 14616
+}
+
+message GS_LadderGetRank_R { // msgid: 14617
+    repeated LadderPlayerInfo Records = 1;
+}
+
+// 拉取录像列表
+message C_LadderGetReplayList { // msgid: 14618
+}
+
+message GS_LadderGetReplayList_R { // msgid: 14619
+    repeated LadderReplayRec Records = 1;
+}
+
+// 拉取回放数据
+message C_LadderGetReplay { // msgid: 14620
+    string ReplayId = 1;
+}
+
+message GS_LadderGetReplay_R { // msgid: 14621
+    int32        ErrorCode = 1;
+    BattleReplay Replay    = 2;
+}

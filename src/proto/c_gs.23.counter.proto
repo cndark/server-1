@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [8400, 8450)
+// ============================================================================
+
+message CounterData {
+    map<int32, int64> Cnt    = 1; // 当前值(直接赋值)
+    map<int32, int64> MaxCnt = 2; // 最大值(直接赋值)
+    map<int32, int64> Ts     = 4; // 上次恢复时间
+}
+
+// ============================================================================
+
+// 推送计数器操作
+message GS_CounterOpUpdate {      // msgid: 8400
+    map<int32, int64> Cnt    = 1; // 计数值(增量)
+    map<int32, int64> MaxCnt = 2; // 计数最大值(增量)
+    map<int32, int64> Ts     = 3; // 上次恢复时间
+}
+
+// ============================================================================
+
+// 要求计算计数器恢复
+message C_CounterRecover { // msgid: 8410
+    int32 Id = 1;
+}
+
+message GS_CounterRecover_R { // msgid: 8411
+    int32 ErrorCode = 1;
+    int32 Id        = 2;
+    int64 Cnt       = 3; // 计数值(直接赋值)
+    int64 Ts        = 4; // 上次恢复时间
+}
+
+// 购买计数
+message C_CounterBuy { // msgid: 8412
+    int32 Id = 1;
+}
+
+message GS_CounterBuy_R { // msgid: 8413
+    int32 ErrorCode = 1;
+}

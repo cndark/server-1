@@ -1,0 +1,22 @@
+[
+    {
+        "attainId": 1,
+        "cond": 11,
+        "p1": 31
+    },
+    {
+        "attainId": 2,
+        "cond": 9,
+        "p1": 2
+    },
+    {
+        "attainId": 3,
+        "cond": 11,
+        "p1": 32
+    },
+    {
+        "attainId": 4,
+        "cond": 1,
+        "p1": 0
+    }
+]

@@ -1,0 +1,4098 @@
+
+var express = require('express');
+var router  = express.Router();
+
+var axios   = require('axios');
+var md5     = require('md5');
+var qs      = require('querystring');
+var crypto  = require('crypto');
+var bignum  = require('bignumber.js');
+
+var dbpool  = require('../lib/dbpool');
+var gtab    = require('../models/gtab');
+var bill    = require('../models/bill');
+
+// ============================================================================
+
+const ERR_Ok    = 0;
+const ERR_Info  = 1;
+const ERR_Sdk   = 2;
+const ERR_Sig   = 3;
+const ERR_Order = 4;
+
+// ============================================================================
+
+async function bill_flow(opt) {
+    // extract info: {sdk, userid, prod_id}
+    let info;
+    try {
+        info = opt.info();
+        if (!info) throw -1;
+    } catch {
+        return ERR_Info;
+    }
+
+    // check sdk
+    let sdkobj;
+    try {
+        sdkobj = gtab.sdk[info.sdk];
+        if (!sdkobj) throw -1;
+    } catch {
+        return ERR_Sdk;
+    }
+
+    // verify signature
+    try {
+        if (!opt.sig(sdkobj)) throw -1;
+    } catch {
+        return ERR_Sig;
+    }
+
+    // save order: {orderid, amount, ccy, [discount]}
+    try {
+        // prepare doc
+        let doc = opt.doc;
+
+        if (!doc.orderid || !doc.amount || !doc.ccy)
+            return ERR_Order;
+
+        doc._id       = `${info.sdk}-${doc.orderid}`;
+        doc.sdk       = info.sdk;
+        doc.userid    = info.userid;
+        doc.prod_id   = tonumber(info.prod_id);
+        doc.discount  = doc.discount || 1;
+        doc.create_ts = new Date();
+        doc.sync_ts   = new Date();
+        doc.status    = 'payed';
+
+        // save
+        try {
+            let db = dbpool.get("bill");
+            await db.collection('order').insertOne(doc);
+            await bill.give_items(doc);
+        } catch(e) {
+            if (e.code != 11000) throw e;
+        }
+
+        // ok
+        return ERR_Ok;
+
+    } catch {
+        return ERR_Order;
+    }
+}
+
+// ============================================================================
+// Bill oursdk
+// ============================================================================
+
+router.post('/bill/oursdk', _A_(async (req, res) => {
+    let q = req.body;
+
+    let ec = await bill_flow({
+        info: () => JSON.parse(q.ext),
+
+        sig: (sdkobj) => {
+            var sign = q.sign;
+            delete q.sign;
+
+            var sign2 = md5(`${Object.keys(q).sort().map(k=>`${k}=${q[k]}`).join('&')}&${sdkobj.bill_key}`);
+            return sign == sign2;
+        },
+
+        doc: {
+            orderid:         q.orderid,
+            amount:          tonumber(q.amount),
+            ccy:             q.ccy,
+
+            oursdk_uid:      q.uid,
+            oursdk_acct_sys: q.acct_sys,
+            oursdk_prod_id:  q.prod_id,
+        },
+    });
+
+    // resp
+    res.json({err: ec}).end();
+}));
+
+// ============================================================================
+// Bill ly
+// ============================================================================
+
+router.post('/bill/ly', _A_(async (req, res) => {
+    let q = req.body;
+
+    let ec = await bill_flow({
+        info: () => JSON.parse(q.payExt),
+
+        sig: (sdkobj) => {
+            var info = JSON.parse(q.payExt);
+
+            var sign = q.sign;
+            var cols = ["game", "orderId", "amount", "uid", "zone", "goodsId", "payTime", "payChannel", "payExt"];
+
+            var sign2 = md5(`${cols.map(v=>q[v]).join("")}#${sdkobj[`bill_key_${info.plat}`]}`);
+            return sign == sign2;
+        },
+
+        doc: {
+            orderid:         q.orderId,
+            amount:          tonumber(q.amount),
+            ccy:             "CNY",
+
+            ly_uid:          q.uid,
+            ly_goodsId:      q.goodsId,
+            ly_payTime:      q.payTime,
+            ly_payChannel:   q.payChannel,
+        },
+    });
+
+    // resp
+    res.json({
+        errno:  [1000, -1008, -1008, 1001, -1][ec],
+        errmsg: ['', 'einfo', 'esdk', 'esig', 'eorder'][ec],
+        data: {
+            orderId: q.orderId,
+            amount:  q.amount,
+            game:    q.game,
+            zone:    q.zone,
+            uid:     q.uid,
+        },
+    }).end();
+}));
+
+// ============================================================================
+// Bill gk
+// ============================================================================
+
+router.post('/bill/gk', _A_(async (req, res) => {
+    let q = req.body;
+
+    let ec = await bill_flow({
+        info: () => JSON.parse(q.extension),
+
+        sig: (sdkobj) => {
+            var sign = q.sign;
+
+            if (q.flag === undefined) {
+                var cols = ["productID", "roleId", "orderNum", "endTime"];
+                var sign2 = md5(`${cols.map(v=>q[v]).join("")}${sdkobj.bill_key}`);
+                return sign == sign2;
+            } else {
+                var cols = ["addTime","appId","channelID","endTime","extension","flag",
+                "logicChannelId","money","orderNum","productID","productName","roleId","sdkUserID","serverID","userID"];
+                var sign2 = md5(`${cols.map(v=>`${v}=${q[v]}`).join("&")}${sdkobj.bill_key}`);
+                return sign == sign2;
+            }
+        },
+
+        doc: {
+            orderid:         q.orderNum,
+            amount:          tonumber(q.money),
+            ccy:             "CNY",
+
+            gk_productID:    q.productID,
+            gk_productName:  q.productName,
+            gk_channelID:    q.channelID,
+            gk_userID:       q.userID,
+            gk_addTime:      q.addTime,
+            gk_endTime:      q.endTime,
+        },
+    });
+
+    // resp
+    res.end(['SUCCESS', 'einfo', 'esdk', 'esig', 'eorder'][ec]);
+}));
+
+// ============================================================================
+// Bill 6kw
+// ============================================================================
+
+router.post('/bill/6kw', _A_(async (req, res) => {
+    let q = req.body;
+
+    let ec = await bill_flow({
+        info: () => JSON.parse(q.extension),
+
+        sig: (sdkobj) => {
+            var sign = q.sign;
+            var cols = ["extension", "gameOrder", "orderID", "productID", "roleID", "serverID", "total", "uid"];
+
+            var sign2 = md5(`${cols.map(v=>`${v}=${q[v]}`).join("&")}${sdkobj.bill_key}`);
+            return sign == sign2;
+        },
+
+        doc: {
+            orderid:         q.orderID,
+            amount:          tonumber(q.total),
+            ccy:             "CNY",
+
+            _6kw_uid:        q.uid,
+            _6kw_gameOrder:  q.gameOrder,
+            _6kw_productID:  q.productID,
+        },
+    });
+
+    // resp
+    res.end(['SUCCESS', 'einfo', 'esdk', 'esig', 'eorder'][ec]);
+}));
+
+// ============================================================================
+// Bill xuyang
+// ============================================================================
+
+router.post('/bill/xuyang', _A_(async (req, res) => {
+    let q = req.body;
+
+    let ec = await bill_flow({
+        info: () => JSON.parse(q.other),
+
+        sig: (sdkobj) => {
+            var sign = q.sign;
+            delete q.sign;
+
+            let keys = ["act", "ts", "gameid", "partnerid", "sid", "money", "clientip", "orderno"];
+
+            var str = `${keys.map(v => `${q[v]}`).join('')}${sdkobj.bill_key}`;
+            var sign2 = md5(str).toLowerCase();
+
+            q.sign = sign;
+            return sign == sign2;
+        },
+
+        doc: {
+            orderid:         q.orderno,
+            amount:          tonumber(q.money) * 100,
+            ccy:             q.paytype && q.paytype == 1 ? 'USD' : 'CNY',
+
+            xuyang_gameid:    q.gameid,
+            xuyang_partnerid: q.partnerid,
+            xuyang_user_id:   q.account,
+        },
+    });
+
+    // resp
+    res.json({
+        code: ec == 0 ? 1 : -1,
+        date: {"result": ec == 0 ? '发货成功' : '发货失败', "orderno": q.orderno},
+    }).end();
+}));
+
+// ============================================================================
+// Bill xuyang ios
+// ============================================================================
+
+router.post('/bill/xuyang_ios', _A_(async (req, res) => {
+    let q = req.body;
+
+    let ec = await bill_flow({
+        info: () => JSON.parse(q.other),
+
+        sig: (sdkobj) => {
+            var sign = q.sign;
+            delete q.sign;
+
+            let keys = ["act", "ts", "gameid", "partnerid", "sid", "money", "clientip", "orderno"];
+
+            var str = `${keys.map(v => `${q[v]}`).join('')}${sdkobj.bill_key}`;
+            var sign2 = md5(str).toLowerCase();
+
+            q.sign = sign;
+            return sign == sign2;
+        },
+
+        doc: {
+            orderid:         q.orderno,
+            amount:          tonumber(q.money) * 100,
+            ccy:             q.paytype && q.paytype == 1 ? 'USD' : 'CNY',
+
+            xuyang_gameid:    q.gameid,
+            xuyang_partnerid: q.partnerid,
+            xuyang_user_id:   q.account,
+        },
+    });
+
+    // resp
+    res.json({
+        code: ec == 0 ? 1 : -1,
+        date: {"result": ec == 0 ? '发货成功' : '发货失败', "orderno": q.orderno},
+    }).end();
+}));
+
+// ============================================================================
+// Bill hw
+// ============================================================================
+
+function verify_sign_hw(q, sdkobj) {
+    var alg = 'RSA-SHA256';
+    if (q.signType != 'RSA256') {
+        alg = 'RSA-SHA1';
+    }
+
+    var sign = q.sign;
+
+    delete q.signType;
+    delete q.sign;
+
+    var verify = crypto.createVerify(alg);
+    verify.update(Object.keys(q).sort().map(k => `${k}=${q[k]}`).join('&'));
+
+    return verify.verify(sdkobj.bill_key, sign, 'base64');
+}
+
+router.post('/bill/hw', _A_(async (req, res) => {
+    let q = req.body;
+
+    // extract info
+    var info = extract_info(q.extReserved);
+    if (!info) {
+        res.json({result: 98}).end();
+        console.log("[ERROR] huawei - error trans");
+        return;
+    }
+
+    // check sdk
+    var sdkobj = gtab.sdk[info.sdk];
+    if (!sdkobj) {
+        res.json({result: 99}).end();
+        console.log("[ERROR] huawei - sdk lost");
+        return;
+    }
+
+    // check signature
+    if (!verify_sign_hw(q, sdkobj)) {
+        res.json({result: 1}).end();
+        console.log("[ERROR] huawei - error sign");
+        return;
+    }
+
+    // orderid
+    var orderid = q.orderId;
+    var key     = `${info.sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                info.sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.amount) * 100,
+        ccy:                q.currency || "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        hw_result:          q.result,
+        hw_payType:         q.payType,
+        hw_productName:     q.productName,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            res.json({result: 94}).end();
+            return;
+        }
+
+        res.json({result: 0}).end();
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill oppo
+// ============================================================================
+
+function verify_sign_oppo(q, sdkobj) {
+    var sign = q.sign;
+    var cols = ["notifyId", "partnerOrder", "productName", "productDesc", "price", "count", "attach"];
+
+    var str = `${cols.map(v=>`${v}=${q[v]}`).join("&")}`;
+
+    var vf = crypto.createVerify('RSA-SHA1');
+    vf.update(str);
+
+    return vf.verify(sdkobj.bill_key, sign, 'base64');
+}
+
+router.post('/bill/oppo', _A_(async (req, res) => {
+    let q = req.body;
+
+    // resp
+    var resp = function (b, errmsg) {
+        res.end(`result=${b ? "OK" : "FAIL"}&resultMsg=${errmsg ? errmsg : ""}`);
+    };
+
+    // extract info
+    var info = extract_info(q.attach);
+    if (!info) {
+        resp(false, "error info");
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        resp(false, "error sdk");
+        return;
+    }
+
+    // check signature
+    if (!verify_sign_oppo(q, sdkobj)) {
+        resp(false, "error sign");
+        return;
+    }
+
+    // orderid
+    var orderid = q.notifyId;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.price) * utils.tonumber(q.count),
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        oppo_productName:   q.productName,
+        oppo_price:         q.price,
+        oppo_count:         q.count,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            resp(false, "error");
+            return;
+        }
+
+        resp(true, "SUCCESS");
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill vivo
+// ============================================================================
+
+function verify_sign_vivo(q, sdkobj) {
+    var sign = q.signature;
+    var cols = ["appId", "cpId", "cpOrderNumber", "extInfo", "orderAmount", "orderNumber", "payTime", "respCode", "respMsg", "tradeStatus", "tradeType", "uid"];
+
+    var sign2 = md5(`${cols.map(v=>`${v}=${q[v]}`).join("&")}&${md5(sdkobj.bill_key)}`);
+    return sign == sign2;
+}
+
+router.post('/bill/vivo', _A_(async (req, res) => {
+    let q = req.body;
+
+    // extract info
+    var info = extract_info(q.extInfo);
+    if (!info) {
+        res.end("error info");
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        res.end("error sdk");
+        return;
+    }
+
+    // check signature
+    if (!verify_sign_vivo(q, sdkobj)) {
+        res.end("error sign");
+        return;
+    }
+
+    // orderid
+    var orderid = q.orderNumber;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.orderAmount),
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        vivo_respCode:      q.respCode,
+        vivo_tradeStatus:   q.tradeStatus,
+        vivo_uid:           q.uid,
+        vivo_payTime:       q.payTime,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            res.end("error");
+            return;
+        }
+
+        res.end("success");
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill 360
+// ============================================================================
+
+function verify_sign_360(q, sdkobj) {
+    var sign = q.sign;
+    delete q.sign;
+    delete q.sign_return;
+
+    var cols = [];
+    for (let k in q) {
+        if (q[k]) cols.push(k);
+    }
+
+    var sign2 = md5(`${cols.sort().map(v => `${q[v]}`).join('#')}#${sdkobj.bill_key}`);
+    return sign == sign2;
+}
+
+router.get('/bill/360', _A_(async (req, res) => {
+    var q = req.query;
+
+    // resp
+    var resp = function (b, errmsg) {
+        res.json({
+            status:   b ? "ok" : "error",
+            delivery: b ? "success" : "other",
+            msg:      errmsg ? errmsg : "",
+        }).end();
+    };
+
+    // extract info
+    var info = extract_info(q.app_ext1);
+    if (!info) {
+        resp(false, "error info");
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        resp(false, "error sdk");
+        return;
+    }
+
+    // check signature
+    if (!verify_sign_360(q, sdkobj)) {
+        resp(false, "error sign");
+        return;
+    }
+
+    // fuck
+    if (q.gateway_flag != "success") {
+        resp(false, "error flag");
+        return;
+    }
+
+    // orderid
+    var orderid = q.order_id;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.amount),
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        _360_product_id:    q.product_id,
+        _360_app_uid:       q.app_uid,
+        _360_user_id:       q.user_id,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            resp(false, "error");
+            return;
+        }
+
+        resp(true, "SUCCESS");
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill meizu
+// ============================================================================
+
+function verify_sign_meizu(q, sdkobj) {
+    var sign = q.sign;
+    delete q.sign_type;
+    delete q.sign;
+
+    var sign2 = md5(`${Object.keys(q).sort().map(v=>`${v}=${q[v]}`).join("&")}:${sdkobj.bill_key}`);
+    return sign == sign2;
+}
+
+router.post('/bill/meizu', _A_(async (req, res) => {
+    let q = req.body;
+
+    // resp
+    var resp = function (b, errmsg) {
+        res.json({
+            code:    b ? 200 : 120014,
+            message: errmsg ? errmsg : "",
+        }).end();
+    };
+
+    // extract info
+    var info = extract_info(q.user_info);
+    if (!info) {
+        resp(false, "error info");
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        resp(false, "error sdk");
+        return;
+    }
+
+    // check signature
+    if (!verify_sign_meizu(q, sdkobj)) {
+        resp(false, "error sign");
+        return;
+    }
+
+    // orderid
+    var orderid = q.order_id;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.total_price) * 100,
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        meizu_notify_time:  q.notify_time,
+        meizu_uid:          q.uid,
+        meizu_product_id:   q.product_id,
+        meizu_trade_status: q.trade_status,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            resp(false, "error");
+            return;
+        }
+
+        resp(true, "SUCCESS");
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill baidu
+// ============================================================================
+
+function baidu_check(q, c, info, sdkobj) {
+    if (q.AppID != sdkobj.appid) return false;
+    if (c.UID != info.auth_id) return false;
+    if (q.CooperatorOrderSerial != info.cp_orderid) return false;
+    if (Math.abs(utils.tonumber(c.OrderMoney) * 100 - utils.tonumber(info.amount)) > 1) return false;
+
+    return true;
+}
+
+function verify_sign_baidu(q, sdkobj) {
+    var sign = q.Sign;
+    var cols = ["AppID", "OrderSerial", "CooperatorOrderSerial", "Content"];
+
+    var sign2 = md5(`${cols.map(v=>`${q[v]}`).join("")}${sdkobj.bill_key}`);
+    return sign == sign2;
+}
+
+router.post('/bill/baidu', _A_(async (req, res) => {
+    let q = req.body;
+
+    // resp
+    var resp = function (errno, errmsg, sdkobj) {
+        if (!sdkobj) {
+            res.json({}).end();
+            return;
+        }
+
+        var obj = {
+            AppID:      sdkobj.appid,
+            ResultCode: errno,
+            ResultMsg:  errmsg,
+        }
+        obj.Sign = md5(`${["AppID", "ResultCode"].map(v=>`${obj[v]}`).join("")}${sdkobj.bill_key}`);
+
+        res.json(obj).end();
+    };
+
+    // prepare
+    var c = Buffer.from(q.Content, 'base64').toString();
+    try {
+        c = JSON.parse(c);
+    } catch(e) {
+        resp(-1, "error content");
+        return;
+    }
+
+    // extract info
+    var info = extract_info(c.ExtInfo);
+    if (!info) {
+        resp(-1, "error info");
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        resp(-1, "error sdk");
+        return;
+    }
+
+    // check signature
+    if (!verify_sign_baidu(q, sdkobj)) {
+        resp(91, "error sign", sdkobj);
+        return;
+    }
+
+    // baidu check
+    if (!baidu_check(q, c, info, sdkobj)) {
+        resp(91, "error check", sdkobj);
+        return;
+    }
+
+    // orderid
+    var orderid = q.OrderSerial;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(c.OrderMoney) * 100,
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        baidu_CooperatorOrderSerial: q.CooperatorOrderSerial,
+        baidu_UID:                   c.UID,
+        baidu_MerchandiseName:       c.MerchandiseName,
+        baidu_OrderStatus:           c.OrderStatus,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            resp(-1, "error", sdkobj);
+            return;
+        }
+
+        resp(1, "SUCCESS", sdkobj);
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill xiaomi
+// ============================================================================
+
+function verify_sign_xiaomi(q, sdkobj) {
+    var sign = q.signature;
+    delete q.signature;
+
+    if (!q.partnerGiftConsume)
+        delete q.partnerGiftConsume;
+
+    var str = Object.keys(q).sort().map(k => `${k}=${q[k]}`).join('&');
+    return sign == crypto.createHmac('SHA1', sdkobj.bill_key).update(str).digest('hex');
+}
+
+router.get('/bill/xiaomi', _A_(async (req, res) => {
+    var q = req.query;
+
+    // extract info
+    var info = extract_info(q.cpUserInfo);
+    if (!info) {
+        res.json({errcode: 3515}).end();
+        console.log("[ERROR] xiaomi - error trans");
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        res.json({errcode: 3515}).end();
+        console.log("[ERROR] xiaomi - sdk lost");
+        return;
+    }
+
+    // verify sign
+    if (!verify_sign_xiaomi(q, sdkobj)) {
+        res.json({errcode: 1525}).end();
+        console.log("[ERROR] xiaomi - error sign");
+        return;
+    }
+
+    // orderid
+    var orderid = q.orderId;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.payFee),
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        xiaomi_ctype:       q.orderConsumeType,
+        xiaomi_gift:        q.partnerGiftConsume || 0,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            res.json({errcode: 555}).end();
+            return;
+        }
+
+        res.json({errcode: 200}).end();
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill jinli
+// ============================================================================
+
+function extract_info_jinli(order) {
+    var tmp = order.trim().split('|');
+    if (!tmp || tmp.length != 4) {
+        return null;
+    }
+
+    var info = {"userid": 0, "sdk": 1, "prod_id": 2, "ts": 3}; 
+    Object.keys(info).map(k => {info[k] = tmp[info[k]]});
+
+    info.orderId = info.userid + info.prod_id + info.ts;
+
+    return info;
+}
+
+function verify_sign_jinli(q, sdkobj) {
+    var sign = q.sign;
+    delete q.sign;
+
+    var str = Object.keys(q).sort().map(k => `${k}=${q[k]}`).join('&');
+
+    return crypto.createVerify('RSA-SHA1').update(str).verify(sdkobj.bill_key, sign, 'base64');
+}
+
+router.post('/bill/jinli', _A_(async (req, res) => {
+    let q = req.body;
+
+    // extract info
+    var info = extract_info_jinli(q.out_order_no);
+    if (!info) {
+        res.end('error');
+        console.log("[ERROR] jinli - error trans");
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        res.end('error');
+        console.log("[ERROR] jinli - sdk lost");
+        return;
+    }
+
+    // verify sign
+    if (!verify_sign_jinli(q, sdkobj)) {
+        res.end('error');
+        console.log("[ERROR] jinli - error sign");
+        return;
+    }
+
+    // orderid
+    var orderid = info.orderId;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.deal_price) * 100,
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        jinli_pay_chn:      q.pay_channel,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            res.end('error');
+            return;
+        }
+
+        res.end('success');
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill coolpad
+// ============================================================================
+
+function verify_sign_coolpad(q, sdkobj) {
+    var keys = Buffer.from(Buffer.from(sdkobj.bill_key, 'base64').slice(40).toString(), 'base64').toString().split("+");
+    var str = q.sign.trim().split(" ").map(v => bignum(v, 16).pow(keys[0], keys[1]).toString(16)).join("");
+
+    var sign2 = Buffer.from(str, 'hex').toString().replace(/\s/g, '');
+
+    return md5(q.transdata) == sign2;
+}
+
+router.post('/bill/coolpad', _A_(async (req, res) => {
+    let q = req.body;
+
+    var data = JSON.parse(q.transdata);
+
+    // extract info
+    var info = extract_info(data.cpprivate);
+    if (!info) {
+        res.end('FAILURE');
+        console.log("[ERROR] coolpad - error trans");
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        res.end('FAILURE');
+        console.log("[ERROR] coolpad - sdk lost");
+        return;
+    }
+
+    // verify sign
+    if (!verify_sign_coolpad(q, sdkobj)) {
+        res.end('FAILURE');
+        console.log("[ERROR] coolpad - error sign");
+        return;
+    }
+
+    // orderid
+    var orderid = data.transid;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(data.money),
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        coolpad_result:     data.result,
+        coolpad_paytype:    data.paytype,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            res.end('FAILURE');
+            return;
+        }
+
+        res.end('SUCCESS');
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill lenovo
+// ============================================================================
+
+function verify_sign_lenovo(q, sdkobj) {
+    return q.sign == crypto.createSign('sha1').update(q.transdata).sign(sdkobj.bill_key, 'base64');
+}
+
+router.post('/bill/lenovo', _A_(async (req, res) => {
+    let q = req.body;
+
+    var data = JSON.parse(q.transdata);
+
+    // extract info
+    var info = extract_info(data.cpprivate);
+    if (!info) {
+        res.end('FAILURE');
+        console.log("[ERROR] lenovo - error trans");
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        res.end('FAILURE');
+        console.log("[ERROR] lenovo - sdk lost");
+        return;
+    }
+
+    // verify sign
+    if (!verify_sign_lenovo(q, sdkobj)) {
+        res.end('FAILURE');
+        console.log("[ERROR] lenovo - error sign");
+        return;
+    }
+
+    // orderid
+    var orderid = data.transid;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(data.money),
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        lenovo_result:      data.result,
+        lenovo_paytype:     data.paytype,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            res.end('FAILURE');
+            return;
+        }
+
+        res.end('SUCCESS');
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill 37
+// ============================================================================
+
+function verify_sign_37(q, sdkobj) {
+    return q.sign == md5(`${q.time}${sdkobj.bill_key}${q.oid}${q.doid}${q.dsid}${q.uid}${q.money}${q.coin}`);
+}
+
+router.post('/bill/37', function(req, res){
+    let q = req.body;
+
+    // extract info
+    var info = extract_info(q.dext);
+    if (!info) {
+        res.json({state:0, msg: "error trans"}).end();
+        console.log("[ERROR] 37 - error trans");
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        res.json({state:0, msg: "sdk lost"}).end();
+        console.log("[ERROR] 37 - sdk lost");
+        return;
+    }
+
+    // verify sign
+    if (!verify_sign_37(q, sdkobj)) {
+        res.json({state:0, msg: "error sign"}).end();
+        console.log("[ERROR] 37 - error sign");
+        return;
+    }
+
+    // orderid
+    var orderid = q.oid;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.money) * 100,
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            res.json({state:0, msg: "db error"}).end();
+            return;
+        }
+
+        res.json({state:1, msg: "ok"}).end();
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill uc
+// ============================================================================
+
+function verify_sign_uc(q, sdkobj) {
+    return q.sign == md5(Object.keys(q.data).sort().map(k => `${k}=${q.data[k]}`).join('')+sdkobj.bill_key);
+}
+
+router.post('/bill/uc', function(req, res){
+    let q = req.body;
+
+    // check order status
+    if (q.data.orderStatus != "S") {
+        res.end("FAILURE");
+        console.log("[ERROR] uc - error orderStatus");
+        return
+    }
+
+    // extract info
+    var info = extract_info(q.data.callbackInfo);
+    if (!info) {
+        res.end('FAILURE');
+        console.log("[ERROR] uc - error trans");
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        res.end('FAILURE');
+        console.log("[ERROR] uc - sdk lost");
+        return;
+    }
+
+    // verify sign
+    if (!verify_sign_uc(q, sdkobj)) {
+        res.end('FAILURE');
+        console.log("[ERROR] uc - error sign");
+        return;
+    }
+
+    // orderid
+    var orderid = q.data.orderId;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.data.amount) * 100,
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        uc_creator:         q.data.creator,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            res.end('FAILURE');
+            return;
+        }
+
+        res.end('SUCCESS');
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill hg
+// ============================================================================
+
+function verify_sign_hg(q, sdkobj) {
+    var sign = q.sign;
+    delete q.sign;
+
+    return sign == md5(`${q.productID}${q.roleId}${q.orderNum}${q.endTime}${sdkobj.bill_key}`);
+}
+
+router.post('/bill/hg', function(req, res){
+    let q = req.body;
+
+    // extract info
+    var info = extract_info(q.extension);
+    if (!info) {
+        res.end('FAIL');
+        console.log("[ERROR] hg - error trans");
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        res.end('FAIL');
+        console.log("[ERROR] hg - sdk lost");
+        return;
+    }
+
+    // verify sign
+    if (!verify_sign_hg(q, sdkobj)) {
+        res.end('FAIL');
+        console.log("[ERROR] hg - error sign");
+        return;
+    }
+
+    // orderid
+    var orderid = q.orderNum;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.money),
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        hg_pId:             q.productID,
+        hg_pName:           q.productName,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            res.end('FAIL');
+            return;
+        }
+
+        res.end('SUCCESS');
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill 6kwan_ios
+// ============================================================================
+
+function verify_sign_6kwan_ios(q, sdkobj) {
+    var data = q.data;
+
+    var data_str = Object.keys(data).sort().map(k => `${k}=${data[k]}`).join('&');
+
+    return q.sign == md5(`${q.appid}${data_str}${sdkobj.bill_key}`);
+}
+
+router.post('/bill/6kwan_ios', _A_(async (req, res) => {
+    let q = req.body;
+    q.data = JSON.parse(q.data);
+
+    // extract info
+    var info = extract_info(q.data.callbackInfo);
+    if (!info) {
+        console.log("[ERROR] 6kwan_ios - error trans");
+        res.end('cb-err');
+        return
+    }
+
+    // check sdk
+    var sdkobj = gtab.sdk[info.sdk];
+    if (!sdkobj) {
+        console.log("[ERROR] 6kwan_ios - sdk lost");
+        res.end('FAIL');
+        return;
+    }
+
+    // verify sign
+    if (!verify_sign_6kwan_ios(q, sdkobj)) {
+        res.end('FAIL');
+        console.log("[ERROR] 6kwan_ios - error sign");
+        return;
+    }
+
+    // orderid
+    var orderid = q.data.orderId;
+    var key     = `${info.sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                info.sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.data.money) * 100,
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            res.end('FAIL');
+            return;
+        }
+
+        res.end('SUCCESS');
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill jx_and
+// ============================================================================
+
+function verify_sign_jx_and(q, sdkobj) {
+    var sign = q.sign;
+    delete q.sign;
+
+    return sign == md5(Object.keys(q).sort().map(k => `${k}=${q[k]}`).join('&') + "&appkey=" + sdkobj.bill_key);
+}
+
+router.post('/bill/jx_and', _A_(async (req, res) => {
+    let q = req.body;
+
+    // extract info
+    var info = extract_info(q.extension);
+    if (!info) {
+        console.log("[ERROR] jx_and - error trans");
+        res.json({code: 101, msg: "error trans"}).end();
+        return
+    }
+
+    // check sdk
+    var sdkobj = gtab.sdk[info.sdk];
+    if (!sdkobj) {
+        console.log("[ERROR] jx_and - sdk lost");
+        res.json({code: 102, msg: "sdk lost"}).end();
+        return;
+    }
+
+    // verify sign
+    if (!verify_sign_jx_and(q, sdkobj)) {
+        console.log("[ERROR] jx_and - error sign");
+        res.json({code: 103, msg: "error sign"}).end();
+        return;
+    }
+
+    // orderid
+    var orderid = q.orderid;
+    var key     = `${info.sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                info.sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.money),
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        jx_and_pay_t:       q.time,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            res.json({code: 104, msg: "db error"}).end();
+            return;
+        }
+
+        res.json({code: 1, msg: "ok"}).end();
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill jx_ios
+// ============================================================================
+
+function verify_sign_jx_ios(q, sdkobj) {
+    var sign = q.sign;
+    delete q.sign;
+
+    return sign == md5(Object.keys(q).sort().map(k => `${k}=${q[k]}`).join('&') + "&key=" + sdkobj.bill_key);
+}
+
+router.post('/bill/jx_ios', _A_(async (req, res) => {
+    let q = req.body;
+
+    // extract info
+    var info = extract_info(q.ext1);
+    if (!info) {
+        console.log("[ERROR] jx_ios - error trans");
+        res.json({code: 101, msg: "error trans"}).end();
+        return
+    }
+
+    // check sdk
+    var sdkobj = gtab.sdk[info.sdk];
+    if (!sdkobj) {
+        console.log("[ERROR] jx_ios - sdk lost");
+        res.json({code: 102, msg: "sdk lost"}).end();
+        return;
+    }
+
+    // verify sign
+    if (!verify_sign_jx_ios(q, sdkobj)) {
+        console.log("[ERROR] jx_ios - error sign");
+        res.json({code: 103, msg: "error sign"}).end();
+        return;
+    }
+
+    // orderid
+    var orderid = q.orderid;
+    var key     = `${info.sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                info.sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.money),
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        jx_ios_pay_t:       q.time,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            res.json({code: 104, msg: "db error"}).end();
+            return;
+        }
+
+        res.json({code: 1, msg: "success"}).end();
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill mzyw
+// ============================================================================
+
+function verify_sign_mzyw(q, sdkobj) {
+    var sign = q.sign;
+
+    var sign2 = md5(`${q.txt}&key=${sdkobj.bill_key}`);
+    return sign == sign2;
+}
+
+router.get('/bill/mzyw', _A_(async (req, res) => {
+    var q = req.query;
+
+    // decode
+    var content = q.content;
+    var sign    = q.sign;
+    q = {};
+    try {
+        q.txt = Buffer.from(content, 'base64').toString();
+        q.data = JSON.parse(q.txt);
+    } catch(e) {}
+    q.sign = sign;
+
+    // extract info
+    var info = extract_info(q.data.cp_order_id.replace(/\|/g, '"').replace('(', '{').replace(')', '}'));
+    if (!info) {
+        res.end("error info");
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        res.end("error sdk");
+        return;
+    }
+
+    // check signature
+    if (!verify_sign_mzyw(q, sdkobj)) {
+        res.end("error sign");
+        return;
+    }
+
+    // orderid
+    var orderid = q.data.pay_no;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.data.amount),
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        mzyw_user_id:       q.data.user_id,
+        mzyw_device_id:     q.data.device_id,
+        mzyw_pay_type:      q.data.pay_type,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            res.end("error");
+            return;
+        }
+
+        res.end("success");
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+router.get('/bill/mzyw_ios', _A_(async (req, res) => {
+    var q = req.query;
+
+    // decode
+    var content = q.content;
+    var sign    = q.sign;
+    q = {};
+    try {
+        q.txt = Buffer.from(content, 'base64').toString();
+        q.data = JSON.parse(q.txt);
+    } catch(e) {}
+    q.sign = sign;
+
+    // extract info
+    var info = extract_info(q.data.cp_order_id.replace(/\|/g, '"'));
+    if (!info) {
+        res.end("error info");
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        res.end("error sdk");
+        return;
+    }
+
+    // check signature
+    if (!verify_sign_mzyw(q, sdkobj)) {
+        res.end("error sign");
+        return;
+    }
+
+    // orderid
+    var orderid = q.data.pay_no;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.data.amount),
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        mzyw_user_id:       q.data.user_id,
+        mzyw_device_id:     q.data.device_id,
+        mzyw_pay_type:      q.data.pay_type,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            res.end("error");
+            return;
+        }
+
+        res.end("success");
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill xunqu
+// ============================================================================
+
+function verify_sign_xunqu(q, sdkobj) {
+    var sign = q.sign;
+    var cols = ["app_key", "product_id", "total_fee", "app_role_id", "user_id", "order_id", "app_order_id", "server_id", "pay_result"];
+
+    var sign2 = md5(`${cols.sort().map(v=>`${v}=${qs.escape(q[v])}`).join("&")}&jh_sign=${sdkobj.bill_key}&time=${q.time}`);
+    return sign == sign2;
+}
+
+router.get('/bill/xunqu_and', _A_(async (req, res) => {
+    var q = req.query;
+
+    // resp
+    var resp = function (b, msg) {
+        res.json({ret: b ? "1" : "0"}).end();
+    };
+
+    // extract info
+    var info = extract_info(q.app_order_id);
+    if (!info) {
+        resp(false, "error info");
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        resp(false, "error sdk");
+        return;
+    }
+
+    // check signature
+    if (!verify_sign_xunqu(q, sdkobj)) {
+        resp(false, "error sign");
+        return;
+    }
+
+    // orderid
+    var orderid = q.order_id;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.total_fee),
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        xunqu_and_product_id:   q.product_id,
+        xunqu_and_user_id:      q.user_id,
+        xunqu_and_pay_result:   q.pay_result,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            resp(false, "error");
+            return;
+        }
+
+        resp(true, "SUCCESS");
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+router.get('/bill/xunqu_ios', _A_(async (req, res) => {
+    var q = req.query;
+
+    // resp
+    var resp = function (b, msg) {
+        res.json({ret: b ? "1" : "0"}).end();
+    };
+
+    // extract info
+    var info = extract_info(q.app_order_id);
+    if (!info) {
+        resp(false, "error info");
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        resp(false, "error sdk");
+        return;
+    }
+
+    // check signature
+    if (!verify_sign_xunqu(q, sdkobj)) {
+        resp(false, "error sign");
+        return;
+    }
+
+    // orderid
+    var orderid = q.order_id;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.total_fee),
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        xunqu_ios_product_id:   q.product_id,
+        xunqu_ios_user_id:      q.user_id,
+        xunqu_ios_pay_result:   q.pay_result,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            resp(false, "error");
+            return;
+        }
+
+        resp(true, "SUCCESS");
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill dkm
+// ============================================================================
+
+function verify_sign_dkm(q, sdkobj) {
+    var sign = q.sign;
+    var cols = ["order_id", "uid", "product_id", "money", "role_id", "server_id", "partner_id", "ext", "time"];
+
+    var sign2 = md5(`${cols.map(v=>`${q[v]}`).join("")}${sdkobj.bill_key}`);
+    return sign == sign2;
+}
+
+router.post('/bill/dkm', _A_(async (req, res) => {
+    let q = req.body;
+
+    // resp
+    var resp = function (b, msg) {
+        res.json({ret: b ? 1 : 0, msg: msg}).end();
+    };
+
+    // extract info
+    var info = extract_info(q.ext);
+    if (!info) {
+        resp(false, "error info");
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        resp(false, "error sdk");
+        return;
+    }
+
+    // check signature
+    if (!verify_sign_dkm(q, sdkobj)) {
+        resp(false, "error sign");
+        return;
+    }
+
+    // orderid
+    var orderid = q.order_id;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.money) * 100,
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        dkm_pay_type:       q.pay_type,
+        dkm_uid:            q.uid,
+        dkm_product_id:     q.product_id,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            resp(false, "error");
+            return;
+        }
+
+        resp(true, "SUCCESS");
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill ali_ios
+// ============================================================================
+
+function verify_sign_ali_ios(q, sdkobj) {
+    var sign = q.sign;
+    delete q.sign;
+
+    q.cpextmsg = qs.escape(q.cpextmsg);
+
+    var sign2 = md5(`${Object.keys(q).sort().map(k=>`${k}=${q[k]}`).join('')}${sdkobj.bill_key}`);
+    return sign == sign2;
+}
+
+router.get('/bill/ali_ios', _A_(async (req, res) => {
+    var q = req.query;
+
+    // resp
+    var resp = function (b, msg) {
+        res.end(b ? 'result=true' : 'result=false');
+    };
+
+    // decode
+    var ext = Buffer.from(q.cpextmsg, 'base64').toString();
+
+    // extract info
+    var info = extract_info(ext);
+    if (!info) {
+        resp(false, "error info");
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        resp(false, "error sdk");
+        return;
+    }
+
+    // check signature
+    if (!verify_sign_ali_ios(q, sdkobj)) {
+        resp(false, "error sign");
+        return;
+    }
+
+    // orderid
+    var orderid = q.order;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.price),
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        ali_ios_code:       q.code,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            resp(false, "error");
+            return;
+        }
+
+        resp(true, "SUCCESS");
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+
+// ============================================================================
+// Bill mlyol
+// ============================================================================
+
+function verify_sign_mly(q, sdkobj) {
+    var sign = q.sign;
+
+    var sign2 = md5(`${q.txt}&key=${sdkobj.bill_key}`);
+    return sign == sign2;
+}
+
+router.post('/bill/mlyol_and', _A_(async (req, res) => {
+    let q = req.body;
+
+    // decode
+    var content = q.content;
+    var sign    = q.sign;
+    q = {};
+    try {
+        q.txt = Buffer.from(content, 'base64').toString();
+        q.data = JSON.parse(q.txt);
+    } catch(e) {}
+    q.sign = sign;
+
+    // extract info
+    var info = extract_info(q.data.cp_order_id.replace(/\|/g, '"').replace('(', '{').replace(')', '}'));
+    if (!info) {
+        res.end("error info");
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        res.end("error sdk");
+        return;
+    }
+
+    // check signature
+    if (!verify_sign_mly(q, sdkobj)) {
+        res.end("error sign");
+        return;
+    }
+
+    // orderid
+    var orderid = q.data.pay_no;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.data.amount),
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        mlyol_and_user_id:       q.data.user_id,
+        mlyol_and_device_id:     q.data.device_id,
+        mlyol_and_pay_type:      q.data.pay_type,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            res.end("error");
+            return;
+        }
+
+        res.end("success");
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill korea
+// ============================================================================
+
+function verify_sign_korea(q, sdkobj) {
+    var sign = q.sign;
+    delete q.sign;
+
+    var sign2 = md5(`${Object.keys(q).sort().map(k=>`${k}=${q[k]}`).join('&')}&${sdkobj.bill_key}`);
+    return sign == sign2;
+}
+
+router.post('/bill/korea', _A_(async (req, res) => {
+    let q = req.body;
+
+    // resp
+    var resp = function (b, msg) {
+        res.json({err: b ? 0 : 1}).end();
+    };
+
+    // extract info
+    var info = extract_info(q.ext);
+    if (!info) {
+        resp(false, "error info");
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        resp(false, "error sdk");
+        return;
+    }
+
+    // check signature
+    if (!verify_sign_korea(q, sdkobj)) {
+        resp(false, "error sign");
+        return;
+    }
+
+    // orderid
+    var orderid = q.orderid;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.amount),
+        ccy:                q.ccy,
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        korea_uid:          q.uid,
+        korea_acct_sys:     q.acct_sys,
+        korea_prod_id:      q.prod_id,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            resp(false, "error");
+            return;
+        }
+
+        resp(true, "SUCCESS");
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill ali_ios_gc
+// ============================================================================
+
+function verify_sign_ali_ios_gc(q, sdkobj) {
+    var sign = q.sign;
+    delete q.sign;
+
+    var sign2 = md5(`${Object.keys(q).sort().map(k=>`${k}=${q[k]}`).join('&')}&${sdkobj.bill_key}`);
+    return sign == sign2;
+}
+
+router.post('/bill/ali_ios_gc', _A_(async (req, res) => {
+    let q = req.body;
+
+    // resp
+    var resp = function (b, msg) {
+        res.json({err: b ? 0 : 1}).end();
+    };
+
+    // extract info
+    var info = extract_info(q.ext);
+    if (!info) {
+        resp(false, "error info");
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        resp(false, "error sdk");
+        return;
+    }
+
+    // check signature
+    if (!verify_sign_ali_ios_gc(q, sdkobj)) {
+        resp(false, "error sign");
+        return;
+    }
+
+    // orderid
+    var orderid = q.orderid;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.amount),
+        ccy:                q.ccy,
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        ali_ios_gc_uid:     q.uid,
+        ali_ios_gc_prod_id: q.prod_id,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            resp(false, "error");
+            return;
+        }
+
+        resp(true, "SUCCESS");
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill juhe
+// ============================================================================
+
+function verify_sign_jh(q, sdkobj) {
+    var sign = q.sign;
+    var sign2 = md5(`${q.data.orderID}${q.data.money}${q.data.state}${sdkobj.appkey}`);
+    return sign == sign2;
+}
+
+router.post('/bill/jh_and', _A_(async (req, res) => {
+    // let q = req.body;
+
+    var q       = {};
+    var content = "";
+
+    var buffers=[];
+    req.on('data',function(trunk){
+        buffers.push(trunk);
+    }).on('end',function(){
+        var buffer=Buffer.concat(buffers);
+        var str = Buffer.from(buffer, 'base64').toString();
+        content = Buffer(str, 'base64').toString();
+    
+        try {
+            q.data = JSON.parse(content);
+        } catch(e) {
+            res.end("error content");
+            return;
+        }
+
+        q.sign = q.data.sign;
+
+
+        // extract info
+        var info = q.data.extension;
+
+        // check sdk
+        var sdk = info.sdk;
+        var sdkobj = gtab.sdk[sdk];
+        if (!sdkobj) {
+            res.end("FAIL");
+            console.log("/bill/jh_and failed: sdkobj");
+            return;
+        }
+
+        // check signature
+        if (!verify_sign_jh(q, sdkobj)) {
+            res.end("FAIL");
+            console.log("/bill/jh_and failed: sign");
+            return;
+        }
+
+        // orderid
+        var orderid = q.data.orderID;
+        var key     = `${sdk}-${orderid}`;
+
+        // create order
+        var db = dbpool.get("bill");
+
+        var doc = {
+            _id:                key,
+            sdk:                sdk,
+            orderid:            orderid,
+            userid:             info.userid,
+            prod_id:            utils.tonumber(info.prod_id),
+            amount:             utils.tonumber(q.data.money),
+            ccy:                "CNY",
+            discount:           1,
+            create_ts:          new Date(),
+            sync_ts:            new Date(),
+            status:             'payed',
+
+            jh_and_user_id:     info.userid,
+            // jh_and_device_id:   q.data.device_id,
+            // jh_and_pay_type:    q.data.pay_type,
+        };
+
+        db.collection('order').insertOne(doc, (err, r) => {
+            if (err && err.code != 11000) {
+                res.end("FAIL");
+                console.log("/bill/jh_and failed: insertdb")
+            return;
+            }
+
+            res.end("SUCCESS");
+
+            if (!err) {
+                bill.give_items(doc);
+            }
+        });
+    });
+}));
+
+// ============================================================================
+// Bill ylw_and
+// ============================================================================
+
+function verify_sign_ylw_and(q, sdkobj) {
+    var sign = q.sign;
+    delete q.sign;
+
+    var keys    = ["app_key", "game_order_id", "money", "timestamp"];
+    var str     = keys.sort().map(k=>`${k}=${q[k]}`).join('&')+`${sdkobj.bill_key}`;
+    var sign2   = md5(str);
+
+    return sign == sign2;
+}
+
+router.post('/bill/ylw_and', _A_(async (req, res) => {
+    let q = req.body;
+
+    // resp
+    var resp = function (code, msg, game_order_id) {
+        var ret = {
+            msg     : msg,
+            code    : code,
+            status  : "success",
+            data    : {
+                game_order_id : game_order_id,
+            },
+        }
+        
+        if (code != 200) {
+            ret.status = "error";
+        }
+
+        res.json(ret).end();
+    };
+
+    // extract info
+    var info = extract_info(q.extension);
+    if (!info) {
+        resp(1, "invalid extension", q.game_order_id);
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        resp(2, "invalid sdk", q.game_order_id);
+        return;
+    }
+
+    // check signature
+    if (!verify_sign_ylw_and(q, sdkobj)) {
+        resp(3, "validate wign failed", q.game_order_id);
+        return;
+    }
+
+    // orderid
+    var orderid = q.game_order_id;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.money * 100),
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        ylw_and_timestamp:  q.timestamp,
+        ylw_and_order_id:   q.order_id,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            resp(false, "error");
+            resp(4, "insert to db failed", q.game_order_id);
+            return;
+        }
+
+        resp(200, "充值成功", q.game_order_id);
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill zshd_and  // 值尚互动
+// ============================================================================
+
+function verify_sign_zshd(q, sdkobj) {
+    var keys = [
+        "account", 
+        "money", 
+        "addtime", 
+        "orderid",
+        "customorderid",
+        "paytype",
+        "senddate",
+        "custominfo",
+        "success",
+    ];
+
+    var str     = keys.sort().map(k=>`${k}=${q[k]}`).join('&')+`${sdkobj.bill_key}`;
+    var sign2   = md5(str);
+
+    console.log("verify_sign_zshd", str, sign2, q.sign);
+
+    return q.sign == sign2;
+}
+
+router.post('/bill/zshd_and', _A_(async (req, res) => {
+    let q = req.body;
+
+    // resp
+    var resp = function (code, msg) {
+        var ret = {
+            code : code,
+            msg  : msg,
+        }
+        res.json(ret).end();
+    };
+
+    // 
+    if (q.success != 1) {
+        resp(1, "failure");
+        return;
+    }
+
+    // extract info
+    var info = extract_info(q.custominfo);
+    if (!info) {
+        resp(2, "invalid custominfo");
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        resp(3, "invalid sdk");
+        return;
+    }
+
+    // check signature
+    if (!verify_sign_zshd(q, sdkobj)) {
+        resp(4, "validate wign failed");
+        return;
+    }
+
+    // orderid
+    var orderid = q.orderid;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.money),
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        zshd_and_customorderid: q.customorderid,
+        zshd_and_paytype:       q.paytype,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            resp(5, "insert to db failed");
+            return;
+        }
+
+        resp(200, "充值成功");
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+
+router.post('/bill/zshd_ios', _A_(async (req, res) => {
+    let q = req.body;
+
+    // resp
+    var resp = function (code, msg) {
+        var ret = {
+            code : code,
+            msg  : msg,
+        }
+        res.json(ret).end();
+    };
+
+    if (q.success != 1) {
+        resp(1, "failure");
+        return;
+    }
+
+    // extract info
+    var info = extract_info(q.custominfo);
+    if (!info) {
+        resp(2, "invalid custominfo");
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        resp(3, "invalid sdk");
+        return;
+    }
+
+    // check signature
+    if (!verify_sign_zshd(q, sdkobj)) {
+        resp(4, "validate wign failed");
+        return;
+    }
+
+    // orderid
+    var orderid = q.orderid;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.money),
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        zshd_ios_customorderid: q.customorderid,
+        zshd_ios_paytype:       q.paytype,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            resp(5, "insert to db failed");
+            return;
+        }
+
+        resp(200, "充值成功");
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill douyu and  // 斗鱼Android
+// ============================================================================
+
+function verify_sign_douyu_and(q, sdkobj) {
+    var keys = [
+        "order_id", 
+        "trade_no", 
+        "status", 
+        "amount",
+        "pt",
+        "callback",
+    ];
+
+    var str     = keys.sort().map(k=>`${k}=${q[k]}`).join('&')+`&key=${sdkobj.bill_key}`;
+    var sign2   = md5(str).toUpperCase();
+
+    console.log("verify_sign_douyu_and", str, sign2, q.sign);
+
+    return q.sign == sign2;
+}
+
+router.post('/bill/douyu_and', _A_(async (req, res) => {
+    let q = req.body;
+
+    if (q.status != 1) {
+        res.end("fail");
+        console.log("fail: status")
+        return;
+    }
+
+    // extract info
+    var info = extract_info(q.callback.replace(/\|/g, '"').replace('(', '{').replace(')', '}').replace(/\=/g, ":"));
+    if (!info) {
+        res.end("fail");
+        console.log("fail: extract_info")
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        res.end("fail");
+        console.log("fail: sdk")
+        return;
+    }
+
+    // check signature
+    if (!verify_sign_douyu_and(q, sdkobj)) {
+        res.end("fail");
+        console.log("fail: verify_sign_douyu_and")
+        return;
+    }
+
+    // orderid
+    var orderid = q.trade_no;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.amount),
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        douyu_and_pt:       q.pt,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            res.end("fail");
+            return;
+        }
+
+        res.end("success");
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill douyu IOS  // 斗鱼IOS
+// ============================================================================
+
+function verify_sign_douyu_ios(q, sdkobj) {
+    var keys = [
+        "game_id", 
+        "out_trade_no", 
+        "price",
+        "extend",
+    ];
+
+    var str     = keys.map(k=>`${q[k]}`).join('')+`${sdkobj.bill_key}`;
+    var sign2   = md5(str);
+
+    console.log("verify_sign_douyu_ios", str, sign2, q.sign);
+
+    return q.sign == sign2;
+}
+
+router.post('/bill/douyu_ios', _A_(async (req, res) => {
+    let q = req.body;
+
+    // extract info
+    var info = extract_info(q.extend);
+    if (!info) {
+        res.end("0");
+        console.log("fail: extract_info")
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        res.end("0");
+        console.log("fail: sdk")
+        return;
+    }
+
+    // check signature
+    if (!verify_sign_douyu_ios(q, sdkobj)) {
+        res.end("0");
+        console.log("fail: verify_sign_douyu_ios")
+        return;
+    }
+
+    // orderid
+    var orderid = q.out_trade_no;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.price*100),
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            res.end("0");
+            return;
+        }
+
+        res.end("1");
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill zhishang_ios 志上IOS
+// ============================================================================
+
+function verify_sign_zhishang_ios(q, sdkobj) {
+    var sign = q.sign;
+    var cols = ["app_id", "player_id", "app_orderid", "coin", "money", "createtime"];
+
+    var sign2 = md5(`${cols.map(v=>q[v]).join("")}${sdkobj.bill_key}`);
+    return sign == sign2;
+}
+
+router.post('/bill/zhishang_ios', _A_(async (req, res) => {
+    let q = req.body;
+
+    // resp
+    var resp = function (b, msg) {
+        res.json({err_code: b ? 0 : 1, desc: msg}).end();
+    };
+
+    // extract info
+    var info = extract_info(q.pay_expanddata);
+    if (!info) {
+        resp(false, "error info");
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        resp(false, "error sdk");
+        return;
+    }
+
+    // check signature
+    if (!verify_sign_zhishang_ios(q, sdkobj)) {
+        resp(false, "error sign");
+        return;
+    }
+
+    // orderid
+    var orderid = q.order_id;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.money) * 100,
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        zhishang_good_code: q.good_code,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            resp(false, "error");
+            return;
+        }
+
+        resp(true, "SUCCESS");
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+router.get('/bill/zhishang_ios/web_order_gen', _A_(async (req, res) => {
+    var q = req.query;
+
+    if (q.order_id)
+        res.json({err_code: 0, desc: `WEB-${q.order_id}`}).end();
+    else
+        res.json({err_code: 1, desc: 'failed'}).end();
+}));
+
+// ============================================================================
+// Bill samsung
+// ============================================================================
+
+function verify_sign_samsung(q, sdkobj) {
+    var verify = crypto.createVerify('RSA-MD5');
+    verify.update(q.transdata);
+
+    return verify.verify(sdkobj.bill_key, q.sign, 'base64');
+}
+
+router.post('/bill/samsung', _A_(async (req, res) => {
+    let q = req.body;
+    var tr = q.transdata
+
+    try {tr = JSON.parse(tr)} catch(e) {tr = {}}
+
+    // resp
+    var resp = function (b, msg) {
+        res.end(msg);
+    };
+
+    // extract info
+    var info = extract_info(tr.cpprivate);
+    if (!info) {
+        resp(false, "error info");
+        return;
+    }
+
+    if (tr.result != 0){
+        resp(false, "error result");
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        resp(false, "error sdk");
+        return;
+    }
+
+    // check signature
+    if (!verify_sign_samsung(q, sdkobj)) {
+        resp(false, "error sign");
+        return;
+    }
+
+    // orderid
+    var orderid = tr.transid;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(tr.money)*100,
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        samsung_waresid:   tr.waresid,
+        samsung_transtype: tr.transtype,
+        samsung_feetype:   tr.feetype,
+        samsung_paytype:   tr.paytype,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            resp(false, "error");
+            return;
+        }
+
+        resp(true, "SUCCESS");
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill bili
+// ============================================================================
+
+function verify_sign_bili(q, sdkobj) {
+    var sign = q.sign;
+    delete q.sign;
+
+    var sign2 = md5(`${Object.keys(q).sort().map(k=>q[k]).join('')}${sdkobj.bill_key}`);
+    return sign == sign2;
+}
+
+router.post('/bill/bili', _A_(async (req, res) => {
+    let q = req.body;
+    try {q = JSON.parse(q.data)} catch(e) {q = {}}
+
+    // resp
+    var resp = function (b, msg) {
+        res.end(msg);
+    };
+
+    // extract info
+    var info = extract_info(q.extension_info);
+    if (!info) {
+        resp(false, "error info");
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        resp(false, "error sdk");
+        return;
+    }
+
+    // check signature
+    if (!verify_sign_bili(q, sdkobj)) {
+        resp(false, "error sign");
+        return;
+    }
+
+    // orderid
+    var orderid = q.order_no;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.pay_money),
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        bili_uid:           q.uid,
+        bili_product_name:  q.product_name,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            resp(false, "error");
+            return;
+        }
+
+        resp(true, "SUCCESS");
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill sogou
+// ============================================================================
+
+function verify_sign_sogou(q, sdkobj) {
+    var sign = q.auth;
+    delete q.auth;
+
+    var str = Object.keys(q).sort().map(k=>`${k}=${qs.escape(q[k])}`).join("&") + `&${sdkobj.bill_key}`;
+    var sign2 = md5(str);
+
+    q.auth = sign;
+    return sign == sign2;
+}
+
+router.post('/bill/sogou', _A_(async (req, res) => {
+    let q = req.body;
+
+    // resp
+    var resp = function (msg) {
+        res.end(msg);
+    };
+
+    // extract info
+    var info = extract_info(q.appdata);
+    if (!info) {
+        resp("ERR_100");
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        resp("ERR_100");
+        return;
+    }
+
+    // check signature
+    if (!verify_sign_sogou(q, sdkobj)) {
+        resp("ERR_200");
+        return;
+    }
+
+    // orderid
+    var orderid = q.oid;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.amount1) * 100,
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        sogou_uid:          q.uid,
+        sogou_realAmount:   q.realAmount,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            resp("ERR_500");
+            return;
+        }
+
+        resp("OK");
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill nubia
+// ============================================================================
+
+function verify_sign_nubia(q, sdkobj) {
+    var sign = q.order_sign;
+    var cols = ["order_no", "data_timestamp", "pay_success", "app_id", "uid", "amount", "product_name", "product_des", "number"];
+
+    var sign2 = md5(`${cols.sort().map(k=>`${k}=${q[k]}`).join('&')}:${sdkobj.appid}:${sdkobj.bill_key}`);
+    return sign == sign2;
+}
+
+router.post(/^\/bill\/nubia(-\w+)?$/, _A_(async (req, res) => {
+    let q = req.body;
+
+    // resp
+    var resp = function (b, msg) {
+        res.json({code: b ? 0 : 90000, message: msg}).end();
+    };
+
+    // decode
+    var info = {};
+    var arr;
+
+    // get sdk based on req.path (fuck nubia)
+    info.sdk = req.path.match(/^\/bill\/(.+)$/)[1];
+
+    // userid
+    arr = q.order_no.split('_');
+    info.userid = arr[0].trim();
+
+    // prod_id
+    arr = q.product_des.split('|');
+    info.prod_id = arr[0].trim();
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        resp(false, "error sdk");
+        return;
+    }
+
+    // check signature
+    if (!verify_sign_nubia(q, sdkobj)) {
+        resp(false, "error sign");
+        return;
+    }
+
+    // orderid
+    var orderid = `${q.order_serial}`;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.amount) * 100,
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        nubia_product_name: q.product_name,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            resp(false, "error");
+            return;
+        }
+
+        resp(true, "SUCCESS");
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill anzhi
+// ============================================================================
+
+function verify_sign_anzhi(q, sdkobj) {
+    return true;
+}
+
+router.post(/^\/bill\/anzhi(-\w+)?$/, _A_(async (req, res) => {
+    let q = req.body;
+
+    // resp
+    var resp = function (b, msg) {
+        res.end(msg);
+    };
+
+    // get sdk based on req.path (fuck anzhi)
+    var sdk = req.path.match(/^\/bill\/(.+)$/)[1];
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        resp(false, "error sdk");
+        return;
+    }
+
+    // decode
+    try {
+        var d = crypto.createDecipheriv('des-ede3', sdkobj.bill_key, '');
+        var r = d.update(Buffer.from(q.data, 'base64'), null, 'utf8');
+        r += d.final('utf8');
+        q = JSON.parse(r);
+    } catch(e) {
+        resp(false, "error decoding");
+        return;
+    }
+
+    // extract info
+    var arr = q.cpCustomInfo.split('_');
+    if (arr.length != 2) {
+        resp(false, "error info");
+        return;
+    }
+    var info = {
+        userid:  arr[0],
+        prod_id: arr[1],
+    }
+
+    // check signature
+    if (!verify_sign_anzhi(q, sdkobj)) {
+        resp(false, "error sign");
+        return;
+    }
+
+    // orderid
+    var orderid = q.orderId;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.orderAmount),
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        anzhi_uid:          q.uid,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            resp(false, "error");
+            return;
+        }
+
+        resp(true, "success");
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill jolo (聚乐 htc)
+// ============================================================================
+
+function verify_sign_jolo(q, sdkobj) {
+    var order       = q.order;      // 明文
+    var sign        = q.sign;       // 密文
+    var sign_type   = q.sign_type;  // 签名类型
+
+    var verify = crypto.createVerify("RSA-SHA1");
+    verify.update(order);
+    return verify.verify(sdkobj.appkey, sign, 'base64');
+}
+
+router.post('/bill/jolo', _A_(async (req, res) => {
+    let q = req.body;
+
+    // resp
+    var resp = function (msg) {
+        res.end(msg);
+    };
+
+    var order, sign, sign_type;
+
+    try {
+        var str = Buffer.from(q).toString();
+        q = qs.parse(str);
+
+        order       = q.order.slice(1, -1);
+        sign        = q.sign.slice(1, -1);
+        sign_type   = q.sign_type.slice(1, -1);
+
+        q = JSON.parse(order);
+    } catch (err) {
+        resp("invalid param");
+        return;
+    }
+
+    // extract info
+    var info = extract_info(Buffer.from(q.game_order_id, "base64").toString());
+    if (!info) {
+        res.end("error info");
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        res.end("error sdk");
+        return;
+    }
+
+    // check signature
+    var verify_q = {
+        order       : order,
+        sign        : sign,
+        sign_type   : sign_type,
+    }
+    if (!verify_sign_jolo(verify_q, sdkobj)) {
+        resp("error sign");
+        return;
+    }
+
+    if (q.result_code != 1) {
+        resp("pay failed");
+        return;
+    }
+
+    // orderid
+    var orderid = q.jolo_order_id;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.real_amount),
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            resp("error");
+            return;
+        }
+
+        resp("success");
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+
+}));
+
+
+// ============================================================================
+// Bill songshu
+// ============================================================================
+
+function verify_sign_songshu(q, sdkobj) {
+    var sign = q.sign;
+    var cols = ["orderID", "userID", "appID", "serverID", "money", "currency", "extension"];
+
+    var sign2 = md5(`${cols.map(v=>`${v}=${q[v]}`).join("")}appKey=${sdkobj.bill_key}`);
+    return sign == sign2;
+}
+
+router.post('/bill/songshu', _A_(async (req, res) => {
+    let q = req.body;
+
+    // resp
+    var resp = function (b) {
+        var msg = (b) ? "SUCCESS" : 'FAIL';
+        res.end(msg);
+    };
+
+    // extract info
+    var info = extract_info(q.extension);
+    if (!info) {
+        resp(false);
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        resp(false);
+        return;
+    }
+
+    // check signature
+    if (!verify_sign_songshu(q, sdkobj)) {
+        resp(false);
+        return;
+    }
+
+    // orderid
+    var orderid = q.orderID;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.money)*100,
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        songshu_user_id:      q.userID,
+        songshu_pay_state:    q.state,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            resp(false);
+            return;
+        }
+
+        resp(true);
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+
+// ============================================================================
+// Bill qingfeng
+// ============================================================================
+
+function verify_sign_qingfeng(q, sdkobj) {
+    var sign = q.sign;
+    var cols = ["gameID","extension","productID","money","platID","orderID","sign","signType","currency","userID","serverID","channelID"];
+
+    var sign2 = md5(`${cols.sort().map(v=>`${v}=${qs.escape(q[v])}`).join("&")}&${sdkobj.bill_key}`);
+    return sign == sign2;
+}
+
+router.post('/bill/qingfeng', _A_(async (req, res) => {
+    var body = req.body;
+    // resp
+    var resp = function (b) {
+        var msg = (b) ? "SUCCESS" : 'FAIL';
+        res.end(msg);
+    };
+
+    if (body.state != 1){
+        resp(false)
+        return;
+    }
+
+    var q = body.data;
+    try {q = JSON.parse(q)} catch(e) {
+        resp(false);
+        return;
+    }
+
+    // extract info
+    var info = extract_info(q.extension);
+    if (!info) {
+        resp(false);
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        resp(false);
+        return;
+    }
+
+    // check signature
+    if (!verify_sign_qingfeng(q, sdkobj)) {
+        resp(false);
+        return;
+    }
+
+    // orderid
+    var orderid = q.orderID.toString();
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.money),
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        qingfeng_and_product_id:   q.productID,
+        qingfeng_and_plat_id:      q.platID,
+        qingfeng_and_user_id:      q.userID,
+        qingfeng_and_pay_state:    q.state,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            resp(false);
+            return;
+        }
+
+        resp(true);
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill iqiyi
+// ============================================================================
+
+function verify_sign_iqiyi(q, sdkobj) {
+    var sign = q.sign;
+    var cols = ["user_id","role_id","order_id","money","time"];
+
+    var sign2 = md5(`${cols.map(v=>`${q[v]}`).join("")}${sdkobj.bill_key}`);
+    return sign == sign2;
+}
+
+router.get('/bill/iqiyi', _A_(async (req, res) => {
+    var q = req.query;
+
+    // resp
+    var resp = function (b, msg) {
+        res.json({result:b, message:msg}).end();
+    };
+
+    // extract info
+    var arr = q.userData.split("_");
+    if (arr.length < 4) {
+        resp(-2, "param error");
+        return;
+    }
+
+    var sdk = arr[0]
+    var userid = `${arr[1]}-${arr[2]}`
+    var prod_id = arr[3]
+
+    // check sdk
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        resp(-5, "error sdk");
+        return;
+    }
+
+    // check signature
+    if (!verify_sign_iqiyi(q, sdkobj)) {
+        resp(-1, "error sign");
+        return;
+    }
+
+    // orderid
+    var orderid = q.order_id;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             userid,
+        prod_id:            utils.tonumber(prod_id),
+        amount:             utils.tonumber(q.money)*100,
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        iqiyi_user_id:       q.user_id,
+        iqiyi_role_id:       q.role_id,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            resp(-6, "error");
+            return;
+        }
+
+        resp(0, "SUCCESS");
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+// ============================================================================
+// Bill 29
+// ============================================================================
+
+function verify_sign_29(q, sdkobj) {
+    var sign = q.sign;
+
+    var str = `${q.orderId}${q.uid}${q.serverId}${q.amount}${q.extraInfo}${q.orderTime}${q.billno}${q.test}${sdkobj.bill_key}`;
+    var sign2 = md5(str).toLowerCase();
+
+    return sign == sign2;
+}
+
+router.post('/bill/29_and', _A_(async (req, res) => {
+    let q = req.body;
+
+    // resp
+    var resp = function (msg) {
+        res.end(msg);
+    };
+
+    // extract info
+    var info = extract_info(q.extraInfo);
+    if (!info) {
+        resp("fail");
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        resp("fail");
+        return;
+    }
+
+    // check signature
+    if (!verify_sign_29(q, sdkobj)) {
+        resp("sign");
+        return;
+    }
+
+    // orderid
+    var orderid = q.orderId;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.money)*100,
+        ccy:                "CNY",
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        _29_and_uid:        q.uid,
+        _29_and_test:       q.test,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            resp("fail");
+            return;
+        }
+
+        resp("success");
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+
+// ============================================================================
+// Bill 快手
+// ============================================================================
+
+function verify_sign_kuaishou(q, sdkobj) {
+    sign = q.sign;
+    delete q.sign;
+
+    var str = Object.keys(q).sort().map(v=>`${v}=${q[v]}`).join("&");
+
+    var verify = crypto.createVerify("RSA-SHA512");
+    verify.update(str);
+
+    q.sign = sign;
+    return verify.verify(sdkobj.bill_key, q.sign, 'base64');
+}
+
+
+router.post('/bill/kuaishou', _A_(async (req, res) => {
+    let q = req.body;
+
+     // resp
+    var resp = function (status) {
+        res.end(status);
+        if (status != "success") {
+            console.log("kuaishou", status, q);
+        }
+    };
+
+    // extract info
+    var info = extract_info(q.extension);
+    if (!info) {
+        res.end("error info");
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        res.end("error sdk");
+        return;
+    }
+
+    if (!verify_sign_kuaishou(q, sdkobj)) {
+        resp("error sign");
+        return;
+    }
+
+    // orderid
+    var orderid = q.allin_trade_no;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.money),
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            resp("error");
+            return;
+        }
+
+        resp("success");
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+
+// ============================================================================
+// Bill 银狐
+// ============================================================================
+
+function verify_sign_yinhu(q, sdkobj) {
+    var sign = q.sign;
+    var cols = ["orderID", "userID", "appID", "serverID", "money", "currency", "extension"];
+
+    var sign2 = md5(`${cols.map(v=>`${v}=${q[v]}`).join("")}appKey=${sdkobj.bill_key}`);
+    return sign == sign2;
+}
+
+router.post('/bill/yinhu', _A_(async (req, res) => {
+    let q = req.body;
+
+    // resp
+    var resp = function (b) {
+        var msg = (b) ? "SUCCESS" : 'FAIL';
+        res.end(msg);
+    };
+
+    // extract info
+    var info = extract_info(q.extension);
+    if (!info) {
+        resp(false);
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        resp(false);
+        return;
+    }
+
+    // check signature
+    if (!verify_sign_yinhu(q, sdkobj)) {
+        resp(false);
+        return;
+    }
+
+    // orderid
+    var orderid = q.orderID;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.money)*100,
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        yinhu_user_id:      q.userID,
+        yinhu_pay_state:    q.state,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            resp(false);
+            return;
+        }
+
+        resp(true);
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+
+// ============================================================================
+// Bill wufan
+// ============================================================================
+
+function verify_sign_wufan(q, sdkobj) {
+    var sign = q.sign;
+    delete q.sign;
+
+    var str = Object.keys(q).sort().map(k => `${k}=${q[k]}`).join('&');
+
+    var sign2 = md5(`${sdkobj.appkey}${sdkobj.bill_key}${str}`);
+    return sign == sign2;
+}
+
+router.post('/bill/wufan', _A_(async (req, res) => {
+    let q = req.body;
+
+    // resp
+    var resp = function (b) {
+        var msg = (b) ? "ok" : 'FAIL';
+        res.end(msg);
+    };
+
+    // extract info
+    var info = extract_info(q.app_extra1);
+    if (!info) {
+        resp(false);
+        return;
+    }
+
+    // check sdk
+    var sdk = info.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        resp(false);
+        return;
+    }
+
+    // check signature
+    if (!verify_sign_wufan(q, sdkobj)) {
+        resp(false);
+        return;
+    }
+
+    // orderid
+    var orderid = q.pa_open_order_id;
+    var key     = `${sdk}-${orderid}`;
+
+    // create order
+    var db = dbpool.get("bill");
+
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             info.userid,
+        prod_id:            utils.tonumber(info.prod_id),
+        amount:             utils.tonumber(q.money_amount)*100,
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+
+        wufan_user_id:        q.pa_open_uid,
+        wufan_product_id:     q.product_id,
+    };
+
+    db.collection('order').insertOne(doc, (err, r) => {
+        if (err && err.code != 11000) {
+            resp(false);
+            return;
+        }
+
+        resp(true);
+
+        if (!err) {
+            bill.give_items(doc);
+        }
+    });
+}));
+
+
+// ============================================================================
+
+module.exports = router;

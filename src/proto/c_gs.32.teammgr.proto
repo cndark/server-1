@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [9200, 9300)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+
+// 阵容管理
+message TeamMgrData {
+    map<int32, TeamFormation> Teams = 1; // 防守阵容
+}
+
+// ============================================================================
+
+message C_SetTeam {       // msgid: 9200
+    int32         Tp = 1; // 阵容类型
+    TeamFormation T  = 2; // 阵容
+}
+
+message GS_SetTeam_R { // msgid: 9201
+    int32         ErrorCode = 1;
+    int32         Tp        = 2; // 阵容类型
+    TeamFormation T         = 3; // 阵容
+}

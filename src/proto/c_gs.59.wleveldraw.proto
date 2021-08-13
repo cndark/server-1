@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [14800, 14900)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+
+// 推图十连
+message WLevelDrawData {
+    int32                      Id        = 1; // 已经领取的id
+    map<int32, WLevelDrawItem> DrawItems = 2; // 当前掉落的<idx,items>
+}
+
+message WLevelDrawItem { repeated Item Items = 1; }
+
+// ============================================================================
+
+message C_WLevelDrawDraw { // msgid: 14800
+    int32 Idx = 1;         // 0开始
+}
+
+message GS_WLevelDrawDraw_R { // msgid: 14801
+    int32         ErrorCode = 1;
+    repeated Item Items     = 2;
+}
+
+message C_WLevelDrawTake { // msgid: 14802
+    int32 Idx       = 1;   // 0开始
+    bool  IsAutoDec = 2;   // 是否自动分解2星
+}
+
+message GS_WLevelDrawTake_R { // msgid: 14803
+    int32         ErrorCode    = 1;
+    Rewards       Rewards      = 2;
+    repeated Item AutoDecItems = 3; // 分解道具显示
+}

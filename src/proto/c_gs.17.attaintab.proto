@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [7400, 7500)
+// ============================================================================
+
+// 条件统计表数据
+message AttainTabData {
+    repeated AttainObj Objs = 1; //
+}
+
+message AttainObj {
+    int32  OId = 1;
+    double Val = 2;
+}
+
+// ============================================================================
+
+// 通知: 进度变化
+message GS_AttainTabObjValueChanged { // msgid: 7400
+    int32  OId = 1;
+    double Val = 2;
+}

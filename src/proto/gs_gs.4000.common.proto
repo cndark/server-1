@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for GS <-> GS: [400000, 400100)
+// ============================================================================
+
+// gs-push
+message GS_Push { // msgid: 400000
+    string          EvtName = 1;
+    repeated string SArg    = 2;
+    bytes           OArg    = 3;
+}
+
+// gs-pull
+message GS_Pull { // msgid: 400001
+    int64           Tk       = 1;
+    int32           SrcSvrId = 2;
+    string          EvtName  = 3;
+    repeated string SArg     = 4;
+    bytes           OArg     = 5;
+}
+
+message GS_Pull_R { // msgid: 400002
+    int64 Tk        = 1;
+    int32 ErrorCode = 2;
+    bytes Result    = 3;
+}

@@ -1,0 +1,30 @@
+package c_gs
+
+import (
+	"fw/src/game/app"
+	"fw/src/game/msg"
+	Err "fw/src/proto/errorcode"
+)
+
+func C_MarvelRollInfo(message msg.Message, ctx interface{}) {
+	req := message.(*msg.C_MarvelRollInfo)
+	plr := ctx.(*app.Player)
+
+	res := &msg.GS_MarvelRollInfo_R{}
+	res.ErrorCode = func() int32 {
+
+		plr.GetMarvelRoll().CheckRefresh()
+
+		group := plr.GetMarvelRoll().Groups[req.Grp]
+		if group == nil {
+			return Err.MarvelRoll_GroupNotFound
+		}
+
+		res.Group = group.ToMsg_Group(req.Grp)
+
+		return Err.OK
+	}()
+
+	plr.SendMsg(res)
+
+}

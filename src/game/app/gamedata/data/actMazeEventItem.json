@@ -1,0 +1,68 @@
+[
+    {
+        "seq": 1,
+        "reward": [
+            {
+                "id": 10001,
+                "n": 13000
+            }
+        ],
+        "showLvCond": 1,
+        "weight": 2
+    },
+    {
+        "seq": 2,
+        "reward": [
+            {
+                "id": 10005,
+                "n": 13000
+            }
+        ],
+        "showLvCond": 1,
+        "weight": 2
+    },
+    {
+        "seq": 3,
+        "reward": [
+            {
+                "id": 10006,
+                "n": 5
+            }
+        ],
+        "showLvCond": 2,
+        "weight": 2
+    },
+    {
+        "seq": 4,
+        "reward": [
+            {
+                "id": 20218,
+                "n": 1
+            }
+        ],
+        "showLvCond": 2,
+        "weight": 1
+    },
+    {
+        "seq": 5,
+        "reward": [
+            {
+                "id": 20001,
+                "n": 1
+            }
+        ],
+        "showLvCond": 1,
+        "weight": 2
+    },
+    {
+        "seq": 6,
+        "reward": [
+            {
+                "id": 20212,
+                "n": 1
+            }
+        ],
+        "showLvCond": 1,
+        "weight": 1
+    }
+]

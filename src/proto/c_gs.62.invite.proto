@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option (gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [15100, 15200)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+
+message InviteData {
+    repeated int32 Taken = 1; // 已领取
+}
+
+// Info
+message C_InviteInfo { // msgid: 15130
+}
+
+message GS_InviteInfo_R { // msgid: 15131
+    InviteData Info = 2;
+}
+
+// 领奖
+message C_InviteTake { // msgid: 15132
+    int32 Id = 1;
+}
+
+message GS_InviteTake_R { // msgid: 15133
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+}

@@ -1,0 +1,44 @@
+[
+    {
+        "seq": 1,
+        "rankId": 101,
+        "rewardGrp": 101,
+        "confGrp": 402
+    },
+    {
+        "seq": 2,
+        "rankId": 102,
+        "rewardGrp": 102,
+        "confGrp": 101
+    },
+    {
+        "seq": 3,
+        "rankId": 103,
+        "rewardGrp": 103,
+        "confGrp": 201
+    },
+    {
+        "seq": 4,
+        "rankId": 104,
+        "rewardGrp": 104,
+        "confGrp": 301
+    },
+    {
+        "seq": 5,
+        "rankId": 105,
+        "rewardGrp": 105,
+        "confGrp": 401
+    },
+    {
+        "seq": 6,
+        "rankId": 106,
+        "rewardGrp": 106,
+        "confGrp": 302
+    },
+    {
+        "seq": 7,
+        "rankId": 107,
+        "rewardGrp": 107,
+        "confGrp": 202
+    }
+]

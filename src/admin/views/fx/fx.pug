@@ -1,0 +1,45 @@
+extends ../lib/table/paged.pug
+
+block head2
+    if cols
+        - var has_grp  = cols.some(v => v.type == 'group' && v.selectable)
+        - var has_stat = cols.some(v => v.type == 'stat' && v.selectable)        
+        - var has_sort = !hide.sort
+
+        if has_grp || has_stat || has_sort
+            .head2.clearfix
+                .form-inline.pull-right
+                    if has_grp
+                        .form-group
+                            label 分组
+                            .input-group(type='group')
+                                - for (let v of cols)
+                                    if v.type == 'group' && v.selectable
+                                        button.btn.btn-default(type='item', key=v.key) #{v.text}
+
+                    if has_stat
+                        .form-group
+                            label 统计
+                            .input-group(type='stat')
+                                - for (let v of cols)
+                                    if v.type == 'stat' && v.selectable
+                                        button.btn.btn-default(type='item', key=v.key) #{v.text}
+
+                    if has_sort
+                        .form-group
+                            label 排序
+                            .input-group(type='sort')
+                                select.form-control
+                                    - for (let v of cols)
+                                        if v.type == 'group' || v.type == 'stat'
+                                            option(value=v.key) #{v.text}
+                                .input-group-addon.button
+                                    button.btn.btn-default(value='1') 升序
+
+
+block append script
+    if combo
+        script.
+            $(function () {
+                make_combos(!{JSON.stringify(combo)});
+            });

@@ -1,0 +1,38 @@
+#!/usr/bin/env node
+
+require('./lib/ext');
+
+var config = require('../config.json');
+var dbpool = require('./lib/dbpool');
+var area = require('./models/area');
+var settings = require('./models/settings');
+
+// ====================================
+
+async function init() {
+    await dbpool.init([
+        ["share", config.common.db_share, 2],
+    ]);
+
+    // initial loading
+    await area.load();
+    await settings.load();
+
+    // reload
+    process.on('SIGHUP', () => {
+        area.load().catch(console.error);
+        console.log("reloaded");
+    });
+}
+
+// ====================================
+
+(async () => {
+    await init();
+
+    let server = require('./server');
+    let app = require('./app');
+
+    server.run(app, config.agent.port, config.agent.ip);
+
+})().catch(console.error);

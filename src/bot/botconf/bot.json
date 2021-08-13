@@ -1,0 +1,36 @@
+{
+    "version": "0.0.1",
+
+    "pprof": {
+        "enabled": false,
+        "port":    8090
+    },
+
+    "pwd": "8YUYSmRmtKACv3TqD6GNdDvfyhEyYPUFMqX3Z6vgmwkX",
+
+    "bots": [
+        {
+            "from":       1,
+            "to":         1,
+            "addr":       "ws://192.168.0.122:23001/gate",
+            "svr":        "game1",
+            "sdk":        "soda.pressure",
+            "model":       "",
+            "job_prefix": ["pt"],
+            "job_itv":    [1, 2],
+            "args":       "key1=val1,key2=val2",
+            "grp":        1
+        }
+    ],
+
+    "jobctl": {
+        "grp_binding": {
+        },
+
+        "sel_weight": {
+        },
+
+        "tri_prob": {
+        }
+    }
+}

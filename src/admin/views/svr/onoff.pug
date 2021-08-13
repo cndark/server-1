@@ -1,0 +1,61 @@
+extends ../base.pug
+
+block css
+    link(href='/css/page.css', rel='stylesheet')
+
+    style.
+        .list {
+            margin-top: 5px;
+            padding: 5px;
+            width: 100%;
+            height: 220px;
+            background-color: #f8fafc;
+            word-break: break-word;
+            overflow-y: auto;
+        }
+
+block content
+    .container-fluid
+        .row
+            .col-md-8.col-md-offset-2
+                .panel.panel-info
+                    .panel-heading.head
+                        .clearfix
+                            | 开服关服
+                            button.btn.btn-info(name='start') 开服
+                            button.btn.btn-warning(name='stop') 关服
+                            span.alert
+                    .panel-body
+                        .row
+                            .col-md-12
+                                | 区域
+                                select.form-control(name='area')
+                                        - for (var v of areas)
+                                            option(value=v[0]) #{v[1]}
+                        .row
+                            .col-md-12
+                                | 目标
+                                input.form-control(name='target', placeholder='全服: all | 单服: 1 | 范围: 3-5')
+                        .row
+                            .col-md-6
+                                | 已开启
+                                .badge
+                                .list#started
+                            .col-md-6
+                                | 已关闭
+                                .badge
+                                .list#stopped
+                        .row
+                            .col-md-6
+                                | 启动中
+                                .badge
+                                .list#starting
+                            .col-md-6
+                                | 停止中
+                                .badge
+                                .list#stopping
+
+
+
+block script
+    script(src='/scripts/svr/onoff.js')

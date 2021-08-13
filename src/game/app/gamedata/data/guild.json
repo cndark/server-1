@@ -1,0 +1,262 @@
+[
+    {
+        "guildLevel": 1,
+        "upgradeExp": 600,
+        "mbLimit": 15,
+        "viceLimit": 1,
+        "checkinReward": [
+            {
+                "id": 10009,
+                "n": 50
+            }
+        ],
+        "checkinExp": 30
+    },
+    {
+        "guildLevel": 2,
+        "upgradeExp": 700,
+        "mbLimit": 16,
+        "viceLimit": 1,
+        "checkinReward": [
+            {
+                "id": 10009,
+                "n": 50
+            }
+        ],
+        "checkinExp": 30
+    },
+    {
+        "guildLevel": 3,
+        "upgradeExp": 853,
+        "mbLimit": 17,
+        "viceLimit": 1,
+        "checkinReward": [
+            {
+                "id": 10009,
+                "n": 50
+            }
+        ],
+        "checkinExp": 30
+    },
+    {
+        "guildLevel": 4,
+        "upgradeExp": 1061,
+        "mbLimit": 18,
+        "viceLimit": 1,
+        "checkinReward": [
+            {
+                "id": 10009,
+                "n": 50
+            }
+        ],
+        "checkinExp": 30
+    },
+    {
+        "guildLevel": 5,
+        "upgradeExp": 1329,
+        "mbLimit": 19,
+        "viceLimit": 1,
+        "checkinReward": [
+            {
+                "id": 10009,
+                "n": 50
+            }
+        ],
+        "checkinExp": 30
+    },
+    {
+        "guildLevel": 6,
+        "upgradeExp": 1661,
+        "mbLimit": 20,
+        "viceLimit": 1,
+        "checkinReward": [
+            {
+                "id": 10009,
+                "n": 50
+            }
+        ],
+        "checkinExp": 30
+    },
+    {
+        "guildLevel": 7,
+        "upgradeExp": 2065,
+        "mbLimit": 21,
+        "viceLimit": 1,
+        "checkinReward": [
+            {
+                "id": 10009,
+                "n": 50
+            }
+        ],
+        "checkinExp": 30
+    },
+    {
+        "guildLevel": 8,
+        "upgradeExp": 2548,
+        "mbLimit": 22,
+        "viceLimit": 1,
+        "checkinReward": [
+            {
+                "id": 10009,
+                "n": 50
+            }
+        ],
+        "checkinExp": 30
+    },
+    {
+        "guildLevel": 9,
+        "upgradeExp": 3120,
+        "mbLimit": 23,
+        "viceLimit": 1,
+        "checkinReward": [
+            {
+                "id": 10009,
+                "n": 50
+            }
+        ],
+        "checkinExp": 30
+    },
+    {
+        "guildLevel": 10,
+        "upgradeExp": 3790,
+        "mbLimit": 24,
+        "viceLimit": 2,
+        "checkinReward": [
+            {
+                "id": 10009,
+                "n": 50
+            }
+        ],
+        "checkinExp": 30
+    },
+    {
+        "guildLevel": 11,
+        "upgradeExp": 4570,
+        "mbLimit": 25,
+        "viceLimit": 2,
+        "checkinReward": [
+            {
+                "id": 10009,
+                "n": 50
+            }
+        ],
+        "checkinExp": 30
+    },
+    {
+        "guildLevel": 12,
+        "upgradeExp": 5473,
+        "mbLimit": 26,
+        "viceLimit": 2,
+        "checkinReward": [
+            {
+                "id": 10009,
+                "n": 50
+            }
+        ],
+        "checkinExp": 30
+    },
+    {
+        "guildLevel": 13,
+        "upgradeExp": 6511,
+        "mbLimit": 27,
+        "viceLimit": 2,
+        "checkinReward": [
+            {
+                "id": 10009,
+                "n": 50
+            }
+        ],
+        "checkinExp": 30
+    },
+    {
+        "guildLevel": 14,
+        "upgradeExp": 7701,
+        "mbLimit": 28,
+        "viceLimit": 2,
+        "checkinReward": [
+            {
+                "id": 10009,
+                "n": 50
+            }
+        ],
+        "checkinExp": 30
+    },
+    {
+        "guildLevel": 15,
+        "upgradeExp": 9059,
+        "mbLimit": 29,
+        "viceLimit": 2,
+        "checkinReward": [
+            {
+                "id": 10009,
+                "n": 50
+            }
+        ],
+        "checkinExp": 30
+    },
+    {
+        "guildLevel": 16,
+        "upgradeExp": 10602,
+        "mbLimit": 30,
+        "viceLimit": 2,
+        "checkinReward": [
+            {
+                "id": 10009,
+                "n": 50
+            }
+        ],
+        "checkinExp": 30
+    },
+    {
+        "guildLevel": 17,
+        "upgradeExp": 12348,
+        "mbLimit": 30,
+        "viceLimit": 2,
+        "checkinReward": [
+            {
+                "id": 10009,
+                "n": 50
+            }
+        ],
+        "checkinExp": 30
+    },
+    {
+        "guildLevel": 18,
+        "upgradeExp": 14317,
+        "mbLimit": 30,
+        "viceLimit": 2,
+        "checkinReward": [
+            {
+                "id": 10009,
+                "n": 50
+            }
+        ],
+        "checkinExp": 30
+    },
+    {
+        "guildLevel": 19,
+        "upgradeExp": 16530,
+        "mbLimit": 30,
+        "viceLimit": 2,
+        "checkinReward": [
+            {
+                "id": 10009,
+                "n": 50
+            }
+        ],
+        "checkinExp": 30
+    },
+    {
+        "guildLevel": 20,
+        "upgradeExp": 0,
+        "mbLimit": 30,
+        "viceLimit": 2,
+        "checkinReward": [
+            {
+                "id": 10009,
+                "n": 50
+            }
+        ],
+        "checkinExp": 30
+    }
+]

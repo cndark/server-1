@@ -1,0 +1,405 @@
+[
+    {
+        "confGrp": 1,
+        "magicHero": [
+            {
+                "hero": 30345,
+                "weight": 8
+            },
+            {
+                "hero": 30236,
+                "weight": 7
+            },
+            {
+                "hero": 30300,
+                "weight": 7
+            }
+        ],
+        "magicExtraTimes": 60,
+        "diamCnt": 20,
+        "diamCost": 300,
+        "summonGrp": "actNormal1",
+        "extraTimes": 25,
+        "extraGroup": "actExtra1",
+        "cost": [
+            {
+                "id": 20004,
+                "n": 1
+            }
+        ],
+        "discount": 1,
+        "costFreeTime": 86400
+    },
+    {
+        "confGrp": 2,
+        "magicHero": [
+            {
+                "hero": 30175,
+                "weight": 8
+            },
+            {
+                "hero": 30058,
+                "weight": 7
+            },
+            {
+                "hero": 30136,
+                "weight": 7
+            }
+        ],
+        "magicExtraTimes": 60,
+        "diamCnt": 20,
+        "diamCost": 300,
+        "summonGrp": "actNormal2",
+        "extraTimes": 25,
+        "extraGroup": "actExtra2",
+        "cost": [
+            {
+                "id": 20004,
+                "n": 1
+            }
+        ],
+        "discount": 1,
+        "costFreeTime": 86400
+    },
+    {
+        "confGrp": 3,
+        "magicHero": [
+            {
+                "hero": 30214,
+                "weight": 8
+            },
+            {
+                "hero": 30022,
+                "weight": 7
+            },
+            {
+                "hero": 30260,
+                "weight": 7
+            }
+        ],
+        "magicExtraTimes": 60,
+        "diamCnt": 20,
+        "diamCost": 300,
+        "summonGrp": "actNormal3",
+        "extraTimes": 25,
+        "extraGroup": "actExtra3",
+        "cost": [
+            {
+                "id": 20004,
+                "n": 1
+            }
+        ],
+        "discount": 1,
+        "costFreeTime": 86400
+    },
+    {
+        "confGrp": 4,
+        "magicHero": [
+            {
+                "hero": 30319,
+                "weight": 8
+            },
+            {
+                "hero": 30138,
+                "weight": 7
+            },
+            {
+                "hero": 30235,
+                "weight": 7
+            }
+        ],
+        "magicExtraTimes": 60,
+        "diamCnt": 20,
+        "diamCost": 300,
+        "summonGrp": "actNormal4",
+        "extraTimes": 25,
+        "extraGroup": "actExtra4",
+        "cost": [
+            {
+                "id": 20004,
+                "n": 1
+            }
+        ],
+        "discount": 1,
+        "costFreeTime": 86400
+    },
+    {
+        "confGrp": 5,
+        "magicHero": [
+            {
+                "hero": 30468,
+                "weight": 8
+            },
+            {
+                "hero": 30300,
+                "weight": 7
+            },
+            {
+                "hero": 30256,
+                "weight": 7
+            }
+        ],
+        "magicExtraTimes": 60,
+        "diamCnt": 20,
+        "diamCost": 300,
+        "summonGrp": "actNormal5",
+        "extraTimes": 25,
+        "extraGroup": "actExtra5",
+        "cost": [
+            {
+                "id": 20004,
+                "n": 1
+            }
+        ],
+        "discount": 1,
+        "costFreeTime": 86400
+    },
+    {
+        "confGrp": 6,
+        "magicHero": [
+            {
+                "hero": 30448,
+                "weight": 8
+            },
+            {
+                "hero": 30260,
+                "weight": 7
+            },
+            {
+                "hero": 30022,
+                "weight": 7
+            }
+        ],
+        "magicExtraTimes": 60,
+        "diamCnt": 20,
+        "diamCost": 300,
+        "summonGrp": "actNormal6",
+        "extraTimes": 25,
+        "extraGroup": "actExtra6",
+        "cost": [
+            {
+                "id": 20004,
+                "n": 1
+            }
+        ],
+        "discount": 1,
+        "costFreeTime": 86400
+    },
+    {
+        "confGrp": 7,
+        "magicHero": [
+            {
+                "hero": 30345,
+                "weight": 8
+            },
+            {
+                "hero": 30236,
+                "weight": 7
+            },
+            {
+                "hero": 30300,
+                "weight": 7
+            }
+        ],
+        "magicExtraTimes": 60,
+        "diamCnt": 20,
+        "diamCost": 300,
+        "summonGrp": "actNormal7",
+        "extraTimes": 25,
+        "extraGroup": "actExtra7",
+        "cost": [
+            {
+                "id": 20004,
+                "n": 1
+            }
+        ],
+        "discount": 1,
+        "costFreeTime": 86400
+    },
+    {
+        "confGrp": 8,
+        "magicHero": [
+            {
+                "hero": 30175,
+                "weight": 8
+            },
+            {
+                "hero": 30058,
+                "weight": 7
+            },
+            {
+                "hero": 30136,
+                "weight": 7
+            }
+        ],
+        "magicExtraTimes": 60,
+        "diamCnt": 20,
+        "diamCost": 300,
+        "summonGrp": "actNormal8",
+        "extraTimes": 25,
+        "extraGroup": "actExtra8",
+        "cost": [
+            {
+                "id": 20004,
+                "n": 1
+            }
+        ],
+        "discount": 1,
+        "costFreeTime": 86400
+    },
+    {
+        "confGrp": 9,
+        "magicHero": [
+            {
+                "hero": 30214,
+                "weight": 8
+            },
+            {
+                "hero": 30022,
+                "weight": 7
+            },
+            {
+                "hero": 30260,
+                "weight": 7
+            }
+        ],
+        "magicExtraTimes": 60,
+        "diamCnt": 20,
+        "diamCost": 300,
+        "summonGrp": "actNormal9",
+        "extraTimes": 25,
+        "extraGroup": "actExtra9",
+        "cost": [
+            {
+                "id": 20004,
+                "n": 1
+            }
+        ],
+        "discount": 1,
+        "costFreeTime": 86400
+    },
+    {
+        "confGrp": 10,
+        "magicHero": [
+            {
+                "hero": 30319,
+                "weight": 8
+            },
+            {
+                "hero": 30138,
+                "weight": 7
+            },
+            {
+                "hero": 30235,
+                "weight": 7
+            }
+        ],
+        "magicExtraTimes": 60,
+        "diamCnt": 20,
+        "diamCost": 300,
+        "summonGrp": "actNormal10",
+        "extraTimes": 25,
+        "extraGroup": "actExtra10",
+        "cost": [
+            {
+                "id": 20004,
+                "n": 1
+            }
+        ],
+        "discount": 1,
+        "costFreeTime": 86400
+    },
+    {
+        "confGrp": 11,
+        "magicHero": [
+            {
+                "hero": 30468,
+                "weight": 8
+            },
+            {
+                "hero": 30300,
+                "weight": 7
+            },
+            {
+                "hero": 30256,
+                "weight": 7
+            }
+        ],
+        "magicExtraTimes": 60,
+        "diamCnt": 20,
+        "diamCost": 300,
+        "summonGrp": "actNormal11",
+        "extraTimes": 25,
+        "extraGroup": "actExtra11",
+        "cost": [
+            {
+                "id": 20004,
+                "n": 1
+            }
+        ],
+        "discount": 1,
+        "costFreeTime": 86400
+    },
+    {
+        "confGrp": 12,
+        "magicHero": [
+            {
+                "hero": 30448,
+                "weight": 8
+            },
+            {
+                "hero": 30260,
+                "weight": 7
+            },
+            {
+                "hero": 30022,
+                "weight": 7
+            }
+        ],
+        "magicExtraTimes": 60,
+        "diamCnt": 20,
+        "diamCost": 300,
+        "summonGrp": "actNormal12",
+        "extraTimes": 25,
+        "extraGroup": "actExtra12",
+        "cost": [
+            {
+                "id": 20004,
+                "n": 1
+            }
+        ],
+        "discount": 1,
+        "costFreeTime": 86400
+    },
+    {
+        "confGrp": 101,
+        "magicHero": [
+            {
+                "hero": 30256,
+                "weight": 8
+            },
+            {
+                "hero": 30300,
+                "weight": 7
+            },
+            {
+                "hero": 30022,
+                "weight": 7
+            }
+        ],
+        "magicExtraTimes": 60,
+        "diamCnt": 20,
+        "diamCost": 300,
+        "summonGrp": "actNormal101",
+        "extraTimes": 25,
+        "extraGroup": "actExtra101",
+        "cost": [
+            {
+                "id": 20004,
+                "n": 1
+            }
+        ],
+        "discount": 1,
+        "costFreeTime": 86400
+    }
+]

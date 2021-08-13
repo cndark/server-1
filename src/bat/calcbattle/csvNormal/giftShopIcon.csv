@@ -1,0 +1,7 @@
+shopId,index,txt_Name,icon,banner
+int32,int32,string,string,string
+1000,2,限时礼包,gift02,ui_bg_grph
+2000,3,每日礼包,gift05,ui_bg_activity07
+4000,4,每周礼包,gift04,ui_bg_activity08
+6000,5,每月礼包,gift03,ui_bg_activity09
+9000,1,新服冲刺,gift01,ui_bg_grjl

@@ -1,0 +1,46 @@
+extends ../base.pug
+
+block css
+    link(href='/css/page.css', rel='stylesheet')
+
+    style.
+        .black-bg {
+            background-color: #f9f9f9;
+        }
+
+block content
+    .container-fluid
+        .row
+            .col-md-10.col-md-offset-1
+                .panel.panel-info
+                    .panel-heading.head
+                        .clearfix
+                            | 黑白名单
+                            button.btn.btn-default OK
+                            form.form-inline.from-left
+                                .input-group
+                                    .input-group-addon 区域
+                                    select.form-control(name='area')
+                                        - for (var v of areas)
+                                            option(value=v[0]) #{v[1]}
+                            span.alert
+                    .panel-body
+                        .row
+                            .col-md-6
+                                | 白-IP
+                                textarea(rows=12, name='w_ips', placeholder='CIDR format: IP/mask')
+                            .col-md-6
+                                | 黑-IP
+                                textarea.black-bg(rows=12, name='b_ips', placeholder='CIDR format: IP/mask')
+                        br
+                        .row
+                            .col-md-6
+                                | 白-设备号
+                                textarea(rows=12, name='w_devices')
+                            .col-md-6
+                                | 黑-设备号
+                                textarea.black-bg(rows=12, name='b_devices')
+
+
+block script
+    script(src='/scripts/svr/wblist.js')

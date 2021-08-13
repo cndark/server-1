@@ -1,0 +1,497 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option (gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [10000, 13000)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+// 公共结构
+
+// 统计值到达
+message ActAttainObj {
+    int32  OId = 1;
+    double Val = 2;
+}
+
+// ============================================================================
+// 限时冲榜
+
+message ActRushLocalRankData {
+    string ActName     = 1; // 活动id
+    int32  RankId      = 2; // 榜单id
+    bool   Take        = 3; // 时候领奖
+    double SelfScore   = 4; // 自己分数
+    double CachedScore = 5; // 缓存历史最大值,部分榜用
+}
+
+// ============================================================================
+
+message C_ActRushLocalGetInfo { // msgid: 10000
+    string ActName = 1;         // 活动id
+    int32  RankId  = 2;         // 0 代表当期所有榜
+}
+
+message GS_ActRushLocalGetInfo_R { // msgid: 10001
+    int32                         ErrorCode = 1;
+    repeated ActRushLocalRankData Data      = 2;
+}
+
+message C_ActRushLocalTake { // msgid: 10002
+    string ActName = 1;
+    int32  RankId  = 2;
+}
+
+message GS_ActRushLocalTake_R { // msgid: 10003
+    int32   ErrorCode = 1;
+    string  ActName   = 2;
+    int32   RankId    = 3;
+    Rewards Rewards   = 4;
+}
+
+// ============================================================================
+// 限时--累计充值
+
+message ActBillLtTotalData {
+    int64          Total = 1;
+    repeated int32 Taken = 2;
+}
+
+message GS_ActBillLtTotal { // msgid: 10010
+    int64 Total = 1;
+}
+
+message C_ActBillLtTotalInfo { // msgid: 10011
+}
+
+message GS_ActBillLtTotalInfo_R { // msgid: 10012
+    int32              ErrorCode = 1;
+    ActBillLtTotalData Data      = 2;
+}
+
+message C_ActBillLtTotalTake { // msgid: 10013
+    int32 Id = 1;
+}
+
+message GS_ActBillLtTotalTake_R { // msgid: 10014
+    int32   ErrorCode = 1;
+    int32   Id        = 2;
+    Rewards Rewards   = 3;
+}
+
+// ============================================================================
+// 限时--累天充值
+
+message ActBillLtDayData {
+    repeated int32 Taken   = 1; // 已领取奖励
+    int32          BillDay = 2; // 充值天数
+}
+
+message C_ActBillLtDayInfo { // msgid: 10020
+}
+
+message GS_ActBillLtDayInfo_R { // msgid: 10021
+    int32            ErrorCode = 1;
+    ActBillLtDayData Data      = 2;
+}
+
+message C_ActBillLtDayTake { // msgid: 10022
+    int32 Id = 1;
+}
+
+message GS_ActBillLtDayTake_R { // msgid: 10023
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+}
+
+// ============================================================================
+// 活动礼包
+
+message GS_ActGiftNew { // msgid: 10031
+    int32   Id      = 1;
+    Rewards Rewards = 2;
+}
+
+// ============================================================================
+// 主题召唤
+
+message ActSummonData {
+    int32             NormalCnt = 1; // 正常保底计数
+    int32             DesireCnt = 2; // 当前循环内次数
+    int32             DiamCnt   = 3; // 钻石消耗次数
+    int32             UpCnt     = 4; // UP计数
+    int64             LastTs    = 5; // 上次免费召唤时间
+    map<int32, int32> HeroPos = 6; // 英雄的站位【1：心愿，2、3：UP】
+    map<int32, int32> ActGift = 7; // 礼包购买次数
+}
+
+message C_ActSummonInfo { // msgid: 10040
+}
+
+message GS_ActSummonInfo_R { // msgid: 10041
+    int32         ErrorCode = 1;
+    ActSummonData Data      = 2;
+}
+
+// 选定Up或心愿英雄
+message C_ActSummonPick { // msgid: 10042
+    map<int32, int32> HeroPos = 1;
+}
+
+message GS_ActSummonPick_R { // msgid: 10043
+    int32 ErrorCode = 1;
+}
+
+// 召唤
+message C_ActSummonDraw { // msgid: 10044
+    bool  IsDiam = 1;     // 是否消耗钻石
+    int32 N      = 2;
+}
+
+message GS_ActSummonDraw_R { // msgid: 10045
+    int32         ErrorCode = 1;
+    int64         LastTs    = 2; // 上次免费召唤时间
+    int32         NormalCnt = 3; // 心愿保底计数
+    int32         DesireCnt = 4; // 当前循环内次数
+    int32         UpCnt     = 5; // UP计数
+    int32         DiamCnt   = 6;
+    repeated Item Items     = 7;
+    Rewards       Rewards   = 8;
+}
+
+// ============================================================================
+// 达标任务
+
+message ActTargetTaskData {
+    repeated ActAttainObj Attain  = 1; // 任务进度
+    repeated int32        Taken   = 2; // 任务领取id
+    map<int32, int32>     ActGift = 3; // 礼包购买次数
+}
+
+// 通知: 进度变化
+message GS_ActTargetTaskObjValueChanged { // msgid: 10050
+    int32  OId = 1;
+    double Val = 2;
+}
+
+message C_ActTargetTaskInfo { // msgid: 10052
+}
+
+message GS_ActTargetTaskInfo_R { // msgid: 10053
+    int32             ErrorCode = 1;
+    ActTargetTaskData Data      = 2;
+}
+
+// 任务领奖
+message C_ActTargetTaskTake { // msgid: 10054
+    int32 Id = 1;
+}
+
+message GS_ActTargetTaskTake_R { // msgid: 10055
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 3;
+}
+
+// ============================================================================
+// 英雄皮肤
+
+message ActHeroSkinData {
+    map<int32, int32> ActGift = 1; // 礼包购买次数
+}
+
+message C_ActHeroSkinInfo { // msgid: 10060
+}
+
+message GS_ActHeroSkinInfo_R { // msgid: 10061
+    int32           ErrorCode = 1;
+    ActHeroSkinData Data      = 2;
+}
+
+// ============================================================================
+// 主题魔法召唤
+
+message ActMSummonData {
+    int32             NormalCnt = 1; // 当前循环内次数
+    int32             MagicCnt  = 2; // 魔法召唤循环次数
+    int32             DiamCnt   = 3; // 钻石消耗次数
+    int64             LastTs    = 4; // 上次免费召唤时间
+    map<int32, int32> ActGift   = 5; // 礼包购买次数
+}
+
+message C_ActMSummonInfo { // msgid: 10070
+}
+
+message GS_ActMSummonInfo_R { // msgid: 10071
+    int32          ErrorCode = 1;
+    ActMSummonData Data      = 2;
+}
+
+// 召唤
+message C_ActMSummonDraw { // msgid: 10072
+    bool  IsDiam = 1;      // 是否消耗钻石
+    int32 N      = 2;
+}
+
+message GS_ActMSummonDraw_R { // msgid: 10073
+    int32   ErrorCode = 1;
+    int32   MagicCnt  = 2; // 魔法召唤循环次数
+    int64   LastTs    = 3; // 上次免费召唤时间
+    int32   DiamCnt   = 4; // 钻石消耗次数
+    int32   NormalCnt = 5; // 当前循环内次数
+    Rewards Rewards   = 6;
+}
+
+// ============================================================================
+// 大富翁
+message ActMonopolyData {
+    int32             Seq        = 1; // 序号
+    int32             Pos        = 2; // 当前点位
+    int32             RepeatCnt  = 3; // 最大关卡后重次数
+    map<int32, int32> AdvPosInfo = 4; // 本关所有奇遇点位信息(pos:type)
+    repeated int32    TaskTaken  = 5;           // 活动任务已领取奖励
+    repeated ActMonopolyAdvItem NormalBat = 6;  // 普通战斗
+    repeated ActMonopolyAdvItem Problems  = 7;  // 答题
+    repeated ActMonolyShopItem  Shops     = 8;  // 折扣商店
+    repeated ActMonopolyBatItem HeroBat   = 9;  // 英雄挑战
+    repeated ActAttainObj       Attain    = 10; // 任务进度
+}
+
+message ActMonolyShopItem {
+    int32          Id         = 1;
+    int64          ExpireTs   = 2;
+    int32          DisCnt     = 3;
+    repeated int32 AlreadyBuy = 4;
+}
+
+message ActMonopolyAdvItem {
+    int32 Id       = 1; // 对应奇遇的配置表id
+    int64 ExpireTs = 2; // 到期时间
+}
+
+message ActMonopolyBatItem {
+    int32 Id        = 1;
+    int64 ExpireTs  = 2;
+    int32 HeroLv    = 3;
+    int32 MonsterLv = 4;
+}
+
+message GS_ActMonopolyObjValueChanged { // msgid: 10080
+    int32  OId = 1;
+    double Val = 2;
+}
+
+message GS_ActMonoPolyNextLv { // msgid: 10081
+    ActMonopolyData Data = 2;
+}
+
+message GS_ActMonopolyBoxReward { // msgid: 10082
+    Rewards Rewards = 2;
+}
+
+// Info
+message C_ActMonopolyInfo { // msgid: 10090
+}
+
+message GS_ActMonoPolyInfo_R { // msgid: 10091
+    int32           ErrorCode = 1;
+    ActMonopolyData Data      = 2;
+}
+
+// 前进N步（Step为0，则随机）
+message C_ActMonopolyNPos { // msgid: 10092
+    int32 Step = 1;
+}
+
+message GS_ActMonopolyNPos_R { // msgid: 10093
+    int32                       ErrorCode = 1;
+    int32                       Step      = 2;
+    repeated ActMonopolyAdvItem NormalBat = 3;
+    repeated ActMonopolyAdvItem Problems  = 4;
+    repeated ActMonolyShopItem  Shops     = 5;
+    repeated ActMonopolyBatItem HeroBat   = 6;
+    Rewards                     Rewards   = 7;
+}
+
+// 答题(Idx为对应列表下标)
+message C_ActMonopolyAnswer { // msgid: 10094
+    int32 Idx       = 1;
+    int32 AnswerIdx = 2;
+}
+
+message GS_ActMonopolyAnswer_R { // msgid: 10095
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+}
+
+// 商店折扣(ShopId为对应列表下标、ItemId为商品Id)
+message C_ActMonopolyBuy { // msgid: 10096
+    int32 ShopIdx = 1;
+    int32 ItemIdx = 2;
+}
+
+message GS_ActMonopolyBuy_R { // msgid: 10097
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+}
+
+// Idx为对应列表(英雄或普通战斗)下标、Tp为战斗类型（1：普通战斗、2：英雄战斗）
+message C_ActMonopolyBattle { // msgid: 10098
+    int32         Tp  = 1;
+    int32         Idx = 2;
+    TeamFormation T   = 3;
+}
+
+message GS_ActMonopolyBattle_R { // msgid: 10099
+    int32        ErrorCode = 1;
+    BattleReplay Replay    = 2;
+    Rewards      Rewards   = 3;
+}
+
+// 活动任务领奖
+message C_ActMonopolyTaskTake { // msgid: 10100
+    int32 Id = 1;
+}
+
+message GS_ActMonopolyTaskTake_R { // msgid: 10101
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+}
+
+// ============================================================================
+// 迷宫
+message ActMazeData {
+    int32                  Lv         = 1;
+    map<int32, bool>       Clicked    = 2;
+    repeated int32         Taken      = 3;
+    int32                  Score      = 4;
+    map<int32, int32>      Points     = 5;
+    map<int32, int32>      Box        = 6;  // 宝箱
+    map<int32, int32>      Mine       = 7;  // 宝矿
+    map<int32, int32>      Item       = 8;  // 道具
+    map<int32, BattleData> Battle     = 9;  // 怪物
+    map<int32, TradeData>  TradeLimit = 10; // 商人限购
+    repeated ActAttainObj  Attain     = 11; // 任务进度
+}
+
+message TradeData {
+    map<int32, int32> Data = 1; // seq:n
+}
+
+message BattleData {
+    int32 Lv  = 1; // 怪物等级
+    int32 Seq = 2; // 配置表id
+    int32 Tp  = 3; // 0: 小怪、1: Boss
+}
+
+message GS_ActMazeObjValueChanged { // msgid: 10110
+    int32  OId = 1;
+    double Val = 2;
+}
+
+message GS_ActMazeTaskTaken { // msgid: 10111
+    repeated int32 Taken = 1;
+}
+
+// 迷宫Info
+message C_ActMazeInfo { // msgid: 10115
+}
+
+message GS_ActMazeInfo_R { // msgid: 10116
+    int32       ErrorCode = 1;
+    ActMazeData Data      = 2;
+}
+
+// 迷宫翻格子（陷阱扣血）
+message C_ActMazeClick { // msgid: 10117
+    int32 Pos = 1;
+}
+
+message GS_ActMazeClick_R { // msgid: 10118
+    int32      ErrorCode = 1;
+    Rewards    Rewards   = 2;
+    int32      Seq       = 3;
+    BattleData Battle    = 4; // 怪物
+    int32      Score     = 5; // 积分
+}
+
+// 迷宫点击出口、下一关
+message C_ActMazeClickNext { // msgid: 10119
+}
+
+message GS_ActMazeClickNext_R { // msgid: 10120
+    int32       ErrorCode = 1;
+    ActMazeData Data      = 2;
+}
+
+// 迷宫商人
+message C_ActMazeClickTrade { // msgid: 10121
+    int32 Pos = 1;
+    int32 Seq = 2;
+}
+
+message GS_ActMazeClickTrade_R { // msgid: 10122
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+}
+
+// 迷宫重置（从第1关开始）
+message C_ActMazeReset { // msgid: 10123
+}
+
+message GS_ActMazeReset_R { // msgid: 10124
+    int32       ErrorCode = 1;
+    ActMazeData Data      = 2;
+}
+
+// 迷宫领取物品（道具、宝箱、宝矿、体力、钥匙）
+message C_ActMazeClickThing { // msgid: 10125
+    int32 Pos    = 1;
+    int32 ItemId = 2; // 体力、道具和钥匙此项设置无效
+}
+
+message GS_ActMazeClickThing_R { // msgid: 10126
+    int32   ErrorCode = 1;
+    int32   Score     = 2;
+    Rewards Rewards   = 3;
+}
+
+// 迷宫打怪
+message C_ActMazeClickBattle { // msgid: 10127
+    int32         Pos = 1;
+    TeamFormation T   = 2;
+    int32         Seq = 3; // 表id
+}
+
+message GS_ActMazeClickBattle_R { // msgid: 10128
+    int32        ErrorCode = 1;
+    int32        Score     = 2;
+    BattleReplay Replay    = 3;
+    Rewards      Rewards   = 4;
+}
+
+// 迷宫任务领取（1:每日、2:成就）
+message C_ActMazeTakeTask { // msgid: 10129
+    int32 Id = 1;
+}
+
+message GS_ActMazeTakeTask_R { // msgid: 10130
+    int32   ErrorCode = 1;
+    int32   Id        = 2;
+    Rewards Rewards   = 3;
+}
+
+// 获取迷宫加成数据
+message C_ActMazeBuff { // msgid: 10131
+}
+
+message GS_ActMazeBuff_R { // msgid: 10132
+    int32             ErrorCode = 1;
+    map<int32, int32> BuffIds   = 2;
+}

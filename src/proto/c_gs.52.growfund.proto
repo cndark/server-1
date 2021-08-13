@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [14100, 14200)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+
+// 推图基金
+message GrowFundData {
+    bool           IsBuy     = 1; // 是否购买
+    repeated int32 Taken     = 2; // 已经领取的id
+    int32          SvrBuyCnt = 3; // 服务器购买人数
+    repeated int32 TakenSvr  = 4; // 服务器奖励领取的id
+}
+
+// ============================================================================
+
+// 新购
+message GS_GrowFundNew { // msgid:14100
+    int32 FundId = 1;
+}
+
+// ============================================================================
+
+// 服务器人数
+message C_GrowFundInfo { // msgid:14110
+}
+
+message GS_GrowFundInfo_R { // msgid:14111
+    int32 SvrBuyCnt = 1;    // 服务器购买人数
+}
+
+// 等级领奖
+message C_GrowFundTakeLv { // msgid:14112
+    int32 Id = 1;
+}
+
+message GS_GrowFundTakeLv_R { // msgid:14113
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+}
+
+// 服务器人数领奖
+message C_GrowFundTakeSvr { // msgid:14114
+    int32 Id = 1;
+}
+
+message GS_GrowFundTakeSvr_R { // msgid:14115
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+}

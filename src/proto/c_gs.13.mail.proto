@@ -1,0 +1,97 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [7000, 7100)
+// ============================================================================
+
+message Mail {
+    int32               Id     = 1;  // mail id
+    int32               Key    = 2;  // mail key
+    string              Sender = 3;  // sender
+    string              Title  = 4;  // mail title (id | string)
+    string              Text   = 5;  // mail text  (id | string)
+    map<string, string> Dict   = 6;  // dict
+    repeated MailRes    A      = 7;  // attachment
+    bool                Read   = 8;  // read flag
+    bool                Taken  = 9;  // taken flag
+    int64               Ts     = 10; // create timestamp
+    int64               ETs    = 11; // expire timestamp
+}
+
+message MailRes {
+    int32  Id = 1;
+    double N  = 2;
+}
+
+message MailExpire {
+    int32 Id  = 1;
+    int64 ETs = 2;
+}
+
+// ============================================================================
+
+// 新邮件推送
+message GS_MailNew { // msgid: 7000
+    Mail M = 1;
+}
+
+// 删除邮件推送
+message GS_MailDel { // msgid: 7001
+    repeated int32 Ids = 1;
+}
+
+// ============================================================================
+
+// 读邮件
+message C_MailRead { // msgid: 7010
+    int32 Id = 1;
+}
+
+message GS_MailRead_R { // msgid: 7011
+    int32      ErrorCode = 1;
+    MailExpire Expire    = 2;
+}
+
+// 删邮件
+message C_MailDel { // msgid: 7012
+    int32 Id = 1;
+}
+
+message GS_MailDel_R { // msgid: 7013
+    int32 ErrorCode = 1;
+    int32 Id        = 2;
+}
+
+// 取附件
+message C_MailTakeAttachment { // msgid: 7014
+    int32 Id = 1;
+}
+
+message GS_MailTakeAttachment_R { // msgid: 7015
+    int32      ErrorCode = 1;
+    MailExpire Expire    = 2;
+}
+
+// 取全部附件
+message C_MailTakeAttachmentAll { // msgid: 7016
+}
+
+message GS_MailTakeAttachmentAll_R { // msgid: 7017
+    int32               ErrorCode = 1;
+    repeated MailExpire Expires   = 2;
+}
+
+// 一键删除
+message C_MailDelOnekey { // msgid: 7018
+}
+
+message GS_MailDelOnekey_R { // msgid: 7019
+    int32          ErrorCode = 1;
+    repeated int32 Ids       = 2;
+}

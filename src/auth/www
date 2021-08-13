@@ -1,0 +1,56 @@
+#!/usr/bin/env node
+
+require('./lib/ext');
+
+var cluster = require('cluster');
+
+var config = require('../config.json');
+var dbpool = require('./lib/dbpool');
+
+// ====================================
+
+async function init_master() {
+    cluster.broadcast = msg => {
+        for (let i in cluster.workers) {
+            cluster.workers[i].send(msg);
+        }
+    }
+
+    // broadcast msg from any worker to all workers
+    cluster.on('message', (worker, msg) => {
+        cluster.broadcast(msg);
+    });
+
+    // reload
+    process.on('SIGHUP', () => {
+        console.log("reloaded");
+    });
+}
+
+async function init_worker() {
+    await dbpool.init([
+        ["center", config.common.db_center, 1],
+    ]);
+
+    let server = require('./server');
+    let app = require('./app');
+
+    server.run(app, config.auth.port, config.auth.ip);
+}
+
+// ====================================
+
+(async () => {
+    if (cluster.isMaster) {
+        // init master
+        await init_master();
+
+        // fork workers
+        for (let i = 0; i < config.auth.threads; i++) {
+            cluster.fork();
+        }
+    } else {
+        // init worker
+        await init_worker();
+    }
+})().catch(console.error);

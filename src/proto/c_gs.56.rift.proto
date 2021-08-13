@@ -1,0 +1,164 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [14500, 14600)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+
+message RiftData {
+    RiftMonster Monster = 1; // 怪物
+    RiftPlrMine PlrMine = 2; // 自己的矿信息
+    int32       BoxNum  = 3; // 宝箱数量
+    RiftBox     CurBox  = 4; // 当前自己的宝箱
+}
+
+message RiftMonster {
+    int32 Id = 1;
+    int32 Lv = 2;
+}
+
+message RiftPlrMine {
+    int32                Id     = 1; // 当前空矿id
+    int32                Lv     = 2; // 当前空矿lv
+    map<int32, RiftMine> RMines = 3; // 自己相关矿[id]seq
+}
+
+message RiftMine {
+    int64                  Seq      = 1; // 矿seq
+    int32                  Id       = 2; // 矿id
+    int32                  Lv       = 3; // 矿等级
+    int64                  FinTs    = 4; // 完成时间
+    PlayerSimpleInfo       CurPlr   = 5; // 当前占领的玩家
+    repeated BattleFighter Fighters = 6; // 当前阵容信息
+}
+
+message RiftBox {
+    int32                  Id       = 1; // 宝箱id
+    int64                  FinTs    = 2; // 完成时间
+    PlayerSimpleInfo       CurPlr   = 3; // 当前占领的玩家
+    repeated BattleFighter Fighters = 4; // 当前阵容信息
+}
+
+// ============================================================================
+// 推送
+
+// 探索到新怪物
+message GS_RiftMonsterNew {  // msgid: 14500
+    RiftMonster Monster = 1; // 新的怪物
+}
+
+// 探索到新矿
+message GS_RiftMineNew { // msgid: 14501
+    RiftMine Mine = 1; // 新的矿(空, 别人占领的(不是从自己抢走的))
+}
+
+// 矿被抢占
+message GS_RiftMineOccupied { // msgid: 14502
+    RiftMine Mine = 1;
+}
+
+// 探索到宝箱
+message GS_RiftBoxNew { // msgid: 14503
+    RiftBox Box = 1;
+}
+
+// 宝箱奖励
+message GS_RiftBoxRewards { // msgid: 14504
+    int32   Id      = 1;
+    Rewards Rewards = 2;
+}
+
+// 宝箱被抢占
+message GS_RiftBoxOccupied { // msgid: 14505
+    RiftBox Box = 1;
+}
+
+// ============================================================================
+
+// 探索
+message C_RiftExplore { // msgid:14560
+}
+
+message GS_RiftExplore_R { // msgid:14561
+    int32 ErrorCode = 1;
+}
+
+// 怪物战斗
+message C_RiftMonsterFight { // msgid: 14562
+    TeamFormation T = 1;
+}
+
+message GS_RiftMonsterFight_R { // msgid: 14563
+    int32        ErrorCode = 1;
+    BattleReplay Replay    = 2;
+    Rewards      Rewards   = 3;
+}
+
+// 获取矿信息
+message C_RiftMineInfo { // msgid: 14564
+    int64 Seq = 1;
+}
+
+message GS_RiftMineInfo_R { // msgid: 14565
+    int32    ErrorCode = 1;
+    RiftMine Mine      = 2;
+}
+
+// 占领矿
+message C_RiftMineOccupy { // msgid: 14566
+    int64         Seq = 1; // 0 表示自己的空矿
+    TeamFormation T   = 2;
+}
+
+message GS_RiftMineOccupy_R { // msgid: 14567
+    int32        ErrorCode = 1;
+    RiftMine     Mine      = 2;
+    BattleReplay Replay    = 3;
+}
+
+// 放弃矿
+message C_RiftMineCancel { // msgid: 14568
+    int64 Seq = 1;
+}
+
+message GS_RiftMineCancel_R { // msgid: 14569
+    int32 ErrorCode = 1;
+}
+
+// 领取奖励
+message C_RiftMineTakeRewards { // msgid: 14570
+    int64 Seq = 1;
+}
+
+message GS_RiftMineTakeRewards_R { // msgid: 14571
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+}
+
+// 占领宝箱
+message C_RiftBoxOccupy { // msgid: 14572
+    int32 Id = 1;
+}
+
+message GS_RiftBoxOccupy_R { // msgid: 14573
+    int32        ErrorCode = 1;
+    int64        FinTs     = 2;
+    BattleReplay Replay    = 3;
+}
+
+// 宝箱数量
+message C_RiftBoxInfo { // msgid: 14574
+}
+
+message GS_RiftBoxInfo_R { // msgid: 14575
+    int32 BoxNum = 1;      // 宝箱数量
+}

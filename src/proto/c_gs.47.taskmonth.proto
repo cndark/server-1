@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [13700, 13800)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+
+// 每月任务
+message TaskMonthData { repeated TaskMonthItem Items = 1; }
+
+message TaskMonthItem {
+    int32  Id  = 1;
+    double Val = 2;
+    bool   Fin = 3;
+    bool   T   = 4;
+}
+
+// ============================================================================
+
+message GS_TaskMonthValueChanged { // msgid: 13700
+    int32  Id  = 1;
+    double Val = 3;
+}
+
+message GS_TaskMonthItemCompleted { // msgid: 13701
+    int32 Id = 1;
+}
+
+message C_TaskMonthInfo { // msgid: 13702
+}
+
+message GS_TaskMonthInfo_R { // msgid: 13703
+    TaskMonthData Data = 1;
+}
+
+message C_TaskMonthTake { // msgid: 13704
+    int32 Id = 1;
+}
+
+message GS_TaskMonthTask_R { // msgid: 13705
+    int32   ErrorCode = 1;
+    int32   Id        = 2;
+    Rewards Rewards   = 3;
+}

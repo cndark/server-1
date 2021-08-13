@@ -1,0 +1,56 @@
+#!/usr/bin/env node
+
+var cluster = require('cluster');
+
+var config  = require('../config.json');
+
+// ====================================
+
+var args = process.argv.slice(2);
+
+var opt = null;
+var sname;
+
+args.forEach(v => {
+    if (v == '-server' || v == '--server') {
+        opt = 'server';
+    } else if (opt == 'server') {
+        sname = v;
+    } else {
+        sname = v;
+    }
+});
+
+var sobj  = config.bats[sname];
+if (!sobj) throw `server NOT found: ${sname}`;
+
+// ====================================
+
+function init_master() {
+    // reload
+    process.on('SIGHUP', () => {
+        console.log("reloaded");
+    });
+}
+
+function init_worker() {
+    let server = require('./server');
+    let app    = require('./app');
+
+    server.run(app, sobj.port, sobj.ip);
+}
+
+// ====================================
+
+if (cluster.isMaster) {
+    // init master
+    init_master();
+
+    // fork workers
+    for (let i = 0; i < sobj.threads; i++) {
+        cluster.fork();
+    }
+} else {
+    // init worker
+    init_worker();
+}

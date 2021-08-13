@@ -1,0 +1,14 @@
+name,txt_Name,showSeq,desc,status,medalShow,banServer,flag
+string,string,int32,string,[]{int32 statusId;double val},int32,[]int32,string
+1,限时冲榜,,,,,,
+2,限时冲榜,,,,,,
+3,限时冲榜,,,,,,
+4,限时冲榜,,,,,,
+201,充值限时累计,,,,,,
+202,充值限时累天,,,,,,
+211,主题召唤,,,,,,
+212,达标任务,,,1~20,,,
+213,主题皮肤,,,1101~16,,,
+214,魔法召唤,,,,,,
+220,大富翁,,,1~20,,,
+221,迷宫,,,1~10,,,

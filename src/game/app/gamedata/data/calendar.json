@@ -1,0 +1,564 @@
+[
+    {
+        "seq": 1,
+        "type": "evt",
+        "modName": "gwar",
+        "stageList": [
+            {
+                "ts": "w/0 23:55:00",
+                "stage": "init"
+            },
+            {
+                "ts": "@1 00:00:00",
+                "stage": "prepare"
+            },
+            {
+                "ts": "@1 13:50:00",
+                "stage": "enroll"
+            },
+            {
+                "ts": "@1 14:00:00",
+                "stage": "match"
+            },
+            {
+                "ts": "@2 00:00:00",
+                "stage": "match"
+            },
+            {
+                "ts": "@3 00:00:00",
+                "stage": "match"
+            },
+            {
+                "ts": "@4 00:00:00",
+                "stage": "match"
+            },
+            {
+                "ts": "@5 00:00:00",
+                "stage": "match"
+            },
+            {
+                "ts": "@5 21:00:00",
+                "stage": "reward"
+            },
+            {
+                "ts": "@5 23:59:59",
+                "stage": "close"
+            }
+        ]
+    },
+    {
+        "seq": 2,
+        "type": "evt",
+        "modName": "rushCross",
+        "stageList": [
+            {
+                "ts": "a!2021-1-8 00:00:00/5",
+                "stage": "start"
+            },
+            {
+                "ts": "@2 22:00:00",
+                "stage": "end"
+            },
+            {
+                "ts": "@3 23:59:59",
+                "stage": "close"
+            }
+        ]
+    },
+    {
+        "seq": 3,
+        "type": "evt",
+        "modName": "arena",
+        "stageList": [
+            {
+                "ts": "w/1 6:00:00",
+                "stage": "start"
+            },
+            {
+                "ts": "@6 22:00:00",
+                "stage": "end"
+            },
+            {
+                "ts": "@6 23:59:59",
+                "stage": "close"
+            }
+        ]
+    },
+    {
+        "seq": 4,
+        "type": "evt",
+        "modName": "ladder",
+        "stageList": [
+            {
+                "ts": "w/5 23:56:00",
+                "stage": "init"
+            },
+            {
+                "ts": "@0 23:57:00",
+                "stage": "robot1"
+            },
+            {
+                "ts": "@0 23:58:00",
+                "stage": "robot2"
+            },
+            {
+                "ts": "@0 23:59:00",
+                "stage": "prepare"
+            },
+            {
+                "ts": "@1 00:00:00",
+                "stage": "start"
+            },
+            {
+                "ts": "@2 22:00:00",
+                "stage": "reward"
+            },
+            {
+                "ts": "@2 23:00:00",
+                "stage": "close"
+            }
+        ]
+    },
+    {
+        "seq": 5,
+        "type": "act",
+        "modName": "1",
+        "stageList": [
+            {
+                "ts": "o!@0",
+                "stage": "open"
+            },
+            {
+                "ts": "@0 00:00:01",
+                "stage": "start"
+            },
+            {
+                "ts": "@0 23:59:58",
+                "stage": "end"
+            },
+            {
+                "ts": "@1 23:59:59",
+                "stage": "close"
+            }
+        ]
+    },
+    {
+        "seq": 6,
+        "type": "act",
+        "modName": "2",
+        "stageList": [
+            {
+                "ts": "o!@0/3/@5",
+                "stage": "open"
+            },
+            {
+                "ts": "@0 00:00:01",
+                "stage": "start"
+            },
+            {
+                "ts": "@1 23:59:58",
+                "stage": "end"
+            },
+            {
+                "ts": "@2 23:59:59",
+                "stage": "close"
+            }
+        ]
+    },
+    {
+        "seq": 7,
+        "type": "act",
+        "modName": "3",
+        "stageList": [
+            {
+                "ts": "o!@1/3/@6",
+                "stage": "open"
+            },
+            {
+                "ts": "@0 00:00:01",
+                "stage": "start"
+            },
+            {
+                "ts": "@1 23:59:58",
+                "stage": "end"
+            },
+            {
+                "ts": "@2 23:59:59",
+                "stage": "close"
+            }
+        ]
+    },
+    {
+        "seq": 8,
+        "type": "evt",
+        "modName": "crusade",
+        "stageList": [
+            {
+                "ts": "o!@0/3",
+                "stage": "open"
+            },
+            {
+                "ts": "@0 06:00:00",
+                "stage": "start"
+            },
+            {
+                "ts": "@1 22:00:00",
+                "stage": "end"
+            }
+        ]
+    },
+    {
+        "seq": 9,
+        "type": "evt",
+        "modName": "warCup",
+        "stageList": [
+            {
+                "ts": "o!@0 00:00:00/3/@12",
+                "stage": "open"
+            },
+            {
+                "ts": "@1 21:00:00",
+                "stage": "audition"
+            },
+            {
+                "ts": "@1 21:30:00",
+                "stage": "top64"
+            },
+            {
+                "ts": "@1 21:45:00",
+                "stage": "top8"
+            },
+            {
+                "ts": "@1 22:00:00",
+                "stage": "end"
+            },
+            {
+                "ts": "@2 23:59:59",
+                "stage": "close"
+            }
+        ]
+    },
+    {
+        "seq": 10,
+        "type": "act",
+        "modName": "220",
+        "stageList": [
+            {
+                "ts": "o!@1",
+                "stage": "open"
+            },
+            {
+                "ts": "@0 00:00:01",
+                "stage": "start"
+            },
+            {
+                "ts": "@5 23:59:58",
+                "stage": "end"
+            },
+            {
+                "ts": "@5 23:59:58",
+                "stage": "close"
+            }
+        ]
+    },
+    {
+        "seq": 11,
+        "type": "act",
+        "modName": "201",
+        "stageList": [
+            {
+                "ts": "o!@0/16",
+                "stage": "open"
+            },
+            {
+                "ts": "@0 00:00:01",
+                "stage": "start"
+            },
+            {
+                "ts": "@15 23:59:58",
+                "stage": "end"
+            },
+            {
+                "ts": "@15 23:59:59",
+                "stage": "close"
+            }
+        ]
+    },
+    {
+        "seq": 12,
+        "type": "act",
+        "modName": "202",
+        "stageList": [
+            {
+                "ts": "o!@0/31",
+                "stage": "open"
+            },
+            {
+                "ts": "@0 00:00:01",
+                "stage": "start"
+            },
+            {
+                "ts": "@30 23:59:58",
+                "stage": "end"
+            },
+            {
+                "ts": "@30 23:59:59",
+                "stage": "close"
+            }
+        ]
+    },
+    {
+        "seq": 13,
+        "type": "act",
+        "modName": "212",
+        "stageList": [
+            {
+                "ts": "o!@1",
+                "stage": "open"
+            },
+            {
+                "ts": "@0 00:00:01",
+                "stage": "start"
+            },
+            {
+                "ts": "@5 23:59:58",
+                "stage": "end"
+            },
+            {
+                "ts": "@5 23:59:59",
+                "stage": "close"
+            }
+        ]
+    },
+    {
+        "seq": 14,
+        "type": "act",
+        "modName": "213",
+        "stageList": [
+            {
+                "ts": "a!2021-6-25 00:00:00/7",
+                "stage": "open"
+            },
+            {
+                "ts": "@0 00:00:01",
+                "stage": "start"
+            },
+            {
+                "ts": "@6 23:59:58",
+                "stage": "end"
+            },
+            {
+                "ts": "@6 23:59:59",
+                "stage": "close"
+            }
+        ]
+    },
+    {
+        "seq": 15,
+        "type": "act",
+        "modName": "211",
+        "stageList": [
+            {
+                "ts": "o!@2",
+                "stage": "open"
+            },
+            {
+                "ts": "@0 00:00:01",
+                "stage": "start"
+            },
+            {
+                "ts": "@4 23:59:58",
+                "stage": "end"
+            },
+            {
+                "ts": "@4 23:59:59",
+                "stage": "close"
+            }
+        ]
+    },
+    {
+        "seq": 16,
+        "type": "act",
+        "modName": "211",
+        "stageList": [
+            {
+                "ts": "o!@7",
+                "stage": "open"
+            },
+            {
+                "ts": "@0 00:00:01",
+                "stage": "start"
+            },
+            {
+                "ts": "@6 23:59:58",
+                "stage": "end"
+            },
+            {
+                "ts": "@6 23:59:59",
+                "stage": "close"
+            }
+        ]
+    },
+    {
+        "seq": 17,
+        "type": "act",
+        "modName": "211",
+        "stageList": [
+            {
+                "ts": "a!2021-7-23 00:00:00/7",
+                "stage": "open"
+            },
+            {
+                "ts": "@0 00:00:01",
+                "stage": "start"
+            },
+            {
+                "ts": "@6 23:59:58",
+                "stage": "end"
+            },
+            {
+                "ts": "@6 23:59:59",
+                "stage": "close"
+            }
+        ]
+    },
+    {
+        "seq": 18,
+        "type": "evt",
+        "modName": "wboss",
+        "stageList": [
+            {
+                "ts": "o!@2 00:00:00",
+                "stage": "init"
+            },
+            {
+                "ts": "@0 00:05:00",
+                "stage": "open"
+            },
+            {
+                "ts": "@1 20:00:00",
+                "stage": "start"
+            },
+            {
+                "ts": "@1 22:00:00",
+                "stage": "end"
+            },
+            {
+                "ts": "@1 22:05:00",
+                "stage": "reward"
+            },
+            {
+                "ts": "@1 23:59:59",
+                "stage": "close"
+            }
+        ]
+    },
+    {
+        "seq": 19,
+        "type": "evt",
+        "modName": "wboss",
+        "stageList": [
+            {
+                "ts": "o!@7 00:00:00",
+                "stage": "init"
+            },
+            {
+                "ts": "@0 00:05:00",
+                "stage": "open"
+            },
+            {
+                "ts": "@1 20:00:00",
+                "stage": "start"
+            },
+            {
+                "ts": "@1 22:00:00",
+                "stage": "end"
+            },
+            {
+                "ts": "@1 22:05:00",
+                "stage": "reward"
+            },
+            {
+                "ts": "@1 23:59:59",
+                "stage": "close"
+            }
+        ]
+    },
+    {
+        "seq": 20,
+        "type": "evt",
+        "modName": "wboss",
+        "stageList": [
+            {
+                "ts": "o!@10 00:00:00",
+                "stage": "init"
+            },
+            {
+                "ts": "@0 00:05:00",
+                "stage": "open"
+            },
+            {
+                "ts": "@1 20:00:00",
+                "stage": "start"
+            },
+            {
+                "ts": "@1 22:00:00",
+                "stage": "end"
+            },
+            {
+                "ts": "@1 22:05:00",
+                "stage": "reward"
+            },
+            {
+                "ts": "@1 23:59:59",
+                "stage": "close"
+            }
+        ]
+    },
+    {
+        "seq": 21,
+        "type": "act",
+        "modName": "4",
+        "stageList": [
+            {
+                "ts": "o!@2/3/@7",
+                "stage": "open"
+            },
+            {
+                "ts": "@0 00:00:01",
+                "stage": "start"
+            },
+            {
+                "ts": "@1 23:59:58",
+                "stage": "end"
+            },
+            {
+                "ts": "@2 23:59:59",
+                "stage": "close"
+            }
+        ]
+    },
+    {
+        "seq": 22,
+        "type": "act",
+        "modName": "221",
+        "stageList": [
+            {
+                "ts": "o!@7",
+                "stage": "open"
+            },
+            {
+                "ts": "@0 00:00:01",
+                "stage": "start"
+            },
+            {
+                "ts": "@6 22:00:00",
+                "stage": "end"
+            },
+            {
+                "ts": "@6 23:59:59",
+                "stage": "close"
+            }
+        ]
+    }
+]

@@ -1,0 +1,98 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [5100, 5200)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+
+// 头像框
+message HFrameStoreData {
+    repeated HFrameStoreOne HFrames = 1; // id 过期时间
+}
+
+message HFrameStoreOne {
+    int32 Id       = 1; // 头像框id
+    int64 ExpireTs = 2; // 过期时间
+}
+
+// ============================================================================
+
+// 推送
+message GS_PlayerUpdateLv { // msgid: 5100
+    int32   Level   = 1;    // -1 表示无变化
+    int32   Exp     = 2;
+    Rewards Rewards = 3;
+}
+
+message GS_PlayerUpdateAtkPwr { // msgid: 5101
+    int32 AtkPwr = 1;
+}
+
+message GS_PlayerUpdateHFrame { // msgid: 5102
+    HFrameStoreOne One = 1;
+}
+
+// ============================================================================
+// 角色改名
+message C_PlayerChangeName { // msgid: 5132
+    string Name = 1;
+}
+
+message GS_PlayerChangeName_R { // msgid: 5133
+    int32  ErrorCode = 1;
+    string Name      = 2;
+}
+
+// 拉取玩家信息
+message C_PlayerInfo { // msgid: 5134
+    string PlrId    = 1;
+    int32  SvrId    = 2;
+    int32  TeamType = 3;
+}
+
+message GS_PlayerInfo_R { // msgid:5135
+    int32                  ErrorCode   = 1;
+    PlayerSimpleInfo       Info        = 2;
+    string                 GuildId     = 3;
+    string                 GuildName   = 4;
+    int32                  GuildIcon   = 5;
+    map<int32, HeroDetail> DfdTeamInfo = 6; // pos:hero
+}
+
+// 激活头像框
+message C_PlayerHFrameAdd { // msgid: 5138
+    int32 Id = 1;
+}
+
+message GS_PlayerHFrameAdd_R { // msgid: 5139
+    int32 ErrorCode = 1;
+    int32 Id        = 2;
+}
+
+// 设置头像框
+message C_PlayerHFrameSet { // msgid: 5140
+    int32 Id = 1;
+}
+
+message GS_PlayerHFrameSet_R { // msgid: 5141
+    int32 ErrorCode = 1;
+    int32 Id        = 2;
+}
+
+// 设置头像
+message C_PlayerHeadSet { // msgid: 5142
+    string Head = 1;
+}
+
+message GS_PlayerHeadSet_R { // msgid: 5143
+    int32 ErrorCode = 1;
+}

@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [8800, 8900)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+
+// 抽卡
+message DrawData {
+    repeated DrawTpData Tps   = 1;
+    int32               Score = 2;
+}
+
+message DrawTpData {
+    string Tp          = 1; // 类型
+    int32  Cnt         = 2; // 保底次数
+    int32  TotalCnt    = 3; // 总抽次数
+    int64  LastTs      = 4; // 上次抽取时间
+    int32  InitialTake = 5; // 初始保底第几次生效
+}
+
+// ============================================================================
+
+message C_DrawGetInfo { // msgid: 8800
+}
+
+message GS_DrawGetInfo_R { // msgid: 8801
+    int32    ErrorCode = 1;
+    DrawData Draw      = 2;
+}
+
+message C_DrawTp { // msgid: 8802
+    string Tp      = 1;
+    int32  N       = 2; // 几抽
+    bool   AutoDec = 3; // 自动分解3星一下英雄
+}
+
+message GS_DrawTp_R { // msgid: 8803
+    int32         ErrorCode    = 1;
+    int32         Score        = 2;
+    DrawTpData    DrawTp       = 3;
+    Rewards       Rewards      = 4;
+    repeated Item Items        = 5; // 道具显示
+    repeated Item AutoDecItems = 6; // 分解道具显示
+}
+
+message C_DrawScoreBoxTake { // msgid: 8804
+}
+
+message GS_DrawScoreBoxTake_R { // msgid: 8805
+    int32   ErrorCode = 1;
+    int32   Score     = 2;
+    Rewards Rewards   = 3;
+}

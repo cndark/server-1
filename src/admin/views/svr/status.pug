@@ -1,0 +1,136 @@
+extends ../base.pug
+
+block css
+    link(href='/css/page.css', rel='stylesheet')
+
+block content
+    .container-fluid
+        .row
+            .col-md-7
+                .panel.panel-info
+                    .panel-heading.head
+                        .clearfix
+                            | #{tab.name}
+                            form.form-inline.pull-right
+                                - for (var f of form ? form : [])
+                                    .input-group
+                                        if f.icon
+                                            .input-group-addon
+                                                i(class=`fa fa-${f.icon}`)
+                                        else if f.desc
+                                            .input-group-addon
+                                                span #{f.desc}
+
+                                        case f.type
+                                            when "select"
+                                                select.form-control(name=f.name === undefined ? "" : f.name)
+                                                    - for (var v of f.src ? f.src : [])
+                                                        if v instanceof Array
+                                                            option(value=v[0] selected=(v[0] == f.value ? true : false)) #{v[1]}
+                                                        else
+                                                            option(value=v selected=(v == f.value ? true : false)) #{v}
+
+                                            when "input"
+                                                input.form-control(
+                                                    type='text',
+                                                    name=f.name === undefined ? "" : f.name,
+                                                    value=f.value === undefined ? "" : f.value,
+                                                    placeholder=f.placeholder === undefined ? "" : f.placeholder,
+                                                    style=f.style == undefined ? "" : f.style,
+                                                )
+
+                                            when "date"
+                                                input.date-picker.form-control(
+                                                    type='text',
+                                                    name=f.name === undefined ? "" : f.name,
+                                                    value=f.value === undefined ? "" : f.value,
+                                                    style=f.style == undefined ? "" : f.style,
+                                                )
+
+                                            when "daterange"
+                                                input.date-range-picker.form-control(
+                                                    type='text',
+                                                    name=f.name === undefined ? "" : f.name,
+                                                    value=f.value === undefined ? "" : f.value,
+                                                    style=f.style == undefined ? "" : f.style,
+                                                )
+
+                                            when "span"
+                                                span.form-control(
+                                                    name=f.name === undefined ? "" : f.name,
+                                                    style=f.style == undefined ? "" : f.style,
+                                                ) #{f.value === undefined ? "" : f.value}
+
+                                            default
+                                                !=f
+
+                                if form
+                                    .input-group
+                                        button#btn_ok.btn.btn-info
+                                            | 确定
+                    .panel-body
+                        .row
+                            .col-md-12.hscroll
+                                table.table.table-striped.table-condensed.table-hover
+                                    thead
+                                        tr
+                                            - for (var v of tab && tab.header ? tab.header : [])
+                                                th #{v}
+                                    tbody
+                                        - for (var row of tab && tab.body ? tab.body : [])
+                                            tr
+                                                - for (var i = 0; i < row.length; i++)
+                                                    td #{row[i]}
+                        .row
+                            .col-md-12
+                                .pager
+                                    a#page_prev(href="javascript:;")
+                                        i(class="fa fa-chevron-left")
+
+                                    span.pageno
+                                        | #{paged.page}
+
+                                    a#page_next(href="javascript:;")
+                                        i(class="fa fa-chevron-right")
+            .col-md-5
+                .panel.panel-info
+                    .panel-heading.head
+                        .clearfix
+                            | 状态维护
+                            button#btn_update.btn.btn-default OK
+                            span.alert
+                    .panel-body
+                        .row
+                            .col-md-12
+                                | 目标
+                                input.form-control(name='target', placeholder='全服: all | 单服: 1 | 范围: 3-5')
+                            .col-md-12
+                                | 显示名
+                                input.form-control(name='text')
+                        .row
+                            .col-md-4
+                                | 状态
+                                select.form-control(name='status')
+                                    - for (var v of src_status)
+                                        option(value=v[0]) #{v[1]}
+                            .col-md-4
+                                | 标志
+                                select.form-control(name='flag')
+                                    - for (var v of src_flag)
+                                        option(value=v[0]) #{v[1]}
+                            .col-md-4
+                                | 关闭注册
+                                select.form-control(name='closereg')
+                                    option(value='--') --
+                                    option(value=0) 否
+                                    option(value=1) 是
+
+
+
+block script
+    script(src='/scripts/svr/status.js')
+
+    script.
+        $(function () {
+            paged_create(!{JSON.stringify(paged)});
+        });

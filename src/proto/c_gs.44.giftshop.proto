@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [13400, 13500)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+// 礼包充值商店
+message GiftShopData {
+    map<int32, int32> BuyCnt = 1; // 购买次数
+}
+
+// ============================================================================
+// 推送--新购买礼包
+
+message GS_GiftShopNew { // msgid: 13400
+    int32   Id      = 1;
+    Rewards Rewards = 2;
+}
+
+// ============================================================================
+// 领奖--免费
+message C_GiftShopTake { // msgid: 13410
+    int32 Id = 1;
+}
+
+message GS_GiftShopTake_R { // msgid: 13411
+    int32   ErrorCode = 1;
+    int32   Id        = 2;
+    Rewards Rewards   = 3;
+}

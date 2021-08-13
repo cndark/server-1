@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [5200, 5300)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+
+// 背包数据
+message BagData {
+    repeated Ccy   Currency = 1;
+    repeated Item  Items    = 2;
+    repeated Hero  Heroes   = 3;
+    repeated Armor Armors   = 4;
+    repeated Relic Relics   = 5;
+}
+
+// ============================================================================
+
+// 背包变化推送
+message GS_BagUpdate { // msgid: 5200
+    repeated Ccy   Currency  = 1;
+    repeated Item  Items     = 2;
+    repeated Hero  Heroes    = 3;
+    repeated int64 HeroesDel = 4;
+    repeated Relic Relics    = 5;
+    repeated int64 RelicsDel = 6;
+}

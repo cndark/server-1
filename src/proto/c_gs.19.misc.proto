@@ -1,0 +1,106 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [7600, 7700)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+
+message MiscData {
+    bool                       FreeRename     = 1;
+    int64                      SvrOpenTs      = 2; // 开服时间
+    int64                      GldLeaveTs     = 3;
+    int32                      GldLeaveCnt    = 4;
+    float                      GoldenHandCrit = 5;
+    int32                      OnlineBoxId    = 6; // 上次领取宝箱的ID值
+    int64                      OnlineBoxDur   = 7; // 上次领取的时间
+    repeated MiscGldActGiftOne GldActGift     = 8; // 家族他人活动礼包
+}
+
+message MiscGldActGiftOne {
+    int32  Id   = 1;
+    string Name = 2;
+}
+
+// ============================================================================
+
+// 获得家族活动礼包
+message GS_MiscGldActGift { // msgid: 7600
+    MiscGldActGiftOne One = 1;
+}
+
+// ============================================================================
+
+message C_MiscBillLocal { // msgid: 7620
+    string J = 1;
+}
+
+message GS_MiscBillLocal_R { // msgid: 7621
+    int32  ErrorCode = 1;
+    string R         = 2;
+}
+
+// 礼包码兑换
+message C_GiftExchange { // msgid: 7622
+    string Code = 1;
+}
+
+message GS_GiftExchange_R { // msgid: 7623
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+}
+
+// 跳过新手
+message C_MiscSkipTutorial { // msgid: 7624
+}
+
+message GS_MiscSkipTutorial_R { // msgid: 7625
+    int32 ErrorCode = 1;
+}
+
+// 点金手
+message C_MiscGoldenHand { // msgid: 7626
+}
+
+message GS_MiscGoldenHand_R { // msgid: 7627
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+    float   NextCrit  = 3;
+}
+
+// 在线宝箱
+message C_MiscOnlineBoxTake { // msgid: 7628
+    int32 Id = 1;
+}
+
+message GS_MiscOnlineBoxTake_R { // msgid: 7629
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+}
+
+// 分享游戏
+message C_MiscSharedGame { // msgid: 7630
+    int32 Tp = 1;
+}
+
+message GS_MiscSharedGame_R { // msgid: 7631
+    int32 ErrorCode = 1;
+}
+
+// 领取家族活动分享礼包
+message C_MiscGldActGiftTake { // msgid: 7632
+    int32 Idx = 1;             // 下标 0开始
+}
+
+message GS_MiscGldActGiftTake_R { // msgid: 7633
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+}

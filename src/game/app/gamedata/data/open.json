@@ -1,0 +1,346 @@
+[
+    {
+        "moduleId": 1,
+        "cond": 101,
+        "p1": 0,
+        "p2": 11,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 2,
+        "cond": 101,
+        "p1": 0,
+        "p2": 16,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 3,
+        "cond": 101,
+        "p1": 0,
+        "p2": 11,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 4,
+        "cond": 101,
+        "p1": 0,
+        "p2": 20,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 5,
+        "cond": 101,
+        "p1": 0,
+        "p2": 60,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 6,
+        "cond": 101,
+        "p1": 0,
+        "p2": 8,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 30,
+        "cond": 101,
+        "p1": 0,
+        "p2": 1,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 31,
+        "cond": 101,
+        "p1": 0,
+        "p2": 1,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 32,
+        "cond": 201,
+        "p1": 0,
+        "p2": 45,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 100,
+        "cond": 101,
+        "p1": 0,
+        "p2": 1,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 101,
+        "cond": 0,
+        "p1": 0,
+        "p2": 0,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 102,
+        "cond": 0,
+        "p1": 0,
+        "p2": 0,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 103,
+        "cond": 0,
+        "p1": 0,
+        "p2": 0,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 104,
+        "cond": 0,
+        "p1": 0,
+        "p2": 0,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 105,
+        "cond": 0,
+        "p1": 0,
+        "p2": 0,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 200,
+        "cond": 101,
+        "p1": 0,
+        "p2": 28,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 201,
+        "cond": 101,
+        "p1": 0,
+        "p2": 14,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 202,
+        "cond": 101,
+        "p1": 0,
+        "p2": 1,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 203,
+        "cond": 201,
+        "p1": 0,
+        "p2": 25,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 204,
+        "cond": 201,
+        "p1": 0,
+        "p2": 35,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 205,
+        "cond": 101,
+        "p1": 0,
+        "p2": 35,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 206,
+        "cond": 201,
+        "p1": 0,
+        "p2": 6,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 207,
+        "cond": 201,
+        "p1": 0,
+        "p2": 5,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 208,
+        "cond": 101,
+        "p1": 0,
+        "p2": 12,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 210,
+        "cond": 101,
+        "p1": 0,
+        "p2": 35,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 211,
+        "cond": 201,
+        "p1": 0,
+        "p2": 6,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 212,
+        "cond": 201,
+        "p1": 0,
+        "p2": 25,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 215,
+        "cond": 101,
+        "p1": 0,
+        "p2": 1,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 218,
+        "cond": 101,
+        "p1": 0,
+        "p2": 1,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 300,
+        "cond": 101,
+        "p1": 0,
+        "p2": 1,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 301,
+        "cond": 101,
+        "p1": 0,
+        "p2": 12,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 401,
+        "cond": 201,
+        "p1": 0,
+        "p2": 11,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 402,
+        "cond": 101,
+        "p1": 0,
+        "p2": 13,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 403,
+        "cond": 101,
+        "p1": 0,
+        "p2": 5,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 404,
+        "cond": 101,
+        "p1": 0,
+        "p2": 4,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 405,
+        "cond": 101,
+        "p1": 0,
+        "p2": 10,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 406,
+        "cond": 101,
+        "p1": 0,
+        "p2": 6,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 407,
+        "cond": 101,
+        "p1": 0,
+        "p2": 10,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 408,
+        "cond": 101,
+        "p1": 0,
+        "p2": 4,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 409,
+        "cond": 101,
+        "p1": 0,
+        "p2": 4,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 410,
+        "cond": 101,
+        "p1": 0,
+        "p2": 5,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 411,
+        "cond": 101,
+        "p1": 0,
+        "p2": 1,
+        "reward": [
+        ]
+    },
+    {
+        "moduleId": 413,
+        "cond": 101,
+        "p1": 0,
+        "p2": 40,
+        "reward": [
+        ]
+    }
+]

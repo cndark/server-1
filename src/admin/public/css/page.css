@@ -1,0 +1,121 @@
+
+.modal .modal-body {
+    max-height: 700px;
+    overflow-y: auto;
+}
+
+.container-fluid {
+    padding-top: 20px;
+}
+
+.head {
+    font-weight: bold;
+}
+
+.head2 {
+    margin-top:   3px;
+    margin-right: 80px;
+
+    margin-top: 3px;
+    margin-right: 80px;
+    padding-top: 3px;
+    border-top: solid 1px #fafafa;
+}
+
+.head .alert {
+    margin-left: 5px;
+}
+
+.form-inline.from-left {
+    display: inline;
+    margin-left: 30px;
+}
+
+.form-group, .input-group {
+    margin-right: 10px;
+}
+
+.form-group label {
+    margin-right: 10px;
+}
+
+button {
+    margin-left: 10px;
+    min-width: 60px;
+}
+
+button[type=item] {
+    margin: 5px;
+}
+
+button[type=item].btn-default.sel {
+    background-color: #f39c12;
+}
+
+button[type=item].btn-default:focus, button[type=item].btn-default.focus {}
+
+.input-group-addon.button {
+    padding: 0px;
+    border: 0px;
+}
+
+.input-group-addon.button > button {
+    margin: 0px;
+}
+
+select[multiple] {
+    height: 500px;
+}
+
+.date-picker {
+    width: 110px !important;
+}
+
+.date-range-picker {
+    width: 210px !important;
+}
+
+.chart {
+    width:  100%;
+    height: 600px;
+}
+
+.hsep {
+    width:  100%;
+    height: 50px;
+}
+
+.hr5 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.hscroll {
+    overflow-x: auto;
+}
+
+.chg {
+    background-color: #ffffcf;
+}
+
+.warn {
+    border: solid #ff9900 2px;
+}
+
+.err {
+    border: solid red 2px;
+}
+
+.pager {
+    width:  500px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.pager a i {
+    width: 150px;
+}
+
+.pager .pageno {
+    margin: 0 20px;
+}

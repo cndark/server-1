@@ -1,0 +1,8530 @@
+[
+    {
+        "seq": 1,
+        "summonGrp": "actNormal1",
+        "rewardId": 30009,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 2,
+        "summonGrp": "actNormal1",
+        "rewardId": 30010,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 3,
+        "summonGrp": "actNormal1",
+        "rewardId": 30011,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 4,
+        "summonGrp": "actNormal1",
+        "rewardId": 30047,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 5,
+        "summonGrp": "actNormal1",
+        "rewardId": 30048,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 6,
+        "summonGrp": "actNormal1",
+        "rewardId": 30051,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 7,
+        "summonGrp": "actNormal1",
+        "rewardId": 30125,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 8,
+        "summonGrp": "actNormal1",
+        "rewardId": 30126,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 9,
+        "summonGrp": "actNormal1",
+        "rewardId": 30129,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 10,
+        "summonGrp": "actNormal1",
+        "rewardId": 30164,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 11,
+        "summonGrp": "actNormal1",
+        "rewardId": 30167,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 12,
+        "summonGrp": "actNormal1",
+        "rewardId": 30206,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 13,
+        "summonGrp": "actNormal1",
+        "rewardId": 30207,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 14,
+        "summonGrp": "actNormal1",
+        "rewardId": 30014,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 15,
+        "summonGrp": "actNormal1",
+        "rewardId": 30015,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 16,
+        "summonGrp": "actNormal1",
+        "rewardId": 30016,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 17,
+        "summonGrp": "actNormal1",
+        "rewardId": 30018,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 18,
+        "summonGrp": "actNormal1",
+        "rewardId": 30052,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 19,
+        "summonGrp": "actNormal1",
+        "rewardId": 30053,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 20,
+        "summonGrp": "actNormal1",
+        "rewardId": 30054,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 21,
+        "summonGrp": "actNormal1",
+        "rewardId": 30056,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 22,
+        "summonGrp": "actNormal1",
+        "rewardId": 30130,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 23,
+        "summonGrp": "actNormal1",
+        "rewardId": 30131,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 24,
+        "summonGrp": "actNormal1",
+        "rewardId": 30133,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 25,
+        "summonGrp": "actNormal1",
+        "rewardId": 30134,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 26,
+        "summonGrp": "actNormal1",
+        "rewardId": 30169,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 27,
+        "summonGrp": "actNormal1",
+        "rewardId": 30170,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 28,
+        "summonGrp": "actNormal1",
+        "rewardId": 30171,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 29,
+        "summonGrp": "actNormal1",
+        "rewardId": 30208,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 30,
+        "summonGrp": "actNormal1",
+        "rewardId": 30209,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 31,
+        "summonGrp": "actNormal1",
+        "rewardId": 30213,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 32,
+        "summonGrp": "actNormal1",
+        "rewardId": 30019,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 33,
+        "summonGrp": "actNormal1",
+        "rewardId": 30020,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 34,
+        "summonGrp": "actNormal1",
+        "rewardId": 30021,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 35,
+        "summonGrp": "actNormal1",
+        "rewardId": 30023,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 36,
+        "summonGrp": "actNormal1",
+        "rewardId": 30024,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 37,
+        "summonGrp": "actNormal1",
+        "rewardId": 30025,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 38,
+        "summonGrp": "actNormal1",
+        "rewardId": 30059,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 39,
+        "summonGrp": "actNormal1",
+        "rewardId": 30060,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 40,
+        "summonGrp": "actNormal1",
+        "rewardId": 30061,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 41,
+        "summonGrp": "actNormal1",
+        "rewardId": 30062,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 42,
+        "summonGrp": "actNormal1",
+        "rewardId": 30063,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 43,
+        "summonGrp": "actNormal1",
+        "rewardId": 30064,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 44,
+        "summonGrp": "actNormal1",
+        "rewardId": 30137,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 45,
+        "summonGrp": "actNormal1",
+        "rewardId": 30140,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 46,
+        "summonGrp": "actNormal1",
+        "rewardId": 30141,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 47,
+        "summonGrp": "actNormal1",
+        "rewardId": 30142,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 48,
+        "summonGrp": "actNormal1",
+        "rewardId": 30301,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 49,
+        "summonGrp": "actNormal1",
+        "rewardId": 30177,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 50,
+        "summonGrp": "actNormal1",
+        "rewardId": 30180,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 51,
+        "summonGrp": "actNormal1",
+        "rewardId": 30217,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 52,
+        "summonGrp": "actNormal1",
+        "rewardId": 30219,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 53,
+        "summonGrp": "actNormal1",
+        "rewardId": 30220,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 54,
+        "summonGrp": "actNormal1",
+        "rewardId": 30342,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 55,
+        "summonGrp": "actNormal1",
+        "rewardId": 30178,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 56,
+        "summonGrp": "actNormal1",
+        "rewardId": 30345,
+        "rewardNum": 1,
+        "weight": 56,
+        "magicTimesCond": 50
+    },
+    {
+        "seq": 57,
+        "summonGrp": "actNormal1",
+        "rewardId": 30236,
+        "rewardNum": 1,
+        "weight": 49,
+        "magicTimesCond": 40
+    },
+    {
+        "seq": 58,
+        "summonGrp": "actNormal1",
+        "rewardId": 30300,
+        "rewardNum": 1,
+        "weight": 49,
+        "magicTimesCond": 40
+    },
+    {
+        "seq": 59,
+        "summonGrp": "actExtra1",
+        "rewardId": 30019,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 60,
+        "summonGrp": "actExtra1",
+        "rewardId": 30020,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 61,
+        "summonGrp": "actExtra1",
+        "rewardId": 30021,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 62,
+        "summonGrp": "actExtra1",
+        "rewardId": 30023,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 63,
+        "summonGrp": "actExtra1",
+        "rewardId": 30024,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 64,
+        "summonGrp": "actExtra1",
+        "rewardId": 30025,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 65,
+        "summonGrp": "actExtra1",
+        "rewardId": 30059,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 66,
+        "summonGrp": "actExtra1",
+        "rewardId": 30060,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 67,
+        "summonGrp": "actExtra1",
+        "rewardId": 30061,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 68,
+        "summonGrp": "actExtra1",
+        "rewardId": 30062,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 69,
+        "summonGrp": "actExtra1",
+        "rewardId": 30063,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 70,
+        "summonGrp": "actExtra1",
+        "rewardId": 30064,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 71,
+        "summonGrp": "actExtra1",
+        "rewardId": 30137,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 72,
+        "summonGrp": "actExtra1",
+        "rewardId": 30140,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 73,
+        "summonGrp": "actExtra1",
+        "rewardId": 30141,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 74,
+        "summonGrp": "actExtra1",
+        "rewardId": 30142,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 75,
+        "summonGrp": "actExtra1",
+        "rewardId": 30301,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 76,
+        "summonGrp": "actExtra1",
+        "rewardId": 30177,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 77,
+        "summonGrp": "actExtra1",
+        "rewardId": 30180,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 78,
+        "summonGrp": "actExtra1",
+        "rewardId": 30217,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 79,
+        "summonGrp": "actExtra1",
+        "rewardId": 30219,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 80,
+        "summonGrp": "actExtra1",
+        "rewardId": 30220,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 81,
+        "summonGrp": "actExtra1",
+        "rewardId": 30342,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 82,
+        "summonGrp": "actExtra1",
+        "rewardId": 30178,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 83,
+        "summonGrp": "actNormal2",
+        "rewardId": 30009,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 84,
+        "summonGrp": "actNormal2",
+        "rewardId": 30010,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 85,
+        "summonGrp": "actNormal2",
+        "rewardId": 30011,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 86,
+        "summonGrp": "actNormal2",
+        "rewardId": 30047,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 87,
+        "summonGrp": "actNormal2",
+        "rewardId": 30048,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 88,
+        "summonGrp": "actNormal2",
+        "rewardId": 30051,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 89,
+        "summonGrp": "actNormal2",
+        "rewardId": 30125,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 90,
+        "summonGrp": "actNormal2",
+        "rewardId": 30126,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 91,
+        "summonGrp": "actNormal2",
+        "rewardId": 30129,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 92,
+        "summonGrp": "actNormal2",
+        "rewardId": 30164,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 93,
+        "summonGrp": "actNormal2",
+        "rewardId": 30167,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 94,
+        "summonGrp": "actNormal2",
+        "rewardId": 30206,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 95,
+        "summonGrp": "actNormal2",
+        "rewardId": 30207,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 96,
+        "summonGrp": "actNormal2",
+        "rewardId": 30014,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 97,
+        "summonGrp": "actNormal2",
+        "rewardId": 30015,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 98,
+        "summonGrp": "actNormal2",
+        "rewardId": 30016,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 99,
+        "summonGrp": "actNormal2",
+        "rewardId": 30018,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 100,
+        "summonGrp": "actNormal2",
+        "rewardId": 30052,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 101,
+        "summonGrp": "actNormal2",
+        "rewardId": 30053,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 102,
+        "summonGrp": "actNormal2",
+        "rewardId": 30054,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 103,
+        "summonGrp": "actNormal2",
+        "rewardId": 30056,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 104,
+        "summonGrp": "actNormal2",
+        "rewardId": 30130,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 105,
+        "summonGrp": "actNormal2",
+        "rewardId": 30131,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 106,
+        "summonGrp": "actNormal2",
+        "rewardId": 30133,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 107,
+        "summonGrp": "actNormal2",
+        "rewardId": 30134,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 108,
+        "summonGrp": "actNormal2",
+        "rewardId": 30169,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 109,
+        "summonGrp": "actNormal2",
+        "rewardId": 30170,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 110,
+        "summonGrp": "actNormal2",
+        "rewardId": 30171,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 111,
+        "summonGrp": "actNormal2",
+        "rewardId": 30208,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 112,
+        "summonGrp": "actNormal2",
+        "rewardId": 30209,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 113,
+        "summonGrp": "actNormal2",
+        "rewardId": 30213,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 114,
+        "summonGrp": "actNormal2",
+        "rewardId": 30019,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 115,
+        "summonGrp": "actNormal2",
+        "rewardId": 30020,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 116,
+        "summonGrp": "actNormal2",
+        "rewardId": 30021,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 117,
+        "summonGrp": "actNormal2",
+        "rewardId": 30023,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 118,
+        "summonGrp": "actNormal2",
+        "rewardId": 30024,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 119,
+        "summonGrp": "actNormal2",
+        "rewardId": 30025,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 120,
+        "summonGrp": "actNormal2",
+        "rewardId": 30059,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 121,
+        "summonGrp": "actNormal2",
+        "rewardId": 30060,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 122,
+        "summonGrp": "actNormal2",
+        "rewardId": 30061,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 123,
+        "summonGrp": "actNormal2",
+        "rewardId": 30062,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 124,
+        "summonGrp": "actNormal2",
+        "rewardId": 30063,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 125,
+        "summonGrp": "actNormal2",
+        "rewardId": 30064,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 126,
+        "summonGrp": "actNormal2",
+        "rewardId": 30137,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 127,
+        "summonGrp": "actNormal2",
+        "rewardId": 30140,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 128,
+        "summonGrp": "actNormal2",
+        "rewardId": 30141,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 129,
+        "summonGrp": "actNormal2",
+        "rewardId": 30142,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 130,
+        "summonGrp": "actNormal2",
+        "rewardId": 30301,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 131,
+        "summonGrp": "actNormal2",
+        "rewardId": 30177,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 132,
+        "summonGrp": "actNormal2",
+        "rewardId": 30180,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 133,
+        "summonGrp": "actNormal2",
+        "rewardId": 30217,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 134,
+        "summonGrp": "actNormal2",
+        "rewardId": 30219,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 135,
+        "summonGrp": "actNormal2",
+        "rewardId": 30220,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 136,
+        "summonGrp": "actNormal2",
+        "rewardId": 30342,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 137,
+        "summonGrp": "actNormal2",
+        "rewardId": 30178,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 138,
+        "summonGrp": "actNormal2",
+        "rewardId": 30175,
+        "rewardNum": 1,
+        "weight": 56,
+        "magicTimesCond": 50
+    },
+    {
+        "seq": 139,
+        "summonGrp": "actNormal2",
+        "rewardId": 30058,
+        "rewardNum": 1,
+        "weight": 49,
+        "magicTimesCond": 40
+    },
+    {
+        "seq": 140,
+        "summonGrp": "actNormal2",
+        "rewardId": 30136,
+        "rewardNum": 1,
+        "weight": 49,
+        "magicTimesCond": 40
+    },
+    {
+        "seq": 141,
+        "summonGrp": "actExtra2",
+        "rewardId": 30019,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 142,
+        "summonGrp": "actExtra2",
+        "rewardId": 30020,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 143,
+        "summonGrp": "actExtra2",
+        "rewardId": 30021,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 144,
+        "summonGrp": "actExtra2",
+        "rewardId": 30023,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 145,
+        "summonGrp": "actExtra2",
+        "rewardId": 30024,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 146,
+        "summonGrp": "actExtra2",
+        "rewardId": 30025,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 147,
+        "summonGrp": "actExtra2",
+        "rewardId": 30059,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 148,
+        "summonGrp": "actExtra2",
+        "rewardId": 30060,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 149,
+        "summonGrp": "actExtra2",
+        "rewardId": 30061,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 150,
+        "summonGrp": "actExtra2",
+        "rewardId": 30062,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 151,
+        "summonGrp": "actExtra2",
+        "rewardId": 30063,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 152,
+        "summonGrp": "actExtra2",
+        "rewardId": 30064,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 153,
+        "summonGrp": "actExtra2",
+        "rewardId": 30137,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 154,
+        "summonGrp": "actExtra2",
+        "rewardId": 30140,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 155,
+        "summonGrp": "actExtra2",
+        "rewardId": 30141,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 156,
+        "summonGrp": "actExtra2",
+        "rewardId": 30142,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 157,
+        "summonGrp": "actExtra2",
+        "rewardId": 30301,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 158,
+        "summonGrp": "actExtra2",
+        "rewardId": 30177,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 159,
+        "summonGrp": "actExtra2",
+        "rewardId": 30180,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 160,
+        "summonGrp": "actExtra2",
+        "rewardId": 30217,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 161,
+        "summonGrp": "actExtra2",
+        "rewardId": 30219,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 162,
+        "summonGrp": "actExtra2",
+        "rewardId": 30220,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 163,
+        "summonGrp": "actExtra2",
+        "rewardId": 30342,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 164,
+        "summonGrp": "actExtra2",
+        "rewardId": 30178,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 165,
+        "summonGrp": "actNormal3",
+        "rewardId": 30009,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 166,
+        "summonGrp": "actNormal3",
+        "rewardId": 30010,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 167,
+        "summonGrp": "actNormal3",
+        "rewardId": 30011,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 168,
+        "summonGrp": "actNormal3",
+        "rewardId": 30047,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 169,
+        "summonGrp": "actNormal3",
+        "rewardId": 30048,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 170,
+        "summonGrp": "actNormal3",
+        "rewardId": 30051,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 171,
+        "summonGrp": "actNormal3",
+        "rewardId": 30125,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 172,
+        "summonGrp": "actNormal3",
+        "rewardId": 30126,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 173,
+        "summonGrp": "actNormal3",
+        "rewardId": 30129,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 174,
+        "summonGrp": "actNormal3",
+        "rewardId": 30164,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 175,
+        "summonGrp": "actNormal3",
+        "rewardId": 30167,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 176,
+        "summonGrp": "actNormal3",
+        "rewardId": 30206,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 177,
+        "summonGrp": "actNormal3",
+        "rewardId": 30207,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 178,
+        "summonGrp": "actNormal3",
+        "rewardId": 30014,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 179,
+        "summonGrp": "actNormal3",
+        "rewardId": 30015,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 180,
+        "summonGrp": "actNormal3",
+        "rewardId": 30016,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 181,
+        "summonGrp": "actNormal3",
+        "rewardId": 30018,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 182,
+        "summonGrp": "actNormal3",
+        "rewardId": 30052,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 183,
+        "summonGrp": "actNormal3",
+        "rewardId": 30053,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 184,
+        "summonGrp": "actNormal3",
+        "rewardId": 30054,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 185,
+        "summonGrp": "actNormal3",
+        "rewardId": 30056,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 186,
+        "summonGrp": "actNormal3",
+        "rewardId": 30130,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 187,
+        "summonGrp": "actNormal3",
+        "rewardId": 30131,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 188,
+        "summonGrp": "actNormal3",
+        "rewardId": 30133,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 189,
+        "summonGrp": "actNormal3",
+        "rewardId": 30134,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 190,
+        "summonGrp": "actNormal3",
+        "rewardId": 30169,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 191,
+        "summonGrp": "actNormal3",
+        "rewardId": 30170,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 192,
+        "summonGrp": "actNormal3",
+        "rewardId": 30171,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 193,
+        "summonGrp": "actNormal3",
+        "rewardId": 30208,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 194,
+        "summonGrp": "actNormal3",
+        "rewardId": 30209,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 195,
+        "summonGrp": "actNormal3",
+        "rewardId": 30213,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 196,
+        "summonGrp": "actNormal3",
+        "rewardId": 30019,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 197,
+        "summonGrp": "actNormal3",
+        "rewardId": 30020,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 198,
+        "summonGrp": "actNormal3",
+        "rewardId": 30021,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 199,
+        "summonGrp": "actNormal3",
+        "rewardId": 30023,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 200,
+        "summonGrp": "actNormal3",
+        "rewardId": 30024,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 201,
+        "summonGrp": "actNormal3",
+        "rewardId": 30025,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 202,
+        "summonGrp": "actNormal3",
+        "rewardId": 30059,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 203,
+        "summonGrp": "actNormal3",
+        "rewardId": 30060,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 204,
+        "summonGrp": "actNormal3",
+        "rewardId": 30061,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 205,
+        "summonGrp": "actNormal3",
+        "rewardId": 30062,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 206,
+        "summonGrp": "actNormal3",
+        "rewardId": 30063,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 207,
+        "summonGrp": "actNormal3",
+        "rewardId": 30064,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 208,
+        "summonGrp": "actNormal3",
+        "rewardId": 30137,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 209,
+        "summonGrp": "actNormal3",
+        "rewardId": 30140,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 210,
+        "summonGrp": "actNormal3",
+        "rewardId": 30141,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 211,
+        "summonGrp": "actNormal3",
+        "rewardId": 30142,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 212,
+        "summonGrp": "actNormal3",
+        "rewardId": 30301,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 213,
+        "summonGrp": "actNormal3",
+        "rewardId": 30177,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 214,
+        "summonGrp": "actNormal3",
+        "rewardId": 30180,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 215,
+        "summonGrp": "actNormal3",
+        "rewardId": 30217,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 216,
+        "summonGrp": "actNormal3",
+        "rewardId": 30219,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 217,
+        "summonGrp": "actNormal3",
+        "rewardId": 30220,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 218,
+        "summonGrp": "actNormal3",
+        "rewardId": 30342,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 219,
+        "summonGrp": "actNormal3",
+        "rewardId": 30178,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 220,
+        "summonGrp": "actNormal3",
+        "rewardId": 30214,
+        "rewardNum": 1,
+        "weight": 56,
+        "magicTimesCond": 50
+    },
+    {
+        "seq": 221,
+        "summonGrp": "actNormal3",
+        "rewardId": 30022,
+        "rewardNum": 1,
+        "weight": 49,
+        "magicTimesCond": 40
+    },
+    {
+        "seq": 222,
+        "summonGrp": "actNormal3",
+        "rewardId": 30260,
+        "rewardNum": 1,
+        "weight": 49,
+        "magicTimesCond": 40
+    },
+    {
+        "seq": 223,
+        "summonGrp": "actExtra3",
+        "rewardId": 30019,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 224,
+        "summonGrp": "actExtra3",
+        "rewardId": 30020,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 225,
+        "summonGrp": "actExtra3",
+        "rewardId": 30021,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 226,
+        "summonGrp": "actExtra3",
+        "rewardId": 30023,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 227,
+        "summonGrp": "actExtra3",
+        "rewardId": 30024,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 228,
+        "summonGrp": "actExtra3",
+        "rewardId": 30025,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 229,
+        "summonGrp": "actExtra3",
+        "rewardId": 30059,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 230,
+        "summonGrp": "actExtra3",
+        "rewardId": 30060,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 231,
+        "summonGrp": "actExtra3",
+        "rewardId": 30061,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 232,
+        "summonGrp": "actExtra3",
+        "rewardId": 30062,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 233,
+        "summonGrp": "actExtra3",
+        "rewardId": 30063,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 234,
+        "summonGrp": "actExtra3",
+        "rewardId": 30064,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 235,
+        "summonGrp": "actExtra3",
+        "rewardId": 30137,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 236,
+        "summonGrp": "actExtra3",
+        "rewardId": 30140,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 237,
+        "summonGrp": "actExtra3",
+        "rewardId": 30141,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 238,
+        "summonGrp": "actExtra3",
+        "rewardId": 30142,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 239,
+        "summonGrp": "actExtra3",
+        "rewardId": 30301,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 240,
+        "summonGrp": "actExtra3",
+        "rewardId": 30177,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 241,
+        "summonGrp": "actExtra3",
+        "rewardId": 30180,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 242,
+        "summonGrp": "actExtra3",
+        "rewardId": 30217,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 243,
+        "summonGrp": "actExtra3",
+        "rewardId": 30219,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 244,
+        "summonGrp": "actExtra3",
+        "rewardId": 30220,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 245,
+        "summonGrp": "actExtra3",
+        "rewardId": 30342,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 246,
+        "summonGrp": "actExtra3",
+        "rewardId": 30178,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 247,
+        "summonGrp": "actNormal4",
+        "rewardId": 30009,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 248,
+        "summonGrp": "actNormal4",
+        "rewardId": 30010,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 249,
+        "summonGrp": "actNormal4",
+        "rewardId": 30011,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 250,
+        "summonGrp": "actNormal4",
+        "rewardId": 30047,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 251,
+        "summonGrp": "actNormal4",
+        "rewardId": 30048,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 252,
+        "summonGrp": "actNormal4",
+        "rewardId": 30051,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 253,
+        "summonGrp": "actNormal4",
+        "rewardId": 30125,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 254,
+        "summonGrp": "actNormal4",
+        "rewardId": 30126,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 255,
+        "summonGrp": "actNormal4",
+        "rewardId": 30129,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 256,
+        "summonGrp": "actNormal4",
+        "rewardId": 30164,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 257,
+        "summonGrp": "actNormal4",
+        "rewardId": 30167,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 258,
+        "summonGrp": "actNormal4",
+        "rewardId": 30206,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 259,
+        "summonGrp": "actNormal4",
+        "rewardId": 30207,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 260,
+        "summonGrp": "actNormal4",
+        "rewardId": 30014,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 261,
+        "summonGrp": "actNormal4",
+        "rewardId": 30015,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 262,
+        "summonGrp": "actNormal4",
+        "rewardId": 30016,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 263,
+        "summonGrp": "actNormal4",
+        "rewardId": 30018,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 264,
+        "summonGrp": "actNormal4",
+        "rewardId": 30052,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 265,
+        "summonGrp": "actNormal4",
+        "rewardId": 30053,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 266,
+        "summonGrp": "actNormal4",
+        "rewardId": 30054,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 267,
+        "summonGrp": "actNormal4",
+        "rewardId": 30056,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 268,
+        "summonGrp": "actNormal4",
+        "rewardId": 30130,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 269,
+        "summonGrp": "actNormal4",
+        "rewardId": 30131,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 270,
+        "summonGrp": "actNormal4",
+        "rewardId": 30133,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 271,
+        "summonGrp": "actNormal4",
+        "rewardId": 30134,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 272,
+        "summonGrp": "actNormal4",
+        "rewardId": 30169,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 273,
+        "summonGrp": "actNormal4",
+        "rewardId": 30170,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 274,
+        "summonGrp": "actNormal4",
+        "rewardId": 30171,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 275,
+        "summonGrp": "actNormal4",
+        "rewardId": 30208,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 276,
+        "summonGrp": "actNormal4",
+        "rewardId": 30209,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 277,
+        "summonGrp": "actNormal4",
+        "rewardId": 30213,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 278,
+        "summonGrp": "actNormal4",
+        "rewardId": 30019,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 279,
+        "summonGrp": "actNormal4",
+        "rewardId": 30020,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 280,
+        "summonGrp": "actNormal4",
+        "rewardId": 30021,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 281,
+        "summonGrp": "actNormal4",
+        "rewardId": 30023,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 282,
+        "summonGrp": "actNormal4",
+        "rewardId": 30024,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 283,
+        "summonGrp": "actNormal4",
+        "rewardId": 30025,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 284,
+        "summonGrp": "actNormal4",
+        "rewardId": 30059,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 285,
+        "summonGrp": "actNormal4",
+        "rewardId": 30060,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 286,
+        "summonGrp": "actNormal4",
+        "rewardId": 30061,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 287,
+        "summonGrp": "actNormal4",
+        "rewardId": 30062,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 288,
+        "summonGrp": "actNormal4",
+        "rewardId": 30063,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 289,
+        "summonGrp": "actNormal4",
+        "rewardId": 30064,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 290,
+        "summonGrp": "actNormal4",
+        "rewardId": 30137,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 291,
+        "summonGrp": "actNormal4",
+        "rewardId": 30140,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 292,
+        "summonGrp": "actNormal4",
+        "rewardId": 30141,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 293,
+        "summonGrp": "actNormal4",
+        "rewardId": 30142,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 294,
+        "summonGrp": "actNormal4",
+        "rewardId": 30301,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 295,
+        "summonGrp": "actNormal4",
+        "rewardId": 30177,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 296,
+        "summonGrp": "actNormal4",
+        "rewardId": 30180,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 297,
+        "summonGrp": "actNormal4",
+        "rewardId": 30217,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 298,
+        "summonGrp": "actNormal4",
+        "rewardId": 30219,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 299,
+        "summonGrp": "actNormal4",
+        "rewardId": 30220,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 300,
+        "summonGrp": "actNormal4",
+        "rewardId": 30342,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 301,
+        "summonGrp": "actNormal4",
+        "rewardId": 30178,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 302,
+        "summonGrp": "actNormal4",
+        "rewardId": 30319,
+        "rewardNum": 1,
+        "weight": 56,
+        "magicTimesCond": 50
+    },
+    {
+        "seq": 303,
+        "summonGrp": "actNormal4",
+        "rewardId": 30138,
+        "rewardNum": 1,
+        "weight": 49,
+        "magicTimesCond": 40
+    },
+    {
+        "seq": 304,
+        "summonGrp": "actNormal4",
+        "rewardId": 30235,
+        "rewardNum": 1,
+        "weight": 49,
+        "magicTimesCond": 40
+    },
+    {
+        "seq": 305,
+        "summonGrp": "actExtra4",
+        "rewardId": 30019,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 306,
+        "summonGrp": "actExtra4",
+        "rewardId": 30020,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 307,
+        "summonGrp": "actExtra4",
+        "rewardId": 30021,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 308,
+        "summonGrp": "actExtra4",
+        "rewardId": 30023,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 309,
+        "summonGrp": "actExtra4",
+        "rewardId": 30024,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 310,
+        "summonGrp": "actExtra4",
+        "rewardId": 30025,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 311,
+        "summonGrp": "actExtra4",
+        "rewardId": 30059,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 312,
+        "summonGrp": "actExtra4",
+        "rewardId": 30060,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 313,
+        "summonGrp": "actExtra4",
+        "rewardId": 30061,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 314,
+        "summonGrp": "actExtra4",
+        "rewardId": 30062,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 315,
+        "summonGrp": "actExtra4",
+        "rewardId": 30063,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 316,
+        "summonGrp": "actExtra4",
+        "rewardId": 30064,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 317,
+        "summonGrp": "actExtra4",
+        "rewardId": 30137,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 318,
+        "summonGrp": "actExtra4",
+        "rewardId": 30140,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 319,
+        "summonGrp": "actExtra4",
+        "rewardId": 30141,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 320,
+        "summonGrp": "actExtra4",
+        "rewardId": 30142,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 321,
+        "summonGrp": "actExtra4",
+        "rewardId": 30301,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 322,
+        "summonGrp": "actExtra4",
+        "rewardId": 30177,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 323,
+        "summonGrp": "actExtra4",
+        "rewardId": 30180,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 324,
+        "summonGrp": "actExtra4",
+        "rewardId": 30217,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 325,
+        "summonGrp": "actExtra4",
+        "rewardId": 30219,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 326,
+        "summonGrp": "actExtra4",
+        "rewardId": 30220,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 327,
+        "summonGrp": "actExtra4",
+        "rewardId": 30342,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 328,
+        "summonGrp": "actExtra4",
+        "rewardId": 30178,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 329,
+        "summonGrp": "actNormal5",
+        "rewardId": 30009,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 330,
+        "summonGrp": "actNormal5",
+        "rewardId": 30010,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 331,
+        "summonGrp": "actNormal5",
+        "rewardId": 30011,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 332,
+        "summonGrp": "actNormal5",
+        "rewardId": 30047,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 333,
+        "summonGrp": "actNormal5",
+        "rewardId": 30048,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 334,
+        "summonGrp": "actNormal5",
+        "rewardId": 30051,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 335,
+        "summonGrp": "actNormal5",
+        "rewardId": 30125,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 336,
+        "summonGrp": "actNormal5",
+        "rewardId": 30126,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 337,
+        "summonGrp": "actNormal5",
+        "rewardId": 30129,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 338,
+        "summonGrp": "actNormal5",
+        "rewardId": 30164,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 339,
+        "summonGrp": "actNormal5",
+        "rewardId": 30167,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 340,
+        "summonGrp": "actNormal5",
+        "rewardId": 30206,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 341,
+        "summonGrp": "actNormal5",
+        "rewardId": 30207,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 342,
+        "summonGrp": "actNormal5",
+        "rewardId": 30014,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 343,
+        "summonGrp": "actNormal5",
+        "rewardId": 30015,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 344,
+        "summonGrp": "actNormal5",
+        "rewardId": 30016,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 345,
+        "summonGrp": "actNormal5",
+        "rewardId": 30018,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 346,
+        "summonGrp": "actNormal5",
+        "rewardId": 30052,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 347,
+        "summonGrp": "actNormal5",
+        "rewardId": 30053,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 348,
+        "summonGrp": "actNormal5",
+        "rewardId": 30054,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 349,
+        "summonGrp": "actNormal5",
+        "rewardId": 30056,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 350,
+        "summonGrp": "actNormal5",
+        "rewardId": 30130,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 351,
+        "summonGrp": "actNormal5",
+        "rewardId": 30131,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 352,
+        "summonGrp": "actNormal5",
+        "rewardId": 30133,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 353,
+        "summonGrp": "actNormal5",
+        "rewardId": 30134,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 354,
+        "summonGrp": "actNormal5",
+        "rewardId": 30169,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 355,
+        "summonGrp": "actNormal5",
+        "rewardId": 30170,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 356,
+        "summonGrp": "actNormal5",
+        "rewardId": 30171,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 357,
+        "summonGrp": "actNormal5",
+        "rewardId": 30208,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 358,
+        "summonGrp": "actNormal5",
+        "rewardId": 30209,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 359,
+        "summonGrp": "actNormal5",
+        "rewardId": 30213,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 360,
+        "summonGrp": "actNormal5",
+        "rewardId": 30019,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 361,
+        "summonGrp": "actNormal5",
+        "rewardId": 30020,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 362,
+        "summonGrp": "actNormal5",
+        "rewardId": 30021,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 363,
+        "summonGrp": "actNormal5",
+        "rewardId": 30023,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 364,
+        "summonGrp": "actNormal5",
+        "rewardId": 30024,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 365,
+        "summonGrp": "actNormal5",
+        "rewardId": 30025,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 366,
+        "summonGrp": "actNormal5",
+        "rewardId": 30059,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 367,
+        "summonGrp": "actNormal5",
+        "rewardId": 30060,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 368,
+        "summonGrp": "actNormal5",
+        "rewardId": 30061,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 369,
+        "summonGrp": "actNormal5",
+        "rewardId": 30062,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 370,
+        "summonGrp": "actNormal5",
+        "rewardId": 30063,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 371,
+        "summonGrp": "actNormal5",
+        "rewardId": 30064,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 372,
+        "summonGrp": "actNormal5",
+        "rewardId": 30137,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 373,
+        "summonGrp": "actNormal5",
+        "rewardId": 30140,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 374,
+        "summonGrp": "actNormal5",
+        "rewardId": 30141,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 375,
+        "summonGrp": "actNormal5",
+        "rewardId": 30142,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 376,
+        "summonGrp": "actNormal5",
+        "rewardId": 30301,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 377,
+        "summonGrp": "actNormal5",
+        "rewardId": 30177,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 378,
+        "summonGrp": "actNormal5",
+        "rewardId": 30180,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 379,
+        "summonGrp": "actNormal5",
+        "rewardId": 30217,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 380,
+        "summonGrp": "actNormal5",
+        "rewardId": 30219,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 381,
+        "summonGrp": "actNormal5",
+        "rewardId": 30220,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 382,
+        "summonGrp": "actNormal5",
+        "rewardId": 30342,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 383,
+        "summonGrp": "actNormal5",
+        "rewardId": 30178,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 384,
+        "summonGrp": "actNormal5",
+        "rewardId": 30468,
+        "rewardNum": 1,
+        "weight": 56,
+        "magicTimesCond": 50
+    },
+    {
+        "seq": 385,
+        "summonGrp": "actNormal5",
+        "rewardId": 30300,
+        "rewardNum": 1,
+        "weight": 49,
+        "magicTimesCond": 40
+    },
+    {
+        "seq": 386,
+        "summonGrp": "actNormal5",
+        "rewardId": 30256,
+        "rewardNum": 1,
+        "weight": 49,
+        "magicTimesCond": 40
+    },
+    {
+        "seq": 387,
+        "summonGrp": "actExtra5",
+        "rewardId": 30019,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 388,
+        "summonGrp": "actExtra5",
+        "rewardId": 30020,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 389,
+        "summonGrp": "actExtra5",
+        "rewardId": 30021,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 390,
+        "summonGrp": "actExtra5",
+        "rewardId": 30023,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 391,
+        "summonGrp": "actExtra5",
+        "rewardId": 30024,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 392,
+        "summonGrp": "actExtra5",
+        "rewardId": 30025,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 393,
+        "summonGrp": "actExtra5",
+        "rewardId": 30059,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 394,
+        "summonGrp": "actExtra5",
+        "rewardId": 30060,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 395,
+        "summonGrp": "actExtra5",
+        "rewardId": 30061,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 396,
+        "summonGrp": "actExtra5",
+        "rewardId": 30062,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 397,
+        "summonGrp": "actExtra5",
+        "rewardId": 30063,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 398,
+        "summonGrp": "actExtra5",
+        "rewardId": 30064,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 399,
+        "summonGrp": "actExtra5",
+        "rewardId": 30137,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 400,
+        "summonGrp": "actExtra5",
+        "rewardId": 30140,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 401,
+        "summonGrp": "actExtra5",
+        "rewardId": 30141,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 402,
+        "summonGrp": "actExtra5",
+        "rewardId": 30142,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 403,
+        "summonGrp": "actExtra5",
+        "rewardId": 30301,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 404,
+        "summonGrp": "actExtra5",
+        "rewardId": 30177,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 405,
+        "summonGrp": "actExtra5",
+        "rewardId": 30180,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 406,
+        "summonGrp": "actExtra5",
+        "rewardId": 30217,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 407,
+        "summonGrp": "actExtra5",
+        "rewardId": 30219,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 408,
+        "summonGrp": "actExtra5",
+        "rewardId": 30220,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 409,
+        "summonGrp": "actExtra5",
+        "rewardId": 30342,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 410,
+        "summonGrp": "actExtra5",
+        "rewardId": 30178,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 411,
+        "summonGrp": "actNormal6",
+        "rewardId": 30009,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 412,
+        "summonGrp": "actNormal6",
+        "rewardId": 30010,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 413,
+        "summonGrp": "actNormal6",
+        "rewardId": 30011,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 414,
+        "summonGrp": "actNormal6",
+        "rewardId": 30047,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 415,
+        "summonGrp": "actNormal6",
+        "rewardId": 30048,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 416,
+        "summonGrp": "actNormal6",
+        "rewardId": 30051,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 417,
+        "summonGrp": "actNormal6",
+        "rewardId": 30125,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 418,
+        "summonGrp": "actNormal6",
+        "rewardId": 30126,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 419,
+        "summonGrp": "actNormal6",
+        "rewardId": 30129,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 420,
+        "summonGrp": "actNormal6",
+        "rewardId": 30164,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 421,
+        "summonGrp": "actNormal6",
+        "rewardId": 30167,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 422,
+        "summonGrp": "actNormal6",
+        "rewardId": 30206,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 423,
+        "summonGrp": "actNormal6",
+        "rewardId": 30207,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 424,
+        "summonGrp": "actNormal6",
+        "rewardId": 30014,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 425,
+        "summonGrp": "actNormal6",
+        "rewardId": 30015,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 426,
+        "summonGrp": "actNormal6",
+        "rewardId": 30016,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 427,
+        "summonGrp": "actNormal6",
+        "rewardId": 30018,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 428,
+        "summonGrp": "actNormal6",
+        "rewardId": 30052,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 429,
+        "summonGrp": "actNormal6",
+        "rewardId": 30053,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 430,
+        "summonGrp": "actNormal6",
+        "rewardId": 30054,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 431,
+        "summonGrp": "actNormal6",
+        "rewardId": 30056,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 432,
+        "summonGrp": "actNormal6",
+        "rewardId": 30130,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 433,
+        "summonGrp": "actNormal6",
+        "rewardId": 30131,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 434,
+        "summonGrp": "actNormal6",
+        "rewardId": 30133,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 435,
+        "summonGrp": "actNormal6",
+        "rewardId": 30134,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 436,
+        "summonGrp": "actNormal6",
+        "rewardId": 30169,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 437,
+        "summonGrp": "actNormal6",
+        "rewardId": 30170,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 438,
+        "summonGrp": "actNormal6",
+        "rewardId": 30171,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 439,
+        "summonGrp": "actNormal6",
+        "rewardId": 30208,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 440,
+        "summonGrp": "actNormal6",
+        "rewardId": 30209,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 441,
+        "summonGrp": "actNormal6",
+        "rewardId": 30213,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 442,
+        "summonGrp": "actNormal6",
+        "rewardId": 30019,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 443,
+        "summonGrp": "actNormal6",
+        "rewardId": 30020,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 444,
+        "summonGrp": "actNormal6",
+        "rewardId": 30021,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 445,
+        "summonGrp": "actNormal6",
+        "rewardId": 30023,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 446,
+        "summonGrp": "actNormal6",
+        "rewardId": 30024,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 447,
+        "summonGrp": "actNormal6",
+        "rewardId": 30025,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 448,
+        "summonGrp": "actNormal6",
+        "rewardId": 30059,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 449,
+        "summonGrp": "actNormal6",
+        "rewardId": 30060,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 450,
+        "summonGrp": "actNormal6",
+        "rewardId": 30061,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 451,
+        "summonGrp": "actNormal6",
+        "rewardId": 30062,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 452,
+        "summonGrp": "actNormal6",
+        "rewardId": 30063,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 453,
+        "summonGrp": "actNormal6",
+        "rewardId": 30064,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 454,
+        "summonGrp": "actNormal6",
+        "rewardId": 30137,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 455,
+        "summonGrp": "actNormal6",
+        "rewardId": 30140,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 456,
+        "summonGrp": "actNormal6",
+        "rewardId": 30141,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 457,
+        "summonGrp": "actNormal6",
+        "rewardId": 30142,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 458,
+        "summonGrp": "actNormal6",
+        "rewardId": 30301,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 459,
+        "summonGrp": "actNormal6",
+        "rewardId": 30177,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 460,
+        "summonGrp": "actNormal6",
+        "rewardId": 30180,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 461,
+        "summonGrp": "actNormal6",
+        "rewardId": 30217,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 462,
+        "summonGrp": "actNormal6",
+        "rewardId": 30219,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 463,
+        "summonGrp": "actNormal6",
+        "rewardId": 30220,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 464,
+        "summonGrp": "actNormal6",
+        "rewardId": 30342,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 465,
+        "summonGrp": "actNormal6",
+        "rewardId": 30178,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 466,
+        "summonGrp": "actNormal6",
+        "rewardId": 30448,
+        "rewardNum": 1,
+        "weight": 56,
+        "magicTimesCond": 50
+    },
+    {
+        "seq": 467,
+        "summonGrp": "actNormal6",
+        "rewardId": 30260,
+        "rewardNum": 1,
+        "weight": 49,
+        "magicTimesCond": 40
+    },
+    {
+        "seq": 468,
+        "summonGrp": "actNormal6",
+        "rewardId": 30022,
+        "rewardNum": 1,
+        "weight": 49,
+        "magicTimesCond": 40
+    },
+    {
+        "seq": 469,
+        "summonGrp": "actExtra6",
+        "rewardId": 30019,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 470,
+        "summonGrp": "actExtra6",
+        "rewardId": 30020,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 471,
+        "summonGrp": "actExtra6",
+        "rewardId": 30021,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 472,
+        "summonGrp": "actExtra6",
+        "rewardId": 30023,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 473,
+        "summonGrp": "actExtra6",
+        "rewardId": 30024,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 474,
+        "summonGrp": "actExtra6",
+        "rewardId": 30025,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 475,
+        "summonGrp": "actExtra6",
+        "rewardId": 30059,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 476,
+        "summonGrp": "actExtra6",
+        "rewardId": 30060,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 477,
+        "summonGrp": "actExtra6",
+        "rewardId": 30061,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 478,
+        "summonGrp": "actExtra6",
+        "rewardId": 30062,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 479,
+        "summonGrp": "actExtra6",
+        "rewardId": 30063,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 480,
+        "summonGrp": "actExtra6",
+        "rewardId": 30064,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 481,
+        "summonGrp": "actExtra6",
+        "rewardId": 30137,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 482,
+        "summonGrp": "actExtra6",
+        "rewardId": 30140,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 483,
+        "summonGrp": "actExtra6",
+        "rewardId": 30141,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 484,
+        "summonGrp": "actExtra6",
+        "rewardId": 30142,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 485,
+        "summonGrp": "actExtra6",
+        "rewardId": 30301,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 486,
+        "summonGrp": "actExtra6",
+        "rewardId": 30177,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 487,
+        "summonGrp": "actExtra6",
+        "rewardId": 30180,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 488,
+        "summonGrp": "actExtra6",
+        "rewardId": 30217,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 489,
+        "summonGrp": "actExtra6",
+        "rewardId": 30219,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 490,
+        "summonGrp": "actExtra6",
+        "rewardId": 30220,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 491,
+        "summonGrp": "actExtra6",
+        "rewardId": 30342,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 492,
+        "summonGrp": "actExtra6",
+        "rewardId": 30178,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 493,
+        "summonGrp": "actNormal7",
+        "rewardId": 30009,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 494,
+        "summonGrp": "actNormal7",
+        "rewardId": 30010,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 495,
+        "summonGrp": "actNormal7",
+        "rewardId": 30011,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 496,
+        "summonGrp": "actNormal7",
+        "rewardId": 30047,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 497,
+        "summonGrp": "actNormal7",
+        "rewardId": 30048,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 498,
+        "summonGrp": "actNormal7",
+        "rewardId": 30051,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 499,
+        "summonGrp": "actNormal7",
+        "rewardId": 30125,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 500,
+        "summonGrp": "actNormal7",
+        "rewardId": 30126,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 501,
+        "summonGrp": "actNormal7",
+        "rewardId": 30129,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 502,
+        "summonGrp": "actNormal7",
+        "rewardId": 30164,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 503,
+        "summonGrp": "actNormal7",
+        "rewardId": 30167,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 504,
+        "summonGrp": "actNormal7",
+        "rewardId": 30206,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 505,
+        "summonGrp": "actNormal7",
+        "rewardId": 30207,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 506,
+        "summonGrp": "actNormal7",
+        "rewardId": 30014,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 507,
+        "summonGrp": "actNormal7",
+        "rewardId": 30015,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 508,
+        "summonGrp": "actNormal7",
+        "rewardId": 30016,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 509,
+        "summonGrp": "actNormal7",
+        "rewardId": 30018,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 510,
+        "summonGrp": "actNormal7",
+        "rewardId": 30052,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 511,
+        "summonGrp": "actNormal7",
+        "rewardId": 30053,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 512,
+        "summonGrp": "actNormal7",
+        "rewardId": 30054,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 513,
+        "summonGrp": "actNormal7",
+        "rewardId": 30056,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 514,
+        "summonGrp": "actNormal7",
+        "rewardId": 30130,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 515,
+        "summonGrp": "actNormal7",
+        "rewardId": 30131,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 516,
+        "summonGrp": "actNormal7",
+        "rewardId": 30133,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 517,
+        "summonGrp": "actNormal7",
+        "rewardId": 30134,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 518,
+        "summonGrp": "actNormal7",
+        "rewardId": 30169,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 519,
+        "summonGrp": "actNormal7",
+        "rewardId": 30170,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 520,
+        "summonGrp": "actNormal7",
+        "rewardId": 30171,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 521,
+        "summonGrp": "actNormal7",
+        "rewardId": 30208,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 522,
+        "summonGrp": "actNormal7",
+        "rewardId": 30209,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 523,
+        "summonGrp": "actNormal7",
+        "rewardId": 30213,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 524,
+        "summonGrp": "actNormal7",
+        "rewardId": 30019,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 525,
+        "summonGrp": "actNormal7",
+        "rewardId": 30020,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 526,
+        "summonGrp": "actNormal7",
+        "rewardId": 30021,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 527,
+        "summonGrp": "actNormal7",
+        "rewardId": 30023,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 528,
+        "summonGrp": "actNormal7",
+        "rewardId": 30024,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 529,
+        "summonGrp": "actNormal7",
+        "rewardId": 30025,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 530,
+        "summonGrp": "actNormal7",
+        "rewardId": 30059,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 531,
+        "summonGrp": "actNormal7",
+        "rewardId": 30060,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 532,
+        "summonGrp": "actNormal7",
+        "rewardId": 30061,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 533,
+        "summonGrp": "actNormal7",
+        "rewardId": 30062,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 534,
+        "summonGrp": "actNormal7",
+        "rewardId": 30063,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 535,
+        "summonGrp": "actNormal7",
+        "rewardId": 30064,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 536,
+        "summonGrp": "actNormal7",
+        "rewardId": 30137,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 537,
+        "summonGrp": "actNormal7",
+        "rewardId": 30140,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 538,
+        "summonGrp": "actNormal7",
+        "rewardId": 30141,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 539,
+        "summonGrp": "actNormal7",
+        "rewardId": 30142,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 540,
+        "summonGrp": "actNormal7",
+        "rewardId": 30301,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 541,
+        "summonGrp": "actNormal7",
+        "rewardId": 30177,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 542,
+        "summonGrp": "actNormal7",
+        "rewardId": 30180,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 543,
+        "summonGrp": "actNormal7",
+        "rewardId": 30217,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 544,
+        "summonGrp": "actNormal7",
+        "rewardId": 30219,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 545,
+        "summonGrp": "actNormal7",
+        "rewardId": 30220,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 546,
+        "summonGrp": "actNormal7",
+        "rewardId": 30342,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 547,
+        "summonGrp": "actNormal7",
+        "rewardId": 30178,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 548,
+        "summonGrp": "actNormal7",
+        "rewardId": 30345,
+        "rewardNum": 1,
+        "weight": 56,
+        "magicTimesCond": 50
+    },
+    {
+        "seq": 549,
+        "summonGrp": "actNormal7",
+        "rewardId": 30236,
+        "rewardNum": 1,
+        "weight": 49,
+        "magicTimesCond": 40
+    },
+    {
+        "seq": 550,
+        "summonGrp": "actNormal7",
+        "rewardId": 30300,
+        "rewardNum": 1,
+        "weight": 49,
+        "magicTimesCond": 40
+    },
+    {
+        "seq": 551,
+        "summonGrp": "actExtra7",
+        "rewardId": 30019,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 552,
+        "summonGrp": "actExtra7",
+        "rewardId": 30020,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 553,
+        "summonGrp": "actExtra7",
+        "rewardId": 30021,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 554,
+        "summonGrp": "actExtra7",
+        "rewardId": 30023,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 555,
+        "summonGrp": "actExtra7",
+        "rewardId": 30024,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 556,
+        "summonGrp": "actExtra7",
+        "rewardId": 30025,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 557,
+        "summonGrp": "actExtra7",
+        "rewardId": 30059,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 558,
+        "summonGrp": "actExtra7",
+        "rewardId": 30060,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 559,
+        "summonGrp": "actExtra7",
+        "rewardId": 30061,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 560,
+        "summonGrp": "actExtra7",
+        "rewardId": 30062,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 561,
+        "summonGrp": "actExtra7",
+        "rewardId": 30063,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 562,
+        "summonGrp": "actExtra7",
+        "rewardId": 30064,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 563,
+        "summonGrp": "actExtra7",
+        "rewardId": 30137,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 564,
+        "summonGrp": "actExtra7",
+        "rewardId": 30140,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 565,
+        "summonGrp": "actExtra7",
+        "rewardId": 30141,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 566,
+        "summonGrp": "actExtra7",
+        "rewardId": 30142,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 567,
+        "summonGrp": "actExtra7",
+        "rewardId": 30301,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 568,
+        "summonGrp": "actExtra7",
+        "rewardId": 30177,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 569,
+        "summonGrp": "actExtra7",
+        "rewardId": 30180,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 570,
+        "summonGrp": "actExtra7",
+        "rewardId": 30217,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 571,
+        "summonGrp": "actExtra7",
+        "rewardId": 30219,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 572,
+        "summonGrp": "actExtra7",
+        "rewardId": 30220,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 573,
+        "summonGrp": "actExtra7",
+        "rewardId": 30342,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 574,
+        "summonGrp": "actExtra7",
+        "rewardId": 30178,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 575,
+        "summonGrp": "actNormal8",
+        "rewardId": 30009,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 576,
+        "summonGrp": "actNormal8",
+        "rewardId": 30010,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 577,
+        "summonGrp": "actNormal8",
+        "rewardId": 30011,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 578,
+        "summonGrp": "actNormal8",
+        "rewardId": 30047,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 579,
+        "summonGrp": "actNormal8",
+        "rewardId": 30048,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 580,
+        "summonGrp": "actNormal8",
+        "rewardId": 30051,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 581,
+        "summonGrp": "actNormal8",
+        "rewardId": 30125,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 582,
+        "summonGrp": "actNormal8",
+        "rewardId": 30126,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 583,
+        "summonGrp": "actNormal8",
+        "rewardId": 30129,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 584,
+        "summonGrp": "actNormal8",
+        "rewardId": 30164,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 585,
+        "summonGrp": "actNormal8",
+        "rewardId": 30167,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 586,
+        "summonGrp": "actNormal8",
+        "rewardId": 30206,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 587,
+        "summonGrp": "actNormal8",
+        "rewardId": 30207,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 588,
+        "summonGrp": "actNormal8",
+        "rewardId": 30014,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 589,
+        "summonGrp": "actNormal8",
+        "rewardId": 30015,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 590,
+        "summonGrp": "actNormal8",
+        "rewardId": 30016,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 591,
+        "summonGrp": "actNormal8",
+        "rewardId": 30018,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 592,
+        "summonGrp": "actNormal8",
+        "rewardId": 30052,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 593,
+        "summonGrp": "actNormal8",
+        "rewardId": 30053,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 594,
+        "summonGrp": "actNormal8",
+        "rewardId": 30054,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 595,
+        "summonGrp": "actNormal8",
+        "rewardId": 30056,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 596,
+        "summonGrp": "actNormal8",
+        "rewardId": 30130,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 597,
+        "summonGrp": "actNormal8",
+        "rewardId": 30131,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 598,
+        "summonGrp": "actNormal8",
+        "rewardId": 30133,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 599,
+        "summonGrp": "actNormal8",
+        "rewardId": 30134,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 600,
+        "summonGrp": "actNormal8",
+        "rewardId": 30169,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 601,
+        "summonGrp": "actNormal8",
+        "rewardId": 30170,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 602,
+        "summonGrp": "actNormal8",
+        "rewardId": 30171,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 603,
+        "summonGrp": "actNormal8",
+        "rewardId": 30208,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 604,
+        "summonGrp": "actNormal8",
+        "rewardId": 30209,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 605,
+        "summonGrp": "actNormal8",
+        "rewardId": 30213,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 606,
+        "summonGrp": "actNormal8",
+        "rewardId": 30019,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 607,
+        "summonGrp": "actNormal8",
+        "rewardId": 30020,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 608,
+        "summonGrp": "actNormal8",
+        "rewardId": 30021,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 609,
+        "summonGrp": "actNormal8",
+        "rewardId": 30023,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 610,
+        "summonGrp": "actNormal8",
+        "rewardId": 30024,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 611,
+        "summonGrp": "actNormal8",
+        "rewardId": 30025,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 612,
+        "summonGrp": "actNormal8",
+        "rewardId": 30059,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 613,
+        "summonGrp": "actNormal8",
+        "rewardId": 30060,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 614,
+        "summonGrp": "actNormal8",
+        "rewardId": 30061,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 615,
+        "summonGrp": "actNormal8",
+        "rewardId": 30062,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 616,
+        "summonGrp": "actNormal8",
+        "rewardId": 30063,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 617,
+        "summonGrp": "actNormal8",
+        "rewardId": 30064,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 618,
+        "summonGrp": "actNormal8",
+        "rewardId": 30137,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 619,
+        "summonGrp": "actNormal8",
+        "rewardId": 30140,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 620,
+        "summonGrp": "actNormal8",
+        "rewardId": 30141,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 621,
+        "summonGrp": "actNormal8",
+        "rewardId": 30142,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 622,
+        "summonGrp": "actNormal8",
+        "rewardId": 30301,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 623,
+        "summonGrp": "actNormal8",
+        "rewardId": 30177,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 624,
+        "summonGrp": "actNormal8",
+        "rewardId": 30180,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 625,
+        "summonGrp": "actNormal8",
+        "rewardId": 30217,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 626,
+        "summonGrp": "actNormal8",
+        "rewardId": 30219,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 627,
+        "summonGrp": "actNormal8",
+        "rewardId": 30220,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 628,
+        "summonGrp": "actNormal8",
+        "rewardId": 30342,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 629,
+        "summonGrp": "actNormal8",
+        "rewardId": 30178,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 630,
+        "summonGrp": "actNormal8",
+        "rewardId": 30175,
+        "rewardNum": 1,
+        "weight": 56,
+        "magicTimesCond": 50
+    },
+    {
+        "seq": 631,
+        "summonGrp": "actNormal8",
+        "rewardId": 30058,
+        "rewardNum": 1,
+        "weight": 49,
+        "magicTimesCond": 40
+    },
+    {
+        "seq": 632,
+        "summonGrp": "actNormal8",
+        "rewardId": 30136,
+        "rewardNum": 1,
+        "weight": 49,
+        "magicTimesCond": 40
+    },
+    {
+        "seq": 633,
+        "summonGrp": "actExtra8",
+        "rewardId": 30019,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 634,
+        "summonGrp": "actExtra8",
+        "rewardId": 30020,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 635,
+        "summonGrp": "actExtra8",
+        "rewardId": 30021,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 636,
+        "summonGrp": "actExtra8",
+        "rewardId": 30023,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 637,
+        "summonGrp": "actExtra8",
+        "rewardId": 30024,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 638,
+        "summonGrp": "actExtra8",
+        "rewardId": 30025,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 639,
+        "summonGrp": "actExtra8",
+        "rewardId": 30059,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 640,
+        "summonGrp": "actExtra8",
+        "rewardId": 30060,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 641,
+        "summonGrp": "actExtra8",
+        "rewardId": 30061,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 642,
+        "summonGrp": "actExtra8",
+        "rewardId": 30062,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 643,
+        "summonGrp": "actExtra8",
+        "rewardId": 30063,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 644,
+        "summonGrp": "actExtra8",
+        "rewardId": 30064,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 645,
+        "summonGrp": "actExtra8",
+        "rewardId": 30137,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 646,
+        "summonGrp": "actExtra8",
+        "rewardId": 30140,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 647,
+        "summonGrp": "actExtra8",
+        "rewardId": 30141,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 648,
+        "summonGrp": "actExtra8",
+        "rewardId": 30142,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 649,
+        "summonGrp": "actExtra8",
+        "rewardId": 30301,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 650,
+        "summonGrp": "actExtra8",
+        "rewardId": 30177,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 651,
+        "summonGrp": "actExtra8",
+        "rewardId": 30180,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 652,
+        "summonGrp": "actExtra8",
+        "rewardId": 30217,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 653,
+        "summonGrp": "actExtra8",
+        "rewardId": 30219,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 654,
+        "summonGrp": "actExtra8",
+        "rewardId": 30220,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 655,
+        "summonGrp": "actExtra8",
+        "rewardId": 30342,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 656,
+        "summonGrp": "actExtra8",
+        "rewardId": 30178,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 657,
+        "summonGrp": "actNormal9",
+        "rewardId": 30009,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 658,
+        "summonGrp": "actNormal9",
+        "rewardId": 30010,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 659,
+        "summonGrp": "actNormal9",
+        "rewardId": 30011,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 660,
+        "summonGrp": "actNormal9",
+        "rewardId": 30047,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 661,
+        "summonGrp": "actNormal9",
+        "rewardId": 30048,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 662,
+        "summonGrp": "actNormal9",
+        "rewardId": 30051,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 663,
+        "summonGrp": "actNormal9",
+        "rewardId": 30125,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 664,
+        "summonGrp": "actNormal9",
+        "rewardId": 30126,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 665,
+        "summonGrp": "actNormal9",
+        "rewardId": 30129,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 666,
+        "summonGrp": "actNormal9",
+        "rewardId": 30164,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 667,
+        "summonGrp": "actNormal9",
+        "rewardId": 30167,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 668,
+        "summonGrp": "actNormal9",
+        "rewardId": 30206,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 669,
+        "summonGrp": "actNormal9",
+        "rewardId": 30207,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 670,
+        "summonGrp": "actNormal9",
+        "rewardId": 30014,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 671,
+        "summonGrp": "actNormal9",
+        "rewardId": 30015,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 672,
+        "summonGrp": "actNormal9",
+        "rewardId": 30016,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 673,
+        "summonGrp": "actNormal9",
+        "rewardId": 30018,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 674,
+        "summonGrp": "actNormal9",
+        "rewardId": 30052,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 675,
+        "summonGrp": "actNormal9",
+        "rewardId": 30053,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 676,
+        "summonGrp": "actNormal9",
+        "rewardId": 30054,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 677,
+        "summonGrp": "actNormal9",
+        "rewardId": 30056,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 678,
+        "summonGrp": "actNormal9",
+        "rewardId": 30130,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 679,
+        "summonGrp": "actNormal9",
+        "rewardId": 30131,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 680,
+        "summonGrp": "actNormal9",
+        "rewardId": 30133,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 681,
+        "summonGrp": "actNormal9",
+        "rewardId": 30134,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 682,
+        "summonGrp": "actNormal9",
+        "rewardId": 30169,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 683,
+        "summonGrp": "actNormal9",
+        "rewardId": 30170,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 684,
+        "summonGrp": "actNormal9",
+        "rewardId": 30171,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 685,
+        "summonGrp": "actNormal9",
+        "rewardId": 30208,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 686,
+        "summonGrp": "actNormal9",
+        "rewardId": 30209,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 687,
+        "summonGrp": "actNormal9",
+        "rewardId": 30213,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 688,
+        "summonGrp": "actNormal9",
+        "rewardId": 30019,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 689,
+        "summonGrp": "actNormal9",
+        "rewardId": 30020,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 690,
+        "summonGrp": "actNormal9",
+        "rewardId": 30021,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 691,
+        "summonGrp": "actNormal9",
+        "rewardId": 30023,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 692,
+        "summonGrp": "actNormal9",
+        "rewardId": 30024,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 693,
+        "summonGrp": "actNormal9",
+        "rewardId": 30025,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 694,
+        "summonGrp": "actNormal9",
+        "rewardId": 30059,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 695,
+        "summonGrp": "actNormal9",
+        "rewardId": 30060,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 696,
+        "summonGrp": "actNormal9",
+        "rewardId": 30061,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 697,
+        "summonGrp": "actNormal9",
+        "rewardId": 30062,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 698,
+        "summonGrp": "actNormal9",
+        "rewardId": 30063,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 699,
+        "summonGrp": "actNormal9",
+        "rewardId": 30064,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 700,
+        "summonGrp": "actNormal9",
+        "rewardId": 30137,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 701,
+        "summonGrp": "actNormal9",
+        "rewardId": 30140,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 702,
+        "summonGrp": "actNormal9",
+        "rewardId": 30141,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 703,
+        "summonGrp": "actNormal9",
+        "rewardId": 30142,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 704,
+        "summonGrp": "actNormal9",
+        "rewardId": 30301,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 705,
+        "summonGrp": "actNormal9",
+        "rewardId": 30177,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 706,
+        "summonGrp": "actNormal9",
+        "rewardId": 30180,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 707,
+        "summonGrp": "actNormal9",
+        "rewardId": 30217,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 708,
+        "summonGrp": "actNormal9",
+        "rewardId": 30219,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 709,
+        "summonGrp": "actNormal9",
+        "rewardId": 30220,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 710,
+        "summonGrp": "actNormal9",
+        "rewardId": 30342,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 711,
+        "summonGrp": "actNormal9",
+        "rewardId": 30178,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 712,
+        "summonGrp": "actNormal9",
+        "rewardId": 30214,
+        "rewardNum": 1,
+        "weight": 56,
+        "magicTimesCond": 50
+    },
+    {
+        "seq": 713,
+        "summonGrp": "actNormal9",
+        "rewardId": 30022,
+        "rewardNum": 1,
+        "weight": 49,
+        "magicTimesCond": 40
+    },
+    {
+        "seq": 714,
+        "summonGrp": "actNormal9",
+        "rewardId": 30260,
+        "rewardNum": 1,
+        "weight": 49,
+        "magicTimesCond": 40
+    },
+    {
+        "seq": 715,
+        "summonGrp": "actExtra9",
+        "rewardId": 30019,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 716,
+        "summonGrp": "actExtra9",
+        "rewardId": 30020,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 717,
+        "summonGrp": "actExtra9",
+        "rewardId": 30021,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 718,
+        "summonGrp": "actExtra9",
+        "rewardId": 30023,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 719,
+        "summonGrp": "actExtra9",
+        "rewardId": 30024,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 720,
+        "summonGrp": "actExtra9",
+        "rewardId": 30025,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 721,
+        "summonGrp": "actExtra9",
+        "rewardId": 30059,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 722,
+        "summonGrp": "actExtra9",
+        "rewardId": 30060,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 723,
+        "summonGrp": "actExtra9",
+        "rewardId": 30061,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 724,
+        "summonGrp": "actExtra9",
+        "rewardId": 30062,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 725,
+        "summonGrp": "actExtra9",
+        "rewardId": 30063,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 726,
+        "summonGrp": "actExtra9",
+        "rewardId": 30064,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 727,
+        "summonGrp": "actExtra9",
+        "rewardId": 30137,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 728,
+        "summonGrp": "actExtra9",
+        "rewardId": 30140,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 729,
+        "summonGrp": "actExtra9",
+        "rewardId": 30141,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 730,
+        "summonGrp": "actExtra9",
+        "rewardId": 30142,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 731,
+        "summonGrp": "actExtra9",
+        "rewardId": 30301,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 732,
+        "summonGrp": "actExtra9",
+        "rewardId": 30177,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 733,
+        "summonGrp": "actExtra9",
+        "rewardId": 30180,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 734,
+        "summonGrp": "actExtra9",
+        "rewardId": 30217,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 735,
+        "summonGrp": "actExtra9",
+        "rewardId": 30219,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 736,
+        "summonGrp": "actExtra9",
+        "rewardId": 30220,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 737,
+        "summonGrp": "actExtra9",
+        "rewardId": 30342,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 738,
+        "summonGrp": "actExtra9",
+        "rewardId": 30178,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 739,
+        "summonGrp": "actNormal10",
+        "rewardId": 30009,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 740,
+        "summonGrp": "actNormal10",
+        "rewardId": 30010,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 741,
+        "summonGrp": "actNormal10",
+        "rewardId": 30011,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 742,
+        "summonGrp": "actNormal10",
+        "rewardId": 30047,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 743,
+        "summonGrp": "actNormal10",
+        "rewardId": 30048,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 744,
+        "summonGrp": "actNormal10",
+        "rewardId": 30051,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 745,
+        "summonGrp": "actNormal10",
+        "rewardId": 30125,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 746,
+        "summonGrp": "actNormal10",
+        "rewardId": 30126,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 747,
+        "summonGrp": "actNormal10",
+        "rewardId": 30129,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 748,
+        "summonGrp": "actNormal10",
+        "rewardId": 30164,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 749,
+        "summonGrp": "actNormal10",
+        "rewardId": 30167,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 750,
+        "summonGrp": "actNormal10",
+        "rewardId": 30206,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 751,
+        "summonGrp": "actNormal10",
+        "rewardId": 30207,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 752,
+        "summonGrp": "actNormal10",
+        "rewardId": 30014,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 753,
+        "summonGrp": "actNormal10",
+        "rewardId": 30015,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 754,
+        "summonGrp": "actNormal10",
+        "rewardId": 30016,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 755,
+        "summonGrp": "actNormal10",
+        "rewardId": 30018,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 756,
+        "summonGrp": "actNormal10",
+        "rewardId": 30052,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 757,
+        "summonGrp": "actNormal10",
+        "rewardId": 30053,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 758,
+        "summonGrp": "actNormal10",
+        "rewardId": 30054,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 759,
+        "summonGrp": "actNormal10",
+        "rewardId": 30056,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 760,
+        "summonGrp": "actNormal10",
+        "rewardId": 30130,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 761,
+        "summonGrp": "actNormal10",
+        "rewardId": 30131,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 762,
+        "summonGrp": "actNormal10",
+        "rewardId": 30133,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 763,
+        "summonGrp": "actNormal10",
+        "rewardId": 30134,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 764,
+        "summonGrp": "actNormal10",
+        "rewardId": 30169,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 765,
+        "summonGrp": "actNormal10",
+        "rewardId": 30170,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 766,
+        "summonGrp": "actNormal10",
+        "rewardId": 30171,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 767,
+        "summonGrp": "actNormal10",
+        "rewardId": 30208,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 768,
+        "summonGrp": "actNormal10",
+        "rewardId": 30209,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 769,
+        "summonGrp": "actNormal10",
+        "rewardId": 30213,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 770,
+        "summonGrp": "actNormal10",
+        "rewardId": 30019,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 771,
+        "summonGrp": "actNormal10",
+        "rewardId": 30020,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 772,
+        "summonGrp": "actNormal10",
+        "rewardId": 30021,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 773,
+        "summonGrp": "actNormal10",
+        "rewardId": 30023,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 774,
+        "summonGrp": "actNormal10",
+        "rewardId": 30024,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 775,
+        "summonGrp": "actNormal10",
+        "rewardId": 30025,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 776,
+        "summonGrp": "actNormal10",
+        "rewardId": 30059,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 777,
+        "summonGrp": "actNormal10",
+        "rewardId": 30060,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 778,
+        "summonGrp": "actNormal10",
+        "rewardId": 30061,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 779,
+        "summonGrp": "actNormal10",
+        "rewardId": 30062,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 780,
+        "summonGrp": "actNormal10",
+        "rewardId": 30063,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 781,
+        "summonGrp": "actNormal10",
+        "rewardId": 30064,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 782,
+        "summonGrp": "actNormal10",
+        "rewardId": 30137,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 783,
+        "summonGrp": "actNormal10",
+        "rewardId": 30140,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 784,
+        "summonGrp": "actNormal10",
+        "rewardId": 30141,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 785,
+        "summonGrp": "actNormal10",
+        "rewardId": 30142,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 786,
+        "summonGrp": "actNormal10",
+        "rewardId": 30301,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 787,
+        "summonGrp": "actNormal10",
+        "rewardId": 30177,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 788,
+        "summonGrp": "actNormal10",
+        "rewardId": 30180,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 789,
+        "summonGrp": "actNormal10",
+        "rewardId": 30217,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 790,
+        "summonGrp": "actNormal10",
+        "rewardId": 30219,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 791,
+        "summonGrp": "actNormal10",
+        "rewardId": 30220,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 792,
+        "summonGrp": "actNormal10",
+        "rewardId": 30342,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 793,
+        "summonGrp": "actNormal10",
+        "rewardId": 30178,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 794,
+        "summonGrp": "actNormal10",
+        "rewardId": 30319,
+        "rewardNum": 1,
+        "weight": 56,
+        "magicTimesCond": 50
+    },
+    {
+        "seq": 795,
+        "summonGrp": "actNormal10",
+        "rewardId": 30138,
+        "rewardNum": 1,
+        "weight": 49,
+        "magicTimesCond": 40
+    },
+    {
+        "seq": 796,
+        "summonGrp": "actNormal10",
+        "rewardId": 30235,
+        "rewardNum": 1,
+        "weight": 49,
+        "magicTimesCond": 40
+    },
+    {
+        "seq": 797,
+        "summonGrp": "actExtra10",
+        "rewardId": 30019,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 798,
+        "summonGrp": "actExtra10",
+        "rewardId": 30020,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 799,
+        "summonGrp": "actExtra10",
+        "rewardId": 30021,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 800,
+        "summonGrp": "actExtra10",
+        "rewardId": 30023,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 801,
+        "summonGrp": "actExtra10",
+        "rewardId": 30024,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 802,
+        "summonGrp": "actExtra10",
+        "rewardId": 30025,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 803,
+        "summonGrp": "actExtra10",
+        "rewardId": 30059,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 804,
+        "summonGrp": "actExtra10",
+        "rewardId": 30060,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 805,
+        "summonGrp": "actExtra10",
+        "rewardId": 30061,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 806,
+        "summonGrp": "actExtra10",
+        "rewardId": 30062,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 807,
+        "summonGrp": "actExtra10",
+        "rewardId": 30063,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 808,
+        "summonGrp": "actExtra10",
+        "rewardId": 30064,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 809,
+        "summonGrp": "actExtra10",
+        "rewardId": 30137,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 810,
+        "summonGrp": "actExtra10",
+        "rewardId": 30140,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 811,
+        "summonGrp": "actExtra10",
+        "rewardId": 30141,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 812,
+        "summonGrp": "actExtra10",
+        "rewardId": 30142,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 813,
+        "summonGrp": "actExtra10",
+        "rewardId": 30301,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 814,
+        "summonGrp": "actExtra10",
+        "rewardId": 30177,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 815,
+        "summonGrp": "actExtra10",
+        "rewardId": 30180,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 816,
+        "summonGrp": "actExtra10",
+        "rewardId": 30217,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 817,
+        "summonGrp": "actExtra10",
+        "rewardId": 30219,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 818,
+        "summonGrp": "actExtra10",
+        "rewardId": 30220,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 819,
+        "summonGrp": "actExtra10",
+        "rewardId": 30342,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 820,
+        "summonGrp": "actExtra10",
+        "rewardId": 30178,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 821,
+        "summonGrp": "actNormal11",
+        "rewardId": 30009,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 822,
+        "summonGrp": "actNormal11",
+        "rewardId": 30010,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 823,
+        "summonGrp": "actNormal11",
+        "rewardId": 30011,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 824,
+        "summonGrp": "actNormal11",
+        "rewardId": 30047,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 825,
+        "summonGrp": "actNormal11",
+        "rewardId": 30048,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 826,
+        "summonGrp": "actNormal11",
+        "rewardId": 30051,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 827,
+        "summonGrp": "actNormal11",
+        "rewardId": 30125,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 828,
+        "summonGrp": "actNormal11",
+        "rewardId": 30126,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 829,
+        "summonGrp": "actNormal11",
+        "rewardId": 30129,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 830,
+        "summonGrp": "actNormal11",
+        "rewardId": 30164,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 831,
+        "summonGrp": "actNormal11",
+        "rewardId": 30167,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 832,
+        "summonGrp": "actNormal11",
+        "rewardId": 30206,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 833,
+        "summonGrp": "actNormal11",
+        "rewardId": 30207,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 834,
+        "summonGrp": "actNormal11",
+        "rewardId": 30014,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 835,
+        "summonGrp": "actNormal11",
+        "rewardId": 30015,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 836,
+        "summonGrp": "actNormal11",
+        "rewardId": 30016,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 837,
+        "summonGrp": "actNormal11",
+        "rewardId": 30018,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 838,
+        "summonGrp": "actNormal11",
+        "rewardId": 30052,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 839,
+        "summonGrp": "actNormal11",
+        "rewardId": 30053,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 840,
+        "summonGrp": "actNormal11",
+        "rewardId": 30054,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 841,
+        "summonGrp": "actNormal11",
+        "rewardId": 30056,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 842,
+        "summonGrp": "actNormal11",
+        "rewardId": 30130,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 843,
+        "summonGrp": "actNormal11",
+        "rewardId": 30131,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 844,
+        "summonGrp": "actNormal11",
+        "rewardId": 30133,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 845,
+        "summonGrp": "actNormal11",
+        "rewardId": 30134,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 846,
+        "summonGrp": "actNormal11",
+        "rewardId": 30169,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 847,
+        "summonGrp": "actNormal11",
+        "rewardId": 30170,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 848,
+        "summonGrp": "actNormal11",
+        "rewardId": 30171,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 849,
+        "summonGrp": "actNormal11",
+        "rewardId": 30208,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 850,
+        "summonGrp": "actNormal11",
+        "rewardId": 30209,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 851,
+        "summonGrp": "actNormal11",
+        "rewardId": 30213,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 852,
+        "summonGrp": "actNormal11",
+        "rewardId": 30019,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 853,
+        "summonGrp": "actNormal11",
+        "rewardId": 30020,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 854,
+        "summonGrp": "actNormal11",
+        "rewardId": 30021,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 855,
+        "summonGrp": "actNormal11",
+        "rewardId": 30023,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 856,
+        "summonGrp": "actNormal11",
+        "rewardId": 30024,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 857,
+        "summonGrp": "actNormal11",
+        "rewardId": 30025,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 858,
+        "summonGrp": "actNormal11",
+        "rewardId": 30059,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 859,
+        "summonGrp": "actNormal11",
+        "rewardId": 30060,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 860,
+        "summonGrp": "actNormal11",
+        "rewardId": 30061,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 861,
+        "summonGrp": "actNormal11",
+        "rewardId": 30062,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 862,
+        "summonGrp": "actNormal11",
+        "rewardId": 30063,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 863,
+        "summonGrp": "actNormal11",
+        "rewardId": 30064,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 864,
+        "summonGrp": "actNormal11",
+        "rewardId": 30137,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 865,
+        "summonGrp": "actNormal11",
+        "rewardId": 30140,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 866,
+        "summonGrp": "actNormal11",
+        "rewardId": 30141,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 867,
+        "summonGrp": "actNormal11",
+        "rewardId": 30142,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 868,
+        "summonGrp": "actNormal11",
+        "rewardId": 30301,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 869,
+        "summonGrp": "actNormal11",
+        "rewardId": 30177,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 870,
+        "summonGrp": "actNormal11",
+        "rewardId": 30180,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 871,
+        "summonGrp": "actNormal11",
+        "rewardId": 30217,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 872,
+        "summonGrp": "actNormal11",
+        "rewardId": 30219,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 873,
+        "summonGrp": "actNormal11",
+        "rewardId": 30220,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 874,
+        "summonGrp": "actNormal11",
+        "rewardId": 30342,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 875,
+        "summonGrp": "actNormal11",
+        "rewardId": 30178,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 876,
+        "summonGrp": "actNormal11",
+        "rewardId": 30468,
+        "rewardNum": 1,
+        "weight": 56,
+        "magicTimesCond": 50
+    },
+    {
+        "seq": 877,
+        "summonGrp": "actNormal11",
+        "rewardId": 30300,
+        "rewardNum": 1,
+        "weight": 49,
+        "magicTimesCond": 40
+    },
+    {
+        "seq": 878,
+        "summonGrp": "actNormal11",
+        "rewardId": 30256,
+        "rewardNum": 1,
+        "weight": 49,
+        "magicTimesCond": 40
+    },
+    {
+        "seq": 879,
+        "summonGrp": "actExtra11",
+        "rewardId": 30019,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 880,
+        "summonGrp": "actExtra11",
+        "rewardId": 30020,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 881,
+        "summonGrp": "actExtra11",
+        "rewardId": 30021,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 882,
+        "summonGrp": "actExtra11",
+        "rewardId": 30023,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 883,
+        "summonGrp": "actExtra11",
+        "rewardId": 30024,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 884,
+        "summonGrp": "actExtra11",
+        "rewardId": 30025,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 885,
+        "summonGrp": "actExtra11",
+        "rewardId": 30059,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 886,
+        "summonGrp": "actExtra11",
+        "rewardId": 30060,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 887,
+        "summonGrp": "actExtra11",
+        "rewardId": 30061,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 888,
+        "summonGrp": "actExtra11",
+        "rewardId": 30062,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 889,
+        "summonGrp": "actExtra11",
+        "rewardId": 30063,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 890,
+        "summonGrp": "actExtra11",
+        "rewardId": 30064,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 891,
+        "summonGrp": "actExtra11",
+        "rewardId": 30137,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 892,
+        "summonGrp": "actExtra11",
+        "rewardId": 30140,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 893,
+        "summonGrp": "actExtra11",
+        "rewardId": 30141,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 894,
+        "summonGrp": "actExtra11",
+        "rewardId": 30142,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 895,
+        "summonGrp": "actExtra11",
+        "rewardId": 30301,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 896,
+        "summonGrp": "actExtra11",
+        "rewardId": 30177,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 897,
+        "summonGrp": "actExtra11",
+        "rewardId": 30180,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 898,
+        "summonGrp": "actExtra11",
+        "rewardId": 30217,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 899,
+        "summonGrp": "actExtra11",
+        "rewardId": 30219,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 900,
+        "summonGrp": "actExtra11",
+        "rewardId": 30220,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 901,
+        "summonGrp": "actExtra11",
+        "rewardId": 30342,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 902,
+        "summonGrp": "actExtra11",
+        "rewardId": 30178,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 903,
+        "summonGrp": "actNormal12",
+        "rewardId": 30009,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 904,
+        "summonGrp": "actNormal12",
+        "rewardId": 30010,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 905,
+        "summonGrp": "actNormal12",
+        "rewardId": 30011,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 906,
+        "summonGrp": "actNormal12",
+        "rewardId": 30047,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 907,
+        "summonGrp": "actNormal12",
+        "rewardId": 30048,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 908,
+        "summonGrp": "actNormal12",
+        "rewardId": 30051,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 909,
+        "summonGrp": "actNormal12",
+        "rewardId": 30125,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 910,
+        "summonGrp": "actNormal12",
+        "rewardId": 30126,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 911,
+        "summonGrp": "actNormal12",
+        "rewardId": 30129,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 912,
+        "summonGrp": "actNormal12",
+        "rewardId": 30164,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 913,
+        "summonGrp": "actNormal12",
+        "rewardId": 30167,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 914,
+        "summonGrp": "actNormal12",
+        "rewardId": 30206,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 915,
+        "summonGrp": "actNormal12",
+        "rewardId": 30207,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 916,
+        "summonGrp": "actNormal12",
+        "rewardId": 30014,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 917,
+        "summonGrp": "actNormal12",
+        "rewardId": 30015,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 918,
+        "summonGrp": "actNormal12",
+        "rewardId": 30016,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 919,
+        "summonGrp": "actNormal12",
+        "rewardId": 30018,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 920,
+        "summonGrp": "actNormal12",
+        "rewardId": 30052,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 921,
+        "summonGrp": "actNormal12",
+        "rewardId": 30053,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 922,
+        "summonGrp": "actNormal12",
+        "rewardId": 30054,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 923,
+        "summonGrp": "actNormal12",
+        "rewardId": 30056,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 924,
+        "summonGrp": "actNormal12",
+        "rewardId": 30130,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 925,
+        "summonGrp": "actNormal12",
+        "rewardId": 30131,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 926,
+        "summonGrp": "actNormal12",
+        "rewardId": 30133,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 927,
+        "summonGrp": "actNormal12",
+        "rewardId": 30134,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 928,
+        "summonGrp": "actNormal12",
+        "rewardId": 30169,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 929,
+        "summonGrp": "actNormal12",
+        "rewardId": 30170,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 930,
+        "summonGrp": "actNormal12",
+        "rewardId": 30171,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 931,
+        "summonGrp": "actNormal12",
+        "rewardId": 30208,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 932,
+        "summonGrp": "actNormal12",
+        "rewardId": 30209,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 933,
+        "summonGrp": "actNormal12",
+        "rewardId": 30213,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 934,
+        "summonGrp": "actNormal12",
+        "rewardId": 30019,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 935,
+        "summonGrp": "actNormal12",
+        "rewardId": 30020,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 936,
+        "summonGrp": "actNormal12",
+        "rewardId": 30021,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 937,
+        "summonGrp": "actNormal12",
+        "rewardId": 30023,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 938,
+        "summonGrp": "actNormal12",
+        "rewardId": 30024,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 939,
+        "summonGrp": "actNormal12",
+        "rewardId": 30025,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 940,
+        "summonGrp": "actNormal12",
+        "rewardId": 30059,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 941,
+        "summonGrp": "actNormal12",
+        "rewardId": 30060,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 942,
+        "summonGrp": "actNormal12",
+        "rewardId": 30061,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 943,
+        "summonGrp": "actNormal12",
+        "rewardId": 30062,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 944,
+        "summonGrp": "actNormal12",
+        "rewardId": 30063,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 945,
+        "summonGrp": "actNormal12",
+        "rewardId": 30064,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 946,
+        "summonGrp": "actNormal12",
+        "rewardId": 30137,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 947,
+        "summonGrp": "actNormal12",
+        "rewardId": 30140,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 948,
+        "summonGrp": "actNormal12",
+        "rewardId": 30141,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 949,
+        "summonGrp": "actNormal12",
+        "rewardId": 30142,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 950,
+        "summonGrp": "actNormal12",
+        "rewardId": 30301,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 951,
+        "summonGrp": "actNormal12",
+        "rewardId": 30177,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 952,
+        "summonGrp": "actNormal12",
+        "rewardId": 30180,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 953,
+        "summonGrp": "actNormal12",
+        "rewardId": 30217,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 954,
+        "summonGrp": "actNormal12",
+        "rewardId": 30219,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 955,
+        "summonGrp": "actNormal12",
+        "rewardId": 30220,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 956,
+        "summonGrp": "actNormal12",
+        "rewardId": 30342,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 957,
+        "summonGrp": "actNormal12",
+        "rewardId": 30178,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 958,
+        "summonGrp": "actNormal12",
+        "rewardId": 30448,
+        "rewardNum": 1,
+        "weight": 56,
+        "magicTimesCond": 50
+    },
+    {
+        "seq": 959,
+        "summonGrp": "actNormal12",
+        "rewardId": 30260,
+        "rewardNum": 1,
+        "weight": 49,
+        "magicTimesCond": 40
+    },
+    {
+        "seq": 960,
+        "summonGrp": "actNormal12",
+        "rewardId": 30022,
+        "rewardNum": 1,
+        "weight": 49,
+        "magicTimesCond": 40
+    },
+    {
+        "seq": 961,
+        "summonGrp": "actExtra12",
+        "rewardId": 30019,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 962,
+        "summonGrp": "actExtra12",
+        "rewardId": 30020,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 963,
+        "summonGrp": "actExtra12",
+        "rewardId": 30021,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 964,
+        "summonGrp": "actExtra12",
+        "rewardId": 30023,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 965,
+        "summonGrp": "actExtra12",
+        "rewardId": 30024,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 966,
+        "summonGrp": "actExtra12",
+        "rewardId": 30025,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 967,
+        "summonGrp": "actExtra12",
+        "rewardId": 30059,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 968,
+        "summonGrp": "actExtra12",
+        "rewardId": 30060,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 969,
+        "summonGrp": "actExtra12",
+        "rewardId": 30061,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 970,
+        "summonGrp": "actExtra12",
+        "rewardId": 30062,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 971,
+        "summonGrp": "actExtra12",
+        "rewardId": 30063,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 972,
+        "summonGrp": "actExtra12",
+        "rewardId": 30064,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 973,
+        "summonGrp": "actExtra12",
+        "rewardId": 30137,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 974,
+        "summonGrp": "actExtra12",
+        "rewardId": 30140,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 975,
+        "summonGrp": "actExtra12",
+        "rewardId": 30141,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 976,
+        "summonGrp": "actExtra12",
+        "rewardId": 30142,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 977,
+        "summonGrp": "actExtra12",
+        "rewardId": 30301,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 978,
+        "summonGrp": "actExtra12",
+        "rewardId": 30177,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 979,
+        "summonGrp": "actExtra12",
+        "rewardId": 30180,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 980,
+        "summonGrp": "actExtra12",
+        "rewardId": 30217,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 981,
+        "summonGrp": "actExtra12",
+        "rewardId": 30219,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 982,
+        "summonGrp": "actExtra12",
+        "rewardId": 30220,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 983,
+        "summonGrp": "actExtra12",
+        "rewardId": 30342,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 984,
+        "summonGrp": "actExtra12",
+        "rewardId": 30178,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 985,
+        "summonGrp": "actNormal101",
+        "rewardId": 30009,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 986,
+        "summonGrp": "actNormal101",
+        "rewardId": 30010,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 987,
+        "summonGrp": "actNormal101",
+        "rewardId": 30011,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 988,
+        "summonGrp": "actNormal101",
+        "rewardId": 30047,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 989,
+        "summonGrp": "actNormal101",
+        "rewardId": 30048,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 990,
+        "summonGrp": "actNormal101",
+        "rewardId": 30051,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 991,
+        "summonGrp": "actNormal101",
+        "rewardId": 30125,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 992,
+        "summonGrp": "actNormal101",
+        "rewardId": 30126,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 993,
+        "summonGrp": "actNormal101",
+        "rewardId": 30129,
+        "rewardNum": 1,
+        "weight": 474,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 994,
+        "summonGrp": "actNormal101",
+        "rewardId": 30164,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 995,
+        "summonGrp": "actNormal101",
+        "rewardId": 30167,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 996,
+        "summonGrp": "actNormal101",
+        "rewardId": 30206,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 997,
+        "summonGrp": "actNormal101",
+        "rewardId": 30207,
+        "rewardNum": 1,
+        "weight": 267,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 998,
+        "summonGrp": "actNormal101",
+        "rewardId": 30014,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 999,
+        "summonGrp": "actNormal101",
+        "rewardId": 30015,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1000,
+        "summonGrp": "actNormal101",
+        "rewardId": 30016,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1001,
+        "summonGrp": "actNormal101",
+        "rewardId": 30018,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1002,
+        "summonGrp": "actNormal101",
+        "rewardId": 30052,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1003,
+        "summonGrp": "actNormal101",
+        "rewardId": 30053,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1004,
+        "summonGrp": "actNormal101",
+        "rewardId": 30054,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1005,
+        "summonGrp": "actNormal101",
+        "rewardId": 30056,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1006,
+        "summonGrp": "actNormal101",
+        "rewardId": 30130,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1007,
+        "summonGrp": "actNormal101",
+        "rewardId": 30131,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1008,
+        "summonGrp": "actNormal101",
+        "rewardId": 30133,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1009,
+        "summonGrp": "actNormal101",
+        "rewardId": 30134,
+        "rewardNum": 1,
+        "weight": 86,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1010,
+        "summonGrp": "actNormal101",
+        "rewardId": 30169,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1011,
+        "summonGrp": "actNormal101",
+        "rewardId": 30170,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1012,
+        "summonGrp": "actNormal101",
+        "rewardId": 30171,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1013,
+        "summonGrp": "actNormal101",
+        "rewardId": 30208,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1014,
+        "summonGrp": "actNormal101",
+        "rewardId": 30209,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1015,
+        "summonGrp": "actNormal101",
+        "rewardId": 30213,
+        "rewardNum": 1,
+        "weight": 43,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1016,
+        "summonGrp": "actNormal101",
+        "rewardId": 30019,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1017,
+        "summonGrp": "actNormal101",
+        "rewardId": 30020,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1018,
+        "summonGrp": "actNormal101",
+        "rewardId": 30021,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1019,
+        "summonGrp": "actNormal101",
+        "rewardId": 30023,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1020,
+        "summonGrp": "actNormal101",
+        "rewardId": 30024,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1021,
+        "summonGrp": "actNormal101",
+        "rewardId": 30025,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1022,
+        "summonGrp": "actNormal101",
+        "rewardId": 30059,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1023,
+        "summonGrp": "actNormal101",
+        "rewardId": 30060,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1024,
+        "summonGrp": "actNormal101",
+        "rewardId": 30061,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1025,
+        "summonGrp": "actNormal101",
+        "rewardId": 30062,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1026,
+        "summonGrp": "actNormal101",
+        "rewardId": 30063,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1027,
+        "summonGrp": "actNormal101",
+        "rewardId": 30064,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1028,
+        "summonGrp": "actNormal101",
+        "rewardId": 30137,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1029,
+        "summonGrp": "actNormal101",
+        "rewardId": 30140,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1030,
+        "summonGrp": "actNormal101",
+        "rewardId": 30141,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1031,
+        "summonGrp": "actNormal101",
+        "rewardId": 30142,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1032,
+        "summonGrp": "actNormal101",
+        "rewardId": 30301,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1033,
+        "summonGrp": "actNormal101",
+        "rewardId": 30177,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1034,
+        "summonGrp": "actNormal101",
+        "rewardId": 30180,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1035,
+        "summonGrp": "actNormal101",
+        "rewardId": 30217,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1036,
+        "summonGrp": "actNormal101",
+        "rewardId": 30219,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1037,
+        "summonGrp": "actNormal101",
+        "rewardId": 30220,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1038,
+        "summonGrp": "actNormal101",
+        "rewardId": 30342,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1039,
+        "summonGrp": "actNormal101",
+        "rewardId": 30178,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1040,
+        "summonGrp": "actNormal101",
+        "rewardId": 30256,
+        "rewardNum": 1,
+        "weight": 56,
+        "magicTimesCond": 50
+    },
+    {
+        "seq": 1041,
+        "summonGrp": "actNormal101",
+        "rewardId": 30300,
+        "rewardNum": 1,
+        "weight": 49,
+        "magicTimesCond": 40
+    },
+    {
+        "seq": 1042,
+        "summonGrp": "actNormal101",
+        "rewardId": 30022,
+        "rewardNum": 1,
+        "weight": 49,
+        "magicTimesCond": 40
+    },
+    {
+        "seq": 1043,
+        "summonGrp": "actExtra101",
+        "rewardId": 30019,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1044,
+        "summonGrp": "actExtra101",
+        "rewardId": 30020,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1045,
+        "summonGrp": "actExtra101",
+        "rewardId": 30021,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1046,
+        "summonGrp": "actExtra101",
+        "rewardId": 30023,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1047,
+        "summonGrp": "actExtra101",
+        "rewardId": 30024,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1048,
+        "summonGrp": "actExtra101",
+        "rewardId": 30025,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1049,
+        "summonGrp": "actExtra101",
+        "rewardId": 30059,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1050,
+        "summonGrp": "actExtra101",
+        "rewardId": 30060,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1051,
+        "summonGrp": "actExtra101",
+        "rewardId": 30061,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1052,
+        "summonGrp": "actExtra101",
+        "rewardId": 30062,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1053,
+        "summonGrp": "actExtra101",
+        "rewardId": 30063,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1054,
+        "summonGrp": "actExtra101",
+        "rewardId": 30064,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1055,
+        "summonGrp": "actExtra101",
+        "rewardId": 30137,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1056,
+        "summonGrp": "actExtra101",
+        "rewardId": 30140,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1057,
+        "summonGrp": "actExtra101",
+        "rewardId": 30141,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1058,
+        "summonGrp": "actExtra101",
+        "rewardId": 30142,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1059,
+        "summonGrp": "actExtra101",
+        "rewardId": 30301,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1060,
+        "summonGrp": "actExtra101",
+        "rewardId": 30177,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1061,
+        "summonGrp": "actExtra101",
+        "rewardId": 30180,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1062,
+        "summonGrp": "actExtra101",
+        "rewardId": 30217,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1063,
+        "summonGrp": "actExtra101",
+        "rewardId": 30219,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1064,
+        "summonGrp": "actExtra101",
+        "rewardId": 30220,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1065,
+        "summonGrp": "actExtra101",
+        "rewardId": 30342,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    },
+    {
+        "seq": 1066,
+        "summonGrp": "actExtra101",
+        "rewardId": 30178,
+        "rewardNum": 1,
+        "weight": 1,
+        "magicTimesCond": 0
+    }
+]

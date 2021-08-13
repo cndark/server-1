@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [13900, 14000)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+
+// 开服庆典(七日目标)
+message TargetDaysData {
+    repeated int32    Taken  = 1; // 已经领取的id
+    map<int32, int32> BuyCnt = 2; // 购买次数
+}
+
+// ============================================================================
+
+message C_TargetDaysTake { // msgid:13900
+    int32 Id = 1;
+}
+
+message GS_TargetDaysTake_R { // msgid:13901
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+}
+
+message C_TargetDaysBuy { // msgid:13902
+    int32 Id = 1;
+}
+
+message GS_TargetDaysBuy_R { // msgid:13903
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+}

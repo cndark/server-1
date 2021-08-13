@@ -1,0 +1,3 @@
+structureNum,actBillLtDayMin,monopolyConsNormal,monopolyConsRandom,mazePowerItem,mazeBloodItem,mazeRewardShow,mazeReviveCost,mazeLoseBlood,mazeTrapBlood,mazePowerFree,mazeKeyReward
+int32,int32,[]{int32 cg;int32 id;int64 n},[]{int32 cg;int32 id;int64 n},[]{int32 id;int32 power},[]{int32 id;int32 blood},[]int32,[]{int32 id;int32 n},int32,int32,int32,[]{int32 id;int32 n}
+1,600,1~20202~1|2~20204~1,1~20201~1|2~20203~1,20210~50,20211~15,20003|20002|21058|21051|10027|20102|10002|20013,20213~1,3,3,5,20220~1

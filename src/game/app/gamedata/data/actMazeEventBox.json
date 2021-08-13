@@ -1,0 +1,17 @@
+[
+    {
+        "seq": 1,
+        "drop": [
+            {
+                "item": 20220,
+                "dropId": 130001
+            },
+            {
+                "item": 20219,
+                "dropId": 130002
+            }
+        ],
+        "showLvCond": 1,
+        "weight": 1
+    }
+]

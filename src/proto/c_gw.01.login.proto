@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GW: [1000, 1100)
+// ============================================================================
+
+// 认证
+message C_Auth {           // msgid: 1000
+    string AuthId    = 1;  // 认证 Id
+    string AuthToken = 2;  // 认证 token
+    string Sdk       = 3;  // sdk
+    string Model     = 4;  // 设备型号
+    string DevId     = 5;  // 设备码
+    string Os        = 6;  // 操作系统
+    string OsVer     = 7;  // 操作系统版本
+    string J         = 8;  // 扩展 json 串
+    string VerMajor  = 9;  // 主版本号
+    string VerMinor  = 10; // 次版本号
+    string VerBuild  = 11; // build 版本号
+}
+
+message GW_Auth_R { // msgid: 1001
+    int32               ErrorCode = 1;
+    string              AuthId    = 2;
+    map<string, string> C         = 3;
+}
+
+// 登录
+message C_Login {        // msgid: 1002
+    string Svr0     = 1; // 初始服名称
+    bool   ChgSvr   = 2; // 是否换一个游戏服
+    string Language = 3; // 客户端语言(cn, en, kr)
+}
+
+message GW_Login_R { // msgid: 1003
+    int32 ErrorCode = 1;
+}
+
+// token 获取
+message C_TokenGet { // msgid: 1004
+}
+
+message GW_TokenGet_R { // msgid: 1005
+    int32  ErrorCode = 1;
+    string Token     = 2;
+}
+
+// token 认证
+message C_TokenAuth { // msgid: 1006
+    string Token  = 1;
+    string AuthId = 2;
+    string Sdk    = 3;
+    string DevId  = 4;
+}
+
+message GW_TokenAuth_R { // msgid: 1007
+    int32 ErrorCode = 1;
+}

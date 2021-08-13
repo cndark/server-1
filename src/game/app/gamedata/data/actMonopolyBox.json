@@ -1,0 +1,332 @@
+[
+    {
+        "seq": 1,
+        "group": 1101,
+        "boxReward": [
+            {
+                "id": 20001,
+                "n": 5
+            }
+        ],
+        "weight": 80
+    },
+    {
+        "seq": 2,
+        "group": 1101,
+        "boxReward": [
+            {
+                "id": 20002,
+                "n": 2
+            }
+        ],
+        "weight": 33
+    },
+    {
+        "seq": 3,
+        "group": 1101,
+        "boxReward": [
+            {
+                "id": 20003,
+                "n": 1
+            }
+        ],
+        "weight": 10
+    },
+    {
+        "seq": 4,
+        "group": 1101,
+        "boxReward": [
+            {
+                "id": 20012,
+                "n": 3
+            }
+        ],
+        "weight": 133
+    },
+    {
+        "seq": 5,
+        "group": 1101,
+        "boxReward": [
+            {
+                "id": 20013,
+                "n": 1
+            }
+        ],
+        "weight": 66
+    },
+    {
+        "seq": 6,
+        "group": 1101,
+        "boxReward": [
+            {
+                "id": 10027,
+                "n": 1
+            }
+        ],
+        "weight": 200
+    },
+    {
+        "seq": 7,
+        "group": 1101,
+        "boxReward": [
+            {
+                "id": 20011,
+                "n": 3
+            }
+        ],
+        "weight": 266
+    },
+    {
+        "seq": 8,
+        "group": 1101,
+        "boxReward": [
+            {
+                "id": 20201,
+                "n": 2
+            }
+        ],
+        "weight": 400
+    },
+    {
+        "seq": 9,
+        "group": 1101,
+        "boxReward": [
+            {
+                "id": 20202,
+                "n": 1
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 10,
+        "group": 1101,
+        "boxReward": [
+            {
+                "id": 20101,
+                "n": 2
+            }
+        ],
+        "weight": 333
+    },
+    {
+        "seq": 11,
+        "group": 1101,
+        "boxReward": [
+            {
+                "id": 20102,
+                "n": 1
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 12,
+        "group": 1101,
+        "boxReward": [
+            {
+                "id": 21031,
+                "n": 20
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 13,
+        "group": 1101,
+        "boxReward": [
+            {
+                "id": 21041,
+                "n": 10
+            }
+        ],
+        "weight": 66
+    },
+    {
+        "seq": 14,
+        "group": 1101,
+        "boxReward": [
+            {
+                "id": 21051,
+                "n": 5
+            }
+        ],
+        "weight": 33
+    },
+    {
+        "seq": 15,
+        "group": 1101,
+        "boxReward": [
+            {
+                "id": 10002,
+                "n": 200
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 16,
+        "group": 1102,
+        "boxReward": [
+            {
+                "id": 20001,
+                "n": 5
+            }
+        ],
+        "weight": 80
+    },
+    {
+        "seq": 17,
+        "group": 1102,
+        "boxReward": [
+            {
+                "id": 20002,
+                "n": 2
+            }
+        ],
+        "weight": 33
+    },
+    {
+        "seq": 18,
+        "group": 1102,
+        "boxReward": [
+            {
+                "id": 20003,
+                "n": 1
+            }
+        ],
+        "weight": 10
+    },
+    {
+        "seq": 19,
+        "group": 1102,
+        "boxReward": [
+            {
+                "id": 20012,
+                "n": 3
+            }
+        ],
+        "weight": 133
+    },
+    {
+        "seq": 20,
+        "group": 1102,
+        "boxReward": [
+            {
+                "id": 20013,
+                "n": 1
+            }
+        ],
+        "weight": 66
+    },
+    {
+        "seq": 21,
+        "group": 1102,
+        "boxReward": [
+            {
+                "id": 10027,
+                "n": 1
+            }
+        ],
+        "weight": 200
+    },
+    {
+        "seq": 22,
+        "group": 1102,
+        "boxReward": [
+            {
+                "id": 20011,
+                "n": 3
+            }
+        ],
+        "weight": 266
+    },
+    {
+        "seq": 23,
+        "group": 1102,
+        "boxReward": [
+            {
+                "id": 20203,
+                "n": 2
+            }
+        ],
+        "weight": 400
+    },
+    {
+        "seq": 24,
+        "group": 1102,
+        "boxReward": [
+            {
+                "id": 20204,
+                "n": 1
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 25,
+        "group": 1102,
+        "boxReward": [
+            {
+                "id": 20101,
+                "n": 2
+            }
+        ],
+        "weight": 333
+    },
+    {
+        "seq": 26,
+        "group": 1102,
+        "boxReward": [
+            {
+                "id": 20102,
+                "n": 1
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 27,
+        "group": 1102,
+        "boxReward": [
+            {
+                "id": 21031,
+                "n": 20
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 28,
+        "group": 1102,
+        "boxReward": [
+            {
+                "id": 21041,
+                "n": 10
+            }
+        ],
+        "weight": 66
+    },
+    {
+        "seq": 29,
+        "group": 1102,
+        "boxReward": [
+            {
+                "id": 21051,
+                "n": 5
+            }
+        ],
+        "weight": 33
+    },
+    {
+        "seq": 30,
+        "group": 1102,
+        "boxReward": [
+            {
+                "id": 10002,
+                "n": 200
+            }
+        ],
+        "weight": 100
+    }
+]

@@ -1,0 +1,45 @@
+extends ../base.pug
+
+block css
+    link(href='/css/page.css', rel='stylesheet')
+
+block content
+    .container-fluid
+        .row
+            .col-md-10.col-md-offset-1
+                .panel.panel-info
+                    .panel-heading.head
+                        | 公会信息
+                        button.btn.btn-default OK
+                        span.alert
+                    .panel-body
+                        input(type='hidden', name='key', value='gldinfo')
+                        .row
+                            .col-md-2
+                                | 区域
+                                select.form-control(name='area')
+                                    - for (var v of areas)
+                                        option(value=v[0]) #{v[1]}
+                            .col-md-2
+                                | 服务器名
+                                input.form-control(name='svr')
+                            .col-md-3
+                                | 公会 Id
+                                input.form-control(type='text', name='gldid')
+                            .col-md-3
+                                | 公会名称
+                                input.form-control(type='text', name='gldname')
+                            .col-md-2
+                                | 模块
+                                select.form-control(name='module')
+                                    option(value='base') 基本信息
+                                    option(value='members') 成员列表
+                        br
+                        .row
+                            .col-md-12
+                                table.table.table-striped.table-condensed.table-hover
+
+
+
+block script
+    script(src='/scripts/gm/guild.js')

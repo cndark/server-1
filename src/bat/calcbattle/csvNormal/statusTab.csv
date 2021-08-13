@@ -1,0 +1,13 @@
+id,txt_Desc,txt_RichDes,type,flag,source
+int32,string,string,string,int32,int32
+1,等级达到{0}级,等级达到{0}级,level,,
+5,主线通过第{0}关,主线通过第{0}关,wLevel,,
+10,VIP达到{0}级,VIP达到{0}级,vip,,
+1000,活动开启,活动开启,actStatus,2,
+1001,达标活动开放,达标活动开放,actConfGrp,212,
+1101,开服第{0}天,开服第{0}天,svrOpenDay,1,
+1102,开服前{0}天,开服前{0}天,svrOpenDay,2,
+1103,开服第{0}天,开服第{0}天,svrOpenDay,3,
+1110,激活{0},激活{0},privCard,,
+2001,当前拥有金币,当前拥有金币,ccyEqual,10001,
+2006,当前拥有进阶石,当前拥有进阶石,ccyEqual,10006,

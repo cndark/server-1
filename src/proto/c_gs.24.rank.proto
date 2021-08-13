@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option (gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [8450, 8500)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+import "c_gs.20.guild.proto";
+
+// ============================================================================
+
+message RankRow {
+    double      Score   = 1;
+    RankRowInfo Info    = 2;
+    int32       BeLiked = 3;
+}
+
+message RankRowInfo {
+    PlayerSimpleInfo Plr = 1;
+    GuildRow         Gld = 2;
+}
+
+message RankPlayData {}
+
+// ============================================================================
+
+// 获取榜单数据
+message C_RankGet { // msgid: 8450
+    int32 Type = 1; // 类型. 1: local; 2: cross
+    int32 SgId = 2; // svrid if local. grpid if cross.
+    int32 RkId = 3; // 榜单id
+}
+
+message GS_RankGet_R { // msgid: 8451
+    repeated RankRow Rows = 1;
+}
+
+// 榜单点赞
+message C_RankLike { // msgid: 8452
+    int32  RkId  = 1;
+    string PlrId = 2;
+}
+
+message GS_RankLike_R { // msgid: 8453
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+}

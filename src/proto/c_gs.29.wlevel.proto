@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [8900, 9000)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+// 关卡
+message WLevelData {
+    int32             LvNum     = 1; // 当前关卡id
+    int64             GJTs      = 2; // 挂机时间
+    map<int32, int64> GJLootRwd = 3; // 挂机奖励
+}
+
+// ============================================================================
+// 推图战斗
+message C_WLevelFight { // msgid: 8900
+    TeamFormation T = 1;
+}
+
+message GS_WLevelFight_R { // msgid: 8901
+    int32        ErrorCode = 1;
+    BattleReplay Replay    = 2;
+    int32        LvNum     = 3;
+    Rewards      Rewards   = 4;
+}
+
+// 获取挂机信息(计算挂机奖励)
+message C_WLevelGJInfo { // msgid: 8902
+}
+
+message GS_WLevelGJInfo_R {          // msgid: 8903
+    map<int32, int64> GJLootRwd = 1; // 挂机奖励
+}
+
+// 领取挂机奖励
+message C_WLevelGJTake { // msgid: 8904
+}
+
+message GS_WLevelGJTake_R { // msgid: 8905
+    int32   ErrorCode = 1;
+    int64   GJTs      = 2; // 挂机开始时间
+    Rewards Rewards   = 3;
+}
+
+// 快速领取挂机奖励
+message C_WLevelOneKeyGJTake { // msgid: 8906
+}
+
+message GS_WLevelOneKeyGJTake_R { // msgid: 8907
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+}
+
+// 快速战斗
+message C_WLevelFightOneKey { // msgid:8908
+    TeamFormation T = 1;
+}
+
+message GS_WLevelFightOneKey_R { // msgid:8909
+    int32                 ErrorCode = 1;
+    repeated BattleReplay Replay    = 2;
+    int32                 LvNum     = 3;
+    Rewards               Rewards   = 4;
+}

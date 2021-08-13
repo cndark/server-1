@@ -1,0 +1,102 @@
+[
+    {
+        "structureNum": 1,
+        "actBillLtDayMin": 600,
+        "rushLocalDrawScore": [
+            {
+                "tp": "normal",
+                "sc": 0
+            },
+            {
+                "tp": "senior",
+                "sc": 2
+            },
+            {
+                "tp": "water",
+                "sc": 10
+            },
+            {
+                "tp": "thunder",
+                "sc": 10
+            },
+            {
+                "tp": "fire",
+                "sc": 10
+            },
+            {
+                "tp": "blend",
+                "sc": 10
+            }
+        ],
+        "rushLocalMarvelRollScore": [
+            {
+                "tp": "normal",
+                "sc": 1
+            },
+            {
+                "tp": "senior",
+                "sc": 6
+            }
+        ],
+        "rushLocalArenaScore": [
+            1, 2
+        ],
+        "monopolyConsNormal": [
+            {
+                "cg": 1,
+                "id": 20202,
+                "n": 1
+            },
+            {
+                "cg": 2,
+                "id": 20204,
+                "n": 1
+            }
+        ],
+        "monopolyConsRandom": [
+            {
+                "cg": 1,
+                "id": 20201,
+                "n": 1
+            },
+            {
+                "cg": 2,
+                "id": 20203,
+                "n": 1
+            }
+        ],
+        "monopolyAdvSplitNum": 2,
+        "monopolyBattleRatio": 0.8,
+        "mazePowerItem": [
+            {
+                "id": 20210,
+                "power": 50
+            }
+        ],
+        "mazeBloodItem": [
+            {
+                "id": 20211,
+                "blood": 15
+            }
+        ],
+        "mazeReviveCost": [
+            {
+                "id": 20213,
+                "n": 1
+            }
+        ],
+        "mazeLoseBlood": 3,
+        "mazeTrapBlood": 3,
+        "mazePowerFree": 5,
+        "mazeKeyReward": [
+            {
+                "id": 20220,
+                "n": 1
+            }
+        ],
+        "mazeMail": 5311,
+        "mazeItemClear": [
+            20212, 20214, 20215, 20216, 20218, 20220
+        ]
+    }
+]

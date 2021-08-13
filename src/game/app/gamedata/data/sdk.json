@@ -1,0 +1,22 @@
+[
+    {
+        "name": "soda.ai"
+    },
+    {
+        "appid": "wx23bc4e696c3c3677",
+        "secretId": "f4HQi9jJ2V2t",
+        "secretKey": "dGRnKu7bsH0Y2zzEuy5G",
+        "name": "chuxin_h5"
+    },
+    {
+        "name": "soda.internal"
+    },
+    {
+        "name": "soda.pressure"
+    },
+    {
+        "appid": "wxed5346f2320a1717",
+        "appkey": "36ce5380162c45973a617dfedc5b4b12",
+        "name": "wx"
+    }
+]

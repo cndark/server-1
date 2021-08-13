@@ -1,0 +1,128 @@
+extends ../../base.pug
+
+block css
+    link(href='/css/page.css', rel='stylesheet')
+
+block content
+    .container-fluid
+        .row
+            .col-md-12
+                #pnl_edit.panel.panel-info
+                    .panel-heading.head
+                        .clearfix
+                            button#btn_save.btn.btn-info
+                                | 保存
+                            span.alert
+                            form.form-inline.pull-right
+                                - for (var f of form ? form : [])
+                                    if f.type == 'hidden'
+                                        input(
+                                            type='hidden',
+                                            name=f.name === undefined ? "" : f.name,
+                                            value=f.value === undefined ? "" : f.value,
+                                        )
+                                    else
+                                        .input-group
+                                            if f.icon
+                                                .input-group-addon
+                                                    i(class=`fa fa-${f.icon}`)
+                                            else if f.desc
+                                                .input-group-addon #{f.desc}
+
+                                            case f.type
+                                                when "select"
+                                                    select.form-control(name=f.name === undefined ? "" : f.name)
+                                                        - for (var v of f.src ? f.src : [])
+                                                            if v instanceof Array
+                                                                option(value=v[0] selected=(v[0] == f.value ? true : false)) #{v[1]}
+                                                            else
+                                                                option(value=v selected=(v == f.value ? true : false)) #{v}
+
+                                                when "input"
+                                                    input.form-control(
+                                                        type='text',
+                                                        name=f.name === undefined ? "" : f.name,
+                                                        value=f.value === undefined ? "" : f.value,
+                                                        placeholder=f.placeholder === undefined ? "" : f.placeholder,
+                                                        style=f.style == undefined ? "" : f.style,
+                                                    )
+
+                                                when "date"
+                                                    input.date-picker.form-control(
+                                                        type='text',
+                                                        name=f.name === undefined ? "" : f.name,
+                                                        value=f.value === undefined ? "" : f.value,
+                                                        style=f.style == undefined ? "" : f.style,
+                                                    )
+
+                                                when "daterange"
+                                                    input.date-range-picker.form-control(
+                                                        type='text',
+                                                        name=f.name === undefined ? "" : f.name,
+                                                        value=f.value === undefined ? "" : f.value,
+                                                        style=f.style == undefined ? "" : f.style,
+                                                    )
+
+                                                when "span"
+                                                    span.form-control(
+                                                        name=f.name === undefined ? "" : f.name,
+                                                        style=f.style == undefined ? "" : f.style,
+                                                    ) #{f.value === undefined ? "" : f.value}
+
+                                                default
+                                                    !=f
+
+                                if filters
+                                    .input-group
+                                        button#btn_filter.btn.btn-info(type='submit')
+                                            | 筛选
+
+                    .panel-body
+                        .row
+                            .col-md-12.hscroll
+                                table.table.table-striped.table-condensed.table-hover
+
+                        .row
+                            .col-md-12
+                                .pager
+                                    a#page_prev(href="javascript:;")
+                                        i(class="fa fa-chevron-left")
+
+                                    span.pageno
+                                        | 1
+
+                                    a#page_next(href="javascript:;")
+                                        i(class="fa fa-chevron-right")
+
+block script
+    script(src='/scripts/lib/table/edit.js')
+
+    script.
+        $(function () {
+            $('.date-picker').daterangepicker({
+                autoApply: true,
+                locale: {
+                    format: "YYYY-MM-DD",
+                    separator: " ~ ",
+                },
+                opens: "left",
+                singleDatePicker: true,
+            });
+
+            $('.date-range-picker').daterangepicker({
+                autoApply: true,
+                locale: {
+                    format: "YYYY-MM-DD",
+                    separator: " ~ ",
+                },
+                opens: "left",
+            });
+        });
+
+    script.
+        $(function () {
+            edit_create(!{JSON.stringify(opt)});
+        });
+
+    - for (var s of scripts ? scripts : [])
+        script(src=s)

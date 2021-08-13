@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [13300, 13400)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+
+// 推送礼包
+message PushGiftData {
+    repeated PushGiftOne Gifts = 1; // 礼包
+}
+
+message PushGiftOne {
+    int32 Id       = 1; // id
+    int32 BuyCnt   = 2; // 购买次数
+    int64 CreateTs = 3; // 创建时间
+}
+
+// ============================================================================
+// 推送
+message GS_PushGiftNew { // msgid: 13300
+    int32 Id       = 1;
+    int64 CreateTs = 2;
+}
+
+message GS_PushGiftRewards { // msgid: 13301
+    int32   Id      = 1;
+    Rewards Rewards = 2;
+}
+
+// ============================================================================
+
+// 设置创建时间
+message C_PushGiftSetCreateTs { // msgid: 13310
+    int32 Id = 1;
+}
+
+message GS_PushGiftSetCreateTs_R { // msgid: 13311
+    int32 ErrorCode = 1;
+    int32 Id        = 2;
+    int64 CreateTs  = 3;
+}

@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "cost": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "rewardExp": 10,
+        "rewardFund": 10,
+        "rewardDonate": 40
+    },
+    {
+        "id": 2,
+        "cost": [
+            {
+                "id": 10002,
+                "n": 250
+            }
+        ],
+        "rewardExp": 50,
+        "rewardFund": 50,
+        "rewardDonate": 200
+    },
+    {
+        "id": 3,
+        "cost": [
+            {
+                "id": 10002,
+                "n": 1000
+            }
+        ],
+        "rewardExp": 200,
+        "rewardFund": 200,
+        "rewardDonate": 800
+    },
+    {
+        "id": 4,
+        "cost": [
+            {
+                "id": 20200,
+                "n": 1
+            }
+        ],
+        "rewardExp": 400,
+        "rewardFund": 400,
+        "rewardDonate": 1600
+    },
+    {
+        "id": 5,
+        "cost": [
+            {
+                "id": 20201,
+                "n": 1
+            }
+        ],
+        "rewardExp": 1200,
+        "rewardFund": 1200,
+        "rewardDonate": 4800
+    },
+    {
+        "id": 6,
+        "cost": [
+            {
+                "id": 20202,
+                "n": 1
+            }
+        ],
+        "rewardExp": 3600,
+        "rewardFund": 3600,
+        "rewardDonate": 14400
+    }
+]

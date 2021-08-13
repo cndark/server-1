@@ -1,0 +1,4 @@
+group,moduleId,openStatus,txt_Name,txt_Des,cost,discount,refreshCost,extReward,blankNum
+string,int32,[]{int32 statusId; double val},string,string,[]{int32 id;int32 n},float,[]{int32 id;int32 n},[]{int32 id;int32 n},int32
+normal,2,,幸运轮盘,,20012~1,0.8,10002~50,,8
+senior,5,,神秘轮盘,,20013~1,1,10002~100,,8

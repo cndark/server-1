@@ -1,0 +1,199 @@
+extends ../base.pug
+
+block css
+    link(href='/css/page.css', rel='stylesheet')
+
+    style.
+        td:nth-child(1) {
+            min-width: 150px;
+        }
+
+        td:nth-child(2) {
+            min-width:  120px;
+            max-width:  120px;
+            word-break: break-all;
+        }
+
+        td:nth-child(3) {
+            min-width:  300px;
+            max-width:  300px;
+            word-break: break-all;
+        }
+
+        td:nth-child(4) {
+            min-width: 60px;
+            max-width: 60px;
+        }
+
+        td:nth-child(5) {
+            min-width:  100px;
+            max-width:  100px;
+        }
+
+        td:nth-child(6) {
+            min-width: 100px;
+            max-width: 100px;
+        }
+
+        td:nth-child(7) {
+            min-width: 50px;
+            max-width: 50px;
+        }
+
+        td:nth-child(8) {
+            min-width: 50px;
+            max-width: 50px;
+        }
+
+block content
+    .container-fluid
+        .row
+            .col-md-8
+                .panel.panel-info
+                    .panel-heading.head
+                        .clearfix
+                            | #{tab.name}
+                            form.form-inline.pull-right
+                                - for (var f of form ? form : [])
+                                    .input-group
+                                        if f.icon
+                                            .input-group-addon
+                                                i(class=`fa fa-${f.icon}`)
+                                        else if f.desc
+                                            .input-group-addon
+                                                span #{f.desc}
+
+                                        case f.type
+                                            when "select"
+                                                select.form-control(name=f.name === undefined ? "" : f.name)
+                                                    - for (var v of f.src ? f.src : [])
+                                                        if v instanceof Array
+                                                            option(value=v[0] selected=(v[0] == f.value ? true : false)) #{v[1]}
+                                                        else
+                                                            option(value=v selected=(v == f.value ? true : false)) #{v}
+
+                                            when "input"
+                                                input.form-control(
+                                                    type='text',
+                                                    name=f.name === undefined ? "" : f.name,
+                                                    value=f.value === undefined ? "" : f.value,
+                                                    placeholder=f.placeholder === undefined ? "" : f.placeholder,
+                                                    style=f.style == undefined ? "" : f.style,
+                                                )
+
+                                            when "date"
+                                                input.date-picker.form-control(
+                                                    type='text',
+                                                    name=f.name === undefined ? "" : f.name,
+                                                    value=f.value === undefined ? "" : f.value,
+                                                    style=f.style == undefined ? "" : f.style,
+                                                )
+
+                                            when "daterange"
+                                                input.date-range-picker.form-control(
+                                                    type='text',
+                                                    name=f.name === undefined ? "" : f.name,
+                                                    value=f.value === undefined ? "" : f.value,
+                                                    style=f.style == undefined ? "" : f.style,
+                                                )
+
+                                            when "span"
+                                                span.form-control(
+                                                    name=f.name === undefined ? "" : f.name,
+                                                    style=f.style == undefined ? "" : f.style,
+                                                ) #{f.value === undefined ? "" : f.value}
+
+                                            default
+                                                !=f
+
+                                if form
+                                    .input-group
+                                        button#btn_ok.btn.btn-info
+                                            | 确定
+
+                    .panel-body
+                        .row
+                            .col-md-12.hscroll
+                                table.table.table-striped.table-condensed.table-hover
+                                    thead
+                                        tr
+                                            - for (var v of tab.header ? tab.header : [])
+                                                th #{v}
+                                    tbody
+                                        - for (var row of tab.body ? tab.body : [])
+                                            tr(_id=row[0])
+                                                - for (var i = 1; i < row.length; i++)
+                                                    td #{row[i]}
+
+                        .row
+                            .col-md-12
+                                .pager
+                                    a#page_prev(href="javascript:;")
+                                        i(class="fa fa-chevron-left")
+
+                                    span.pageno
+                                        | #{paged.page}
+
+                                    a#page_next(href="javascript:;")
+                                        i(class="fa fa-chevron-right")
+
+            .col-md-4
+                .panel.panel-info
+                    .panel-heading.head
+                        .clearfix
+                            | 信息
+                            button#btn_update.btn.btn-primary(disabled) 新增
+                            button#btn_audit.btn.btn-warning(
+                                style='display: none',
+                                priv=sess.priv['gm.mail.audit'] ? 'true' : 'false',
+                            ) 审核
+                            span.alert
+                    .panel-body
+                        .row
+                            .col-md-12
+                                | ID
+                                input.form-control(type='text', name='_id', disabled)
+                            .col-md-12
+                                | 发送时间
+                                input.form-control(type='text', name='send_ts', placeholder='yyyy-MM-DD HH:mm:ss | 不填: 立即发送')
+                            .col-md-12
+                                | 区域
+                                select.form-control(name='area')
+                                    option(value='-1') 所有区域
+                                    - for (var v of areas)
+                                        option(value=v[0]) #{v[1]}
+                            .col-md-12
+                                | 目标
+                                input.form-control(type='text', name='target', placeholder='全区: all  |  指定服: 1,3-5 ...  |  指定玩家: id,id ...')
+                        .row
+                            .col-md-12
+                                | 标题
+                                input.form-control(type='text', name='title')
+                            .col-md-12
+                                | 文本
+                                textarea.form-control(rows=10, name='text')
+                        .row
+                            .col-md-12 附件
+                            - for (var i = 0;  i < 20; i++)
+                                .col-md-6
+                                    input.form-control(type='text', name='res_k')
+                                .col-md-6
+                                    input.form-control(type='text', name='res_v')
+
+
+block script
+    script(src='/scripts/gm/tmail.js')
+
+    script.
+        $(function () {
+            $('.date-range-picker').daterangepicker({
+                autoApply: true,
+                locale: {
+                    format: "YYYY-MM-DD",
+                    separator: " ~ ",
+                },
+                opens: "left",
+            });
+
+            paged_create(!{JSON.stringify(paged)});
+        });

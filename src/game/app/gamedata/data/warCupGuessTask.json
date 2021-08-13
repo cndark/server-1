@@ -1,0 +1,162 @@
+[
+    {
+        "id": 101,
+        "guessTaskAttain": [
+            {
+                "attainId": 3,
+                "p2": 1
+            }
+        ],
+        "reward": [
+            {
+                "id": 10011,
+                "n": 50
+            }
+        ],
+        "confGrp": 1
+    },
+    {
+        "id": 201,
+        "guessTaskAttain": [
+            {
+                "attainId": 4,
+                "p2": 1
+            }
+        ],
+        "reward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "confGrp": 1
+    },
+    {
+        "id": 301,
+        "guessTaskAttain": [
+            {
+                "attainId": 1,
+                "p2": 1
+            }
+        ],
+        "reward": [
+            {
+                "id": 10010,
+                "n": 50
+            }
+        ],
+        "confGrp": 1
+    },
+    {
+        "id": 302,
+        "guessTaskAttain": [
+            {
+                "attainId": 1,
+                "p2": 3
+            }
+        ],
+        "reward": [
+            {
+                "id": 10010,
+                "n": 100
+            }
+        ],
+        "confGrp": 1
+    },
+    {
+        "id": 303,
+        "guessTaskAttain": [
+            {
+                "attainId": 1,
+                "p2": 5
+            }
+        ],
+        "reward": [
+            {
+                "id": 10010,
+                "n": 150
+            }
+        ],
+        "confGrp": 1
+    },
+    {
+        "id": 304,
+        "guessTaskAttain": [
+            {
+                "attainId": 1,
+                "p2": 10
+            }
+        ],
+        "reward": [
+            {
+                "id": 10010,
+                "n": 200
+            }
+        ],
+        "confGrp": 1
+    },
+    {
+        "id": 401,
+        "guessTaskAttain": [
+            {
+                "attainId": 2,
+                "p2": 1
+            }
+        ],
+        "reward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "confGrp": 1
+    },
+    {
+        "id": 402,
+        "guessTaskAttain": [
+            {
+                "attainId": 2,
+                "p2": 3
+            }
+        ],
+        "reward": [
+            {
+                "id": 10002,
+                "n": 150
+            }
+        ],
+        "confGrp": 1
+    },
+    {
+        "id": 403,
+        "guessTaskAttain": [
+            {
+                "attainId": 2,
+                "p2": 5
+            }
+        ],
+        "reward": [
+            {
+                "id": 10002,
+                "n": 200
+            }
+        ],
+        "confGrp": 1
+    },
+    {
+        "id": 404,
+        "guessTaskAttain": [
+            {
+                "attainId": 2,
+                "p2": 10
+            }
+        ],
+        "reward": [
+            {
+                "id": 10002,
+                "n": 300
+            }
+        ],
+        "confGrp": 1
+    }
+]

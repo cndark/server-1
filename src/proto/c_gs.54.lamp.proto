@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [14300, 14400)
+// ============================================================================
+
+// 跑马灯数据
+message LampData { repeated LampOne Data = 1; }
+
+message LampOne {
+    int32               Id    = 1;
+    map<string, string> Param = 2; // 参数,可变
+    int64               Ts    = 3;
+}
+
+// ============================================================================
+// 通知
+message GS_LampMsg { // msgid:14300
+    LampOne One = 1;
+}

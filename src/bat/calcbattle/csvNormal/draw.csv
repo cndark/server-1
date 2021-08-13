@@ -1,0 +1,8 @@
+drawGroup,moduleId,txt_Name,txt_Des,cost,equilCost,discount,costFreeTime,initialTimes,fixedTimes,extraTimes
+string,int32,string,string,[]{int32 id;int32 n},[]{int32 id;int32 n},int32,int32,int32,[]int32,int32
+normal,30,基础召唤,随机召唤1~5星英雄,20001~1,,10000,300,,,10
+senior,31,高级召唤,随机召唤3~5星英雄,20002~1,10002~300,9000,,10,,20
+water,32,水,,20003~1,,10000,,,,20
+thunder,32,雷,,20003~1,,10000,,,,20
+fire,32,火,,20003~1,,10000,,,,20
+blend,32,光/暗,,20003~1,,10000,,,,30

@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for GW <-> GS: [1100, 1200)
+// ============================================================================
+
+// 注册网关
+message GW_RegisterGate { // msgid: 1100
+    int32 Id = 1;
+}
+
+message GS_RegisterGate_R { // msgid: 1101
+    bool Success = 1;
+}
+
+// 玩家上线
+message GW_UserOnline { // msgid: 1102
+    uint64              Sid      = 1;
+    string              UserId   = 2;
+    string              AuthId   = 3;
+    string              Svr0     = 4;
+    string              Sdk      = 5;
+    string              Model    = 6; // 设备型号
+    string              DevId    = 7; // 设备码
+    string              Os       = 8; // 操作系统
+    string              OsVer    = 9; // 操作系统版本
+    string              LoginIP  = 10;
+    string              Language = 11;
+    map<string, string> AuthRet  = 12;
+}
+
+// 通知 game 玩家登出
+message GW_LogoutPlayer { // msgid: 1103
+    uint64 Sid = 1;
+}
+
+// game 踢人
+message GS_Kick { // msgid: 1104
+    uint64 Sid = 1;
+}

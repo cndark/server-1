@@ -1,0 +1,140 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [9600, 9700)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+import "c_gs.41.chat.proto";
+
+// ============================================================================
+
+// 好友
+message FriendData {
+    repeated FriendInfo       Friends   = 1; // 好友列表
+    repeated PlayerSimpleInfo ApplyList = 2; // 申请列表
+    repeated PlayerSimpleInfo BlackList = 3; // 屏蔽列表
+    repeated string           GiveList  = 4; // 赠送列表
+    repeated string           RecvList  = 5; // 接受赠送列表
+}
+
+message FriendInfo {
+    PlayerSimpleInfo Info     = 1; // 玩家基础信息
+    bool             IsOnline = 2; // 是否在线
+    int64            OffTs    = 3; // 下线时间
+    int64            Ts       = 4; // 玩家添加好友时间
+    repeated ChatOne ChatData = 5; // 聊天数据
+}
+
+// ============================================================================
+
+// 新的好友申请
+message GS_FriendNewApplied { // msgid: 9600
+    string PlrId = 1;
+}
+
+// 新的好友
+message GS_FriendNewFriend { // msgid: 9601
+    FriendInfo Frd = 1;
+}
+
+message GS_FriendRemoveFriend { // msgid: 9602
+    string PlrId = 1;
+}
+
+message GS_FriendRecv { // msgid: 9603
+    string PlrId = 1;
+}
+
+// ============================================================================
+
+// 好友列表
+message C_FriendGetFrds { // msgid: 9610
+}
+
+message GS_FriendGetFrds_R { // msgid: 9611
+    repeated FriendInfo Friends = 1;
+}
+
+// 搜索好友
+message C_FriendSearchFrds { // msgid: 9612
+    string Name = 1;
+}
+
+message GS_FriendSearchFrds_R { // msgid: 9613
+    repeated PlayerSimpleInfo Plrs = 1;
+}
+
+// 移除好友
+message C_FriendRemoveFrds { // msgid: 9614
+    string PlrId = 1;
+}
+
+message GS_FriendRemoveFrds_R { // msgid: 9615
+    int32  ErrorCode = 1;
+    string PlrId     = 2;
+}
+
+// 申请列表
+message C_FriendGetApplyList { // msgid: 9616
+}
+
+message GS_FriendGetApplyList_R { // msgid: 9617
+    repeated PlayerSimpleInfo ApplyList = 1;
+}
+
+// 申请好友
+message C_FriendApply { // msgid: 9618
+    string PlrId = 1;
+}
+
+message GS_FriendApply_R { // msgid: 9619
+    int32 ErrorCode = 1;
+}
+
+// 接受好友
+message C_FriendAccept {          // msgid: 9620
+    bool            IsAccept = 1; // 接受，拒绝
+    repeated string PlrIds   = 2;
+}
+
+message GS_FriendAccept_R { // msgid: 9621
+    int32 ErrorCode = 1;
+}
+
+// 黑白名单列表
+message C_FriendGetBlackList { // msgid: 9622
+}
+
+message GS_FriendGetBlackList_R { // msgid: 9623
+    repeated PlayerSimpleInfo BlackList = 1;
+}
+
+// 添加移除黑白名单
+message C_FriendAddBlackList { // msgid: 9624
+    bool   IsAdd = 1;          // 添加，移除
+    string PlrId = 2;
+}
+
+message GS_FriendAddBlackList_R { // msgid: 9625
+    int32  ErrorCode = 1;
+    bool   IsAdd     = 2; // 添加，移除
+    string PlrId     = 3;
+}
+
+// 送礼和收礼
+message C_FriendGiveAndRecv { // msgid: 9626
+    repeated string PlrIds = 1;
+}
+
+message GS_FriendGiveAndRecv_R { // msgid: 9627
+    int32           ErrorCode = 1;
+    repeated string PlrIds    = 2;
+    int32           Cnt       = 3; // 体力收获点数
+}

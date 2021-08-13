@@ -1,0 +1,32 @@
+extends ../base.pug
+
+block css
+    link(href='/css/page.css', rel='stylesheet')
+
+block content
+    .container-fluid
+        .row
+            .col-md-6
+                .panel.panel-info
+                    .panel-heading.head
+                        .clearfix
+                            | 万能认证动态码
+                            button#btn_dyncode.btn.btn-default 设置
+                            button#btn_dyncode_gen.btn.btn-default 生成
+                            span.alert
+                    .panel-body
+                        .row
+                            .col-md-12
+                                | 区域
+                                select.form-control(name='area')
+                                    - for (var v of areas)
+                                        option(value=v[0]) #{v[1]}
+                        .row
+                            .col-md-12
+                                | 动态码
+                                input.form-control(name='code', placeholder='长度至少32个字符. 设置后60秒过期')
+
+
+
+block script
+    script(src='/scripts/private/bible.js')

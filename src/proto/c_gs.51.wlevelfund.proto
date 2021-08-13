@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [14000, 14100)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+
+// 推图基金
+message WLevelFundData {
+    bool           IsBuy = 1; // 是否购买
+    repeated int32 Taken = 2; // 已经领取的id
+}
+
+// ============================================================================
+
+// 新购
+message GS_WLevelFundNew { // msgid:14000
+    int32 FundId = 1;
+}
+
+// ============================================================================
+
+message C_WLevelFundTake { // msgid:14010
+    int32 Id = 1;
+}
+
+message GS_WLevelFundTake_R { // msgid:14011
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+}

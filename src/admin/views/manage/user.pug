@@ -1,0 +1,46 @@
+extends ../lib/table/edit.pug
+
+block modals
+    #dlg_priv.modal.fade
+        .modal-dialog.modal-lg
+            .modal-content
+                .modal-header
+                    .close(data-dismiss='modal')
+                        i.fa.fa-times
+                    h4.modal-title
+                        | 授权: 
+                        span
+
+                .modal-body
+                    - for (let lv1 of sess.sys.priv_pages)
+                        if sess.priv[lv1.path]
+                            .row
+                                .col-md-12
+                                    b #{lv1.text}
+                            hr.hr5
+                            .row
+                                .col-md-12
+                                    - for (let lv2 of lv1.children)
+                                        if sess.priv[lv2.path]
+                                            button.btn.btn-default(type='item', key=lv2.path) #{lv2.text}
+                            br
+
+                    .row
+                        .col-md-12
+                            b 特殊权限
+                    hr.hr5
+                    .row
+                        .col-md-12
+                            - for (let lv1 of sess.sys.priv_specials)
+                                if sess.priv[lv1.key]
+                                    button.btn.btn-default(type='item', key=lv1.key) #{lv1.text}
+                                - for (let lv2 of lv1.children)
+                                    if sess.priv[lv2.key]
+                                        button.btn.btn-default(type='item', key=lv2.key) #{lv2.text}
+
+                .modal-footer
+                    button.btn.btn-primary 确定
+                    button.btn.btn-default(data-dismiss='modal') 取消
+
+block custom
+    #userdata(user=sess.user, rank=sess.rank)

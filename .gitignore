@@ -1,0 +1,6 @@
+bin/
+pkg/
+.vscode/
+.ver/
+env.local
+*.DS_Store

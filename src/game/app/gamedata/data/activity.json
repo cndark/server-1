@@ -1,0 +1,134 @@
+[
+    {
+        "name": "1",
+        "confCycles": [
+            {
+                "cnt": 1,
+                "grps": "101"
+            }
+        ],
+        "needDays": 0,
+        "initialPower": 0
+    },
+    {
+        "name": "2",
+        "confCycles": [
+            {
+                "cnt": 1,
+                "grps": "201,202"
+            }
+        ],
+        "needDays": 0,
+        "initialPower": 0
+    },
+    {
+        "name": "3",
+        "confCycles": [
+            {
+                "cnt": 1,
+                "grps": "301,302"
+            }
+        ],
+        "needDays": 0,
+        "initialPower": 0
+    },
+    {
+        "name": "4",
+        "confCycles": [
+            {
+                "cnt": 1,
+                "grps": "401,402"
+            }
+        ],
+        "needDays": 0,
+        "initialPower": 0
+    },
+    {
+        "name": "201",
+        "confCycles": [
+            {
+                "cnt": 0,
+                "grps": "1"
+            }
+        ],
+        "needDays": 0,
+        "initialPower": 0
+    },
+    {
+        "name": "202",
+        "confCycles": [
+            {
+                "cnt": 0,
+                "grps": "1"
+            }
+        ],
+        "needDays": 0,
+        "initialPower": 0
+    },
+    {
+        "name": "211",
+        "confCycles": [
+            {
+                "cnt": 1,
+                "grps": "21,22"
+            },
+            {
+                "cnt": 0,
+                "grps": "1,2,3,4,5,6,7,8,9,10,11,12"
+            }
+        ],
+        "needDays": 15,
+        "initialPower": 0
+    },
+    {
+        "name": "212",
+        "confCycles": [
+            {
+                "cnt": 1,
+                "grps": "21"
+            }
+        ],
+        "needDays": 15,
+        "initialPower": 0
+    },
+    {
+        "name": "213",
+        "confCycles": [
+            {
+                "cnt": 0,
+                "grps": "1,2,3,4,5,6,7,8,9,10,11,12"
+            }
+        ],
+        "needDays": 15,
+        "initialPower": 0
+    },
+    {
+        "name": "214",
+        "confCycles": [
+        ],
+        "needDays": 0,
+        "initialPower": 0
+    },
+    {
+        "name": "220",
+        "confCycles": [
+            {
+                "cnt": 1,
+                "grps": "1"
+            }
+        ],
+        "needDays": 15,
+        "initialPower": 0
+    },
+    {
+        "name": "221",
+        "confCycles": [
+            {
+                "cnt": 1,
+                "grps": "1"
+            }
+        ],
+        "needDays": 0,
+        "initialPower": 100
+    }
+]

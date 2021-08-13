@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [9700, 9800)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+
+// 远征
+message CrusadeData {
+    string                Stage    = 1; // 阶段
+    int64                 Ts1      = 2; // 阶段开始时间
+    int64                 Ts2      = 3; // 阶段结束时间
+    int32                 LvNum    = 4; // 通关关卡
+    repeated int32        BoxTaken = 5; // 宝箱领取
+    map<int64, double>    HpLoss   = 6; // 损失血量
+    repeated CrusadeEnemy Enemies  = 7; // 对手
+}
+
+message CrusadeEnemy { PlayerSimpleInfo Plr = 1; }
+
+// ============================================================================
+
+// 推送: 版本推送
+message GS_CrusadeStageUpdate { // msgid: 9700
+    string Stage = 1;           // 阶段
+    int64  Ts1   = 2;           // 阶段开始时间
+    int64  Ts2   = 3;           // 阶段结束时间
+}
+
+// ============================================================================
+
+message C_CrusadeGetInfo { // msgid: 9710
+}
+
+message GS_CrusadeGetInfo_R { // msgid: 9711
+    CrusadeData Data = 1;
+}
+
+message C_CrusadeBoxTake { // msgid: 9712
+    int32 Id = 1;
+}
+
+message GS_CrusadeBoxTake_R { // msgid: 9713
+    int32   ErrorCode = 1;
+    int32   Id        = 2;
+    Rewards Rewards   = 3;
+}
+
+// 打架
+message C_CrusadeFight { // msgid: 9714
+    TeamFormation T = 1;
+}
+
+message GS_CrusadeFight_R { // msgid: 9715
+    int32              ErrorCode = 1;
+    BattleReplay       Replay    = 2;
+    Rewards            Rewards   = 3;
+    map<int64, double> HpLoss    = 4; // 损失血量
+}

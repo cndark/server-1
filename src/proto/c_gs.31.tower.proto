@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [9100, 9200)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+
+// 爬塔
+message TowerData {
+    int32 LvNum  = 1; // 当前层数
+    int64 LastTs = 2; // 上次raid时间
+}
+
+// ============================================================================
+
+// 战斗
+message C_TowerFight { // msgid: 9100
+    TeamFormation T = 1;
+}
+
+message GS_TowerFight_R { // msgid: 9101
+    int32        ErrorCode = 1;
+    BattleReplay Replay    = 2;
+    int32        LvNum     = 3;
+    Rewards      Rewards   = 4;
+}
+
+// 扫荡
+message C_TowerRaid { // msgid: 9102
+}
+
+message GS_TowerRaid_R { // msgid: 9103
+    int32   ErrorCode = 1;
+    int64   LastTs    = 2;
+    Rewards Rewards   = 3;
+}
+
+// 录像
+message C_TowerRecord { // msgid: 9104
+    int32 LvNum = 1;
+}
+
+message GS_TowerRecord_R {     // msgid: 9105
+    BattleReplay First    = 1; // 首杀战斗录像
+    BattleReplay MinPower = 2; // 最小战力战斗录像
+}

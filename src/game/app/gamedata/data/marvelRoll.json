@@ -1,0 +1,46 @@
+[
+    {
+        "group": "normal",
+        "moduleId": 2,
+        "openStatus": [
+        ],
+        "cost": [
+            {
+                "id": 20012,
+                "n": 1
+            }
+        ],
+        "discount": 0.8,
+        "refreshCost": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "extReward": [
+        ],
+        "blankNum": 8
+    },
+    {
+        "group": "senior",
+        "moduleId": 5,
+        "openStatus": [
+        ],
+        "cost": [
+            {
+                "id": 20013,
+                "n": 1
+            }
+        ],
+        "discount": 1,
+        "refreshCost": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "extReward": [
+        ],
+        "blankNum": 8
+    }
+]

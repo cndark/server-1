@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [7300, 7400)
+// ============================================================================
+
+message ActState {
+    string Name    = 1; // act name
+    string Stage   = 2; // current stage
+    int64  T1      = 3; // stage begin ts
+    int64  T2      = 4; // stage end ts
+    int32  ConfGrp = 5; // conf group
+}
+
+// ============================================================================
+
+message GS_ActStateChange { // msgid: 7300
+    ActState Act = 1;
+}
+
+// ============================================================================
+
+message C_ActStateGet { // msgid: 7320
+}
+
+message GS_ActStateGet_R { // msgid: 7321
+    int32             ErrorCode = 1;
+    repeated ActState Acts      = 2;
+}

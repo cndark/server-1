@@ -1,0 +1,295 @@
+package evt
+
+import (
+	"fw/src/core"
+	"fw/src/core/evtmgr"
+	"fw/src/game/app"
+	"fw/src/game/app/gamedata"
+	"fw/src/game/app/gconst"
+	"time"
+)
+
+// ============================================================================
+
+func init() {
+	// player create
+	evtmgr.On(gconst.Evt_ServerNewUser, func(args ...interface{}) {
+		plr := args[1].(*app.Player)
+
+		new_chuxin_rec(gconst.GLog_AcctCreate, "accountCreate", plr).
+			set("account", plr.GetAuthId()).
+			set("device_id", plr.GetDevId()).
+			set("ip", plr.GetLoginIP()).
+			set("timestamp", time.Now().Unix()).
+			insert()
+
+		new_chuxin_rec(gconst.GLog_UserCreate, "roleCreate", plr).
+			set("role_name", plr.GetName()).
+			set("device_id", plr.GetDevId()).
+			set("ip", plr.GetLoginIP()).
+			set("timestamp", time.Now().Unix()).
+			insert()
+	})
+
+	// player login
+	evtmgr.On(gconst.Evt_LoginOnline, func(args ...interface{}) {
+		plr := args[0].(*app.Player)
+		devid := args[1].(string)
+		ip := args[2].(string)
+
+		new_chuxin_rec(gconst.GLog_UserLogin, "loginGame", plr).
+			set("role_name", plr.GetName()).
+			set("grade", plr.GetLevel()).
+			set("ip", ip).
+			set("login_time", plr.GetLoginTs().Unix()).
+			set("login_type", 1).
+			set("device_id", devid).
+			set("device_brand", plr.GetModel()).
+			set("device_type", plr.GetModel()).
+			set("device_os", plr.GetOs()+plr.GetOsVer()).
+			set("device_memory", "-").
+			set("game_version", "1.0.0").
+			set("res_version", "1.0.0").
+			set("role_head", plr.GetHead()).
+			set("power", plr.GetAtkPwr()).
+			insert()
+	})
+
+	// player logoff
+	evtmgr.On(gconst.Evt_LoginOffline, func(args ...interface{}) {
+		plr := args[0].(*app.Player)
+
+		new_chuxin_rec(gconst.GLog_UserLogoff, "logoutGame", plr).
+			set("role_name", plr.GetName()).
+			set("ip", plr.GetLoginIP()).
+			set("login_time", plr.GetLoginTs().Unix()).
+			set("logout_time", time.Now().Unix()).
+			insert()
+	})
+
+	// player level up
+	evtmgr.On(gconst.Evt_PlrLv, func(args ...interface{}) {
+		plr := args[0].(*app.Player)
+		lv := args[1].(int32)
+		add := args[2].(int32)
+
+		if add > 0 {
+			new_chuxin_rec(gconst.GLog_UserLv, "roleUpgrade", plr).
+				set("role_name", plr.GetName()).
+				set("old_grade", lv-add).
+				set("old_experience", 0).
+				set("new_grade", lv).
+				set("new_experience", 0).
+				set("add_experience", 0).
+				set("action_type", 1).
+				set("upgrade_time", time.Now().Unix()).
+				insert()
+		}
+	})
+
+	// player bill gen
+	evtmgr.On(gconst.Evt_BillGen, func(args ...interface{}) {
+		plr := args[0].(*app.Player)
+		pid := args[1].(int32)
+		csext := args[2].(string)
+		orderid := args[3].(string)
+		ts := args[4].(int64)
+
+		conf := gamedata.ConfBillProduct.Query(pid)
+		if conf == nil {
+			return
+		}
+
+		new_chuxin_rec(gconst.GLog_BillGen, "createOrder", plr).
+			set("role_name", plr.GetName()).
+			set("order_id", orderid).
+			set("order_type", 1).
+			set("create_time", ts).
+			set("status", 0).
+			set("amount", conf.Price).
+			set("goods_num", pid).
+			set("goods_type", conf.PayId).
+			set("role_grade", plr.GetLevel()).
+			set("vip_grade", plr.GetVipLevel()).
+			set("device_id", plr.GetDevId()).
+			set("ip", plr.GetLoginIP()).
+			set("csext", csext).
+			insert()
+	})
+
+	// player bill done
+	evtmgr.On(gconst.Evt_BillStats, func(args ...interface{}) {
+		plr := args[0].(*app.Player)
+		amount := args[1].(int32)
+		orderid := args[3].(string)
+		pid := args[4].(int32)
+		csext := args[5].(string)
+
+		conf := gamedata.ConfBillProduct.Query(pid)
+		if conf == nil {
+			return
+		}
+
+		new_chuxin_rec(gconst.GLog_BillFin, "completeOrder", plr).
+			set("role_name", plr.GetName()).
+			set("order_id", orderid).
+			set("order_type", 1).
+			set("create_time", time.Now().Unix()).
+			set("pay_time", time.Now().Unix()).
+			set("status", 2).
+			set("amount", amount).
+			set("goods_num", pid).
+			set("goods_type", conf.PayId).
+			set("role_grade", plr.GetLevel()).
+			set("vip_grade", plr.GetVipLevel()).
+			set("device_id", plr.GetDevId()).
+			set("ip", plr.GetLoginIP()).
+			set("csext", csext).
+			insert()
+	})
+
+	// player bag change
+	evtmgr.On(gconst.Evt_BagChg, func(args ...interface{}) {
+		plr := args[0].(*app.Player)
+		chg := args[1].(map[int32]int64)
+		from := args[2].(int32)
+
+		for id, n := range chg {
+			status := 1
+			opn := n
+			if n < 0 {
+				status = 2
+				opn = -n
+			}
+
+			tp := gconst.ObjectType(id)
+			if tp == gconst.ObjType_Currency {
+				cur := plr.GetBag().GetCcy(id)
+				new_chuxin_rec(gconst.GLog_CcyChg, "moneyChange", plr).
+					set("role_name", plr.GetName()).
+					set("currency_type", core.I32toa(id)).
+					set("status", status).
+					set("action_type", from).
+					set("before_num", cur).
+					set("currency_num", opn).
+					set("after_num", cur+n).
+					set("timestamp", time.Now().Unix()).
+					insert()
+			} else if tp == gconst.ObjType_Item {
+				cur := plr.GetBag().GetItem(id)
+				new_chuxin_rec(gconst.GLog_ItemChg, "bagChange", plr).
+					set("role_name", plr.GetName()).
+					set("goods_id", core.I32toa(id)).
+					set("goods_name", core.I32toa(id)).
+					set("goods_num", opn).
+					set("status", status).
+					set("action_type", from).
+					set("is_bind", 2).
+					set("bag_type", core.I32toa(gconst.ObjectType(id))).
+					set("goods_residue", cur+int32(n)).
+					set("timestamp", time.Now().Unix()).
+					insert()
+			} else if tp == gconst.ObjType_Hero {
+				new_chuxin_rec(gconst.GLog_HeroAdd, "heroHandleLog", plr).
+					set("role_name", plr.GetName()).
+					set("hero_id", core.I32toa(id)).
+					set("template_id", core.I32toa(id)).
+					set("hero_name", core.I32toa(id)).
+					set("handle", 1).
+					set("source", from).
+					set("num", 1).
+					set("timestamp", time.Now().Unix()).
+					insert()
+			}
+		}
+	})
+
+	// player shop buy
+	evtmgr.On(gconst.Evt_ShopBuy, func(args ...interface{}) {
+		plr := args[0].(*app.Player)
+		shopid := args[1].(int32)
+		shopitem := args[2].(map[int32]int32)
+
+		for id, n := range shopitem {
+			conf := gamedata.ConfShopItem.Query(id)
+			if conf == nil {
+				continue
+			}
+
+			new_chuxin_rec(gconst.GLog_ShopBuy, "shopChange", plr).
+				set("role_name", plr.GetName()).
+				set("shop_id", core.I32toa(shopid)).
+				set("shop_name", core.I32toa(shopid)).
+				set("goods_id", core.I32toa(conf.Item)).
+				set("goods_name", core.I32toa(conf.Item)).
+				set("shop_num", conf.Num*n).
+				set("timestamp", time.Now().Unix()).
+				set("price", conf.Currency).
+				set("discount", conf.Discount/1000).
+				insert()
+		}
+	})
+
+	// player tutorial
+	evtmgr.On(gconst.Evt_Tutorial, func(args ...interface{}) {
+		plr := args[0].(*app.Player)
+		tp := args[1].(string)
+		step := args[2].(int32)
+
+		new_chuxin_rec(gconst.GLog_Tutorial, "noviceGuideLog", plr).
+			set("role_name", plr.GetName()).
+			set("role_create_time", plr.GetCreateTs().Unix()).
+			set("ip", plr.GetLoginIP()).
+			set("step_id", core.I32toa(step)).
+			set("step_name", tp).
+			set("finish_time", time.Now().Unix()).
+			insert()
+	})
+
+	// player wlevel
+	evtmgr.On(gconst.Evt_WLevelLv, func(args ...interface{}) {
+		plr := args[0].(*app.Player)
+		lvNum := args[1].(int32)
+
+		new_chuxin_rec(gconst.GLog_WLevel, "checkpointLog", plr).
+			set("role_name", plr.GetName()).
+			set("role_create_time", plr.GetCreateTs().Unix()).
+			set("ip", plr.GetLoginIP()).
+			set("step_id", core.I32toa(lvNum)).
+			set("step_name", core.I32toa(lvNum)).
+			set("start_time", time.Now().Unix()).
+			set("finish_time", time.Now().Unix()).
+			set("status", 1).
+			insert()
+	})
+
+	// world num
+	evtmgr.On(gconst.Evt_OnlineNum, func(args ...interface{}) {
+		n := args[0].(int32)
+
+		new_chuxin_rec(gconst.GLog_OnlineNum, "onlineUserLog", nil).
+			set("timestamp", time.Now().Unix()).
+			set("num", n).
+			insert()
+	})
+
+	// player send chat
+	evtmgr.On(gconst.Evt_SendChat, func(args ...interface{}) {
+		plr := args[0].(*app.Player)
+		tp := args[1].(int32)
+		content := args[2].(string)
+		toid := args[3].(string)
+		toName := args[4].(string)
+
+		new_chuxin_rec(gconst.GLog_Chat, "chatLog", plr).
+			set("role_name", plr.GetName()).
+			set("chat_channel_id", tp).
+			set("chat_role_id", toid).
+			set("chat_role_name", toName).
+			set("chat_msg", content).
+			set("chat_time", time.Now().Unix()).
+			set("faction_id", plr.GetGuildId()).
+			insert()
+	})
+
+}

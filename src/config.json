@@ -1,0 +1,130 @@
+{
+    "common": {
+        "version": "0.0.1",
+
+        "area": {
+            "id":   1,
+            "name": "dev"
+        },
+
+        "db_share":  "mongodb://192.168.0.200:28002/fws",
+        "db_center": "mongodb://192.168.0.200:28002/fwc",
+        "db_stats":  "mongodb://192.168.0.200:28002/fwst",
+        "db_log":    "mongodb://192.168.0.200:28002/fwlg",
+        "db_bill":   "mongodb://192.168.0.200:28002/fwb",
+        "db_cross":  "mongodb://192.168.0.200:28002/fwcr",
+
+        "db_user": {
+            "u1": "mongodb://192.168.0.200:28002/fwu1",
+            "u2": "mongodb://192.168.0.200:28002/fwu2"
+        },
+
+        "kfk": {
+            "urls": [
+                "192.168.0.202:9092"
+            ]
+        },
+
+        "redis": {
+            "pool_size": 4,
+
+            "urls": [
+            ]
+        },
+
+        "behind_proxy": false,
+
+        "dev_mode": true
+    },
+
+    "auth": {
+        "ip":   "192.168.0.122",
+        "port": 5000,
+
+        "threads": 2
+    },
+
+    "bill": {
+        "ip":   "192.168.0.122",
+        "port": 6000,
+
+        "threads": 2
+    },
+
+    "switcher": {
+        "ip":   "192.168.0.122",
+        "port": 7000,
+
+        "threads": 2,
+
+        "token": "mCNGYy3uxLQJrJiGHmq69gLVDHfC62xLpIcpg9rRHdyBKT"
+    },
+
+    "reporter": {
+        "ip":   "192.168.0.122",
+        "port": 9000,
+
+        "threads": 2,
+
+        "token": "sw5t2RDq8xAaCgAQWhHghrSHQLrtIMIUAxEg96HrK2GtUGzrt"
+    },
+
+    "agent": {
+        "ip":   "192.168.0.122",
+        "port": 9001
+    },
+
+    "admin": {
+        "ip":   "192.168.0.122",
+        "port": 8000,
+
+        "pwdfill": "xm82qhgU6zeySSces7Uu9euWg9JhaBE",
+
+        "ccy": "CNY"
+    },
+
+    "routers": {
+        "router1": {"addr4c": "192.168.0.122:16001"}
+    },
+
+    "bats": {
+        "bat1": {"ip": "192.168.0.122", "port": 17001, "threads": 2 }
+    },
+
+    "games": {
+        "game1": {
+            "addr4gw": "192.168.0.122:10001",
+            "svc":     "192.168.0.122:13001",
+            "db_game": "mongodb://192.168.0.200:28002/fw_1"
+        },
+        "game2": {
+            "addr4gw": "192.168.0.122:10002",
+            "svc":     "192.168.0.122:13002",
+            "db_game": "mongodb://192.168.0.200:28002/fw_2"
+        },
+        "game3": {
+            "addr4gw": "192.168.0.122:10003",
+            "svc":     "192.168.0.122:13003",
+            "db_game": "mongodb://192.168.0.200:28002/fw_3"
+        }
+    },
+
+    "gates": {
+        "gate1": {
+            "ip_wan": "192.168.0.122",
+            "port":   20001,
+            "wsport": 23001
+        },
+        "gate2": {
+            "ip_wan": "192.168.0.122",
+            "port":   20002,
+            "wsport": 23002
+        },
+        "gate3": {
+            "ip_wan": "192.168.0.122",
+            "port":   20003,
+            "wsport": 23003
+        }
+    }
+}
+

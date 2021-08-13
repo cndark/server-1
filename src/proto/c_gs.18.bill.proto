@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [7500, 7600)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+
+message BillBuyCnt {
+    int32 PayId = 1;
+    int32 N     = 2;
+}
+
+// ============================================================================
+
+// 推送
+message GS_BillDone {    // msgid: 7500
+    int32   ProdId  = 1; // 充值id
+    Rewards Rewards = 2; // 获得奖励
+}
+
+// 推送三方订单
+message GS_BillOrder {  // msgid: 7501
+    string OrderId = 1; // 三方订单号
+    int32  Amount  = 2; // 金额
+}
+
+// ============================================================================
+
+// 获取信息
+message C_BillInfo { // msgid: 7510
+}
+
+message GS_BillInfo_R { // msgid: 7511
+    int32               ErrorCode    = 1;
+    repeated BillBuyCnt BuyCnt       = 2;
+    int64               TotalBaseCcy = 3;
+}
+
+// 获取充值返利码
+message C_BillRefundCodeGet { // msgid: 7512
+}
+
+message GS_BillRefundCodeGet_R { // msgid: 7513
+    int32  ErrorCode = 1;
+    string Code      = 2;
+}
+
+// 领取返利
+message C_BillRefundTake { // msgid: 7514
+    string Code = 1;
+}
+
+message GS_BillRefundTake_R { // msgid: 7515
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+}

@@ -1,0 +1,157 @@
+extends ../../base.pug
+
+block css
+    link(href='/css/page.css', rel='stylesheet')
+
+    if css
+        style
+            !=css
+
+block content
+    .container-fluid
+        .row
+            .col-md-12
+                .panel.panel-info
+                    .panel-heading.head
+                        .clearfix
+                            | #{tab ? tab.name || '' : ''}
+                            form.form-inline.pull-right
+                                - for (var f of form ? form : [])
+                                    if f.type == 'hidden'
+                                        input(
+                                            type='hidden',
+                                            name=f.name === undefined ? "" : f.name,
+                                            value=f.value === undefined ? "" : f.value,
+                                        )
+                                    else
+                                        .input-group
+                                            if f.icon
+                                                .input-group-addon
+                                                    i(class=`fa fa-${f.icon}`)
+                                            else if f.desc
+                                                .input-group-addon #{f.desc}
+
+                                            case f.type
+                                                when "select"
+                                                    select.form-control(name=f.name === undefined ? "" : f.name)
+                                                        - for (var v of f.src ? f.src : [])
+                                                            if v instanceof Array
+                                                                option(value=v[0] selected=(v[0] == f.value ? true : false)) #{v[1]}
+                                                            else
+                                                                option(value=v selected=(v == f.value ? true : false)) #{v}
+
+                                                when "input"
+                                                    input.form-control(
+                                                        type='text',
+                                                        name=f.name === undefined ? "" : f.name,
+                                                        value=f.value === undefined ? "" : f.value,
+                                                        placeholder=f.placeholder === undefined ? "" : f.placeholder,
+                                                        style=f.style == undefined ? "" : f.style,
+                                                    )
+
+                                                when "date"
+                                                    input.date-picker.form-control(
+                                                        type='text',
+                                                        name=f.name === undefined ? "" : f.name,
+                                                        value=f.value === undefined ? "" : f.value,
+                                                        style=f.style == undefined ? "" : f.style,
+                                                    )
+
+                                                when "daterange"
+                                                    input.date-range-picker.form-control(
+                                                        type='text',
+                                                        name=f.name === undefined ? '' : f.name,
+                                                        value=f.value === undefined ? '' : f.value,
+                                                        style=f.style == undefined ? '' : f.style,
+                                                    )
+
+                                                when "span"
+                                                    span.form-control(
+                                                        name=f.name === undefined ? "" : f.name,
+                                                        style=f.style == undefined ? "" : f.style,
+                                                    ) #{f.value === undefined ? "" : f.value}
+
+                                                default
+                                                    !=f
+
+                                if form
+                                    .input-group
+                                        button#btn_ok.btn.btn-info
+                                            | 确定
+
+                        block head2
+
+                    .panel-body
+                        if chart
+                            .row
+                                .col-md-12
+                                    canvas.chart
+                                .col-md-12
+                                    .hsep
+
+                        .row
+                            .col-md-12.hscroll
+                                table.table.table-striped.table-condensed.table-hover
+                                    thead
+                                        tr
+                                            - for (var v of tab && tab.header ? tab.header : [])
+                                                th #{v}
+                                    tbody
+                                        - for (var row of tab && tab.body ? tab.body : [])
+                                            tr
+                                                - for (var i = 0; i < row.length; i++)
+                                                    td #{row[i]}
+
+                        if paged
+                            .row
+                                .col-md-12
+                                    .pager
+                                        a#page_prev(href="javascript:;")
+                                            i(class="fa fa-chevron-left")
+
+                                        span.pageno
+                                            | #{paged.page}
+
+                                        a#page_next(href="javascript:;")
+                                            i(class="fa fa-chevron-right")
+
+block script
+    script(src='/scripts/lib/table/paged.js')
+
+    script.
+        $(function () {
+            $('.date-picker').daterangepicker({
+                autoApply: true,
+                locale: {
+                    format: "YYYY-MM-DD",
+                    separator: " ~ ",
+                },
+                opens: "left",
+                singleDatePicker: true,
+            });
+
+            $('.date-range-picker').daterangepicker({
+                autoApply: true,
+                locale: {
+                    format: "YYYY-MM-DD",
+                    separator: " ~ ",
+                },
+                opens: "left",
+            });
+        });
+
+    if chart
+        script(src='/scripts/lib/chart.js')
+        script.
+            $(function () {
+                draw_chart(!{JSON.stringify(chart)});
+            });
+
+    if paged
+        script.
+            $(function () {
+                paged_create(!{JSON.stringify(paged)});
+            });
+
+    - for (var s of scripts ? scripts : [])
+        script(src=s)

@@ -1,0 +1,152 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option (gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [5000, 5100)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+import "c_gs.11.plr.proto";
+import "c_gs.12-1.bag.proto";
+import "c_gs.13.mail.proto";
+import "c_gs.15.tutorial.proto";
+import "c_gs.16.act.proto";
+import "c_gs.17.attaintab.proto";
+import "c_gs.18.bill.proto";
+import "c_gs.19.misc.proto";
+import "c_gs.20.guild.proto";
+import "c_gs.21.mopen.proto";
+import "c_gs.23.counter.proto";
+import "c_gs.24.rank.proto";
+import "c_gs.26.taskdaily.proto";
+import "c_gs.27.taskachv.proto";
+import "c_gs.28.draw.proto";
+import "c_gs.29.wlevel.proto";
+import "c_gs.30.appoint.proto";
+import "c_gs.31.tower.proto";
+import "c_gs.32.teammgr.proto";
+import "c_gs.33.arena.proto";
+import "c_gs.35.marvelroll.proto";
+import "c_gs.36.friend.proto";
+import "c_gs.37.crusade.proto";
+import "c_gs.38.vip.proto";
+import "c_gs.41.chat.proto";
+import "c_gs.42.monthticket.proto";
+import "c_gs.43.pushgift.proto";
+import "c_gs.44.giftshop.proto";
+import "c_gs.45.privcard.proto";
+import "c_gs.46.signdaily.proto";
+import "c_gs.47.taskmonth.proto";
+import "c_gs.48.daysign.proto";
+import "c_gs.49.targetdays.proto";
+import "c_gs.50.taskgrow.proto";
+import "c_gs.51.wlevelfund.proto";
+import "c_gs.52.growfund.proto";
+import "c_gs.53.billfirst.proto";
+import "c_gs.54.lamp.proto";
+import "c_gs.55.gwar.proto";
+import "c_gs.56.rift.proto";
+import "c_gs.57.ladder.proto";
+import "c_gs.58.heroskin.proto";
+import "c_gs.59.wleveldraw.proto";
+import "c_gs.60.warcup.proto";
+import "c_gs.61.wboss.proto";
+import "c_gs.62.invite.proto";
+
+// ============================================================================
+
+// 登录错误
+message GS_LoginError { // msgid: 5000
+    int32 ErrorCode = 1;
+}
+
+// 玩家信息
+message GS_UserInfo { // msgid: 5001
+    string UserId    = 1;
+    string Name      = 2;
+    string Head      = 4;
+    int32  HFrame    = 5;
+    int32  Lv        = 6;
+    int32  Exp       = 7;
+    int64  CreateTs  = 8;
+    bool   IsNew     = 9;
+    string LoginIP   = 10;
+    int32  OnlineDur = 11;
+    int64  SvrTs     = 12;
+    string GuildId   = 13;
+
+    ForLoading ForLoading = 16; // loading 界面需要的数据
+    int32      AtkPwr     = 17; // 战力
+
+    BagData         Bag         = 19; // 背包
+    CounterData     Counter     = 20; // 计数器相关数据
+    AttainTabData   AttainTab   = 21; // 条件统计表数据
+    repeated Mail   Mails       = 22; // 邮件
+    MOpenData       MOpen       = 24; // 模块开启数据
+    TutorialData    Tutorial    = 25; // 新手数据
+    MiscData        Misc        = 26; // 杂项数据
+    TaskDailyData   TaskDaily   = 29; // 日常任务
+    TaskAchvData    TaskAchv    = 30; // 成就任务
+    DrawData        Draw        = 31; // 抽卡
+    WLevelData      WLevel      = 32; // 推图
+    AppointData     Appoint     = 33; // 酒馆委派
+    TowerData       Tower       = 34; // 爬塔
+    TeamMgrData     TeamMgr     = 35; // 阵容管理
+    ArenaData       Arena       = 36; // 竞技场
+    HFrameStoreData HFrameStore = 37; // 头像框
+    MarvelRollData  MarvelRoll  = 38; // 奇迹之盘
+    FriendData      Friend      = 39; // 好友
+    VipData         Vip         = 40; // vip
+    ChatData        Chat        = 41; // 历史聊天信息
+    MonthTicketData MonthTicket = 43; // 月票
+    PushGiftData    PushGift    = 44; // 推送礼包
+    GiftShopData    GiftShop    = 45; // 礼包商店
+    PrivCardData    PrivCard    = 46; // 特权卡
+    SignDailyData   SignDaily   = 47; // 每日签到
+    TaskMonthData   TaskMonth   = 48; // 每月任务
+    DaySignData     DaySign     = 49; // 七日之约
+    RankPlayData    RankPlay    = 50; // 榜单玩法
+    TargetDaysData  TargetDays  = 51; // 开服庆典(七日目标)
+    TaskGrowData    TaskGrow    = 52; // 进阶之路
+    WLevelFundData  WLevelFund  = 53; // 推图基金
+    GrowFundData    GrowFund    = 54; // 成长基金
+    BillFirstData   BillFirst   = 55; // 超值首充
+    LampData        Lamp        = 56; // 跑马灯
+    GWarData        Gwar        = 57; // 公会战
+    RiftData        Rift        = 58; // 裂隙
+    LadderData      Ladder      = 59; // 天梯
+    HeroSkinData    HeroSkin    = 60; // 英雄皮肤
+    WLevelDrawData  WLevelDraw  = 61; // 推图十连
+    WarCupData      WarCup      = 62; // 本服杯赛
+    WBossData       WBoss       = 63; // 世界boss
+    InviteData      Invite      = 64;
+}
+
+// 时间同步 (心跳)
+message C_TimeSync { // msgid: 5002
+}
+
+message GS_TimeSync_R { // msgid: 5003
+    int64 Ts = 1;
+}
+
+// 游戏数据配置重读通知
+message GS_GameDataReloaded { // msgid: 5004
+}
+
+// 登录后整合请求
+message C_UserExtInfo { // msgid: 5006
+}
+
+message GS_UserExtInfo_R { // msgid: 5007
+    GS_BillInfo_R       GS_BillInfo_R       = 1;
+    GS_ActStateGet_R    GS_ActStateGet_R    = 2;
+    GS_CrusadeGetInfo_R GS_CrusadeGetInfo_R = 3;
+    GS_GuildInfoFull_R  GS_GuildInfoFull_R  = 4;
+    GS_GWarGetSummary_R GS_GWarGetSummary_R = 5;
+}

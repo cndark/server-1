@@ -1,0 +1,178 @@
+extends ../base.pug
+
+block css
+    link(href='/css/page.css', rel='stylesheet')
+
+block content
+    .container-fluid
+        .row
+            // ---------------- Column Left ----------------
+
+            .col-lg-4.col-md-6.col-sm-12
+
+                .panel.panel-info
+                    .panel-heading.head
+                        | 玩家信息
+                        button#plrinfo.btn.btn-default OK
+                        span.alert
+                    .panel-body.plrinfo
+                        input(type='hidden', name='key', value='plrinfo')
+                        .row
+                            .col-md-4
+                                | 玩家 Id
+                                input.form-control(type='text', name='plrid')
+                            .col-md-4
+                                | 玩家名字
+                                input.form-control(type='text', name='plrname')
+                            .col-md-4
+                                | 模块
+                                select.form-control(name='module')
+                                    option(value='base') 基本信息
+                                    option(value='ccy') 货币
+                                    option(value='item') 道具
+                                    option(value='hero') 英雄
+                                    option(value='guild') 公会
+                        br
+                        .row
+                            .col-md-12
+                                table.table.table-striped.table-condensed.table-hover
+
+            // ---------------- Column Right ----------------
+
+            .col-lg-8.col-md-6.col-sm-12
+                .row
+                    // ---------------- Column 1 ----------------
+
+                    .col-lg-6.col-md-12
+
+                        if sess.priv['gm.w']
+                            .panel.panel-info
+                                .panel-heading.head
+                                    | 资源
+                                    button.btn.btn-default OK
+                                    span.alert
+                                .panel-body
+                                    input(type='hidden', name='key', value='w.res')
+                                    .row
+                                        - for (var i = 0;  i < 3; i++)
+                                            .col-md-6
+                                                input.form-control(type='text', name='res_k')
+                                            .col-md-6
+                                                input.form-control(type='text', name='res_v')
+                            if devmode
+                                .panel.panel-info
+                                    .panel-heading.head
+                                        | 英雄
+                                        button.btn.btn-default OK
+                                        span.alert
+                                    .panel-body
+                                        input(type='hidden', name='key', value='w.hero')
+                                        .row
+                                            .col-md-4
+                                                | 英雄
+                                                input.form-control(type='text', name='hero_k')
+                                            .col-md-4
+                                                | 等级
+                                                input.form-control(type='text', name='lv')
+                                            .col-md-4
+                                                | 星级
+                                                input.form-control(type='text', name='star')
+
+                            .panel.panel-info
+                                .panel-heading.head
+                                    | 玩家
+                                    button.btn.btn-default OK
+                                    span.alert
+                                .panel-body
+                                    input(type='hidden', name='key', value='w.plr')
+                                    .row
+                                        .col-md-6
+                                            | 设置身份
+                                            input.form-control(type='text', name='lv')
+
+                            .panel.panel-info
+                                    .panel-heading.head
+                                        | 伪充值
+                                        button.btn.btn-default OK
+                                        span.alert
+                                    .panel-body
+                                        input(type='hidden', name='key', value='w.fakebill')
+                                        .row
+                                            .col-md-6
+                                                | 产品Id(billProduct表Id)
+                                            .col-md-6
+                                                input.form-control(type='text', name='prod_id')
+                                        .row
+                                            .col-md-6
+                                                | 透传(1:礼包商店,2:推送礼包,3:活动礼包)
+                                            .col-md-6
+                                                input.form-control(type='text', placeholder='xxx_对应表id' name='csext')
+
+                        if sess.priv['gm.tool.ban']
+                            .panel.panel-info
+                                .panel-heading.head
+                                    | 封锁操作
+                                    button.btn.btn-default OK
+                                    span.alert
+                                .panel-body
+                                    input(type='hidden', name='key', value='w.ban')
+                                    .row
+                                        .col-md-6
+                                            | 封号分钟数 (-1: 解封)
+                                            input.form-control(type='text', name='ban_acct')
+
+ 
+
+                    // ---------------- Column 2 ----------------
+
+                    if sess.priv['gm.w']
+                        .col-lg-6.col-md-12
+
+                            if devmode
+                                .panel.panel-info
+                                    .panel-heading.head
+                                        | 开发调试
+                                        button.btn.btn-default OK
+                                        span.alert
+                                    .panel-body
+                                        input(type='hidden', name='key', value='dev')
+                                        .row
+                                            .col-md-4
+                                                |设置新手step
+                                                input.form-control(type='text', name='tut_tp')
+                                                input.form-control(type='text', name='tut_step')
+                                            .col-md-4
+                                                |设置关卡
+                                                input.form-control(type='text', name='wlv_pass')
+                                            .col-md-4
+                                                |设置爬塔
+                                                input.form-control(type='text', name='tower_pass')
+
+                            .panel.panel-info
+                                .panel-heading.head
+                                    | 个人邮件
+                                    button.btn.btn-default OK
+                                    span.alert
+                                .panel-body
+                                    input(type='hidden', name='key', value='w.pmail')
+                                    .row
+                                        .col-md-12
+                                            | 标题
+                                            input.form-control(type='text', name='title')
+                                        .col-md-12
+                                            | 文本
+                                            textarea.form-control(rows=10, name='text')
+                                    .row
+                                        .col-md-12 附件
+                                        - for (var i = 0;  i < 20; i++)
+                                            .col-md-6
+                                                input.form-control(type='text', name='res_k')
+                                            .col-md-6
+                                                input.form-control(type='text', name='res_v')
+
+                    // ---------------- End Column ----------------
+            
+            // ---------------- End Column ----------------
+
+block script
+    script(src='/scripts/gm/tool.js')

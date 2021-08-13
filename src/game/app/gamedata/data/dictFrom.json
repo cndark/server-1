@@ -1,0 +1,18 @@
+[
+    {
+        "id": "init",
+        "name": "init"
+    },
+    {
+        "id": "gm",
+        "name": "GM"
+    },
+    {
+        "id": "sys",
+        "name": "sys"
+    },
+    {
+        "id": "bill-normal",
+        "name": "钻石充值"
+    }
+]

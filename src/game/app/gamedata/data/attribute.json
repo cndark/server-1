@@ -1,0 +1,434 @@
+[
+    {
+        "attributeId": 10,
+        "powerType": 1,
+        "heroPower": 0.4,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 12,
+        "powerType": 1,
+        "heroPower": 0.4,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 14,
+        "powerType": 1,
+        "heroPower": 0.06,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 15,
+        "powerType": 2,
+        "heroPower": 0.002,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 1000,
+        "powerType": 0,
+        "heroPower": 0,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 1200,
+        "powerType": 0,
+        "heroPower": 0,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 1400,
+        "powerType": 0,
+        "heroPower": 0,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 1500,
+        "powerType": 0,
+        "heroPower": 0,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 20,
+        "powerType": 2,
+        "heroPower": 0.5,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 21,
+        "powerType": 2,
+        "heroPower": 0.1,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 22,
+        "powerType": 2,
+        "heroPower": 0.5,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 23,
+        "powerType": 2,
+        "heroPower": 0.1,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 24,
+        "powerType": 2,
+        "heroPower": 0.3,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 25,
+        "powerType": 2,
+        "heroPower": 0.3,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 26,
+        "powerType": 2,
+        "heroPower": 0,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 30,
+        "powerType": 2,
+        "heroPower": 0.2,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 31,
+        "powerType": 2,
+        "heroPower": 0.1,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 40,
+        "powerType": 2,
+        "heroPower": 1,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 41,
+        "powerType": 2,
+        "heroPower": 1,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 42,
+        "powerType": 2,
+        "heroPower": 0.8,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 43,
+        "powerType": 2,
+        "heroPower": 0.8,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 44,
+        "powerType": 2,
+        "heroPower": 0.66,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 45,
+        "powerType": 2,
+        "heroPower": 0.66,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 46,
+        "powerType": 2,
+        "heroPower": 0.7,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 47,
+        "powerType": 2,
+        "heroPower": 0.7,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 48,
+        "powerType": 2,
+        "heroPower": 0.7,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 49,
+        "powerType": 2,
+        "heroPower": 0.7,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 50,
+        "powerType": 2,
+        "heroPower": 0.7,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 51,
+        "powerType": 2,
+        "heroPower": 0.7,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 52,
+        "powerType": 2,
+        "heroPower": 0.7,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 53,
+        "powerType": 2,
+        "heroPower": 0.7,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 54,
+        "powerType": 2,
+        "heroPower": 0.7,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 55,
+        "powerType": 2,
+        "heroPower": 0.7,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 70,
+        "powerType": 2,
+        "heroPower": 1,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 71,
+        "powerType": 2,
+        "heroPower": 1,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 72,
+        "powerType": 2,
+        "heroPower": 1,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 73,
+        "powerType": 2,
+        "heroPower": 1,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 74,
+        "powerType": 2,
+        "heroPower": 1,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 75,
+        "powerType": 2,
+        "heroPower": 1,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 76,
+        "powerType": 2,
+        "heroPower": 1,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 79,
+        "powerType": 2,
+        "heroPower": 1,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 80,
+        "powerType": 2,
+        "heroPower": 0.75,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 81,
+        "powerType": 2,
+        "heroPower": 0.75,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 82,
+        "powerType": 2,
+        "heroPower": 0.75,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 83,
+        "powerType": 2,
+        "heroPower": 0.75,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 84,
+        "powerType": 2,
+        "heroPower": 0.75,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 89,
+        "powerType": 2,
+        "heroPower": 1,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    },
+    {
+        "attributeId": 2200,
+        "powerType": 0,
+        "heroPower": 0,
+        "equipPower": 0,
+        "soulPower": 0,
+        "artifactPower": 0,
+        "gemPower": 0
+    }
+]

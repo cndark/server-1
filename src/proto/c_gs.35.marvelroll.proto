@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [9500, 9600)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+
+// 奇迹之盘
+message MarvelRollData {
+    repeated MarvelRollGroup Groups = 1; // 组
+}
+
+message MarvelRollGroup {
+    string                   Grp       = 1;
+    bool                     IsEnforce = 2; // 是否要强制刷新
+    bool                     IsFree    = 3; // 是否能免费刷新
+    repeated MarvelRollBlank Blanks    = 4;
+}
+
+message MarvelRollBlank {
+    int32 Id      = 1; // 表id
+    int32 AttainN = 2; // 获得次数
+}
+
+// ============================================================================
+
+message C_MarvelRollInfo { // msgid: 9500
+    string Grp = 1;
+}
+
+message GS_MarvelRollInfo_R { // msgid: 9501
+    int32           ErrorCode = 1;
+    MarvelRollGroup Group     = 2;
+}
+
+message C_MarvelRollRefresh { // msgid: 9502
+    string Grp = 1;
+}
+
+message GS_MarvelRollRefresh_R { // msgid: 9503
+    int32           ErrorCode = 1;
+    MarvelRollGroup Group     = 2;
+}
+
+message C_MarvelRollTake { // msgid: 9504
+    string Grp   = 1;
+    bool   IsTen = 2;
+}
+
+message GS_MarvelRollTake_R { // msgid: 9505
+    int32          ErrorCode = 1;
+    string         Grp       = 2;
+    repeated int32 Ids       = 3;
+}

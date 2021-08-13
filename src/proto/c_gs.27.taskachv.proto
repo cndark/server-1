@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [8700, 8800)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+
+// 成就任务
+message TaskAchvData { repeated int32 Taken = 1; }
+
+// ============================================================================
+// 获得一个成就任务
+message C_TaskAchvTake { // msgid: 8700
+    int32 Id = 1;
+}
+
+message GS_TaskAchvTake_R { // msgid: 8701
+    int32   ErrorCode = 1;
+    int32   Id        = 2;
+    Rewards Rewards   = 3;
+}

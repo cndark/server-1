@@ -1,0 +1,104 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [13200, 13300)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+// 月票
+message MonthTicketData {
+    repeated MonthTicketItem Items      = 1;
+    bool                     IsBuy      = 2; // 是否购买了月票
+    int32                    Lv         = 3; // 等级
+    int32                    Exp        = 4; // 经验
+    int32                    TakeBase   = 5; // 领取基础奖励位置
+    int32                    TakeTicket = 6; // 领取月票奖励位置
+    repeated int32           PickId     = 7; // 今天能做的任务
+    repeated int32           TaskTaken  = 8; // 今天做完的任务
+}
+
+message MonthTicketItem {
+    int32  Id  = 1;
+    double Val = 2;
+    bool   Fin = 3;
+}
+
+// ============================================================================
+// 通知: 进度变化
+message GS_MonthTicketValueChanged { // msgid: 13200
+    int32  Id  = 1;
+    double Val = 2;
+}
+
+// 通知: 一个日常项完成
+message GS_MonthTicketItemCompleted { // msgid: 13201
+    int32 Id = 1;
+}
+
+// 购买悬赏令
+message GS_MonthTicketIsBuy { // msgid: 13202
+    bool IsBuy = 1;
+}
+
+// ============================================================================
+
+message C_MonthTicketInfo { // msgid: 13221
+}
+
+message GS_MonthTicketInfo_R { // msgid: 13222
+    MonthTicketData Data = 1;
+}
+
+// 领取月票奖励
+message C_MonthTicketTakeOneKey { // msgid: 13223
+}
+
+message GS_MonthTicketTakeOneKey_R { // msgid: 13224
+    int32   ErrorCode  = 1;
+    Rewards Rewards    = 2;
+    int32   TakeBase   = 3; // 领取基础奖励等级位置
+    int32   TakeTicket = 4; // 领取月票奖励等级位置
+}
+
+// 购买升级
+message C_MonthTicketBuyUp { // msgid: 13225
+    int32 N = 1;             // 购买几级
+}
+
+message GS_MonthTicketBuyUp_R { // msgid: 13226
+    int32 ErrorCode = 1;
+    int32 Lv        = 2;
+    int32 Exp       = 3;
+}
+
+// 领取月票奖励
+message C_MonthTicketTake { // msgid: 13227
+    int32 Lv = 1;
+}
+
+message GS_MonthTicketTake_R { // msgid: 13228
+    int32   ErrorCode  = 1;
+    Rewards Rewards    = 2;
+    int32   TakeBase   = 3; // 领取基础奖励等级位置
+    int32   TakeTicket = 4; // 领取月票奖励等级位置
+}
+
+// 领取任务奖励
+message C_MonthTicketTaskTake { // msgid: 13229
+    repeated int32 Ids = 1;
+}
+
+message GS_MonthTicketTaskTake_R { // msgid: 13230
+    int32          ErrorCode = 1;
+    repeated int32 Ids       = 2;
+    int32          Lv        = 3;
+    int32          Exp       = 4;
+}

@@ -1,0 +1,6 @@
+id,txt_Name,counterTimeLimit,counterOnce,reward,dailyReward,extNeedAddCnt,extReward,extCounter,disPayId,payId,txt_Des
+int32,string,[]{int32 id;int32 n},[]{int32 id;int32 n},[]{int32 id;int64 n},[]{int32 id;int64 n},int32,[]{int32 id;int64 n},[]{int32 id;int32 n},int32,int32,string
+1001,周卡,1000011~30|1100006~50,,10002~100,,2,,,,2002,<outline color=#321100 width=2><color=#fff1eb>挂机获得金币</color><color=#f9de6d>+30%<br/></color><color=#fff1eb>挂机获得战魂</color><color=#f9de6d>+30%<br/></color><color=#fff1eb>挂机获得经验</color><color=#f9de6d>+30%<br/></color><color=#fff1eb>体力上限</color><color=#f9de6d>+50</color></outline>
+2001,月卡,,,10002~300,10002~100|21051~1,1,,1100006~50,,2004,
+3001,终身卡,,1000012~1,10002~1280|10001~2000000|10005~2000000|10006~2000|23107~1|23207~1|23307~1|23407~1,10002~100,,,,,2006,<outline color=#321100 width=2><color=#fff1eb>每日可获得</color><color=#f9de6d>100钻石</color><color=#fff1eb><br/>每日快速通关次数</color><color=#f9de6d>+1</color><color=#fff1eb><br/>珍宝商店额外</color><color=#f9de6d>优惠20%</color></outline>
+4001,体力上限,,1100006~50,,,,,,,2007,

@@ -1,0 +1,25 @@
+extends ../lib/table/paged.pug
+
+block modals
+    #dlg_ban.modal.fade
+        .modal-dialog
+            .modal-content
+                .modal-header
+                    .close(data-dismiss='modal')
+                        i.fa.fa-times
+                    h4.modal-title
+                        | 封号: 
+                        span
+
+                if sess.priv['gm.tool.ban']
+                    .modal-body
+                        input(type='hidden', name='key',   value='w.ban')
+                        input(type='hidden', name='plrid')
+                        .row
+                            .col-md-12
+                                | 封号分钟数 (-1: 解封)
+                                input.form-control(type='text', name='ban_acct')
+
+                    .modal-footer
+                        button.btn.btn-primary 确定
+                        button.btn.btn-default(data-dismiss='modal') 取消

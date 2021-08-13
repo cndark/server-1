@@ -1,0 +1,154 @@
+[
+    {
+        "seq": 1,
+        "group": 3101,
+        "shopItem": [
+            {
+                "id": 10010,
+                "n": 200
+            },
+            {
+                "id": 10005,
+                "n": 50000
+            },
+            {
+                "id": 10006,
+                "n": 60
+            },
+            {
+                "id": 10010,
+                "n": 50
+            }
+        ],
+        "ccy": 10002,
+        "discountAndOdds": [
+            {
+                "weight": 100,
+                "discount": 9000
+            },
+            {
+                "weight": 100,
+                "discount": 8000
+            },
+            {
+                "weight": 100,
+                "discount": 7000
+            }
+        ],
+        "weight": 1
+    },
+    {
+        "seq": 2,
+        "group": 3101,
+        "shopItem": [
+            {
+                "id": 10010,
+                "n": 200
+            },
+            {
+                "id": 10005,
+                "n": 50000
+            },
+            {
+                "id": 10006,
+                "n": 60
+            },
+            {
+                "id": 10010,
+                "n": 50
+            }
+        ],
+        "ccy": 10002,
+        "discountAndOdds": [
+            {
+                "weight": 100,
+                "discount": 9000
+            },
+            {
+                "weight": 100,
+                "discount": 8000
+            },
+            {
+                "weight": 100,
+                "discount": 7000
+            }
+        ],
+        "weight": 1
+    },
+    {
+        "seq": 3,
+        "group": 3101,
+        "shopItem": [
+            {
+                "id": 10010,
+                "n": 200
+            },
+            {
+                "id": 10005,
+                "n": 50000
+            },
+            {
+                "id": 10006,
+                "n": 60
+            },
+            {
+                "id": 10010,
+                "n": 50
+            }
+        ],
+        "ccy": 10002,
+        "discountAndOdds": [
+            {
+                "weight": 100,
+                "discount": 9000
+            },
+            {
+                "weight": 100,
+                "discount": 8000
+            },
+            {
+                "weight": 100,
+                "discount": 7000
+            }
+        ],
+        "weight": 1
+    },
+    {
+        "seq": 4,
+        "group": 3101,
+        "shopItem": [
+            {
+                "id": 10010,
+                "n": 200
+            },
+            {
+                "id": 10005,
+                "n": 50000
+            },
+            {
+                "id": 10006,
+                "n": 60
+            },
+            {
+                "id": 10010,
+                "n": 50
+            }
+        ],
+        "ccy": 10002,
+        "discountAndOdds": [
+            {
+                "weight": 100,
+                "discount": 9000
+            },
+            {
+                "weight": 100,
+                "discount": 8000
+            },
+            {
+                "weight": 100,
+                "discount": 7000
+            }
+        ],
+        "weight": 1
+    }
+]

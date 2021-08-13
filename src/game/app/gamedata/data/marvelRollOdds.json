@@ -1,0 +1,1982 @@
+[
+    {
+        "id": 11001,
+        "group": "normal",
+        "blankId": 1,
+        "item": [
+            {
+                "id": 40101,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 51,
+                "high": 999
+            }
+        ],
+        "refOdds": 2,
+        "rollOdds": 10,
+        "upper": 1
+    },
+    {
+        "id": 11002,
+        "group": "normal",
+        "blankId": 1,
+        "item": [
+            {
+                "id": 40104,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 51,
+                "high": 999
+            }
+        ],
+        "refOdds": 2,
+        "rollOdds": 10,
+        "upper": 1
+    },
+    {
+        "id": 11003,
+        "group": "normal",
+        "blankId": 1,
+        "item": [
+            {
+                "id": 40201,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 51,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 5,
+        "upper": 1
+    },
+    {
+        "id": 11004,
+        "group": "normal",
+        "blankId": 1,
+        "item": [
+            {
+                "id": 40202,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 51,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 5,
+        "upper": 1
+    },
+    {
+        "id": 11005,
+        "group": "normal",
+        "blankId": 1,
+        "item": [
+            {
+                "id": 40203,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 51,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 5,
+        "upper": 1
+    },
+    {
+        "id": 11006,
+        "group": "normal",
+        "blankId": 1,
+        "item": [
+            {
+                "id": 40204,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 51,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 5,
+        "upper": 1
+    },
+    {
+        "id": 11007,
+        "group": "normal",
+        "blankId": 1,
+        "item": [
+            {
+                "id": 49002,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 51,
+                "high": 999
+            }
+        ],
+        "refOdds": 2,
+        "rollOdds": 10,
+        "upper": 1
+    },
+    {
+        "id": 11008,
+        "group": "normal",
+        "blankId": 1,
+        "item": [
+            {
+                "id": 10007,
+                "n": 100
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 10,
+        "upper": 0
+    },
+    {
+        "id": 12001,
+        "group": "normal",
+        "blankId": 2,
+        "item": [
+            {
+                "id": 21041,
+                "n": 30
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 3,
+        "rollOdds": 20,
+        "upper": 0
+    },
+    {
+        "id": 12002,
+        "group": "normal",
+        "blankId": 2,
+        "item": [
+            {
+                "id": 21042,
+                "n": 30
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 2,
+        "rollOdds": 20,
+        "upper": 0
+    },
+    {
+        "id": 12003,
+        "group": "normal",
+        "blankId": 2,
+        "item": [
+            {
+                "id": 21043,
+                "n": 30
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 2,
+        "rollOdds": 20,
+        "upper": 0
+    },
+    {
+        "id": 12004,
+        "group": "normal",
+        "blankId": 2,
+        "item": [
+            {
+                "id": 21045,
+                "n": 30
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 2,
+        "rollOdds": 20,
+        "upper": 0
+    },
+    {
+        "id": 12005,
+        "group": "normal",
+        "blankId": 2,
+        "item": [
+            {
+                "id": 21047,
+                "n": 30
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 50,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 20,
+        "upper": 0
+    },
+    {
+        "id": 12006,
+        "group": "normal",
+        "blankId": 2,
+        "item": [
+            {
+                "id": 21048,
+                "n": 30
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 50,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 20,
+        "upper": 0
+    },
+    {
+        "id": 13001,
+        "group": "normal",
+        "blankId": 3,
+        "item": [
+            {
+                "id": 21031,
+                "n": 20
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 3,
+        "rollOdds": 60,
+        "upper": 0
+    },
+    {
+        "id": 13002,
+        "group": "normal",
+        "blankId": 3,
+        "item": [
+            {
+                "id": 21032,
+                "n": 20
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 2,
+        "rollOdds": 60,
+        "upper": 0
+    },
+    {
+        "id": 13003,
+        "group": "normal",
+        "blankId": 3,
+        "item": [
+            {
+                "id": 21033,
+                "n": 20
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 2,
+        "rollOdds": 60,
+        "upper": 0
+    },
+    {
+        "id": 13004,
+        "group": "normal",
+        "blankId": 3,
+        "item": [
+            {
+                "id": 21035,
+                "n": 20
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 2,
+        "rollOdds": 60,
+        "upper": 0
+    },
+    {
+        "id": 13005,
+        "group": "normal",
+        "blankId": 3,
+        "item": [
+            {
+                "id": 21036,
+                "n": 20
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 40,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 60,
+        "upper": 0
+    },
+    {
+        "id": 13006,
+        "group": "normal",
+        "blankId": 3,
+        "item": [
+            {
+                "id": 21037,
+                "n": 20
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 40,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 60,
+        "upper": 0
+    },
+    {
+        "id": 14001,
+        "group": "normal",
+        "blankId": 4,
+        "item": [
+            {
+                "id": 23103,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 30,
+        "upper": 0
+    },
+    {
+        "id": 14002,
+        "group": "normal",
+        "blankId": 4,
+        "item": [
+            {
+                "id": 23203,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 30,
+        "upper": 0
+    },
+    {
+        "id": 14003,
+        "group": "normal",
+        "blankId": 4,
+        "item": [
+            {
+                "id": 23303,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 30,
+        "upper": 0
+    },
+    {
+        "id": 14004,
+        "group": "normal",
+        "blankId": 4,
+        "item": [
+            {
+                "id": 23403,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 30,
+        "upper": 0
+    },
+    {
+        "id": 15001,
+        "group": "normal",
+        "blankId": 5,
+        "item": [
+            {
+                "id": 10006,
+                "n": 30
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 30,
+        "rollOdds": 100,
+        "upper": 0
+    },
+    {
+        "id": 15002,
+        "group": "normal",
+        "blankId": 5,
+        "item": [
+            {
+                "id": 10006,
+                "n": 50
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 20,
+        "rollOdds": 100,
+        "upper": 0
+    },
+    {
+        "id": 15003,
+        "group": "normal",
+        "blankId": 5,
+        "item": [
+            {
+                "id": 10006,
+                "n": 100
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 40,
+                "high": 999
+            }
+        ],
+        "refOdds": 5,
+        "rollOdds": 100,
+        "upper": 0
+    },
+    {
+        "id": 15004,
+        "group": "normal",
+        "blankId": 5,
+        "item": [
+            {
+                "id": 10006,
+                "n": 200
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 50,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 100,
+        "upper": 1
+    },
+    {
+        "id": 15005,
+        "group": "normal",
+        "blankId": 5,
+        "item": [
+            {
+                "id": 10010,
+                "n": 100
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 30,
+                "high": 999
+            }
+        ],
+        "refOdds": 30,
+        "rollOdds": 200,
+        "upper": 0
+    },
+    {
+        "id": 15006,
+        "group": "normal",
+        "blankId": 5,
+        "item": [
+            {
+                "id": 10010,
+                "n": 200
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 30,
+                "high": 999
+            }
+        ],
+        "refOdds": 15,
+        "rollOdds": 200,
+        "upper": 0
+    },
+    {
+        "id": 16001,
+        "group": "normal",
+        "blankId": 6,
+        "item": [
+            {
+                "id": 23102,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 60,
+        "upper": 0
+    },
+    {
+        "id": 16002,
+        "group": "normal",
+        "blankId": 6,
+        "item": [
+            {
+                "id": 23202,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 60,
+        "upper": 0
+    },
+    {
+        "id": 16003,
+        "group": "normal",
+        "blankId": 6,
+        "item": [
+            {
+                "id": 23302,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 60,
+        "upper": 0
+    },
+    {
+        "id": 16004,
+        "group": "normal",
+        "blankId": 6,
+        "item": [
+            {
+                "id": 23402,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 60,
+        "upper": 0
+    },
+    {
+        "id": 16005,
+        "group": "normal",
+        "blankId": 6,
+        "item": [
+            {
+                "id": 23102,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 0,
+        "rollOdds": 60,
+        "upper": 0
+    },
+    {
+        "id": 16006,
+        "group": "normal",
+        "blankId": 6,
+        "item": [
+            {
+                "id": 23202,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 0,
+        "rollOdds": 60,
+        "upper": 0
+    },
+    {
+        "id": 16007,
+        "group": "normal",
+        "blankId": 6,
+        "item": [
+            {
+                "id": 23302,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 0,
+        "rollOdds": 60,
+        "upper": 0
+    },
+    {
+        "id": 16008,
+        "group": "normal",
+        "blankId": 6,
+        "item": [
+            {
+                "id": 23402,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 0,
+        "rollOdds": 60,
+        "upper": 0
+    },
+    {
+        "id": 16009,
+        "group": "normal",
+        "blankId": 6,
+        "item": [
+            {
+                "id": 23102,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 0,
+        "rollOdds": 60,
+        "upper": 0
+    },
+    {
+        "id": 16010,
+        "group": "normal",
+        "blankId": 6,
+        "item": [
+            {
+                "id": 23202,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 0,
+        "rollOdds": 60,
+        "upper": 0
+    },
+    {
+        "id": 16011,
+        "group": "normal",
+        "blankId": 6,
+        "item": [
+            {
+                "id": 23302,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 0,
+        "rollOdds": 60,
+        "upper": 0
+    },
+    {
+        "id": 17001,
+        "group": "normal",
+        "blankId": 7,
+        "item": [
+            {
+                "id": 10005,
+                "n": 10000
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 20,
+        "rollOdds": 350,
+        "upper": 0
+    },
+    {
+        "id": 17002,
+        "group": "normal",
+        "blankId": 7,
+        "item": [
+            {
+                "id": 10005,
+                "n": 20000
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 15,
+        "rollOdds": 350,
+        "upper": 0
+    },
+    {
+        "id": 17003,
+        "group": "normal",
+        "blankId": 7,
+        "item": [
+            {
+                "id": 10005,
+                "n": 50000
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 10,
+        "rollOdds": 350,
+        "upper": 0
+    },
+    {
+        "id": 17004,
+        "group": "normal",
+        "blankId": 7,
+        "item": [
+            {
+                "id": 10005,
+                "n": 75000
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 3,
+        "rollOdds": 350,
+        "upper": 0
+    },
+    {
+        "id": 17005,
+        "group": "normal",
+        "blankId": 7,
+        "item": [
+            {
+                "id": 10005,
+                "n": 100000
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 30,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 350,
+        "upper": 1
+    },
+    {
+        "id": 18001,
+        "group": "normal",
+        "blankId": 8,
+        "item": [
+            {
+                "id": 10001,
+                "n": 10000
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 350,
+        "upper": 0
+    },
+    {
+        "id": 18002,
+        "group": "normal",
+        "blankId": 8,
+        "item": [
+            {
+                "id": 10001,
+                "n": 20000
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 350,
+        "upper": 0
+    },
+    {
+        "id": 18003,
+        "group": "normal",
+        "blankId": 8,
+        "item": [
+            {
+                "id": 10001,
+                "n": 30000
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 350,
+        "upper": 0
+    },
+    {
+        "id": 18004,
+        "group": "normal",
+        "blankId": 8,
+        "item": [
+            {
+                "id": 10001,
+                "n": 50000
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 350,
+        "upper": 0
+    },
+    {
+        "id": 18005,
+        "group": "normal",
+        "blankId": 8,
+        "item": [
+            {
+                "id": 10001,
+                "n": 10000
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 0,
+        "rollOdds": 350,
+        "upper": 0
+    },
+    {
+        "id": 18006,
+        "group": "normal",
+        "blankId": 8,
+        "item": [
+            {
+                "id": 10001,
+                "n": 20000
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 0,
+        "rollOdds": 350,
+        "upper": 0
+    },
+    {
+        "id": 18007,
+        "group": "normal",
+        "blankId": 8,
+        "item": [
+            {
+                "id": 10001,
+                "n": 30000
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 0,
+        "rollOdds": 350,
+        "upper": 0
+    },
+    {
+        "id": 18008,
+        "group": "normal",
+        "blankId": 8,
+        "item": [
+            {
+                "id": 10001,
+                "n": 50000
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 0,
+        "rollOdds": 350,
+        "upper": 0
+    },
+    {
+        "id": 18009,
+        "group": "normal",
+        "blankId": 8,
+        "item": [
+            {
+                "id": 10001,
+                "n": 10000
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 0,
+        "rollOdds": 350,
+        "upper": 0
+    },
+    {
+        "id": 18010,
+        "group": "normal",
+        "blankId": 8,
+        "item": [
+            {
+                "id": 10001,
+                "n": 20000
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 0,
+        "rollOdds": 350,
+        "upper": 0
+    },
+    {
+        "id": 21001,
+        "group": "senior",
+        "blankId": 1,
+        "item": [
+            {
+                "id": 21052,
+                "n": 50
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 5,
+        "upper": 1
+    },
+    {
+        "id": 21002,
+        "group": "senior",
+        "blankId": 1,
+        "item": [
+            {
+                "id": 21053,
+                "n": 50
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 5,
+        "upper": 1
+    },
+    {
+        "id": 21003,
+        "group": "senior",
+        "blankId": 1,
+        "item": [
+            {
+                "id": 21055,
+                "n": 50
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 5,
+        "upper": 1
+    },
+    {
+        "id": 21004,
+        "group": "senior",
+        "blankId": 1,
+        "item": [
+            {
+                "id": 21056,
+                "n": 50
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 5,
+        "upper": 1
+    },
+    {
+        "id": 21005,
+        "group": "senior",
+        "blankId": 1,
+        "item": [
+            {
+                "id": 21057,
+                "n": 50
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 5,
+        "upper": 1
+    },
+    {
+        "id": 21006,
+        "group": "senior",
+        "blankId": 1,
+        "item": [
+            {
+                "id": 21052,
+                "n": 50
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 0,
+        "rollOdds": 5,
+        "upper": 1
+    },
+    {
+        "id": 22001,
+        "group": "senior",
+        "blankId": 2,
+        "item": [
+            {
+                "id": 40301,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 10,
+        "upper": 1
+    },
+    {
+        "id": 22002,
+        "group": "senior",
+        "blankId": 2,
+        "item": [
+            {
+                "id": 40302,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 10,
+        "upper": 1
+    },
+    {
+        "id": 22003,
+        "group": "senior",
+        "blankId": 2,
+        "item": [
+            {
+                "id": 40303,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 10,
+        "upper": 1
+    },
+    {
+        "id": 22004,
+        "group": "senior",
+        "blankId": 2,
+        "item": [
+            {
+                "id": 40304,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 10,
+        "upper": 1
+    },
+    {
+        "id": 22005,
+        "group": "senior",
+        "blankId": 2,
+        "item": [
+            {
+                "id": 40305,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 10,
+        "upper": 1
+    },
+    {
+        "id": 22006,
+        "group": "senior",
+        "blankId": 2,
+        "item": [
+            {
+                "id": 40306,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 10,
+        "upper": 1
+    },
+    {
+        "id": 22007,
+        "group": "senior",
+        "blankId": 2,
+        "item": [
+            {
+                "id": 20024,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 10,
+        "upper": 0
+    },
+    {
+        "id": 22008,
+        "group": "senior",
+        "blankId": 2,
+        "item": [
+            {
+                "id": 49003,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 10,
+        "upper": 0
+    },
+    {
+        "id": 23001,
+        "group": "senior",
+        "blankId": 3,
+        "item": [
+            {
+                "id": 21041,
+                "n": 30
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 160,
+        "upper": 0
+    },
+    {
+        "id": 23002,
+        "group": "senior",
+        "blankId": 3,
+        "item": [
+            {
+                "id": 21042,
+                "n": 30
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 160,
+        "upper": 0
+    },
+    {
+        "id": 23003,
+        "group": "senior",
+        "blankId": 3,
+        "item": [
+            {
+                "id": 21043,
+                "n": 30
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 160,
+        "upper": 0
+    },
+    {
+        "id": 23004,
+        "group": "senior",
+        "blankId": 3,
+        "item": [
+            {
+                "id": 21045,
+                "n": 30
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 160,
+        "upper": 0
+    },
+    {
+        "id": 23005,
+        "group": "senior",
+        "blankId": 3,
+        "item": [
+            {
+                "id": 21047,
+                "n": 30
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 160,
+        "upper": 0
+    },
+    {
+        "id": 23006,
+        "group": "senior",
+        "blankId": 3,
+        "item": [
+            {
+                "id": 21048,
+                "n": 30
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 160,
+        "upper": 0
+    },
+    {
+        "id": 24001,
+        "group": "senior",
+        "blankId": 4,
+        "item": [
+            {
+                "id": 10001,
+                "n": 500000
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 10,
+        "rollOdds": 1000,
+        "upper": 0
+    },
+    {
+        "id": 24002,
+        "group": "senior",
+        "blankId": 4,
+        "item": [
+            {
+                "id": 10001,
+                "n": 750000
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 10,
+        "rollOdds": 1000,
+        "upper": 0
+    },
+    {
+        "id": 24003,
+        "group": "senior",
+        "blankId": 4,
+        "item": [
+            {
+                "id": 10001,
+                "n": 1000000
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 1000,
+        "upper": 0
+    },
+    {
+        "id": 25001,
+        "group": "senior",
+        "blankId": 5,
+        "item": [
+            {
+                "id": 23105,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 10,
+        "rollOdds": 80,
+        "upper": 0
+    },
+    {
+        "id": 25002,
+        "group": "senior",
+        "blankId": 5,
+        "item": [
+            {
+                "id": 23205,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 10,
+        "rollOdds": 80,
+        "upper": 0
+    },
+    {
+        "id": 25003,
+        "group": "senior",
+        "blankId": 5,
+        "item": [
+            {
+                "id": 23305,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 5,
+        "rollOdds": 80,
+        "upper": 0
+    },
+    {
+        "id": 25004,
+        "group": "senior",
+        "blankId": 5,
+        "item": [
+            {
+                "id": 23405,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 80,
+        "upper": 0
+    },
+    {
+        "id": 26001,
+        "group": "senior",
+        "blankId": 6,
+        "item": [
+            {
+                "id": 20002,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 1000,
+        "upper": 0
+    },
+    {
+        "id": 26002,
+        "group": "senior",
+        "blankId": 6,
+        "item": [
+            {
+                "id": 20003,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 20,
+        "upper": 1
+    },
+    {
+        "id": 27001,
+        "group": "senior",
+        "blankId": 7,
+        "item": [
+            {
+                "id": 10006,
+                "n": 100
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 5,
+        "rollOdds": 400,
+        "upper": 0
+    },
+    {
+        "id": 27002,
+        "group": "senior",
+        "blankId": 7,
+        "item": [
+            {
+                "id": 10006,
+                "n": 200
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 5,
+        "rollOdds": 400,
+        "upper": 0
+    },
+    {
+        "id": 27003,
+        "group": "senior",
+        "blankId": 7,
+        "item": [
+            {
+                "id": 10006,
+                "n": 300
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 5,
+        "rollOdds": 400,
+        "upper": 0
+    },
+    {
+        "id": 27004,
+        "group": "senior",
+        "blankId": 7,
+        "item": [
+            {
+                "id": 10006,
+                "n": 500
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 400,
+        "upper": 0
+    },
+    {
+        "id": 27005,
+        "group": "senior",
+        "blankId": 7,
+        "item": [
+            {
+                "id": 10010,
+                "n": 600
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 4,
+        "rollOdds": 400,
+        "upper": 0
+    },
+    {
+        "id": 28001,
+        "group": "senior",
+        "blankId": 8,
+        "item": [
+            {
+                "id": 23107,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 40,
+        "upper": 1
+    },
+    {
+        "id": 28002,
+        "group": "senior",
+        "blankId": 8,
+        "item": [
+            {
+                "id": 23207,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 40,
+        "upper": 1
+    },
+    {
+        "id": 28003,
+        "group": "senior",
+        "blankId": 8,
+        "item": [
+            {
+                "id": 23307,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 40,
+        "upper": 1
+    },
+    {
+        "id": 28004,
+        "group": "senior",
+        "blankId": 8,
+        "item": [
+            {
+                "id": 23407,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 1,
+        "rollOdds": 40,
+        "upper": 1
+    },
+    {
+        "id": 28005,
+        "group": "senior",
+        "blankId": 8,
+        "item": [
+            {
+                "id": 23107,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 0,
+        "rollOdds": 40,
+        "upper": 1
+    },
+    {
+        "id": 28006,
+        "group": "senior",
+        "blankId": 8,
+        "item": [
+            {
+                "id": 23207,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 0,
+        "rollOdds": 40,
+        "upper": 1
+    },
+    {
+        "id": 28007,
+        "group": "senior",
+        "blankId": 8,
+        "item": [
+            {
+                "id": 23307,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 0,
+        "rollOdds": 40,
+        "upper": 1
+    },
+    {
+        "id": 28008,
+        "group": "senior",
+        "blankId": 8,
+        "item": [
+            {
+                "id": 23407,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 0,
+        "rollOdds": 40,
+        "upper": 1
+    },
+    {
+        "id": 28009,
+        "group": "senior",
+        "blankId": 8,
+        "item": [
+            {
+                "id": 23407,
+                "n": 1
+            }
+        ],
+        "levelRange": [
+            {
+                "low": 1,
+                "high": 999
+            }
+        ],
+        "refOdds": 0,
+        "rollOdds": 40,
+        "upper": 1
+    }
+]

@@ -1,0 +1,792 @@
+[
+    {
+        "star": 1,
+        "maxLv": 20,
+        "starCost": [
+        ],
+        "starAddCost": [
+        ],
+        "starRet": [
+        ],
+        "propsRatio": [
+        ],
+        "sacrifice": [
+            {
+                "type": 1,
+                "id": 10005,
+                "n": 50
+            },
+            {
+                "type": 1,
+                "id": 10006,
+                "n": 2
+            }
+        ],
+        "starInheritNum": 0
+    },
+    {
+        "star": 2,
+        "maxLv": 40,
+        "starCost": [
+        ],
+        "starAddCost": [
+        ],
+        "starRet": [
+        ],
+        "propsRatio": [
+        ],
+        "sacrifice": [
+            {
+                "type": 1,
+                "id": 10005,
+                "n": 150
+            },
+            {
+                "type": 1,
+                "id": 10006,
+                "n": 5
+            }
+        ],
+        "starInheritNum": 0
+    },
+    {
+        "star": 3,
+        "maxLv": 60,
+        "starCost": [
+        ],
+        "starAddCost": [
+        ],
+        "starRet": [
+        ],
+        "propsRatio": [
+        ],
+        "sacrifice": [
+            {
+                "type": 1,
+                "id": 10005,
+                "n": 450
+            },
+            {
+                "type": 1,
+                "id": 10006,
+                "n": 10
+            },
+            {
+                "type": 1,
+                "id": 10013,
+                "n": 10
+            }
+        ],
+        "starInheritNum": 0
+    },
+    {
+        "star": 4,
+        "maxLv": 80,
+        "starCost": [
+            {
+                "tp": 1,
+                "star": 4,
+                "n": 1
+            },
+            {
+                "tp": 3,
+                "star": 4,
+                "n": 4
+            },
+            {
+                "tp": 3,
+                "star": 3,
+                "n": 6
+            }
+        ],
+        "starAddCost": [
+            {
+                "id": 10006,
+                "n": 0
+            }
+        ],
+        "starRet": [
+        ],
+        "propsRatio": [
+        ],
+        "sacrifice": [
+            {
+                "type": 1,
+                "id": 10005,
+                "n": 1000
+            },
+            {
+                "type": 1,
+                "id": 10006,
+                "n": 25
+            },
+            {
+                "type": 1,
+                "id": 10013,
+                "n": 25
+            }
+        ],
+        "starInheritNum": 0
+    },
+    {
+        "star": 5,
+        "maxLv": 100,
+        "starCost": [
+            {
+                "tp": 4,
+                "star": 5,
+                "n": 2
+            },
+            {
+                "tp": 4,
+                "star": 4,
+                "n": 2
+            },
+            {
+                "tp": 4,
+                "star": 3,
+                "n": 8
+            }
+        ],
+        "starAddCost": [
+            {
+                "id": 10006,
+                "n": 0
+            }
+        ],
+        "starRet": [
+            {
+                "type": 2,
+                "id": 0,
+                "n": 30
+            },
+            {
+                "type": 3,
+                "id": 4,
+                "n": 120
+            },
+            {
+                "type": 3,
+                "id": 3,
+                "n": 120
+            }
+        ],
+        "propsRatio": [
+            {
+                "id": 1000,
+                "val": 0.15
+            },
+            {
+                "id": 1200,
+                "val": 0.15
+            },
+            {
+                "id": 1400,
+                "val": 0.15
+            }
+        ],
+        "sacrifice": [
+            {
+                "type": 2,
+                "id": 0,
+                "n": 50
+            }
+        ],
+        "starInheritNum": 0
+    },
+    {
+        "star": 6,
+        "maxLv": 120,
+        "starCost": [
+            {
+                "tp": 1,
+                "star": 5,
+                "n": 1
+            },
+            {
+                "tp": 4,
+                "star": 5,
+                "n": 1
+            }
+        ],
+        "starAddCost": [
+            {
+                "id": 10006,
+                "n": 2000
+            }
+        ],
+        "starRet": [
+            {
+                "type": 3,
+                "id": 5,
+                "n": 100
+            },
+            {
+                "type": 3,
+                "id": 4,
+                "n": 60
+            },
+            {
+                "type": 3,
+                "id": 3,
+                "n": 160
+            },
+            {
+                "type": 1,
+                "id": 10006,
+                "n": 0
+            }
+        ],
+        "propsRatio": [
+            {
+                "id": 1000,
+                "val": 0.3
+            },
+            {
+                "id": 1200,
+                "val": 0.3
+            },
+            {
+                "id": 1400,
+                "val": 0.3
+            }
+        ],
+        "sacrifice": [
+        ],
+        "starInheritNum": 50
+    },
+    {
+        "star": 7,
+        "maxLv": 140,
+        "starCost": [
+            {
+                "tp": 3,
+                "star": 5,
+                "n": 1
+            },
+            {
+                "tp": 4,
+                "star": 5,
+                "n": 2
+            },
+            {
+                "tp": 4,
+                "star": 4,
+                "n": 3
+            }
+        ],
+        "starAddCost": [
+            {
+                "id": 10006,
+                "n": 3500
+            }
+        ],
+        "starRet": [
+            {
+                "type": 3,
+                "id": 5,
+                "n": 150
+            },
+            {
+                "type": 3,
+                "id": 4,
+                "n": 60
+            },
+            {
+                "type": 3,
+                "id": 3,
+                "n": 160
+            },
+            {
+                "type": 1,
+                "id": 10006,
+                "n": 1600
+            },
+            {
+                "type": 2,
+                "id": 0,
+                "n": 50
+            }
+        ],
+        "propsRatio": [
+            {
+                "id": 1000,
+                "val": 0.45
+            },
+            {
+                "id": 1200,
+                "val": 0.45
+            },
+            {
+                "id": 1400,
+                "val": 0.45
+            }
+        ],
+        "sacrifice": [
+        ],
+        "starInheritNum": 50
+    },
+    {
+        "star": 8,
+        "maxLv": 160,
+        "starCost": [
+            {
+                "tp": 3,
+                "star": 5,
+                "n": 2
+            },
+            {
+                "tp": 4,
+                "star": 5,
+                "n": 2
+            },
+            {
+                "tp": 4,
+                "star": 4,
+                "n": 3
+            }
+        ],
+        "starAddCost": [
+            {
+                "id": 10006,
+                "n": 5000
+            }
+        ],
+        "starRet": [
+            {
+                "type": 3,
+                "id": 5,
+                "n": 300
+            },
+            {
+                "type": 3,
+                "id": 4,
+                "n": 150
+            },
+            {
+                "type": 3,
+                "id": 3,
+                "n": 160
+            },
+            {
+                "type": 1,
+                "id": 10006,
+                "n": 4400
+            },
+            {
+                "type": 2,
+                "id": 0,
+                "n": 50
+            }
+        ],
+        "propsRatio": [
+            {
+                "id": 1000,
+                "val": 0.65
+            },
+            {
+                "id": 1200,
+                "val": 0.65
+            },
+            {
+                "id": 1400,
+                "val": 0.65
+            }
+        ],
+        "sacrifice": [
+        ],
+        "starInheritNum": 50
+    },
+    {
+        "star": 9,
+        "maxLv": 180,
+        "starCost": [
+            {
+                "tp": 1,
+                "star": 5,
+                "n": 1
+            },
+            {
+                "tp": 4,
+                "star": 6,
+                "n": 1
+            },
+            {
+                "tp": 3,
+                "star": 5,
+                "n": 1
+            }
+        ],
+        "starAddCost": [
+            {
+                "id": 10006,
+                "n": 6000
+            }
+        ],
+        "starRet": [
+            {
+                "type": 3,
+                "id": 5,
+                "n": 500
+            },
+            {
+                "type": 3,
+                "id": 4,
+                "n": 240
+            },
+            {
+                "type": 3,
+                "id": 3,
+                "n": 160
+            },
+            {
+                "type": 1,
+                "id": 10006,
+                "n": 8400
+            },
+            {
+                "type": 2,
+                "id": 0,
+                "n": 50
+            }
+        ],
+        "propsRatio": [
+            {
+                "id": 1000,
+                "val": 0.85
+            },
+            {
+                "id": 1200,
+                "val": 0.85
+            },
+            {
+                "id": 1400,
+                "val": 0.85
+            }
+        ],
+        "sacrifice": [
+        ],
+        "starInheritNum": 100
+    },
+    {
+        "star": 10,
+        "maxLv": 200,
+        "starCost": [
+            {
+                "tp": 4,
+                "star": 7,
+                "n": 1
+            },
+            {
+                "tp": 3,
+                "star": 5,
+                "n": 3
+            }
+        ],
+        "starAddCost": [
+            {
+                "id": 10006,
+                "n": 10000
+            }
+        ],
+        "starRet": [
+            {
+                "type": 3,
+                "id": 5,
+                "n": 700
+            },
+            {
+                "type": 3,
+                "id": 4,
+                "n": 300
+            },
+            {
+                "type": 3,
+                "id": 3,
+                "n": 320
+            },
+            {
+                "type": 1,
+                "id": 10006,
+                "n": 13200
+            },
+            {
+                "type": 2,
+                "id": 0,
+                "n": 100
+            }
+        ],
+        "propsRatio": [
+            {
+                "id": 1000,
+                "val": 1.1
+            },
+            {
+                "id": 1200,
+                "val": 1.1
+            },
+            {
+                "id": 1400,
+                "val": 1.1
+            }
+        ],
+        "sacrifice": [
+        ],
+        "starInheritNum": 100
+    },
+    {
+        "star": 11,
+        "maxLv": 220,
+        "starCost": [
+            {
+                "tp": 1,
+                "star": 5,
+                "n": 1
+            },
+            {
+                "tp": 4,
+                "star": 8,
+                "n": 1
+            },
+            {
+                "tp": 3,
+                "star": 5,
+                "n": 2
+            }
+        ],
+        "starAddCost": [
+            {
+                "id": 10006,
+                "n": 15000
+            }
+        ],
+        "starRet": [
+            {
+                "type": 3,
+                "id": 5,
+                "n": 1100
+            },
+            {
+                "type": 3,
+                "id": 4,
+                "n": 360
+            },
+            {
+                "type": 3,
+                "id": 3,
+                "n": 480
+            },
+            {
+                "type": 1,
+                "id": 10006,
+                "n": 22800
+            },
+            {
+                "type": 2,
+                "id": 0,
+                "n": 100
+            }
+        ],
+        "propsRatio": [
+            {
+                "id": 1000,
+                "val": 1.35
+            },
+            {
+                "id": 1200,
+                "val": 1.35
+            },
+            {
+                "id": 1400,
+                "val": 1.35
+            }
+        ],
+        "sacrifice": [
+        ],
+        "starInheritNum": 100
+    },
+    {
+        "star": 12,
+        "maxLv": 240,
+        "starCost": [
+            {
+                "tp": 4,
+                "star": 9,
+                "n": 1
+            },
+            {
+                "tp": 3,
+                "star": 5,
+                "n": 3
+            }
+        ],
+        "starAddCost": [
+            {
+                "id": 10006,
+                "n": 20000
+            }
+        ],
+        "starRet": [
+            {
+                "type": 3,
+                "id": 5,
+                "n": 1600
+            },
+            {
+                "type": 3,
+                "id": 4,
+                "n": 510
+            },
+            {
+                "type": 3,
+                "id": 3,
+                "n": 640
+            },
+            {
+                "type": 1,
+                "id": 10006,
+                "n": 39200
+            },
+            {
+                "type": 2,
+                "id": 0,
+                "n": 150
+            }
+        ],
+        "propsRatio": [
+            {
+                "id": 1000,
+                "val": 1.65
+            },
+            {
+                "id": 1200,
+                "val": 1.65
+            },
+            {
+                "id": 1400,
+                "val": 1.65
+            }
+        ],
+        "sacrifice": [
+        ],
+        "starInheritNum": 100
+    },
+    {
+        "star": 13,
+        "maxLv": 260,
+        "starCost": [
+            {
+                "tp": 4,
+                "star": 10,
+                "n": 1
+            },
+            {
+                "tp": 1,
+                "star": 5,
+                "n": 2
+            }
+        ],
+        "starAddCost": [
+            {
+                "id": 10006,
+                "n": 20000
+            }
+        ],
+        "starRet": [
+            {
+                "type": 3,
+                "id": 5,
+                "n": 2350
+            },
+            {
+                "type": 3,
+                "id": 4,
+                "n": 750
+            },
+            {
+                "type": 3,
+                "id": 3,
+                "n": 800
+            },
+            {
+                "type": 1,
+                "id": 10006,
+                "n": 63600
+            },
+            {
+                "type": 2,
+                "id": 0,
+                "n": 150
+            }
+        ],
+        "propsRatio": [
+            {
+                "id": 1000,
+                "val": 1.95
+            },
+            {
+                "id": 1200,
+                "val": 1.95
+            },
+            {
+                "id": 1400,
+                "val": 1.95
+            }
+        ],
+        "sacrifice": [
+        ],
+        "starInheritNum": 150
+    },
+    {
+        "star": 14,
+        "maxLv": 290,
+        "starCost": [
+        ],
+        "starAddCost": [
+        ],
+        "starRet": [
+            {
+                "type": 3,
+                "id": 5,
+                "n": 3200
+            },
+            {
+                "type": 3,
+                "id": 4,
+                "n": 1050
+            },
+            {
+                "type": 3,
+                "id": 3,
+                "n": 1120
+            },
+            {
+                "type": 1,
+                "id": 10006,
+                "n": 92800
+            },
+            {
+                "type": 2,
+                "id": 0,
+                "n": 250
+            }
+        ],
+        "propsRatio": [
+            {
+                "id": 1000,
+                "val": 2.25
+            },
+            {
+                "id": 1200,
+                "val": 2.25
+            },
+            {
+                "id": 1400,
+                "val": 2.25
+            }
+        ],
+        "sacrifice": [
+        ],
+        "starInheritNum": 200
+    }
+]

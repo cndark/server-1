@@ -1,0 +1,24 @@
+[
+    {
+        "num": 1,
+        "initialPlayerLevel": 1,
+        "initialCurrency": [
+        ],
+        "initialHero": [
+            
+        ],
+        "initialBeast": [
+            
+        ],
+        "initialItem": [
+            {
+                "id": 20002,
+                "n": 1
+            }
+        ],
+        "initialModule": [
+            30, 31
+        ],
+        "initialMailId": 2
+    }
+]

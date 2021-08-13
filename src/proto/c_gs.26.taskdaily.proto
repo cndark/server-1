@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option (gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [8600, 8700)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+
+// 日常任务
+message TaskDailyData {
+    repeated TaskDailyItem Items   = 1;
+    repeated int32         BoxTake = 2;
+}
+
+message TaskDailyItem {
+    int32  Id  = 1;
+    double Val = 2;
+    bool   Fin = 3;
+    bool   T   = 4;
+}
+
+// ============================================================================
+// 通知: 进度变化
+message GS_TaskDailyValueChanged { // msgid: 8600
+    int32  Id  = 1;
+    double Val = 3;
+}
+
+// 通知: 一个日常项完成
+message GS_TaskDailyItemCompleted { // msgid: 8601
+    int32 Id = 1;
+}
+
+// ============================================================================
+
+message C_TaskDailyInfo { // msgid: 8650
+}
+
+message GS_TaskDailyInfo_R { // msgid: 8651
+    TaskDailyData Data = 1;
+}
+
+message C_TaskDailyTakeBoxReward { // msgid: 8654
+    int32 Id = 1;
+}
+
+message GS_TaskDailyTakeBoxReward_R { // msgid: 8655
+    int32   ErrorCode = 1;
+    int32   Id        = 2;
+    Rewards Rewards   = 3;
+}

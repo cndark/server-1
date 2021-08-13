@@ -1,0 +1,72 @@
+[
+    {
+        "level": 1,
+        "levelExp": 12000000,
+        "outAdd": 0,
+        "orderLimit": 1,
+        "timeReduce": 0
+    },
+    {
+        "level": 2,
+        "levelExp": 24000000,
+        "outAdd": 0.1,
+        "orderLimit": 1,
+        "timeReduce": 0.1
+    },
+    {
+        "level": 3,
+        "levelExp": 48000000,
+        "outAdd": 0.15,
+        "orderLimit": 2,
+        "timeReduce": 0.15
+    },
+    {
+        "level": 4,
+        "levelExp": 96000000,
+        "outAdd": 0.2,
+        "orderLimit": 2,
+        "timeReduce": 0.2
+    },
+    {
+        "level": 5,
+        "levelExp": 154000000,
+        "outAdd": 0.25,
+        "orderLimit": 3,
+        "timeReduce": 0.25
+    },
+    {
+        "level": 6,
+        "levelExp": 222000000,
+        "outAdd": 0.3,
+        "orderLimit": 3,
+        "timeReduce": 0.3
+    },
+    {
+        "level": 7,
+        "levelExp": 300000000,
+        "outAdd": 0.35,
+        "orderLimit": 4,
+        "timeReduce": 0.35
+    },
+    {
+        "level": 8,
+        "levelExp": 388000000,
+        "outAdd": 0.4,
+        "orderLimit": 4,
+        "timeReduce": 0.4
+    },
+    {
+        "level": 9,
+        "levelExp": 486000000,
+        "outAdd": 0.45,
+        "orderLimit": 5,
+        "timeReduce": 0.45
+    },
+    {
+        "level": 10,
+        "levelExp": 0,
+        "outAdd": 0.5,
+        "orderLimit": 5,
+        "timeReduce": 0.5
+    }
+]

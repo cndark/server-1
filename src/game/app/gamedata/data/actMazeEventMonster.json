@@ -1,0 +1,171 @@
+[
+    {
+        "seq": 1,
+        "type": 0,
+        "monster": [
+            30170, 30517, 30502, 30512, 30018, 30515
+        ],
+        "bossPos": 0,
+        "buffNum": 1,
+        "reward": [
+        ],
+        "showLvCond": 1,
+        "weight": 10
+    },
+    {
+        "seq": 2,
+        "type": 0,
+        "monster": [
+            30208, 30506, 30213, 30016, 30504, 30056
+        ],
+        "bossPos": 0,
+        "buffNum": 1,
+        "reward": [
+        ],
+        "showLvCond": 1,
+        "weight": 10
+    },
+    {
+        "seq": 3,
+        "type": 0,
+        "monster": [
+            30505, 30516, 30512, 30504, 30512, 30014
+        ],
+        "bossPos": 0,
+        "buffNum": 1,
+        "reward": [
+        ],
+        "showLvCond": 1,
+        "weight": 10
+    },
+    {
+        "seq": 4,
+        "type": 0,
+        "monster": [
+            30131, 30517, 30503, 30502, 30016, 30507
+        ],
+        "bossPos": 0,
+        "buffNum": 1,
+        "reward": [
+        ],
+        "showLvCond": 1,
+        "weight": 10
+    },
+    {
+        "seq": 5,
+        "type": 0,
+        "monster": [
+            30509, 30510, 30512, 30502, 30133, 30014
+        ],
+        "bossPos": 0,
+        "buffNum": 1,
+        "reward": [
+        ],
+        "showLvCond": 1,
+        "weight": 10
+    },
+    {
+        "seq": 6,
+        "type": 0,
+        "monster": [
+            30053, 30130, 30502, 30515, 30015, 30508
+        ],
+        "bossPos": 0,
+        "buffNum": 1,
+        "reward": [
+        ],
+        "showLvCond": 1,
+        "weight": 10
+    },
+    {
+        "seq": 7,
+        "type": 0,
+        "monster": [
+            30214, 30175, 30323, 30319, 30345, 30468
+        ],
+        "bossPos": 0,
+        "buffNum": 1,
+        "reward": [
+        ],
+        "showLvCond": 15,
+        "weight": 10
+    },
+    {
+        "seq": 8,
+        "type": 0,
+        "monster": [
+            30058, 30138, 30022, 30300, 30256, 30236
+        ],
+        "bossPos": 0,
+        "buffNum": 1,
+        "reward": [
+        ],
+        "showLvCond": 15,
+        "weight": 10
+    },
+    {
+        "seq": 9,
+        "type": 1,
+        "monster": [
+            30019, 30235, 30022, 30236, 30024, 30023
+        ],
+        "bossPos": 5,
+        "buffNum": 2,
+        "reward": [
+        ],
+        "showLvCond": 1,
+        "weight": 10
+    },
+    {
+        "seq": 10,
+        "type": 1,
+        "monster": [
+            30058, 30060, 30061, 30256, 30260, 30059
+        ],
+        "bossPos": 5,
+        "buffNum": 2,
+        "reward": [
+        ],
+        "showLvCond": 1,
+        "weight": 10
+    },
+    {
+        "seq": 11,
+        "type": 1,
+        "monster": [
+            30136, 30138, 30141, 30142, 30301, 30300
+        ],
+        "bossPos": 5,
+        "buffNum": 2,
+        "reward": [
+        ],
+        "showLvCond": 1,
+        "weight": 10
+    },
+    {
+        "seq": 12,
+        "type": 1,
+        "monster": [
+            30175, 30319, 30323, 30178, 30445, 30448
+        ],
+        "bossPos": 5,
+        "buffNum": 2,
+        "reward": [
+        ],
+        "showLvCond": 30,
+        "weight": 10
+    },
+    {
+        "seq": 13,
+        "type": 1,
+        "monster": [
+            30214, 30341, 30470, 30345, 30468, 30344
+        ],
+        "bossPos": 5,
+        "buffNum": 2,
+        "reward": [
+        ],
+        "showLvCond": 30,
+        "weight": 10
+    }
+]

@@ -1,0 +1,392 @@
+[
+    {
+        "lv": 1,
+        "status": [
+            {
+                "statusId": 14000,
+                "val": 1
+            }
+        ],
+        "needShrineScore": 1200,
+        "rewardFund": 2,
+        "rewardElem": 5,
+        "rewardDonate": 20
+    },
+    {
+        "lv": 2,
+        "status": [
+            {
+                "statusId": 14000,
+                "val": 2
+            }
+        ],
+        "needShrineScore": 1200,
+        "rewardFund": 2,
+        "rewardElem": 6,
+        "rewardDonate": 22
+    },
+    {
+        "lv": 3,
+        "status": [
+            {
+                "statusId": 14000,
+                "val": 2
+            }
+        ],
+        "needShrineScore": 1200,
+        "rewardFund": 2,
+        "rewardElem": 7,
+        "rewardDonate": 24
+    },
+    {
+        "lv": 4,
+        "status": [
+            {
+                "statusId": 14000,
+                "val": 3
+            }
+        ],
+        "needShrineScore": 1900,
+        "rewardFund": 2,
+        "rewardElem": 8,
+        "rewardDonate": 26
+    },
+    {
+        "lv": 5,
+        "status": [
+            {
+                "statusId": 14000,
+                "val": 3
+            }
+        ],
+        "needShrineScore": 2700,
+        "rewardFund": 2,
+        "rewardElem": 9,
+        "rewardDonate": 28
+    },
+    {
+        "lv": 6,
+        "status": [
+            {
+                "statusId": 14000,
+                "val": 4
+            }
+        ],
+        "needShrineScore": 3800,
+        "rewardFund": 2,
+        "rewardElem": 10,
+        "rewardDonate": 30
+    },
+    {
+        "lv": 7,
+        "status": [
+            {
+                "statusId": 14000,
+                "val": 4
+            }
+        ],
+        "needShrineScore": 6000,
+        "rewardFund": 2,
+        "rewardElem": 11,
+        "rewardDonate": 32
+    },
+    {
+        "lv": 8,
+        "status": [
+            {
+                "statusId": 14000,
+                "val": 5
+            }
+        ],
+        "needShrineScore": 10000,
+        "rewardFund": 2,
+        "rewardElem": 12,
+        "rewardDonate": 34
+    },
+    {
+        "lv": 9,
+        "status": [
+            {
+                "statusId": 14000,
+                "val": 6
+            }
+        ],
+        "needShrineScore": 13000,
+        "rewardFund": 2,
+        "rewardElem": 13,
+        "rewardDonate": 36
+    },
+    {
+        "lv": 10,
+        "status": [
+            {
+                "statusId": 14000,
+                "val": 6
+            }
+        ],
+        "needShrineScore": 21000,
+        "rewardFund": 2,
+        "rewardElem": 14,
+        "rewardDonate": 38
+    },
+    {
+        "lv": 11,
+        "status": [
+            {
+                "statusId": 14000,
+                "val": 7
+            }
+        ],
+        "needShrineScore": 31000,
+        "rewardFund": 2,
+        "rewardElem": 15,
+        "rewardDonate": 40
+    },
+    {
+        "lv": 12,
+        "status": [
+            {
+                "statusId": 14000,
+                "val": 7
+            }
+        ],
+        "needShrineScore": 47000,
+        "rewardFund": 2,
+        "rewardElem": 16,
+        "rewardDonate": 42
+    },
+    {
+        "lv": 13,
+        "status": [
+            {
+                "statusId": 14000,
+                "val": 8
+            }
+        ],
+        "needShrineScore": 70000,
+        "rewardFund": 2,
+        "rewardElem": 17,
+        "rewardDonate": 44
+    },
+    {
+        "lv": 14,
+        "status": [
+            {
+                "statusId": 14000,
+                "val": 8
+            }
+        ],
+        "needShrineScore": 110000,
+        "rewardFund": 2,
+        "rewardElem": 18,
+        "rewardDonate": 46
+    },
+    {
+        "lv": 15,
+        "status": [
+            {
+                "statusId": 14000,
+                "val": 8
+            }
+        ],
+        "needShrineScore": 150000,
+        "rewardFund": 2,
+        "rewardElem": 19,
+        "rewardDonate": 48
+    },
+    {
+        "lv": 16,
+        "status": [
+            {
+                "statusId": 14000,
+                "val": 9
+            }
+        ],
+        "needShrineScore": 230000,
+        "rewardFund": 2,
+        "rewardElem": 20,
+        "rewardDonate": 50
+    },
+    {
+        "lv": 17,
+        "status": [
+            {
+                "statusId": 14000,
+                "val": 9
+            }
+        ],
+        "needShrineScore": 300000,
+        "rewardFund": 2,
+        "rewardElem": 21,
+        "rewardDonate": 52
+    },
+    {
+        "lv": 18,
+        "status": [
+            {
+                "statusId": 14000,
+                "val": 10
+            }
+        ],
+        "needShrineScore": 600000,
+        "rewardFund": 2,
+        "rewardElem": 22,
+        "rewardDonate": 54
+    },
+    {
+        "lv": 19,
+        "status": [
+            {
+                "statusId": 14000,
+                "val": 10
+            }
+        ],
+        "needShrineScore": 800000,
+        "rewardFund": 2,
+        "rewardElem": 23,
+        "rewardDonate": 56
+    },
+    {
+        "lv": 20,
+        "status": [
+            {
+                "statusId": 14000,
+                "val": 11
+            }
+        ],
+        "needShrineScore": 800000,
+        "rewardFund": 2,
+        "rewardElem": 24,
+        "rewardDonate": 58
+    },
+    {
+        "lv": 21,
+        "status": [
+            {
+                "statusId": 14000,
+                "val": 11
+            }
+        ],
+        "needShrineScore": 1000000,
+        "rewardFund": 2,
+        "rewardElem": 26,
+        "rewardDonate": 60
+    },
+    {
+        "lv": 22,
+        "status": [
+            {
+                "statusId": 14000,
+                "val": 12
+            }
+        ],
+        "needShrineScore": 1000000,
+        "rewardFund": 2,
+        "rewardElem": 28,
+        "rewardDonate": 62
+    },
+    {
+        "lv": 23,
+        "status": [
+            {
+                "statusId": 14000,
+                "val": 12
+            }
+        ],
+        "needShrineScore": 1120000,
+        "rewardFund": 2,
+        "rewardElem": 30,
+        "rewardDonate": 64
+    },
+    {
+        "lv": 24,
+        "status": [
+            {
+                "statusId": 14000,
+                "val": 12
+            }
+        ],
+        "needShrineScore": 1260000,
+        "rewardFund": 2,
+        "rewardElem": 32,
+        "rewardDonate": 66
+    },
+    {
+        "lv": 25,
+        "status": [
+            {
+                "statusId": 14000,
+                "val": 12
+            }
+        ],
+        "needShrineScore": 1450000,
+        "rewardFund": 2,
+        "rewardElem": 34,
+        "rewardDonate": 68
+    },
+    {
+        "lv": 26,
+        "status": [
+            {
+                "statusId": 14000,
+                "val": 12
+            }
+        ],
+        "needShrineScore": 1630000,
+        "rewardFund": 2,
+        "rewardElem": 36,
+        "rewardDonate": 70
+    },
+    {
+        "lv": 27,
+        "status": [
+            {
+                "statusId": 14000,
+                "val": 12
+            }
+        ],
+        "needShrineScore": 1830000,
+        "rewardFund": 2,
+        "rewardElem": 38,
+        "rewardDonate": 72
+    },
+    {
+        "lv": 28,
+        "status": [
+            {
+                "statusId": 14000,
+                "val": 12
+            }
+        ],
+        "needShrineScore": 2060000,
+        "rewardFund": 2,
+        "rewardElem": 40,
+        "rewardDonate": 74
+    },
+    {
+        "lv": 29,
+        "status": [
+            {
+                "statusId": 14000,
+                "val": 12
+            }
+        ],
+        "needShrineScore": 2320000,
+        "rewardFund": 2,
+        "rewardElem": 42,
+        "rewardDonate": 76
+    },
+    {
+        "lv": 30,
+        "status": [
+            {
+                "statusId": 14000,
+                "val": 12
+            }
+        ],
+        "needShrineScore": 0,
+        "rewardFund": 2,
+        "rewardElem": 44,
+        "rewardDonate": 78
+    }
+]

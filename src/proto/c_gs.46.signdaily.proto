@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option (gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [13600, 13700)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+// 每日签到
+message SignDailyData {
+    int32 CanDays = 1; // 签到未领取天数
+    int32 Day     = 2; // 最近领取的是第几条
+    int32 Round   = 3; // 奖励领取的轮数
+}
+
+// ============================================================================
+
+message C_SignDailySign { // msgid: 13601
+}
+
+message GS_SignDailySign_R { // msgid: 13602
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+}

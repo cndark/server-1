@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "activeCond": 2,
+        "reward": [
+            {
+                "id": 20011,
+                "n": 2
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "activeCond": 4,
+        "reward": [
+            {
+                "id": 20101,
+                "n": 1
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "activeCond": 6,
+        "reward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "activeCond": 8,
+        "reward": [
+            {
+                "id": 20002,
+                "n": 1
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "activeCond": 10,
+        "reward": [
+            {
+                "id": 21041,
+                "n": 15
+            }
+        ]
+    }
+]

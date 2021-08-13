@@ -1,0 +1,1190 @@
+[
+    {
+        "seq": 1,
+        "group": 2101,
+        "right": 2,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 2,
+        "group": 2101,
+        "right": 3,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 3,
+        "group": 2101,
+        "right": 4,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 4,
+        "group": 2101,
+        "right": 1,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 5,
+        "group": 2101,
+        "right": 2,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 6,
+        "group": 2101,
+        "right": 3,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 7,
+        "group": 2101,
+        "right": 4,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 8,
+        "group": 2101,
+        "right": 1,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 9,
+        "group": 2101,
+        "right": 1,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 10,
+        "group": 2101,
+        "right": 3,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 11,
+        "group": 2101,
+        "right": 4,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 12,
+        "group": 2101,
+        "right": 1,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 13,
+        "group": 2101,
+        "right": 2,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 14,
+        "group": 2101,
+        "right": 1,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 15,
+        "group": 2101,
+        "right": 4,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 16,
+        "group": 2101,
+        "right": 1,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 17,
+        "group": 2101,
+        "right": 2,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 18,
+        "group": 2101,
+        "right": 3,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 19,
+        "group": 2101,
+        "right": 2,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 20,
+        "group": 2101,
+        "right": 3,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 21,
+        "group": 2101,
+        "right": 3,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 22,
+        "group": 2101,
+        "right": 1,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 23,
+        "group": 2101,
+        "right": 4,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 24,
+        "group": 2101,
+        "right": 2,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 25,
+        "group": 2101,
+        "right": 1,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 26,
+        "group": 2101,
+        "right": 2,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 27,
+        "group": 2101,
+        "right": 4,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 28,
+        "group": 2101,
+        "right": 2,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 29,
+        "group": 2101,
+        "right": 4,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 30,
+        "group": 2101,
+        "right": 1,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 31,
+        "group": 2101,
+        "right": 4,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 32,
+        "group": 2101,
+        "right": 3,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 33,
+        "group": 2101,
+        "right": 1,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 34,
+        "group": 2101,
+        "right": 1,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 35,
+        "group": 2101,
+        "right": 2,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 36,
+        "group": 2101,
+        "right": 2,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 37,
+        "group": 2101,
+        "right": 1,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 38,
+        "group": 2101,
+        "right": 4,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 39,
+        "group": 2101,
+        "right": 3,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 40,
+        "group": 2101,
+        "right": 1,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 41,
+        "group": 2101,
+        "right": 1,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 42,
+        "group": 2101,
+        "right": 1,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 43,
+        "group": 2101,
+        "right": 2,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 44,
+        "group": 2101,
+        "right": 2,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 45,
+        "group": 2101,
+        "right": 1,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 46,
+        "group": 2101,
+        "right": 3,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 47,
+        "group": 2101,
+        "right": 4,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 48,
+        "group": 2101,
+        "right": 1,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 49,
+        "group": 2101,
+        "right": 4,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 50,
+        "group": 2101,
+        "right": 4,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 51,
+        "group": 2101,
+        "right": 1,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 52,
+        "group": 2101,
+        "right": 4,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 53,
+        "group": 2101,
+        "right": 4,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 54,
+        "group": 2101,
+        "right": 3,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 55,
+        "group": 2101,
+        "right": 3,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 56,
+        "group": 2101,
+        "right": 3,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 57,
+        "group": 2101,
+        "right": 4,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 58,
+        "group": 2101,
+        "right": 2,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 59,
+        "group": 2101,
+        "right": 3,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 60,
+        "group": 2101,
+        "right": 3,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 61,
+        "group": 2101,
+        "right": 2,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 62,
+        "group": 2101,
+        "right": 1,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 63,
+        "group": 2101,
+        "right": 4,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 64,
+        "group": 2101,
+        "right": 2,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 65,
+        "group": 2101,
+        "right": 3,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    },
+    {
+        "seq": 66,
+        "group": 2101,
+        "right": 4,
+        "rightReward": [
+            {
+                "id": 10002,
+                "n": 100
+            }
+        ],
+        "errorReward": [
+            {
+                "id": 10002,
+                "n": 50
+            }
+        ],
+        "weight": 100
+    }
+]

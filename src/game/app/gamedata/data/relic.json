@@ -1,0 +1,2386 @@
+[
+    {
+        "id": 40101,
+        "txt_Name": "初心者法典",
+        "color": 1,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 300
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 200
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 20,
+        "supplyExp": 10,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40104,
+        "txt_Name": "舞会面具",
+        "color": 1,
+        "baseProps": [
+            {
+                "id": 14,
+                "val": 1300
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 14,
+                "val": 800
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 20,
+        "supplyExp": 10,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40201,
+        "txt_Name": "学徒法典",
+        "color": 2,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 400
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 300
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 40,
+        "supplyExp": 30,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40202,
+        "txt_Name": "自然法球",
+        "color": 2,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 400
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 300
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 40,
+        "supplyExp": 30,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40203,
+        "txt_Name": "金丝手镯",
+        "color": 2,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 400
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 300
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 40,
+        "supplyExp": 30,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40204,
+        "txt_Name": "森林面具",
+        "color": 2,
+        "baseProps": [
+            {
+                "id": 14,
+                "val": 1900
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 14,
+                "val": 1200
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 40,
+        "supplyExp": 30,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40301,
+        "txt_Name": "法师宝典",
+        "color": 3,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 800
+            },
+            {
+                "id": 46,
+                "val": 0.008
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 500
+            },
+            {
+                "id": 46,
+                "val": 0.006
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 120,
+        "supplyExp": 100,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40302,
+        "txt_Name": "水溅法球",
+        "color": 3,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 800
+            },
+            {
+                "id": 47,
+                "val": 0.008
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 500
+            },
+            {
+                "id": 47,
+                "val": 0.006
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 120,
+        "supplyExp": 100,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40303,
+        "txt_Name": "龙牙手镯",
+        "color": 3,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 800
+            },
+            {
+                "id": 49,
+                "val": 0.008
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 500
+            },
+            {
+                "id": 49,
+                "val": 0.006
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 120,
+        "supplyExp": 100,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40304,
+        "txt_Name": "天蓝面具",
+        "color": 3,
+        "baseProps": [
+            {
+                "id": 14,
+                "val": 3300
+            },
+            {
+                "id": 1200,
+                "val": 0.008
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 14,
+                "val": 2100
+            },
+            {
+                "id": 1200,
+                "val": 0.006
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 120,
+        "supplyExp": 100,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40305,
+        "txt_Name": "宝石戒指",
+        "color": 3,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 800
+            },
+            {
+                "id": 50,
+                "val": 0.008
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 500
+            },
+            {
+                "id": 50,
+                "val": 0.006
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 120,
+        "supplyExp": 100,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40306,
+        "txt_Name": "寒冰匕首",
+        "color": 3,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 800
+            },
+            {
+                "id": 48,
+                "val": 0.008
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 500
+            },
+            {
+                "id": 48,
+                "val": 0.006
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 120,
+        "supplyExp": 100,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40401,
+        "txt_Name": "高阶法师之书",
+        "color": 4,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 1300
+            },
+            {
+                "id": 46,
+                "val": 0.014
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 800
+            },
+            {
+                "id": 46,
+                "val": 0.01
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 300,
+        "supplyExp": 300,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40402,
+        "txt_Name": "精灵法球",
+        "color": 4,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 1300
+            },
+            {
+                "id": 47,
+                "val": 0.014
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 800
+            },
+            {
+                "id": 47,
+                "val": 0.01
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 300,
+        "supplyExp": 300,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40403,
+        "txt_Name": "彩虹手镯",
+        "color": 4,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 1300
+            },
+            {
+                "id": 49,
+                "val": 0.014
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 800
+            },
+            {
+                "id": 49,
+                "val": 0.01
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 300,
+        "supplyExp": 300,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40404,
+        "txt_Name": "智慧面具",
+        "color": 4,
+        "baseProps": [
+            {
+                "id": 14,
+                "val": 5200
+            },
+            {
+                "id": 1200,
+                "val": 0.014
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 14,
+                "val": 3400
+            },
+            {
+                "id": 1200,
+                "val": 0.01
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 300,
+        "supplyExp": 300,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40405,
+        "txt_Name": "法师之戒",
+        "color": 4,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 1300
+            },
+            {
+                "id": 50,
+                "val": 0.014
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 800
+            },
+            {
+                "id": 50,
+                "val": 0.01
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 300,
+        "supplyExp": 300,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40406,
+        "txt_Name": "沉默匕首",
+        "color": 4,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 1300
+            },
+            {
+                "id": 48,
+                "val": 0.014
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 800
+            },
+            {
+                "id": 48,
+                "val": 0.01
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 300,
+        "supplyExp": 300,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40501,
+        "txt_Name": "大法师之书",
+        "color": 5,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 1900
+            },
+            {
+                "id": 46,
+                "val": 0.02
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 1200
+            },
+            {
+                "id": 46,
+                "val": 0.015
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 500,
+        "supplyExp": 700,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40502,
+        "txt_Name": "燃烧法球",
+        "color": 5,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 1900
+            },
+            {
+                "id": 47,
+                "val": 0.02
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 1200
+            },
+            {
+                "id": 47,
+                "val": 0.015
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 500,
+        "supplyExp": 700,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40503,
+        "txt_Name": "燃烧手镯",
+        "color": 5,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 1900
+            },
+            {
+                "id": 49,
+                "val": 0.02
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 1200
+            },
+            {
+                "id": 49,
+                "val": 0.015
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 500,
+        "supplyExp": 700,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40504,
+        "txt_Name": "符咒面具",
+        "color": 5,
+        "baseProps": [
+            {
+                "id": 14,
+                "val": 7800
+            },
+            {
+                "id": 1200,
+                "val": 0.02
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 14,
+                "val": 5100
+            },
+            {
+                "id": 1200,
+                "val": 0.015
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 500,
+        "supplyExp": 700,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40505,
+        "txt_Name": "魔力戒指",
+        "color": 5,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 1900
+            },
+            {
+                "id": 50,
+                "val": 0.02
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 1200
+            },
+            {
+                "id": 50,
+                "val": 0.015
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 500,
+        "supplyExp": 700,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40506,
+        "txt_Name": "宝石匕首",
+        "color": 5,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 1900
+            },
+            {
+                "id": 48,
+                "val": 0.02
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 1200
+            },
+            {
+                "id": 48,
+                "val": 0.015
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 500,
+        "supplyExp": 700,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40507,
+        "txt_Name": "金色符文",
+        "color": 5,
+        "baseProps": [
+            {
+                "id": 70,
+                "val": 0.01
+            },
+            {
+                "id": 25,
+                "val": 0.015
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 70,
+                "val": 0.005
+            },
+            {
+                "id": 25,
+                "val": 0.01
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 500,
+        "supplyExp": 700,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40508,
+        "txt_Name": "巫师竖琴",
+        "color": 5,
+        "baseProps": [
+            {
+                "id": 30,
+                "val": 0.02
+            },
+            {
+                "id": 80,
+                "val": 0.01
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 30,
+                "val": 0.015
+            },
+            {
+                "id": 80,
+                "val": 0.005
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 500,
+        "supplyExp": 700,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40509,
+        "txt_Name": "魔人拳套",
+        "color": 5,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 1900
+            },
+            {
+                "id": 20,
+                "val": 0.015
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 1200
+            },
+            {
+                "id": 20,
+                "val": 0.01
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 500,
+        "supplyExp": 700,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40601,
+        "txt_Name": "恶魔法典",
+        "color": 6,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 2700
+            },
+            {
+                "id": 46,
+                "val": 0.029
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 1800
+            },
+            {
+                "id": 46,
+                "val": 0.022
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 850,
+        "supplyExp": 1500,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40602,
+        "txt_Name": "恶魔法球",
+        "color": 6,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 2700
+            },
+            {
+                "id": 47,
+                "val": 0.029
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 1800
+            },
+            {
+                "id": 47,
+                "val": 0.022
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 850,
+        "supplyExp": 1500,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40603,
+        "txt_Name": "恶魔手镯",
+        "color": 6,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 2700
+            },
+            {
+                "id": 49,
+                "val": 0.029
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 1800
+            },
+            {
+                "id": 49,
+                "val": 0.022
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 850,
+        "supplyExp": 1500,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40604,
+        "txt_Name": "恶魔面具",
+        "color": 6,
+        "baseProps": [
+            {
+                "id": 14,
+                "val": 11100
+            },
+            {
+                "id": 1200,
+                "val": 0.029
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 14,
+                "val": 7300
+            },
+            {
+                "id": 1200,
+                "val": 0.022
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 850,
+        "supplyExp": 1500,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40605,
+        "txt_Name": "龙胆戒指",
+        "color": 6,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 2700
+            },
+            {
+                "id": 50,
+                "val": 0.029
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 1800
+            },
+            {
+                "id": 50,
+                "val": 0.022
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 850,
+        "supplyExp": 1500,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40606,
+        "txt_Name": "觅心匕首",
+        "color": 6,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 2700
+            },
+            {
+                "id": 48,
+                "val": 0.029
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 1800
+            },
+            {
+                "id": 48,
+                "val": 0.022
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 850,
+        "supplyExp": 1500,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40607,
+        "txt_Name": "恶魔符文",
+        "color": 6,
+        "baseProps": [
+            {
+                "id": 70,
+                "val": 0.014
+            },
+            {
+                "id": 25,
+                "val": 0.022
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 70,
+                "val": 0.007
+            },
+            {
+                "id": 25,
+                "val": 0.014
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 850,
+        "supplyExp": 1500,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40608,
+        "txt_Name": "阿波罗竖琴",
+        "color": 6,
+        "baseProps": [
+            {
+                "id": 30,
+                "val": 0.029
+            },
+            {
+                "id": 80,
+                "val": 0.014
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 30,
+                "val": 0.022
+            },
+            {
+                "id": 80,
+                "val": 0.007
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 850,
+        "supplyExp": 1500,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40609,
+        "txt_Name": "撒旦拳刃",
+        "color": 6,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 2700
+            },
+            {
+                "id": 20,
+                "val": 0.022
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 1800
+            },
+            {
+                "id": 20,
+                "val": 0.014
+            }
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 850,
+        "supplyExp": 1500,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40610,
+        "txt_Name": "穿云弓",
+        "color": 6,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 2700
+            },
+            {
+                "id": 20,
+                "val": 0.022
+            },
+            {
+                "id": 41,
+                "val": 0.007
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 1800
+            },
+            {
+                "id": 20,
+                "val": 0.014
+            },
+            {
+                "id": 41,
+                "val": 0.007
+            }
+        ],
+        "active": [
+            {
+                "type": 3,
+                "n": 30236
+            }
+        ],
+        "hideProps": [
+            {
+                "id": 31,
+                "val": 0.046
+            }
+        ],
+        "hidePropGrowth": [
+            {
+                "id": 31,
+                "val": 0.034
+            }
+        ],
+        "exp": 850,
+        "supplyExp": 1500,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40611,
+        "txt_Name": "无双战刃",
+        "color": 6,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 2700
+            },
+            {
+                "id": 42,
+                "val": 0.014
+            },
+            {
+                "id": 24,
+                "val": 0.022
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 1800
+            },
+            {
+                "id": 42,
+                "val": 0.007
+            },
+            {
+                "id": 24,
+                "val": 0.014
+            }
+        ],
+        "active": [
+            {
+                "type": 3,
+                "n": 30345
+            }
+        ],
+        "hideProps": [
+            {
+                "id": 40,
+                "val": 0.011
+            }
+        ],
+        "hidePropGrowth": [
+            {
+                "id": 40,
+                "val": 0.011
+            }
+        ],
+        "exp": 850,
+        "supplyExp": 1500,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40612,
+        "txt_Name": "凛冬之矛",
+        "color": 6,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 2700
+            },
+            {
+                "id": 1400,
+                "val": 0.029
+            },
+            {
+                "id": 21,
+                "val": 0.044
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 1800
+            },
+            {
+                "id": 1400,
+                "val": 0.022
+            },
+            {
+                "id": 21,
+                "val": 0.029
+            }
+        ],
+        "active": [
+            {
+                "type": 3,
+                "n": 30319
+            }
+        ],
+        "hideProps": [
+            {
+                "id": 20,
+                "val": 0.034
+            }
+        ],
+        "hidePropGrowth": [
+            {
+                "id": 20,
+                "val": 0.023
+            }
+        ],
+        "exp": 850,
+        "supplyExp": 1500,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40613,
+        "txt_Name": "生命之心",
+        "color": 6,
+        "baseProps": [
+            {
+                "id": 14,
+                "val": 11100
+            },
+            {
+                "id": 70,
+                "val": 0.014
+            },
+            {
+                "id": 41,
+                "val": 0.007
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 14,
+                "val": 7300
+            },
+            {
+                "id": 70,
+                "val": 0.007
+            },
+            {
+                "id": 41,
+                "val": 0.007
+            }
+        ],
+        "active": [
+            {
+                "type": 3,
+                "n": 30235
+            }
+        ],
+        "hideProps": [
+            {
+                "id": 1200,
+                "val": 0.046
+            }
+        ],
+        "hidePropGrowth": [
+            {
+                "id": 1200,
+                "val": 0.034
+            }
+        ],
+        "exp": 850,
+        "supplyExp": 1500,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40614,
+        "txt_Name": "暮灵之锤",
+        "color": 6,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 2700
+            },
+            {
+                "id": 20,
+                "val": 0.022
+            },
+            {
+                "id": 21,
+                "val": 0.044
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 1800
+            },
+            {
+                "id": 20,
+                "val": 0.014
+            },
+            {
+                "id": 21,
+                "val": 0.029
+            }
+        ],
+        "active": [
+            {
+                "type": 3,
+                "n": 30341
+            }
+        ],
+        "hideProps": [
+            {
+                "id": 41,
+                "val": 0.011
+            }
+        ],
+        "hidePropGrowth": [
+            {
+                "id": 41,
+                "val": 0.011
+            }
+        ],
+        "exp": 850,
+        "supplyExp": 1500,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40615,
+        "txt_Name": "蝴蝶短铳",
+        "color": 6,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 2700
+            },
+            {
+                "id": 41,
+                "val": 0.007
+            },
+            {
+                "id": 70,
+                "val": 0.014
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 1800
+            },
+            {
+                "id": 41,
+                "val": 0.007
+            },
+            {
+                "id": 70,
+                "val": 0.007
+            }
+        ],
+        "active": [
+            {
+                "type": 3,
+                "n": 30448
+            }
+        ],
+        "hideProps": [
+            {
+                "id": 21,
+                "val": 0.069
+            }
+        ],
+        "hidePropGrowth": [
+            {
+                "id": 21,
+                "val": 0.046
+            }
+        ],
+        "exp": 850,
+        "supplyExp": 1500,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40616,
+        "txt_Name": "命运塔罗",
+        "color": 6,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 2700
+            },
+            {
+                "id": 1500,
+                "val": 0.007
+            },
+            {
+                "id": 25,
+                "val": 0.022
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 1800
+            },
+            {
+                "id": 1500,
+                "val": 0.007
+            },
+            {
+                "id": 25,
+                "val": 0.014
+            }
+        ],
+        "active": [
+            {
+                "type": 3,
+                "n": 30058
+            }
+        ],
+        "hideProps": [
+            {
+                "id": 25,
+                "val": 0.034
+            }
+        ],
+        "hidePropGrowth": [
+            {
+                "id": 25,
+                "val": 0.023
+            }
+        ],
+        "exp": 850,
+        "supplyExp": 1500,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40617,
+        "txt_Name": "恶魔之誓",
+        "color": 6,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 2700
+            },
+            {
+                "id": 1400,
+                "val": 0.029
+            },
+            {
+                "id": 25,
+                "val": 0.022
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 1800
+            },
+            {
+                "id": 1400,
+                "val": 0.022
+            },
+            {
+                "id": 25,
+                "val": 0.014
+            }
+        ],
+        "active": [
+            {
+                "type": 3,
+                "n": 30136
+            }
+        ],
+        "hideProps": [
+            {
+                "id": 1500,
+                "val": 0.011
+            }
+        ],
+        "hidePropGrowth": [
+            {
+                "id": 1500,
+                "val": 0.011
+            }
+        ],
+        "exp": 850,
+        "supplyExp": 1500,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40618,
+        "txt_Name": "烈焰魔珠",
+        "color": 6,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 2700
+            },
+            {
+                "id": 1400,
+                "val": 0.029
+            },
+            {
+                "id": 21,
+                "val": 0.044
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 1800
+            },
+            {
+                "id": 1400,
+                "val": 0.022
+            },
+            {
+                "id": 21,
+                "val": 0.029
+            }
+        ],
+        "active": [
+            {
+                "type": 3,
+                "n": 30300
+            }
+        ],
+        "hideProps": [
+            {
+                "id": 41,
+                "val": 0.011
+            }
+        ],
+        "hidePropGrowth": [
+            {
+                "id": 41,
+                "val": 0.011
+            }
+        ],
+        "exp": 850,
+        "supplyExp": 1500,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40619,
+        "txt_Name": "死神之眼",
+        "color": 6,
+        "baseProps": [
+            {
+                "id": 14,
+                "val": 11100
+            },
+            {
+                "id": 41,
+                "val": 0.007
+            },
+            {
+                "id": 25,
+                "val": 0.022
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 14,
+                "val": 7300
+            },
+            {
+                "id": 41,
+                "val": 0.007
+            },
+            {
+                "id": 25,
+                "val": 0.014
+            }
+        ],
+        "active": [
+            {
+                "type": 3,
+                "n": 30175
+            }
+        ],
+        "hideProps": [
+            {
+                "id": 1400,
+                "val": 0.046
+            }
+        ],
+        "hidePropGrowth": [
+            {
+                "id": 1400,
+                "val": 0.034
+            }
+        ],
+        "exp": 850,
+        "supplyExp": 1500,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40620,
+        "txt_Name": "吞噬之息",
+        "color": 6,
+        "baseProps": [
+            {
+                "id": 14,
+                "val": 11100
+            },
+            {
+                "id": 41,
+                "val": 0.007
+            },
+            {
+                "id": 43,
+                "val": 0.014
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 14,
+                "val": 7300
+            },
+            {
+                "id": 41,
+                "val": 0.007
+            },
+            {
+                "id": 43,
+                "val": 0.007
+            }
+        ],
+        "active": [
+            {
+                "type": 3,
+                "n": 30214
+            }
+        ],
+        "hideProps": [
+            {
+                "id": 1500,
+                "val": 0.011
+            }
+        ],
+        "hidePropGrowth": [
+            {
+                "id": 1500,
+                "val": 0.011
+            }
+        ],
+        "exp": 850,
+        "supplyExp": 1500,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40621,
+        "txt_Name": "梦魇之镜",
+        "color": 6,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 2700
+            },
+            {
+                "id": 42,
+                "val": 0.014
+            },
+            {
+                "id": 21,
+                "val": 0.044
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 1800
+            },
+            {
+                "id": 42,
+                "val": 0.007
+            },
+            {
+                "id": 21,
+                "val": 0.029
+            }
+        ],
+        "active": [
+            {
+                "type": 3,
+                "n": 30468
+            }
+        ],
+        "hideProps": [
+            {
+                "id": 22,
+                "val": 0.034
+            }
+        ],
+        "hidePropGrowth": [
+            {
+                "id": 22,
+                "val": 0.023
+            }
+        ],
+        "exp": 850,
+        "supplyExp": 1500,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40701,
+        "txt_Name": "神圣法典",
+        "color": 6,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 2700
+            },
+            {
+                "id": 1400,
+                "val": 0.029
+            },
+            {
+                "id": 20,
+                "val": 0.022
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 1800
+            },
+            {
+                "id": 1400,
+                "val": 0.022
+            },
+            {
+                "id": 20,
+                "val": 0.014
+            }
+        ],
+        "active": [
+            {
+                "type": 3,
+                "n": 30260
+            }
+        ],
+        "hideProps": [
+            {
+                "id": 41,
+                "val": 0.011
+            }
+        ],
+        "hidePropGrowth": [
+            {
+                "id": 41,
+                "val": 0.011
+            }
+        ],
+        "exp": 850,
+        "supplyExp": 1500,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40702,
+        "txt_Name": "超阶之球",
+        "color": 6,
+        "baseProps": [
+            {
+                "id": 14,
+                "val": 11100
+            },
+            {
+                "id": 22,
+                "val": 0.022
+            },
+            {
+                "id": 42,
+                "val": 0.014
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 14,
+                "val": 7300
+            },
+            {
+                "id": 22,
+                "val": 0.014
+            },
+            {
+                "id": 42,
+                "val": 0.007
+            }
+        ],
+        "active": [
+            {
+                "type": 3,
+                "n": 30344
+            }
+        ],
+        "hideProps": [
+            {
+                "id": 1400,
+                "val": 0.046
+            }
+        ],
+        "hidePropGrowth": [
+            {
+                "id": 1400,
+                "val": 0.034
+            }
+        ],
+        "exp": 850,
+        "supplyExp": 1500,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40703,
+        "txt_Name": "暗黑手镯",
+        "color": 6,
+        "baseProps": [
+            {
+                "id": 14,
+                "val": 11100
+            },
+            {
+                "id": 20,
+                "val": 0.022
+            },
+            {
+                "id": 42,
+                "val": 0.014
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 14,
+                "val": 7300
+            },
+            {
+                "id": 20,
+                "val": 0.014
+            },
+            {
+                "id": 42,
+                "val": 0.007
+            }
+        ],
+        "active": [
+            {
+                "type": 3,
+                "n": 30470
+            }
+        ],
+        "hideProps": [
+            {
+                "id": 1000,
+                "val": 0.046
+            }
+        ],
+        "hidePropGrowth": [
+            {
+                "id": 1000,
+                "val": 0.034
+            }
+        ],
+        "exp": 850,
+        "supplyExp": 1500,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40704,
+        "txt_Name": "黑色天使",
+        "color": 6,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 2700
+            },
+            {
+                "id": 1400,
+                "val": 0.029
+            },
+            {
+                "id": 41,
+                "val": 0.007
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 1800
+            },
+            {
+                "id": 1400,
+                "val": 0.022
+            },
+            {
+                "id": 41,
+                "val": 0.007
+            }
+        ],
+        "active": [
+            {
+                "type": 3,
+                "n": 30324
+            }
+        ],
+        "hideProps": [
+            {
+                "id": 23,
+                "val": 0.069
+            }
+        ],
+        "hidePropGrowth": [
+            {
+                "id": 23,
+                "val": 0.046
+            }
+        ],
+        "exp": 850,
+        "supplyExp": 1500,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40705,
+        "txt_Name": "神圣之戒",
+        "color": 6,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 2700
+            },
+            {
+                "id": 42,
+                "val": 0.014
+            },
+            {
+                "id": 1400,
+                "val": 0.029
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 1800
+            },
+            {
+                "id": 42,
+                "val": 0.007
+            },
+            {
+                "id": 1400,
+                "val": 0.022
+            }
+        ],
+        "active": [
+            {
+                "type": 3,
+                "n": 30323
+            }
+        ],
+        "hideProps": [
+            {
+                "id": 70,
+                "val": 0.023
+            }
+        ],
+        "hidePropGrowth": [
+            {
+                "id": 70,
+                "val": 0.011
+            }
+        ],
+        "exp": 850,
+        "supplyExp": 1500,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 40706,
+        "txt_Name": "雷霆之刃",
+        "color": 6,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 2700
+            },
+            {
+                "id": 1400,
+                "val": 0.029
+            },
+            {
+                "id": 41,
+                "val": 0.007
+            }
+        ],
+        "basePropGrowth": [
+            {
+                "id": 10,
+                "val": 1800
+            },
+            {
+                "id": 1400,
+                "val": 0.022
+            },
+            {
+                "id": 41,
+                "val": 0.007
+            }
+        ],
+        "active": [
+            {
+                "type": 3,
+                "n": 30445
+            }
+        ],
+        "hideProps": [
+            {
+                "id": 40,
+                "val": 0.011
+            }
+        ],
+        "hidePropGrowth": [
+            {
+                "id": 40,
+                "val": 0.011
+            }
+        ],
+        "exp": 850,
+        "supplyExp": 1500,
+        "starLimit": 10,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 49002,
+        "txt_Name": "绿色经验神器",
+        "color": 2,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 1
+            },
+            {
+                "id": 12,
+                "val": 1
+            },
+            {
+                "id": 14,
+                "val": 1
+            }
+        ],
+        "basePropGrowth": [
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 1,
+        "supplyExp": 30,
+        "starLimit": 1,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 49003,
+        "txt_Name": "蓝色经验神器",
+        "color": 3,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 1
+            },
+            {
+                "id": 12,
+                "val": 1
+            },
+            {
+                "id": 14,
+                "val": 1
+            }
+        ],
+        "basePropGrowth": [
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 1,
+        "supplyExp": 100,
+        "starLimit": 1,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 49004,
+        "txt_Name": "紫色经验神器",
+        "color": 4,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 1
+            },
+            {
+                "id": 12,
+                "val": 1
+            },
+            {
+                "id": 14,
+                "val": 1
+            }
+        ],
+        "basePropGrowth": [
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 1,
+        "supplyExp": 300,
+        "starLimit": 1,
+        "decompose": [
+        ]
+    },
+    {
+        "id": 49005,
+        "txt_Name": "橙色经验神器",
+        "color": 5,
+        "baseProps": [
+            {
+                "id": 10,
+                "val": 1
+            },
+            {
+                "id": 12,
+                "val": 1
+            },
+            {
+                "id": 14,
+                "val": 1
+            }
+        ],
+        "basePropGrowth": [
+        ],
+        "active": [
+        ],
+        "hideProps": [
+        ],
+        "hidePropGrowth": [
+        ],
+        "exp": 1,
+        "supplyExp": 700,
+        "starLimit": 1,
+        "decompose": [
+        ]
+    }
+]

@@ -1,0 +1,114 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [9000, 9100)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+// 酒馆派遣
+message AppointData {
+    repeated AppointTask Tasks = 1;
+    int64                AddTs = 2; // 上次增加任务时间
+}
+
+message AppointTask {
+    int32 Seq = 1; // 序列号
+    int32 Id  = 2; // 表id
+    // 任务条件1:最大英雄星级;2:元素*100+个数;2:职业*100+个数
+    map<int32, int32> Cond   = 3;
+    bool              IsLock = 4; // 是否锁定
+    int64             Ts     = 5; // 任务结束时间
+    repeated int64    Heroes = 6; // 上阵英雄
+}
+
+// ============================================================================
+
+// 新增任务
+message GS_AppointAddTask { // msgid: 9000
+    repeated AppointTask Tasks = 1;
+}
+
+// ============================================================================
+
+// 检查恢复
+message C_AppointCheckAdd { // msgid:9010
+}
+
+message GS_AppointCheckAdd_R { // msgid:9011
+    int32 ErrorCode = 1;
+    int64 AddTs     = 2;
+}
+
+// 刷新
+message C_AppointRefresh { // msgid:9012
+}
+
+message GS_AppointRefresh_R { // msgid:9013
+    int32       ErrorCode = 1;
+    AppointData Data      = 2;
+}
+
+// 锁定
+message C_AppointLock { // msgid:9014
+    int32 Seq    = 1;   // 0代表一键
+    bool  IsLock = 2;   // true锁, false解锁
+}
+
+message GS_AppointLock_R { // msgid:9015
+    int32 ErrorCode = 1;
+    int32 Seq       = 2; // 0代表一键
+    bool  IsLock    = 3; // true锁, false解锁
+}
+
+// 派遣
+message C_AppointSend { // msgid:9016
+    int32          Seq    = 1;
+    repeated int64 Heroes = 2;
+}
+
+message GS_AppointSend_R { // msgid:9017
+    int32          ErrorCode = 1;
+    int32          Seq       = 2;
+    int64          Ts        = 3; // 开始时间
+    repeated int64 Heroes    = 4; // 上阵英雄
+}
+
+// 加速
+message C_AppointAcc { // msgid:9018
+    int32 Seq = 1;
+}
+
+message GS_AppointAcc_R { // msgid:9019
+    int32 ErrorCode = 1;
+    int32 Seq       = 2;
+}
+
+// 领取
+message C_AppointTake { // msgid:9020
+    int32 Seq = 1;
+}
+
+message GS_AppointTake_R { // msgid:9021
+    int32   ErrorCode = 1;
+    int32   Seq       = 2;
+    int64   AddTs     = 3;
+    Rewards Rewards   = 4;
+}
+
+// 取消派遣
+message C_AppointCancel { // msgid:9022
+    int32 Seq = 1;
+}
+
+message GS_AppointCancel_R { // msgid:9023
+    int32 ErrorCode = 1;
+    int32 Seq       = 2;
+}

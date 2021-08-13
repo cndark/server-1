@@ -1,0 +1,175 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [5400, 5500)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+
+message HeroArray {
+    repeated int64 Seqs = 1; // array
+}
+
+// ============================================================================
+
+// 英雄变化
+message GS_HeroUpdate { // msgid: 5400
+    Hero Hero = 1;
+}
+
+// ============================================================================
+
+// 英雄升级
+message C_HeroLevelUp { // msgid: 5410
+    int64 Seq = 1;      // 英雄seq
+    int32 N   = 2;      // 升N级
+}
+
+message GS_HeroLevelUp_R { // msgid: 5411
+    int32 ErrorCode = 1;
+}
+
+// 英雄升星
+message C_HeroStarUp { // msgid: 5414
+    int64              Seq  = 1;
+    repeated HeroArray Cost = 2;
+}
+
+message GS_HeroStarUp_R { // msgid: 5415
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+}
+
+// 英雄锁
+message C_HeroLock { // msgid: 5416
+    int64 Seq  = 1;
+    bool  Lock = 2;
+}
+
+message GS_HeroLock_R { // msgid: 5417
+    int32 ErrorCode = 1;
+}
+
+// 重置
+message C_HeroReset { // msgid: 5418
+    int64 Seq = 1;
+}
+
+message GS_HeroReset_R { // msgid: 5419
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+}
+
+// 分解
+message C_HeroDecompose { // msgid: 5420
+    repeated int64 Seqs = 1;
+}
+
+message GS_HeroDecompose_R { // msgid: 5421
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+}
+
+// 英雄转换生成id
+message C_HeroChange { // msgid: 5422
+    int64 Seq = 1;
+}
+
+message GS_HeroChange_R { // msgid: 5423
+    int32 ErrorCode = 1;
+    int32 ChangeId  = 2;
+}
+
+// 英雄取消转换
+message C_HeroChangeCancel { // msgid: 5424
+    int64 Seq = 1;
+}
+
+message GS_HeroChangeCancel_R { // msgid: 5425
+    int32 ErrorCode = 1;
+}
+
+// 英雄转换确认
+message C_HeroChangeApply { // msgid: 5426
+    int64 Seq = 1;
+}
+
+message GS_HeroChangeApply_R { // msgid: 5427
+    int32 ErrorCode = 1;
+    Hero  Hero      = 2;
+}
+
+// 解锁饰品
+message C_HeroTrinketUnlock { // msgid: 5428
+    int64 Seq = 1;
+}
+
+message GS_HeroTrinketUnlock_R { // msgid: 5429
+    int32 ErrorCode = 1;
+}
+
+// 升级饰品
+message C_HeroTrinketUp { // msgid: 5430
+    int64 Seq  = 1;
+    bool  Lock = 2;
+}
+
+message GS_HeroTrinketUp_R { // msgid: 5431
+    int32 ErrorCode = 1;
+}
+
+// 转换饰品
+message C_HeroTrinketTransformGen { // msgid: 5432
+    int64 Seq = 1;
+}
+
+message GS_HeroTrinketTransformGen_R { // msgid: 5433
+    int32          ErrorCode = 1;
+    repeated int32 Props     = 2;
+}
+
+// 保存饰品转换的属性
+message C_HeroTrinketTransformCommit { // msgid: 5434
+    int64 Seq = 1;
+}
+
+message GS_HeroTrinketTransformCommit_R { // msgid: 5435
+    int32 ErrorCode = 1;
+}
+
+// 英雄背包扩容
+message C_HeroBagBuy { // msgid: 5436
+}
+
+message GS_HeroBagBuy_R { // msgid: 5437
+    int32 ErrorCode = 1;
+}
+
+// 英雄继承
+message C_HeroInherit { // msgid: 5438
+    int64 Seq = 1;      // 需要被继承的seq
+    int32 Id  = 2;      // 准备继承的id
+}
+
+message GS_HeroInherit_R { // msgid: 5439
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+}
+
+// 英雄设置皮肤
+message C_HeroSetSkin { // msgid: 5440
+    int64 Seq  = 1;
+    int32 Skin = 2;
+}
+
+message GS_HeroSetSkin_R { // msgid: 5441
+    int32 ErrorCode = 1;
+}

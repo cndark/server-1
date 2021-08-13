@@ -1,0 +1,219 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [14900, 15000)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+import "c_gs.24.rank.proto";
+
+// ============================================================================
+// 本服杯赛
+
+message WarCupData {
+    int32 Stage      = 1; // 阶段
+    int64 Ts2        = 2; // 本阶段结束时间
+    int32 Round      = 3; // 第几轮
+    int32 RoundPiece = 4; // 本轮小阶段(1:跑战斗,2:看比赛发奖)
+    int64 PieceEndTs = 5; // 本轮小阶段结束时间
+    repeated WarCupAttainObj Attain    = 6;
+    repeated int32           TaskTaken = 7;
+    repeated WarCupChatOne   Chat      = 8;
+}
+
+// 竞猜对战数据
+message WarCupGuessData {
+    int32        GuessScore     = 1; // 自己的总竞猜积分
+    bool         GuessHas       = 2; // 有过竞猜
+    BattleReplay Replay         = 3; // 竞猜队伍详情
+    int32        GuessWin       = 4; // 本次竞猜队伍1,2
+    int32        GuessNum       = 5; // 本次竞猜压数
+    float        GuessRatio     = 6; // 竞猜左右比例
+    float        GuessWinRatio1 = 7; // 竞猜左赔率
+    float        GuessWinRatio2 = 8; // 竞猜右赔率
+}
+
+// 玩家身上竞猜记录
+message WarCupPlrGuessOne {
+    int32  Stage = 1; // 阶段
+    int32  Round = 2; // 第几轮
+    string Name  = 3; // 压谁
+    int32  Num   = 4; // 压了多少积分
+    int32  Add   = 5; // 赢了多少积分
+    bool   IsFin = 6; // 结果出来没
+}
+
+// 对战信息
+message WarCupVsData {
+    int32            VsSeq    = 1; // 对战索引
+    int32            Stage    = 2; // 阶段
+    int32            Round    = 3; // 轮数
+    PlayerSimpleInfo Plr1     = 4; // 左边队伍
+    PlayerSimpleInfo Plr2     = 5; // 右边队伍
+    int32            Winner   = 6; // 输赢
+    int32            AddScore = 7; // 赢的加积分数
+}
+
+// 统计值到达
+message WarCupAttainObj {
+    int32  OId = 1;
+    double Val = 2;
+}
+
+// 聊天信息
+message WarCupChatOne {
+    string Name    = 1;
+    string Content = 2;
+}
+
+// ============================================================================
+
+// 阶段更新
+message GS_WarCupStageUpdate { // msgid:14900
+    int32 Stage      = 1;      // 阶段
+    int64 Ts2        = 2;      // 本阶段结束时间
+    int32 Round      = 3;      // 第几轮
+    int32 RoundPiece = 4;      // 本轮小阶段(1:跑战斗,2:看比赛发奖)
+    int64 PieceEndTs = 5;      // 本轮小阶段结束时间
+}
+
+// 弹幕聊天推送
+message GS_WarCupChat { // msgid:14901
+    string Name    = 1;
+    string Content = 2;
+}
+
+// 押注信息更新
+message GS_WarCupGuessRatio { // msgid:14902
+    float GuessRatio     = 1; // 竞猜左右比例
+    float GuessWinRatio1 = 2; // 竞猜左赔率
+    float GuessWinRatio2 = 3; // 竞猜右赔率
+}
+
+// 通知: 任务进度变化
+message GS_WarCupAttainObjValueChanged { // msgid: 14903
+    int32  OId = 1;
+    double Val = 2;
+}
+
+// ============================================================================
+
+// 获取竞猜信息
+message C_WarCupGuessInfo { // msgid:14920
+}
+
+message GS_WarCupGuessInfo_R { // msgid:14921
+    int32           ErrorCode = 1;
+    WarCupGuessData Guess     = 2; // 本轮竞猜情况
+}
+
+// 获取自己比赛信息
+message C_WarCupSelfInfo { // msgid:14922
+}
+
+message GS_WarCupSelfInfo_R { // msgid:14923
+    int32                 ErrorCode = 1;
+    repeated WarCupVsData VsData    = 2; // 自己的对战数据
+    BattleReplay          CurReplay = 3; // 当前轮自己的对局
+}
+
+// 获取64强淘汰赛信息
+message C_WarCupTop64Info { // msgid:14924
+    int32 Grp = 1;          // 当前组
+}
+
+message GS_WarCupTop64Info_R { // msgid:14925
+    int32                 ErrorCode = 1;
+    repeated WarCupVsData VsData    = 2; // 对战数据
+}
+
+// 获取8强冠军赛信息
+message C_WarCupTop8Info { // msgid:14926
+}
+
+message GS_WarCupTop8Info_R { // msgid:14927
+    int32                 ErrorCode = 1;
+    repeated WarCupVsData VsData    = 2; // 对战数据
+}
+
+// 竞猜
+message C_WarCupGuess { // msgid:14928
+    int32 GuessWin = 1; // 本次竞猜队伍1,2
+    int32 GuessNum = 2;
+}
+
+message GS_WarCupGuess_R { // msgid:14929
+    int32 ErrorCode  = 1;
+    int32 GuessScore = 2;
+}
+
+// 海选排行榜
+message C_WarCupAuditionRank { // msgid:14930
+    int32 Top = 1;
+    int32 N   = 2;
+}
+
+message GS_WarCupAuditionRank_R { // msgid:14931
+    int32            ErrorCode = 1;
+    repeated RankRow Rows      = 2;
+}
+
+// 聊天
+message C_WarCupChatSend { // msgid:14932
+    string Content = 1;    // 聊天内容
+}
+
+message GS_WarCupChatSend_R { // msgid:14933
+    int32 ErrorCode = 1;
+}
+
+// 拉战报
+message C_WarCupGetReplay { // msgid:14934
+    int32 VsSeq = 1;
+}
+
+message GS_WarCupGetReplay_R { // msgid:14935
+    int32        ErrorCode = 1;
+    BattleReplay Replay    = 2;
+}
+
+// 获取冠军信息
+message C_WarCupTop1Info { // msgid:14936
+}
+
+message GS_WarCupTop1Info_R { // msgid:14937
+    int32            ErrorCode = 1;
+    PlayerSimpleInfo Plr       = 2; // 冠军
+    int32            HeroId    = 3; // 最强英雄id
+    int32            HeroStar  = 4; // 最强英雄星级
+    int32            HeroSkin  = 5; // 最强英雄皮肤
+}
+
+// 任务领取
+message C_WarCupTaskTake { // msgid:14938
+    int32 Id = 1;
+}
+
+message GS_WarCupTaskTake_R { // msgid:14939
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+}
+
+// 观看比赛
+message C_WarCupWatch { // msgid:14940
+}
+
+// 玩家竞猜记录
+message C_WarCupGuessRecords { // msgid:14942
+}
+
+message GS_WarCupGuessRecords_R { // msgid:14943
+    int32                      ErrorCode = 1;
+    repeated WarCupPlrGuessOne Records   = 2;
+}

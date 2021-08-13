@@ -1,0 +1,145 @@
+[
+    {
+        "id": 1,
+        "rankRange": [
+            {
+                "up": 1,
+                "down": 1
+            }
+        ],
+        "dailyMail": 1001,
+        "weekMail": 1101
+    },
+    {
+        "id": 2,
+        "rankRange": [
+            {
+                "up": 2,
+                "down": 2
+            }
+        ],
+        "dailyMail": 1002,
+        "weekMail": 1102
+    },
+    {
+        "id": 3,
+        "rankRange": [
+            {
+                "up": 3,
+                "down": 3
+            }
+        ],
+        "dailyMail": 1003,
+        "weekMail": 1103
+    },
+    {
+        "id": 4,
+        "rankRange": [
+            {
+                "up": 4,
+                "down": 4
+            }
+        ],
+        "dailyMail": 1004,
+        "weekMail": 1104
+    },
+    {
+        "id": 5,
+        "rankRange": [
+            {
+                "up": 5,
+                "down": 5
+            }
+        ],
+        "dailyMail": 1005,
+        "weekMail": 1105
+    },
+    {
+        "id": 6,
+        "rankRange": [
+            {
+                "up": 6,
+                "down": 10
+            }
+        ],
+        "dailyMail": 1006,
+        "weekMail": 1106
+    },
+    {
+        "id": 7,
+        "rankRange": [
+            {
+                "up": 11,
+                "down": 20
+            }
+        ],
+        "dailyMail": 1007,
+        "weekMail": 1107
+    },
+    {
+        "id": 8,
+        "rankRange": [
+            {
+                "up": 21,
+                "down": 50
+            }
+        ],
+        "dailyMail": 1008,
+        "weekMail": 1108
+    },
+    {
+        "id": 9,
+        "rankRange": [
+            {
+                "up": 51,
+                "down": 100
+            }
+        ],
+        "dailyMail": 1009,
+        "weekMail": 1109
+    },
+    {
+        "id": 10,
+        "rankRange": [
+            {
+                "up": 101,
+                "down": 200
+            }
+        ],
+        "dailyMail": 1010,
+        "weekMail": 1110
+    },
+    {
+        "id": 11,
+        "rankRange": [
+            {
+                "up": 201,
+                "down": 500
+            }
+        ],
+        "dailyMail": 1011,
+        "weekMail": 1111
+    },
+    {
+        "id": 12,
+        "rankRange": [
+            {
+                "up": 501,
+                "down": 1000
+            }
+        ],
+        "dailyMail": 1012,
+        "weekMail": 1112
+    },
+    {
+        "id": 13,
+        "rankRange": [
+            {
+                "up": 1001,
+                "down": 100000
+            }
+        ],
+        "dailyMail": 1013,
+        "weekMail": 1113
+    }
+]

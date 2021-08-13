@@ -1,0 +1,12 @@
+# work dir
+export PROJ_NAME=fw
+export WORK_DIR=/data/${PROJ_NAME}
+
+# svn gamedata url
+SVN_GAMEDATA_URL="svn://192.168.0.201/${PROJ_NAME}-hplan/配置"
+
+# svn calc-battle url
+SVN_CALCBATTLE_URL="svn://192.168.0.201/${PROJ_NAME}-hshared/client"
+
+# source local
+[ -f env.local ] && source env.local

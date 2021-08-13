@@ -1,0 +1,14 @@
+Id,txt_Name,icon,sequence,isRandom,refreshTime,specialCost,freeCounter,refreshCost,UnOpen,openStatus
+int32,string,string,int32,int32,[]int32,[]int32,int32,[]{int32 id;int32 n},int32,[]{int32 statusId;double val}
+100,珍宝商店,diamond_shop,1,1,0,10013,1000008,,,1~1
+102,幸运商店,currency_6,7,1,0,10008,1000009,10008~70,1,1~1
+104,萌萌商店,currency_11,6,1,0,10027,,,,1~5
+101,公会商店,currency_7,3,,0,10009,,10009~200,,1~20
+103,竞技商店,currency_9,2,,0,10011,,10011~50,,5~25
+105,天梯商店,currency_12,4,,0,10012,,10012~100,,1~35
+106,灵徽商铺,,,,0,10016,,,1,
+107,斗技场商铺,,,,0,10018,,,1,
+108,魂屑商铺,,,,0,10017,,,1,
+109,英魂商铺,,,,0,10013,,,1,
+110,深渊商铺,,,,0,10024,,,1,
+111,封印商店,currency_14,5,,0,10028,,10028~200,,1~40

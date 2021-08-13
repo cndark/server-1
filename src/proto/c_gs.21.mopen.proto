@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [8000, 8050)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+
+message MOpenData {
+    map<int32, bool> M = 1; //
+}
+
+// ============================================================================
+
+// 推送
+message GS_MOpenModuleNew { // msgid: 8000
+    int32   MId     = 1;
+    Rewards Rewards = 2;
+}

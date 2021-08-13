@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for GS <-> RT: [1200, 1300)
+// ============================================================================
+
+// 注册游戏服
+message GS_RegisterGame { // msgid: 1200
+    int32 Id = 1;
+}
+
+message RT_RegisterGame_R { // msgid: 1201
+    bool Success = 1;
+}

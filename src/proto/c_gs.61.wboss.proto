@@ -1,0 +1,96 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [15000, 15100)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+
+message WBossData {
+    int32                Stage   = 1; // 阶段
+    int64                Ts2     = 2; // 本阶段结束时间
+    GS_WBossGetSummary_R Summary = 3; // 概要信息
+}
+
+message WBossMaxDmgInfo {
+    PlayerSimpleInfo Player = 1;
+    double           Dmg    = 2;
+}
+
+message WBossRankRow {
+    PlayerSimpleInfo Player = 1;
+    int32            Jf     = 2;
+}
+
+// ============================================================================
+
+message GS_WBossStageChange { // msgid: 15000
+    int32 Stage = 1;
+    int64 Ts2   = 2;
+}
+
+// ============================================================================
+
+// 拉取概要信息
+message C_WBossGetSummary { // msgid: 15010
+}
+
+message GS_WBossGetSummary_R {           // msgid: 15011
+    int32            BossId         = 1; // boss id
+    map<int32, bool> RwdMaxDmgTaken = 2; // 最大伤害奖励已领取的箱子
+}
+
+// 打架
+message C_WBossFight { // msgid: 15012
+    TeamFormation T = 1;
+}
+
+message GS_WBossFight_R { // msgid: 15013
+    int32        ErrorCode = 1;
+    BattleReplay Replay    = 2;
+    Rewards      Rewards   = 3;
+    int32        JfAdd     = 4;
+}
+
+// 领取最大伤害奖励
+message C_WBossTakeMaxDmgRwd { // msgid: 15014
+    int32 N = 1;               // 第几个箱子. 从1开始
+}
+
+message GS_WBossTakeMaxDmgRwd_R { // msgid: 15015
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+}
+
+// 拉取排行榜
+message C_WBossGetRank { // msgid: 15016
+}
+
+message GS_WBossGetRank_R { // msgid: 15017
+    repeated WBossRankRow Rows = 1;
+}
+
+// 拉取最大伤害信息
+message C_WBossGetMaxDmgInfo { // msgid: 15018
+}
+
+message GS_WBossGetMaxDmgInfo_R {   // msgid: 15019
+    WBossMaxDmgInfo MaxDmgInfo = 1; // 最大伤害信息
+}
+
+// 拉取自己名次
+message C_WBossGetSelfRank { // msgid: 15020
+}
+
+message GS_WBossGetSelfRank_R { // msgid: 15021
+    int32 SelfRank = 1;
+    int32 Jf       = 2;
+}

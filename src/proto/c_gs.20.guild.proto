@@ -1,0 +1,548 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [7700, 8000)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+
+message GuildRow {
+    string Id      = 1;
+    string Name    = 2;
+    int32  Icon    = 3;
+    int32  Lv      = 4;
+    int32  MemberN = 5;
+    int32  NeedLv  = 6;
+    int32  Rank    = 7;
+    int32  AtkPwr  = 8;
+}
+
+message GuildInfo_Full {
+    GuildRow                 Row         = 1;
+    int64                    Exp         = 2;
+    string                   Notice      = 3; // 家训
+    int32                    AMode       = 4; // 申请模式
+    repeated GuildMemberInfo Mbs         = 6; // 成员
+    int32                    HarborLevel = 7;
+    int64                    HarborXp    = 8;
+    int64                    ZmTs        = 9;
+    GuildPlrData             PlrData     = 10; // 家族玩家信息
+}
+
+message GuildMemberInfo {
+    PlayerSimpleInfo Plr       = 1;
+    int32            Rank      = 2;
+    int32            AtkPwr    = 3;
+    bool             Online    = 4;
+    int64            OfflineTs = 5;
+    int64            SignTs    = 6;
+}
+
+message GuildApplyRow { PlayerSimpleInfo Plr = 1; }
+
+message GuildLog {
+    int32               Id    = 1;
+    map<string, string> Param = 2;
+    int64               Ts    = 3;
+}
+
+// ============================================================================
+// 家族数据--跟着玩家走
+
+message GuildPlrData {
+    bool              Signed  = 1;
+    int64             WishTs  = 2;
+    map<int32, int32> WishCnt = 3;
+}
+
+// ============================================================================
+// 推送
+
+message GS_GuildPlrLeaveTs { // msgid: 7700
+    int64 LeaveTs  = 1;      // 上次离开家族，下次加入时间
+    int32 LeaveCnt = 2;      // 离开家族次数
+}
+
+message GS_Guild_Join { // msgid: 7701
+    string          GuildId   = 1;
+    string          GuildName = 2;
+    GuildMemberInfo Mb        = 3;
+}
+
+message GS_Guild_Leave { // msgid: 7702
+    int32  Reason = 1;
+    string PId    = 2;
+    string PName  = 3;
+}
+
+message GS_Guild_MbRank { // msgid: 7703
+    string PId   = 1;
+    string PName = 2;
+    int32  Rank  = 3;
+}
+
+message GS_Guild_Lv { // msgid: 7704
+    int32 Level = 1;  // -1 表示无变化
+    int64 Exp   = 2;
+}
+
+message GS_Guild_Notice { // msgid: 7705
+    string Notice = 1;
+}
+
+message GS_Guild_Icon { // msgid: 7706
+    int32 Icon = 1;
+}
+
+message GS_Guild_NewApply { // msgid: 7707
+    string PId = 1;
+}
+
+// ============================================================================
+
+// 创建公会
+message C_GuildCreate { // msgid: 7730
+    string Name   = 1;
+    string Notice = 2;
+    int32  Icon   = 3;
+}
+
+message GS_GuildCreate_R { // msgid: 7731
+    int32 ErrorCode = 1;
+}
+
+// 解散公会
+message C_GuildDestroy { // msgid: 7732
+}
+
+message GS_GuildDestroy_R { // msgid: 7733
+    int32 ErrorCode = 1;
+}
+
+// 更改设置
+message C_GuildChangeSetting { // msgid: 7734
+    int32 AMode  = 1;
+    int32 NeedLv = 2;
+}
+
+message GS_GuildChangeSetting_R { // msgid: 7735
+    int32 ErrorCode = 1;
+}
+
+// 拉取公会列表
+message C_GuildList { // msgid: 7736
+    int32 Page = 1;
+}
+
+message GS_GuildList_R { // msgid: 7737
+    int32             ErrorCode = 1;
+    repeated GuildRow Rows      = 2;
+}
+
+// 拉取玩家自己申请的公会列表
+message C_GuildPlrApplyList { // msgid: 7738
+}
+
+message GS_GuildPlrApplyList_R { // msgid: 7739
+    int32             ErrorCode = 1;
+    repeated GuildRow Rows      = 2;
+}
+
+// 公会查找
+message C_GuildSearch { // msgid: 7740
+    string Name = 1;
+}
+
+message GS_GuildSearch_R { // msgid: 7741
+    int32    ErrorCode = 1;
+    GuildRow Row       = 2;
+}
+
+// 拉取公会接收的申请列表
+message C_GuildApplyList { // msgid: 7742
+}
+
+message GS_GuildApplyList_R { // msgid: 7743
+    int32                  ErrorCode = 1;
+    repeated GuildApplyRow Rows      = 2;
+}
+
+// 拉取完整公会信息 (自己的公会)
+message C_GuildInfoFull { // msgid: 7744
+}
+
+message GS_GuildInfoFull_R { // msgid: 7745
+    int32          ErrorCode = 1;
+    GuildInfo_Full Info      = 2;
+}
+
+// 申请入会
+message C_GuildApply { // msgid: 7746
+    string GuildId = 1;
+}
+
+message GS_GuildApply_R { // msgid: 7747
+    int32 ErrorCode = 1;
+}
+
+// 取消申请
+message C_GuildApplyCancel { // msgid: 7748
+    string GuildId = 1;
+}
+
+message GS_GuildApplyCancel_R { // msgid: 7749
+    int32 ErrorCode = 1;
+}
+
+// 接受申请
+message C_GuildApplyAccept { // msgid: 7750
+    string PId = 1;
+}
+
+message GS_GuildApplyAccept_R { // msgid: 7751
+    int32 ErrorCode = 1;
+}
+
+// 拒绝申请
+message C_GuildApplyDeny { // msgid: 7752
+    string PId = 1;
+}
+
+message GS_GuildApplyDeny_R { // msgid: 7753
+    int32 ErrorCode = 1;
+}
+
+// 退出公会
+message C_GuildLeave { // msgid: 7754
+}
+
+message GS_GuildLeave_R { // msgid: 7755
+    int32 ErrorCode = 1;
+}
+
+// 踢出公会
+message C_GuildKick { // msgid: 7756
+    string PId = 1;
+}
+
+message GS_GuildKick_R { // msgid: 7757
+    int32 ErrorCode = 1;
+}
+
+// 设置职务
+message C_GuildSetRank { // msgid: 7758
+    string PId  = 1;
+    int32  Rank = 2;
+}
+
+message GS_GuildSetRank_R { // msgid: 7759
+    int32 ErrorCode = 1;
+}
+
+// 公会改名
+message C_GuildChangeName { // msgid: 7760
+    string Name = 1;
+}
+
+message GS_GuildChangeName_R { // msgid: 7761
+    int32 ErrorCode = 1;
+}
+
+// 一键接受申请
+message C_GuildApplyAcceptOneKey { // msgid: 7762
+}
+
+message GS_GuildApplyAcceptOneKey_R { // msgid: 7763
+    int32 ErrorCode = 1;
+}
+
+// 一键拒绝申请
+message C_GuildApplyDenyOneKey { // msgid: 7764
+}
+
+message GS_GuildApplyDenyOneKey_R { // msgid: 7765
+    int32 ErrorCode = 1;
+}
+
+// 弹劾族长
+message C_GuildKickOwner { // msgid: 7766
+}
+
+message GS_GuildKickOwner_R { // msgid: 7767
+    int32 ErrorCode = 1;
+}
+
+// 拉取公会日志
+message C_GuildGetLog { // msgid: 7768
+}
+
+message GS_GuildGetLog_R { // msgid: 7769
+    int32             ErrorCode = 1;
+    repeated GuildLog Log       = 2;
+}
+
+// 每日签到
+message C_GuildSign { // msgid: 7770
+}
+
+message GS_GuildSign_R { // msgid: 7771
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+}
+
+// 修改公告
+message C_GuildSetNotice { // msgid: 7772
+    string Notice = 1;
+}
+
+message GS_GuildSetNotice_R { // msgid: 7773
+    int32 ErrorCode = 1;
+}
+
+// 修改 icon
+message C_GuildSetIcon { // msgid: 7774
+    int32 Icon = 1;
+}
+
+message GS_GuildSetIcon_R { // msgid: 7775
+    int32 ErrorCode = 1;
+}
+
+// 发布招募
+message C_GuildPublishZm { // msgid: 7776
+}
+
+message GS_GuildPublishZm_R { // msgid: 7777
+    int32 ErrorCode = 1;
+    int64 ZmTs      = 2;
+}
+
+// ============================================================================
+// 祈愿
+
+message GuildWish {
+    int64  Seq     = 1;
+    string PlrId   = 2;
+    int32  ItemNum = 3; // 许愿物编号
+    int32  Helps   = 4; // 助力次数
+}
+
+// 新许愿推送
+message GS_GuildWishNew { // msgid: 7800
+    string Name = 1;
+    int32  Num  = 2;
+    int64  Seq  = 3;
+}
+
+// 自己可领取推送
+message GS_GuildWishFullHelp { // msgid: 7801
+}
+
+// 许愿
+message C_GuildWishItem { // msgid: 7805
+    int32 Num = 1;
+}
+
+message GS_GuildWishItem_R { // msgid: 7806
+    int32 ErrorCode = 1;
+    int64 Seq       = 2;
+}
+
+// 助力
+message C_GuildWishHelp { // msgid: 7807
+    int64 Seq = 1;
+}
+
+message GS_GuildWishHelp_R { // msgid: 7808
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+}
+
+// 领取
+message C_GuildWishClose { // msgid: 7809
+    int64 Seq = 1;
+}
+
+message GS_GuildWishClose_R { // msgid: 7810
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+}
+
+// 列表
+message C_GuildWishList { // msgid: 7811
+}
+
+message GS_GuildWishList_R { // msgid: 7812
+    repeated GuildWish Wishes = 1;
+}
+
+// ============================================================================
+// 港口
+
+message GuildHarborDonateRec { //
+    PlayerSimpleInfo Plr = 1;
+    int64            Val = 2;
+}
+
+message GS_GuildHarborXpChange { // msgid: 7820
+    int32 Lv = 1;
+    int64 Xp = 2;
+}
+
+// 捐赠
+message C_GuildHarborDonate { // msgid: 7824
+    int32 Which = 1;
+}
+
+message GS_GuildHarborDonate_R { // msgid: 7825
+    int32 ErrorCode = 1;
+}
+
+// 捐赠列表
+message C_GuildHarborDonateList { // msgid: 7826
+}
+
+message GS_GuildHarborDonateList_R { // msgid: 7827
+    repeated GuildHarborDonateRec Records = 1;
+}
+
+// ============================================================================
+// 订单
+
+message GuildOrderRec {
+    int64 Seq     = 1;
+    int32 Star    = 3;
+    int64 StartTs = 4;
+}
+
+// 获取订单
+message C_GuildOrderGet { // msgid: 7840
+}
+
+message GS_GuildOrderGet_R { // msgid: 7841
+    int32                  ErrorCode   = 1;
+    repeated GuildOrderRec Records     = 2;
+    int64                  GetOrdersTs = 3;
+}
+
+// 升星
+message C_GuildOrderStarup { // msgid: 7842
+    int64 Seq = 1;
+}
+
+message GS_GuildOrderStarup_R { // msgid: 7843
+    int32 ErrorCode = 1;
+}
+
+// 启动
+message C_GuildOrderStart { // msgid: 7844
+    int64 Seq = 1;
+}
+
+message GS_GuildOrderStart_R { // msgid: 7845
+    int32 ErrorCode = 1;
+    int64 StartTs   = 2;
+}
+
+// 结束订单
+message C_GuildOrderClose { // msgid: 7846
+    int64 Seq = 1;
+}
+
+message GS_GuildOrderClose_R { // msgid: 7847
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+}
+
+// 订单列表
+message C_GuildOrderList { // msgid: 7848
+}
+
+message GS_GuildOrderList_R { // msgid: 7849
+    repeated GuildOrderRec Records     = 1;
+    int64                  GetOrdersTs = 2;
+}
+
+// ============================================================================
+// 科技
+
+// 升级
+message C_GuildTechLevelup { // msgid: 7860
+    int32 Id = 1;
+}
+
+message GS_GuildTechLevelup_R { // msgid: 7861
+    int32 ErrorCode = 1;
+}
+
+// 重置
+message C_GuildTechReset { // msgid: 7862
+}
+
+message GS_GuildTechReset_R { // msgid: 7863
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+}
+
+// 获取信息
+message C_GuildTechGetInfo { // msgid: 7864
+}
+
+message GS_GuildTechGetInfo_R { // msgid: 7865
+    map<int32, int32> Techs = 1;
+}
+
+// ============================================================================
+// 副本 boss
+
+message GuildBossHistory {
+    int32                 Num  = 1;
+    repeated GuildBossDmg Dmgs = 2;
+}
+
+message GuildBossDmg {
+    PlayerSimpleInfo Plr = 1;
+    double           Dmg = 2;
+}
+
+// 打boss
+message C_GuildBossFight { // msgid: 7880
+    TeamFormation Team = 1;
+}
+
+message GS_GuildBossFight_R { // msgid: 7881
+    int32        ErrorCode = 1;
+    BattleReplay Replay    = 2;
+    Rewards      Rewards   = 3;
+    double       Dmg       = 4;
+    double       HpLeft    = 5;
+}
+
+// 拉取当前 boss 信息
+message C_GuildBossGetCurrent { // msgid: 7882
+    bool OnlyNum = 1;
+}
+
+message GS_GuildBossGetCurrent_R { // msgid: 7883
+    int32            ErrorCode = 1;
+    GuildBossHistory Info      = 2;
+    double           HpLeft    = 3;
+}
+
+// 拉取历史 boss 信息
+message C_GuildBossGetHistory { // msgid: 7884
+    int32 Num = 1;
+}
+
+message GS_GuildBossGetHistory_R { // msgid: 7885
+    int32            ErrorCode = 1;
+    GuildBossHistory Info      = 2;
+}

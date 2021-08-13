@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [7100, 7200)
+// ============================================================================
+
+// 获取数据
+message C_CloudGet { // msgid: 7100
+    string Key = 1;
+}
+
+message GS_CloudGet_R { // msgid: 7101
+    int32  ErrorCode = 1;
+    string Key       = 2;
+    string Val       = 3;
+}
+
+// 设置数据
+message C_CloudSet { // msgid: 7102
+    string Key = 1;
+    string Val = 2;
+}
+
+message GS_CloudSet_R { // msgid: 7103
+    int32 ErrorCode = 1;
+}

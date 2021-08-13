@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [9400, 9500)
+// ============================================================================
+
+// ============================================================================
+
+// 商店
+message ShopData {
+    int32         Id    = 1; // 商店id
+    repeated Good Goods = 2; // 商品
+}
+
+message Good {
+    int32 Id     = 1; // shopItem表id
+    int32 BuyCnt = 2; // 购买次数
+}
+
+// ============================================================================
+
+message C_ShopGetInfo { // msgid: 9400
+    int32 ShopId = 1;
+}
+
+message GS_ShopGetInfo_R { // msgid: 9401
+    int32    ErrorCode = 1;
+    ShopData Shop      = 2;
+}
+
+message C_ShopBuy { // msgid: 9402
+    int32 ShopId = 1;
+    int32 ItemId = 2;
+    int32 N      = 3;
+}
+
+message GS_ShopBuy_R { // msgid: 9403
+    int32 ErrorCode = 1;
+    int32 ItemId    = 2;
+    int32 N         = 3;
+}
+
+message C_ShopRefresh { // msgid: 9404
+    int32 ShopId = 1;
+}
+
+message GS_ShopRefresh_R { // msgid: 9405
+    int32    ErrorCode = 1;
+    ShopData Shop      = 2;
+}

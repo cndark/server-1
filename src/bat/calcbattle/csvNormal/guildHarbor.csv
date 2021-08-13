@@ -1,0 +1,12 @@
+level,levelExp,outAdd,orderLimit,timeReduce,icon
+int32,int64,float,int32,float,string
+1,12000000,0,1,0,new_com_ship01
+2,24000000,0.1,1,0.1,new_com_ship02
+3,48000000,0.15,2,0.15,new_com_ship02
+4,96000000,0.2,2,0.2,new_com_ship03
+5,154000000,0.25,3,0.25,new_com_ship03
+6,222000000,0.3,3,0.3,new_com_ship03
+7,300000000,0.35,4,0.35,new_com_ship04
+8,388000000,0.4,4,0.4,new_com_ship04
+9,486000000,0.45,5,0.45,new_com_ship04
+10,,0.5,5,0.5,new_com_ship05

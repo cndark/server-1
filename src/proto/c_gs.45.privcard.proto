@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [13500, 13600)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+// 特权卡
+
+message PrivCardData { repeated PrivCard Cards = 1; }
+
+message PrivCard {
+    int32 Id       = 1; // id
+    int64 ExpireTs = 2; // 过期时间
+    bool  IsAward  = 3; // 日常奖励是否领取
+    int32 AddCnt   = 4; // 获得次数
+}
+
+// ============================================================================
+
+message GS_PrivCardNew { // msgid: 13500
+    PrivCard Card    = 1;
+    Rewards  Rewards = 2;
+}
+
+// ============================================================================
+message C_PrivCardTake { // msgid: 13510
+    int32 Id = 1;
+}
+
+message GS_PrivCardTake_R { // msgid: 13511
+    int32   ErrorCode = 1;
+    int32   Id        = 2;
+    Rewards Rewards   = 3;
+}

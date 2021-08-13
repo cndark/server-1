@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option (gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [14000, 14100)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+
+// 进阶之路
+message TaskGrowData { repeated int32 Taken = 1; }
+
+// ============================================================================
+
+// 领取进阶奖励
+message C_TaskGrowTake { // msgid: 14030
+    int32 Id = 1;
+}
+
+message GS_TaskGrowTake_R { // msgid: 14031
+    int32   ErrorCode = 1;
+    int32   Id        = 2;
+    Rewards Rewards   = 3;
+}

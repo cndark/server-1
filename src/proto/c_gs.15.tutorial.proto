@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option(gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [7200, 7300)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+
+message TutorialData {
+    map<string, int32> Steps = 1; // [tp]step
+}
+
+// ============================================================================
+
+// 设置步骤
+message C_TutorialSet { // msgid: 7200
+    string Tp   = 1;
+    int32  Step = 2;
+    string Key  = 3;
+}
+
+message GS_TutorialSet_R { // msgid: 7201
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+}

@@ -1,0 +1,37 @@
+[
+    {
+        "buffId": 4101010,
+        "showLvCond": 1,
+        "weight": 5
+    },
+    {
+        "buffId": 4101011,
+        "showLvCond": 2,
+        "weight": 5
+    },
+    {
+        "buffId": 4101012,
+        "showLvCond": 3,
+        "weight": 5
+    },
+    {
+        "buffId": 4101013,
+        "showLvCond": 6,
+        "weight": 3
+    },
+    {
+        "buffId": 4101014,
+        "showLvCond": 10,
+        "weight": 3
+    },
+    {
+        "buffId": 4101015,
+        "showLvCond": 20,
+        "weight": 2
+    },
+    {
+        "buffId": 4101016,
+        "showLvCond": 30,
+        "weight": 2
+    }
+]

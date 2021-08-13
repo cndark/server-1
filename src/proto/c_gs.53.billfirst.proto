@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package msg;
+
+import "gogo.proto";
+
+option (gogoproto.goproto_getters_all) = false;
+
+// ============================================================================
+// msgid range for C <-> GS: [14200, 14300)
+// ============================================================================
+
+import "c_gs.00.structs.proto";
+
+// ============================================================================
+
+// 超值首充
+message BillFirstData { repeated BillFirstItem Items = 1; }
+
+message BillFirstItem {
+    int32          Id    = 1;
+    int32          Day   = 2; // 充值后登录天数
+    repeated int32 Taken = 3;
+}
+
+// ============================================================================
+
+// 推送
+message GS_BillFirstNew { // msgid:14201
+    BillFirstItem Data = 1;
+}
+
+// 领奖
+message C_BillFirstTake { // msgid:14222
+    int32 Id  = 1;        // 领取档位
+    int32 Day = 2;        // 领取的是哪天
+}
+
+message GS_BillFirstTake_R { // msgid:14223
+    int32   ErrorCode = 1;
+    Rewards Rewards   = 2;
+}

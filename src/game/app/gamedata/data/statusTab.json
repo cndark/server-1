@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1,
+        "type": "level",
+        "flag": 0
+    },
+    {
+        "id": 5,
+        "type": "wLevel",
+        "flag": 0
+    },
+    {
+        "id": 10,
+        "type": "vip",
+        "flag": 0
+    },
+    {
+        "id": 1000,
+        "type": "actStatus",
+        "flag": 2
+    },
+    {
+        "id": 1001,
+        "type": "actConfGrp",
+        "flag": 212
+    },
+    {
+        "id": 1101,
+        "type": "svrOpenDay",
+        "flag": 1
+    },
+    {
+        "id": 1102,
+        "type": "svrOpenDay",
+        "flag": 2
+    },
+    {
+        "id": 1103,
+        "type": "svrOpenDay",
+        "flag": 3
+    },
+    {
+        "id": 1110,
+        "type": "privCard",
+        "flag": 0
+    },
+    {
+        "id": 2001,
+        "type": "ccyEqual",
+        "flag": 10001
+    },
+    {
+        "id": 2006,
+        "type": "ccyEqual",
+        "flag": 10006
+    }
+]

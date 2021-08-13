@@ -1,0 +1,1150 @@
+[
+    {
+        "confGrp": 1,
+        "type": 1,
+        "desireHero": [
+            {
+                "hero": 30319,
+                "weight": 1
+            },
+            {
+                "hero": 30470,
+                "weight": 7
+            },
+            {
+                "hero": 30256,
+                "weight": 7
+            },
+            {
+                "hero": 30300,
+                "weight": 7
+            },
+            {
+                "hero": 30022,
+                "weight": 7
+            }
+        ],
+        "upHero": [
+            {
+                "hero": 30019,
+                "weight": 30
+            },
+            {
+                "hero": 30020,
+                "weight": 30
+            },
+            {
+                "hero": 30024,
+                "weight": 30
+            },
+            {
+                "hero": 30235,
+                "weight": 30
+            },
+            {
+                "hero": 30058,
+                "weight": 30
+            },
+            {
+                "hero": 30060,
+                "weight": 30
+            },
+            {
+                "hero": 30062,
+                "weight": 30
+            },
+            {
+                "hero": 30136,
+                "weight": 30
+            },
+            {
+                "hero": 30140,
+                "weight": 30
+            },
+            {
+                "hero": 30142,
+                "weight": 30
+            }
+        ],
+        "upTimes": 50,
+        "diamCnt": 99999,
+        "diamCost": 500,
+        "summonGrp": "actNormal",
+        "extraTimes": 25,
+        "extraGroup": "actExtra",
+        "cost": [
+            {
+                "id": 20004,
+                "n": 1
+            }
+        ],
+        "discount": 1,
+        "costFreeTime": 86400
+    },
+    {
+        "confGrp": 2,
+        "type": 1,
+        "desireHero": [
+            {
+                "hero": 30324,
+                "weight": 7
+            },
+            {
+                "hero": 30345,
+                "weight": 1
+            },
+            {
+                "hero": 30260,
+                "weight": 7
+            },
+            {
+                "hero": 30138,
+                "weight": 7
+            },
+            {
+                "hero": 30236,
+                "weight": 7
+            }
+        ],
+        "upHero": [
+            {
+                "hero": 30021,
+                "weight": 30
+            },
+            {
+                "hero": 30023,
+                "weight": 30
+            },
+            {
+                "hero": 30025,
+                "weight": 30
+            },
+            {
+                "hero": 30059,
+                "weight": 30
+            },
+            {
+                "hero": 30061,
+                "weight": 30
+            },
+            {
+                "hero": 30063,
+                "weight": 30
+            },
+            {
+                "hero": 30064,
+                "weight": 30
+            },
+            {
+                "hero": 30137,
+                "weight": 30
+            },
+            {
+                "hero": 30141,
+                "weight": 30
+            },
+            {
+                "hero": 30301,
+                "weight": 30
+            }
+        ],
+        "upTimes": 50,
+        "diamCnt": 99999,
+        "diamCost": 500,
+        "summonGrp": "actNormal",
+        "extraTimes": 25,
+        "extraGroup": "actExtra",
+        "cost": [
+            {
+                "id": 20004,
+                "n": 1
+            }
+        ],
+        "discount": 1,
+        "costFreeTime": 86400
+    },
+    {
+        "confGrp": 3,
+        "type": 1,
+        "desireHero": [
+            {
+                "hero": 30175,
+                "weight": 1
+            },
+            {
+                "hero": 30341,
+                "weight": 7
+            },
+            {
+                "hero": 30256,
+                "weight": 7
+            },
+            {
+                "hero": 30300,
+                "weight": 7
+            },
+            {
+                "hero": 30022,
+                "weight": 7
+            }
+        ],
+        "upHero": [
+            {
+                "hero": 30019,
+                "weight": 30
+            },
+            {
+                "hero": 30020,
+                "weight": 30
+            },
+            {
+                "hero": 30024,
+                "weight": 30
+            },
+            {
+                "hero": 30235,
+                "weight": 30
+            },
+            {
+                "hero": 30058,
+                "weight": 30
+            },
+            {
+                "hero": 30060,
+                "weight": 30
+            },
+            {
+                "hero": 30062,
+                "weight": 30
+            },
+            {
+                "hero": 30136,
+                "weight": 30
+            },
+            {
+                "hero": 30140,
+                "weight": 30
+            },
+            {
+                "hero": 30142,
+                "weight": 30
+            }
+        ],
+        "upTimes": 50,
+        "diamCnt": 99999,
+        "diamCost": 500,
+        "summonGrp": "actNormal",
+        "extraTimes": 25,
+        "extraGroup": "actExtra",
+        "cost": [
+            {
+                "id": 20004,
+                "n": 1
+            }
+        ],
+        "discount": 1,
+        "costFreeTime": 86400
+    },
+    {
+        "confGrp": 4,
+        "type": 1,
+        "desireHero": [
+            {
+                "hero": 30445,
+                "weight": 7
+            },
+            {
+                "hero": 30214,
+                "weight": 1
+            },
+            {
+                "hero": 30260,
+                "weight": 7
+            },
+            {
+                "hero": 30138,
+                "weight": 7
+            },
+            {
+                "hero": 30236,
+                "weight": 7
+            }
+        ],
+        "upHero": [
+            {
+                "hero": 30021,
+                "weight": 30
+            },
+            {
+                "hero": 30023,
+                "weight": 30
+            },
+            {
+                "hero": 30025,
+                "weight": 30
+            },
+            {
+                "hero": 30059,
+                "weight": 30
+            },
+            {
+                "hero": 30061,
+                "weight": 30
+            },
+            {
+                "hero": 30063,
+                "weight": 30
+            },
+            {
+                "hero": 30064,
+                "weight": 30
+            },
+            {
+                "hero": 30137,
+                "weight": 30
+            },
+            {
+                "hero": 30141,
+                "weight": 30
+            },
+            {
+                "hero": 30301,
+                "weight": 30
+            }
+        ],
+        "upTimes": 50,
+        "diamCnt": 99999,
+        "diamCost": 500,
+        "summonGrp": "actNormal",
+        "extraTimes": 25,
+        "extraGroup": "actExtra",
+        "cost": [
+            {
+                "id": 20004,
+                "n": 1
+            }
+        ],
+        "discount": 1,
+        "costFreeTime": 86400
+    },
+    {
+        "confGrp": 5,
+        "type": 1,
+        "desireHero": [
+            {
+                "hero": 30448,
+                "weight": 1
+            },
+            {
+                "hero": 30344,
+                "weight": 1
+            },
+            {
+                "hero": 30256,
+                "weight": 7
+            },
+            {
+                "hero": 30300,
+                "weight": 7
+            },
+            {
+                "hero": 30022,
+                "weight": 7
+            }
+        ],
+        "upHero": [
+            {
+                "hero": 30019,
+                "weight": 30
+            },
+            {
+                "hero": 30020,
+                "weight": 30
+            },
+            {
+                "hero": 30024,
+                "weight": 30
+            },
+            {
+                "hero": 30235,
+                "weight": 30
+            },
+            {
+                "hero": 30058,
+                "weight": 30
+            },
+            {
+                "hero": 30060,
+                "weight": 30
+            },
+            {
+                "hero": 30062,
+                "weight": 30
+            },
+            {
+                "hero": 30136,
+                "weight": 30
+            },
+            {
+                "hero": 30140,
+                "weight": 30
+            },
+            {
+                "hero": 30142,
+                "weight": 30
+            }
+        ],
+        "upTimes": 50,
+        "diamCnt": 99999,
+        "diamCost": 500,
+        "summonGrp": "actNormal",
+        "extraTimes": 25,
+        "extraGroup": "actExtra",
+        "cost": [
+            {
+                "id": 20004,
+                "n": 1
+            }
+        ],
+        "discount": 1,
+        "costFreeTime": 86400
+    },
+    {
+        "confGrp": 6,
+        "type": 1,
+        "desireHero": [
+            {
+                "hero": 30323,
+                "weight": 1
+            },
+            {
+                "hero": 30468,
+                "weight": 1
+            },
+            {
+                "hero": 30260,
+                "weight": 7
+            },
+            {
+                "hero": 30138,
+                "weight": 7
+            },
+            {
+                "hero": 30236,
+                "weight": 7
+            }
+        ],
+        "upHero": [
+            {
+                "hero": 30021,
+                "weight": 30
+            },
+            {
+                "hero": 30023,
+                "weight": 30
+            },
+            {
+                "hero": 30025,
+                "weight": 30
+            },
+            {
+                "hero": 30059,
+                "weight": 30
+            },
+            {
+                "hero": 30061,
+                "weight": 30
+            },
+            {
+                "hero": 30063,
+                "weight": 30
+            },
+            {
+                "hero": 30064,
+                "weight": 30
+            },
+            {
+                "hero": 30137,
+                "weight": 30
+            },
+            {
+                "hero": 30141,
+                "weight": 30
+            },
+            {
+                "hero": 30301,
+                "weight": 30
+            }
+        ],
+        "upTimes": 50,
+        "diamCnt": 99999,
+        "diamCost": 500,
+        "summonGrp": "actNormal",
+        "extraTimes": 25,
+        "extraGroup": "actExtra",
+        "cost": [
+            {
+                "id": 20004,
+                "n": 1
+            }
+        ],
+        "discount": 1,
+        "costFreeTime": 86400
+    },
+    {
+        "confGrp": 7,
+        "type": 1,
+        "desireHero": [
+            {
+                "hero": 30319,
+                "weight": 1
+            },
+            {
+                "hero": 30470,
+                "weight": 7
+            },
+            {
+                "hero": 30256,
+                "weight": 7
+            },
+            {
+                "hero": 30300,
+                "weight": 7
+            },
+            {
+                "hero": 30022,
+                "weight": 7
+            }
+        ],
+        "upHero": [
+            {
+                "hero": 30019,
+                "weight": 30
+            },
+            {
+                "hero": 30020,
+                "weight": 30
+            },
+            {
+                "hero": 30024,
+                "weight": 30
+            },
+            {
+                "hero": 30235,
+                "weight": 30
+            },
+            {
+                "hero": 30058,
+                "weight": 30
+            },
+            {
+                "hero": 30060,
+                "weight": 30
+            },
+            {
+                "hero": 30062,
+                "weight": 30
+            },
+            {
+                "hero": 30136,
+                "weight": 30
+            },
+            {
+                "hero": 30140,
+                "weight": 30
+            },
+            {
+                "hero": 30142,
+                "weight": 30
+            }
+        ],
+        "upTimes": 50,
+        "diamCnt": 99999,
+        "diamCost": 500,
+        "summonGrp": "actNormal",
+        "extraTimes": 25,
+        "extraGroup": "actExtra",
+        "cost": [
+            {
+                "id": 20004,
+                "n": 1
+            }
+        ],
+        "discount": 1,
+        "costFreeTime": 86400
+    },
+    {
+        "confGrp": 8,
+        "type": 1,
+        "desireHero": [
+            {
+                "hero": 30324,
+                "weight": 7
+            },
+            {
+                "hero": 30345,
+                "weight": 1
+            },
+            {
+                "hero": 30260,
+                "weight": 7
+            },
+            {
+                "hero": 30138,
+                "weight": 7
+            },
+            {
+                "hero": 30236,
+                "weight": 7
+            }
+        ],
+        "upHero": [
+            {
+                "hero": 30021,
+                "weight": 30
+            },
+            {
+                "hero": 30023,
+                "weight": 30
+            },
+            {
+                "hero": 30025,
+                "weight": 30
+            },
+            {
+                "hero": 30059,
+                "weight": 30
+            },
+            {
+                "hero": 30061,
+                "weight": 30
+            },
+            {
+                "hero": 30063,
+                "weight": 30
+            },
+            {
+                "hero": 30064,
+                "weight": 30
+            },
+            {
+                "hero": 30137,
+                "weight": 30
+            },
+            {
+                "hero": 30141,
+                "weight": 30
+            },
+            {
+                "hero": 30301,
+                "weight": 30
+            }
+        ],
+        "upTimes": 50,
+        "diamCnt": 99999,
+        "diamCost": 500,
+        "summonGrp": "actNormal",
+        "extraTimes": 25,
+        "extraGroup": "actExtra",
+        "cost": [
+            {
+                "id": 20004,
+                "n": 1
+            }
+        ],
+        "discount": 1,
+        "costFreeTime": 86400
+    },
+    {
+        "confGrp": 9,
+        "type": 1,
+        "desireHero": [
+            {
+                "hero": 30175,
+                "weight": 1
+            },
+            {
+                "hero": 30341,
+                "weight": 7
+            },
+            {
+                "hero": 30256,
+                "weight": 7
+            },
+            {
+                "hero": 30300,
+                "weight": 7
+            },
+            {
+                "hero": 30022,
+                "weight": 7
+            }
+        ],
+        "upHero": [
+            {
+                "hero": 30019,
+                "weight": 30
+            },
+            {
+                "hero": 30020,
+                "weight": 30
+            },
+            {
+                "hero": 30024,
+                "weight": 30
+            },
+            {
+                "hero": 30235,
+                "weight": 30
+            },
+            {
+                "hero": 30058,
+                "weight": 30
+            },
+            {
+                "hero": 30060,
+                "weight": 30
+            },
+            {
+                "hero": 30062,
+                "weight": 30
+            },
+            {
+                "hero": 30136,
+                "weight": 30
+            },
+            {
+                "hero": 30140,
+                "weight": 30
+            },
+            {
+                "hero": 30142,
+                "weight": 30
+            }
+        ],
+        "upTimes": 50,
+        "diamCnt": 99999,
+        "diamCost": 500,
+        "summonGrp": "actNormal",
+        "extraTimes": 25,
+        "extraGroup": "actExtra",
+        "cost": [
+            {
+                "id": 20004,
+                "n": 1
+            }
+        ],
+        "discount": 1,
+        "costFreeTime": 86400
+    },
+    {
+        "confGrp": 10,
+        "type": 1,
+        "desireHero": [
+            {
+                "hero": 30445,
+                "weight": 7
+            },
+            {
+                "hero": 30214,
+                "weight": 1
+            },
+            {
+                "hero": 30260,
+                "weight": 7
+            },
+            {
+                "hero": 30138,
+                "weight": 7
+            },
+            {
+                "hero": 30236,
+                "weight": 7
+            }
+        ],
+        "upHero": [
+            {
+                "hero": 30021,
+                "weight": 30
+            },
+            {
+                "hero": 30023,
+                "weight": 30
+            },
+            {
+                "hero": 30025,
+                "weight": 30
+            },
+            {
+                "hero": 30059,
+                "weight": 30
+            },
+            {
+                "hero": 30061,
+                "weight": 30
+            },
+            {
+                "hero": 30063,
+                "weight": 30
+            },
+            {
+                "hero": 30064,
+                "weight": 30
+            },
+            {
+                "hero": 30137,
+                "weight": 30
+            },
+            {
+                "hero": 30141,
+                "weight": 30
+            },
+            {
+                "hero": 30301,
+                "weight": 30
+            }
+        ],
+        "upTimes": 50,
+        "diamCnt": 99999,
+        "diamCost": 500,
+        "summonGrp": "actNormal",
+        "extraTimes": 25,
+        "extraGroup": "actExtra",
+        "cost": [
+            {
+                "id": 20004,
+                "n": 1
+            }
+        ],
+        "discount": 1,
+        "costFreeTime": 86400
+    },
+    {
+        "confGrp": 11,
+        "type": 1,
+        "desireHero": [
+            {
+                "hero": 30448,
+                "weight": 1
+            },
+            {
+                "hero": 30344,
+                "weight": 1
+            },
+            {
+                "hero": 30256,
+                "weight": 7
+            },
+            {
+                "hero": 30300,
+                "weight": 7
+            },
+            {
+                "hero": 30022,
+                "weight": 7
+            }
+        ],
+        "upHero": [
+            {
+                "hero": 30019,
+                "weight": 30
+            },
+            {
+                "hero": 30020,
+                "weight": 30
+            },
+            {
+                "hero": 30024,
+                "weight": 30
+            },
+            {
+                "hero": 30235,
+                "weight": 30
+            },
+            {
+                "hero": 30058,
+                "weight": 30
+            },
+            {
+                "hero": 30060,
+                "weight": 30
+            },
+            {
+                "hero": 30062,
+                "weight": 30
+            },
+            {
+                "hero": 30136,
+                "weight": 30
+            },
+            {
+                "hero": 30140,
+                "weight": 30
+            },
+            {
+                "hero": 30142,
+                "weight": 30
+            }
+        ],
+        "upTimes": 50,
+        "diamCnt": 99999,
+        "diamCost": 500,
+        "summonGrp": "actNormal",
+        "extraTimes": 25,
+        "extraGroup": "actExtra",
+        "cost": [
+            {
+                "id": 20004,
+                "n": 1
+            }
+        ],
+        "discount": 1,
+        "costFreeTime": 86400
+    },
+    {
+        "confGrp": 12,
+        "type": 1,
+        "desireHero": [
+            {
+                "hero": 30323,
+                "weight": 1
+            },
+            {
+                "hero": 30468,
+                "weight": 1
+            },
+            {
+                "hero": 30260,
+                "weight": 7
+            },
+            {
+                "hero": 30138,
+                "weight": 7
+            },
+            {
+                "hero": 30236,
+                "weight": 7
+            }
+        ],
+        "upHero": [
+            {
+                "hero": 30021,
+                "weight": 30
+            },
+            {
+                "hero": 30023,
+                "weight": 30
+            },
+            {
+                "hero": 30025,
+                "weight": 30
+            },
+            {
+                "hero": 30059,
+                "weight": 30
+            },
+            {
+                "hero": 30061,
+                "weight": 30
+            },
+            {
+                "hero": 30063,
+                "weight": 30
+            },
+            {
+                "hero": 30064,
+                "weight": 30
+            },
+            {
+                "hero": 30137,
+                "weight": 30
+            },
+            {
+                "hero": 30141,
+                "weight": 30
+            },
+            {
+                "hero": 30301,
+                "weight": 30
+            }
+        ],
+        "upTimes": 50,
+        "diamCnt": 99999,
+        "diamCost": 500,
+        "summonGrp": "actNormal",
+        "extraTimes": 25,
+        "extraGroup": "actExtra",
+        "cost": [
+            {
+                "id": 20004,
+                "n": 1
+            }
+        ],
+        "discount": 1,
+        "costFreeTime": 86400
+    },
+    {
+        "confGrp": 21,
+        "type": 1,
+        "desireHero": [
+            {
+                "hero": 30319,
+                "weight": 1
+            },
+            {
+                "hero": 30345,
+                "weight": 1
+            },
+            {
+                "hero": 30256,
+                "weight": 7
+            },
+            {
+                "hero": 30300,
+                "weight": 7
+            },
+            {
+                "hero": 30022,
+                "weight": 7
+            }
+        ],
+        "upHero": [
+            {
+                "hero": 30019,
+                "weight": 30
+            },
+            {
+                "hero": 30020,
+                "weight": 30
+            },
+            {
+                "hero": 30024,
+                "weight": 30
+            },
+            {
+                "hero": 30235,
+                "weight": 30
+            },
+            {
+                "hero": 30058,
+                "weight": 30
+            },
+            {
+                "hero": 30060,
+                "weight": 30
+            },
+            {
+                "hero": 30062,
+                "weight": 30
+            },
+            {
+                "hero": 30136,
+                "weight": 30
+            },
+            {
+                "hero": 30140,
+                "weight": 30
+            },
+            {
+                "hero": 30142,
+                "weight": 30
+            }
+        ],
+        "upTimes": 50,
+        "diamCnt": 99999,
+        "diamCost": 500,
+        "summonGrp": "actNormal",
+        "extraTimes": 25,
+        "extraGroup": "actExtra",
+        "cost": [
+            {
+                "id": 20004,
+                "n": 1
+            }
+        ],
+        "discount": 1,
+        "costFreeTime": 86400
+    },
+    {
+        "confGrp": 22,
+        "type": 1,
+        "desireHero": [
+            {
+                "hero": 30175,
+                "weight": 1
+            },
+            {
+                "hero": 30214,
+                "weight": 1
+            },
+            {
+                "hero": 30260,
+                "weight": 7
+            },
+            {
+                "hero": 30138,
+                "weight": 7
+            },
+            {
+                "hero": 30236,
+                "weight": 7
+            }
+        ],
+        "upHero": [
+            {
+                "hero": 30021,
+                "weight": 30
+            },
+            {
+                "hero": 30023,
+                "weight": 30
+            },
+            {
+                "hero": 30025,
+                "weight": 30
+            },
+            {
+                "hero": 30059,
+                "weight": 30
+            },
+            {
+                "hero": 30061,
+                "weight": 30
+            },
+            {
+                "hero": 30063,
+                "weight": 30
+            },
+            {
+                "hero": 30064,
+                "weight": 30
+            },
+            {
+                "hero": 30137,
+                "weight": 30
+            },
+            {
+                "hero": 30141,
+                "weight": 30
+            },
+            {
+                "hero": 30301,
+                "weight": 30
+            }
+        ],
+        "upTimes": 50,
+        "diamCnt": 99999,
+        "diamCost": 500,
+        "summonGrp": "actNormal",
+        "extraTimes": 25,
+        "extraGroup": "actExtra",
+        "cost": [
+            {
+                "id": 20004,
+                "n": 1
+            }
+        ],
+        "discount": 1,
+        "costFreeTime": 86400
+    }
+]

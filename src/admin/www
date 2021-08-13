@@ -1,0 +1,78 @@
+#!/usr/bin/env node
+
+require('./lib/ext');
+
+var config = require('../config.json');
+var dbpool = require('./lib/dbpool');
+var area   = require('./models/area');
+
+// ====================================
+
+async function init() {
+    await dbpool.init([
+        ["share",  config.common.db_share,  2],
+        ["stats",  config.common.db_stats,  2],
+        ["bill",   config.common.db_bill,   2],
+    ]);
+
+    // make sure db-indexes are created
+    {
+        var db = dbpool.get("share");
+        var coll;
+
+        // tmail
+        coll = db.collection('tmail');
+        await dbpool.create_index([
+            [coll, 'idx_send_ts', {send_ts: 1}, false],
+            [coll, 'idx_status',  {status:  1}, false],
+            [coll, 'idx_title',   {title:   1}, false],
+            [coll, 'idx_apply',   {apply:   1}, false],
+            [coll, 'idx_audit',   {audit:   1}, false],
+        ]);
+
+        // gm-log
+        coll = db.collection('gmlog');
+        await dbpool.create_index([
+            [coll, 'idx_operator', {operator: 1}, false],
+            [coll, 'idx_area',     {area:     1}, false],
+            [coll, 'idx_userid',   {userid:   1}, false],
+        ]);
+
+        // giftinfo
+        coll = db.collection('giftinfo');
+        await dbpool.create_index([
+            [coll, 'idx_codes', {codes: 1}, false],
+        ]);
+
+        // giftuse
+        coll = db.collection('giftuse');
+        await dbpool.create_index([
+            [coll, 'idx_grpid', {grpid:  1}, false],
+            [coll, 'idx_area',  {area:   1}, false],
+            [coll, 'idx_code',  {code:   1}, false],
+            [coll, 'idx_uid',   {userid: 1}, false],
+            [coll, 'idx_svr',   {svr:    1}, false],
+        ]);
+    }
+
+    // load areas
+    await area.load();
+
+    // reload
+    process.on('SIGHUP', () => {
+        area.load().catch(console.error);
+        console.log("reloaded");
+    });
+}
+
+// ====================================
+
+(async () => {
+    await init();
+
+    let server = require('./server');
+    let app    = require('./app');
+
+    server.run(app, config.admin.port);
+
+})().catch(console.error);

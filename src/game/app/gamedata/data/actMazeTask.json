@@ -1,0 +1,227 @@
+[
+    {
+        "id": 1,
+        "type": 1,
+        "attain": [
+            {
+                "attainId": 1,
+                "p2": 1
+            }
+        ],
+        "reward": [
+            {
+                "id": 20218,
+                "n": 1
+            }
+        ],
+        "confGrp": 1
+    },
+    {
+        "id": 2,
+        "type": 1,
+        "attain": [
+            {
+                "attainId": 2,
+                "p2": 1
+            }
+        ],
+        "reward": [
+            {
+                "id": 20218,
+                "n": 1
+            }
+        ],
+        "confGrp": 1
+    },
+    {
+        "id": 3,
+        "type": 1,
+        "attain": [
+            {
+                "attainId": 3,
+                "p2": 3
+            }
+        ],
+        "reward": [
+            {
+                "id": 20220,
+                "n": 1
+            }
+        ],
+        "confGrp": 1
+    },
+    {
+        "id": 4,
+        "type": 1,
+        "attain": [
+            {
+                "attainId": 4,
+                "p2": 5
+            }
+        ],
+        "reward": [
+            {
+                "id": 20218,
+                "n": 1
+            }
+        ],
+        "confGrp": 1
+    },
+    {
+        "id": 5,
+        "type": 1,
+        "attain": [
+            {
+                "attainId": 5,
+                "p2": 20
+            }
+        ],
+        "reward": [
+            {
+                "id": 20220,
+                "n": 1
+            }
+        ],
+        "confGrp": 1
+    },
+    {
+        "id": 6,
+        "type": 1,
+        "attain": [
+            {
+                "attainId": 6,
+                "p2": 10
+            }
+        ],
+        "reward": [
+            {
+                "id": 20220,
+                "n": 1
+            }
+        ],
+        "confGrp": 1
+    },
+    {
+        "id": 7,
+        "type": 2,
+        "attain": [
+            {
+                "attainId": 7,
+                "p2": 10
+            }
+        ],
+        "reward": [
+            {
+                "id": 20218,
+                "n": 1
+            }
+        ],
+        "confGrp": 1
+    },
+    {
+        "id": 8,
+        "type": 2,
+        "attain": [
+            {
+                "attainId": 7,
+                "p2": 100
+            }
+        ],
+        "reward": [
+            {
+                "id": 20220,
+                "n": 1
+            }
+        ],
+        "confGrp": 1
+    },
+    {
+        "id": 9,
+        "type": 2,
+        "attain": [
+            {
+                "attainId": 7,
+                "p2": 200
+            }
+        ],
+        "reward": [
+            {
+                "id": 20217,
+                "n": 1
+            }
+        ],
+        "confGrp": 1
+    },
+    {
+        "id": 10,
+        "type": 2,
+        "attain": [
+            {
+                "attainId": 7,
+                "p2": 400
+            }
+        ],
+        "reward": [
+            {
+                "id": 20218,
+                "n": 1
+            }
+        ],
+        "confGrp": 1
+    },
+    {
+        "id": 11,
+        "type": 2,
+        "attain": [
+            {
+                "attainId": 7,
+                "p2": 650
+            }
+        ],
+        "reward": [
+            {
+                "id": 20220,
+                "n": 1
+            }
+        ],
+        "confGrp": 1
+    },
+    {
+        "id": 12,
+        "type": 2,
+        "attain": [
+            {
+                "attainId": 7,
+                "p2": 1000
+            }
+        ],
+        "reward": [
+            {
+                "id": 20219,
+                "n": 1
+            }
+        ],
+        "confGrp": 1
+    },
+    {
+        "id": 13,
+        "type": 2,
+        "attain": [
+            {
+                "attainId": 7,
+                "p2": 2000
+            }
+        ],
+        "reward": [
+            {
+                "id": 20217,
+                "n": 1
+            },
+            {
+                "id": 20219,
+                "n": 1
+            }
+        ],
+        "confGrp": 1
+    }
+]

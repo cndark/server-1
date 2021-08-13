@@ -1,0 +1,121 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+
+        title Admin
+
+        // bootstrap & jquery
+        link(href='/dist/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+        script(src='/dist/jquery/jquery-2.2.3.min.js')
+        script(src='/dist/bootstrap/js/bootstrap.min.js')
+
+        // typeahead
+        script(src='/dist/typeahead/bootstrap3-typeahead.min.js')
+
+        // datepicker
+        script(src='/dist/daterangepicker/moment.min.js')
+        script(src='/dist/daterangepicker/daterangepicker.js')
+        link(href='/dist/daterangepicker/daterangepicker.css', rel='stylesheet')
+
+        // chartjs
+        script(src='/dist/chartjs/Chart.min.js')
+
+        // Font Awesome
+        link(href='/dist/fontawesome/css/all.min.css', rel='stylesheet')
+
+        // Theme style
+        link(href='/dist/framework/css/AdminLTE.css', rel='stylesheet')
+
+        // Skins
+        link(href='/dist/framework/css/skins/_all-skins.min.css', rel='stylesheet')
+
+        block css
+
+    body.hold-transition.skin-blue.sidebar-mini
+        include ./lib/confirm.pug
+        block modals
+        block custom
+
+        .wrapper
+            // side header (left)
+            header.main-header
+                // Logo
+                a.logo(href='#')
+                    span.logo-mini
+                        b Admin
+                    span.logo-lg
+                        b Admin
+
+                // Header Navbar: style can be found in header.less
+                nav.navbar.navbar-static-top
+                    // Sidebar toggle button
+                    a.sidebar-toggle(href='#', data-toggle='offcanvas', role='button')
+                        span.sr-only Toggle navigation
+
+                    // Custom menu
+                    .navbar-custom-menu
+                        ul.nav.navbar-nav
+                            li
+                                a(href='/logout') Logout
+
+            // side bar (left)
+            aside.main-sidebar
+                // sidebar: style can be found in sidebar.less
+                section.sidebar
+                    // Sidebar user panel
+                    .user-panel
+                        .pull-left.image
+                            img.img-circle(src='/dist/framework/img/head-160x160.jpg', alt='User Image')
+                        .pull-left.info
+                            p #{sess.user}
+                            a(href='#')
+                                i.fa.fa-circle.text-success
+                                | Online
+                    ul.sidebar-menu
+                        li.header 功能导航栏
+
+                        li
+                            a(href='/main')
+                                i.fa.fa-home
+                                span 服务器概览
+
+                        - for (let lv1 of sess.sys.priv_pages)
+                            if sess.priv[lv1.path]
+                                li(class=`${sess.req_path.startsWith(lv1.path + '/') ? 'active' : ''}`)
+                                    a(href='#')
+                                        i(class=`fa fa-${lv1.icon}`)
+                                        span #{lv1.text}
+                                        span.pull-right-container
+                                            i.fa.fa-angle-left.pull-right
+                                    ul.treeview-menu
+                                        - for (let lv2 of lv1.children)
+                                            if sess.priv[lv2.path]
+                                                li
+                                                    a(href=lv2.path)
+                                                        i(class=`fa fa-${lv2.icon}`)
+                                                        | #{lv2.text}
+
+
+            // content (right)
+            .content-wrapper
+                block content
+
+            // footer
+            block footer
+                footer.main-footer
+                    .pull-right.hidden-xs
+                        b Version
+                        |  1.0.0
+                    strong Copyright © 2020 贝努鸟 Inc.
+                    |  All rights reserved.
+
+        // AdminLTE App
+        script(src='/dist/framework/js/app.min.js')
+
+        // lib scripts
+        script(src='/scripts/lib/confirm.js')
+        script(src='/scripts/lib/alert.js')
+
+        block script

@@ -1,0 +1,194 @@
+[
+    {
+        "Id": 100,
+        "isRandom": 1,
+        "refreshTime": [
+            0
+        ],
+        "freeCounter": 1000008,
+        "refreshCost": [
+        ],
+        "openStatus": [
+            {
+                "statusId": 1,
+                "val": 1
+            }
+        ]
+    },
+    {
+        "Id": 102,
+        "isRandom": 1,
+        "refreshTime": [
+            0
+        ],
+        "freeCounter": 1000009,
+        "refreshCost": [
+            {
+                "id": 10008,
+                "n": 70
+            }
+        ],
+        "openStatus": [
+            {
+                "statusId": 1,
+                "val": 1
+            }
+        ]
+    },
+    {
+        "Id": 104,
+        "isRandom": 1,
+        "refreshTime": [
+            0
+        ],
+        "freeCounter": 0,
+        "refreshCost": [
+        ],
+        "openStatus": [
+            {
+                "statusId": 1,
+                "val": 5
+            }
+        ]
+    },
+    {
+        "Id": 101,
+        "isRandom": 0,
+        "refreshTime": [
+            0
+        ],
+        "freeCounter": 0,
+        "refreshCost": [
+            {
+                "id": 10009,
+                "n": 200
+            }
+        ],
+        "openStatus": [
+            {
+                "statusId": 1,
+                "val": 20
+            }
+        ]
+    },
+    {
+        "Id": 103,
+        "isRandom": 0,
+        "refreshTime": [
+            0
+        ],
+        "freeCounter": 0,
+        "refreshCost": [
+            {
+                "id": 10011,
+                "n": 50
+            }
+        ],
+        "openStatus": [
+            {
+                "statusId": 5,
+                "val": 25
+            }
+        ]
+    },
+    {
+        "Id": 105,
+        "isRandom": 0,
+        "refreshTime": [
+            0
+        ],
+        "freeCounter": 0,
+        "refreshCost": [
+            {
+                "id": 10012,
+                "n": 100
+            }
+        ],
+        "openStatus": [
+            {
+                "statusId": 1,
+                "val": 35
+            }
+        ]
+    },
+    {
+        "Id": 106,
+        "isRandom": 0,
+        "refreshTime": [
+            0
+        ],
+        "freeCounter": 0,
+        "refreshCost": [
+        ],
+        "openStatus": [
+        ]
+    },
+    {
+        "Id": 107,
+        "isRandom": 0,
+        "refreshTime": [
+            0
+        ],
+        "freeCounter": 0,
+        "refreshCost": [
+        ],
+        "openStatus": [
+        ]
+    },
+    {
+        "Id": 108,
+        "isRandom": 0,
+        "refreshTime": [
+            0
+        ],
+        "freeCounter": 0,
+        "refreshCost": [
+        ],
+        "openStatus": [
+        ]
+    },
+    {
+        "Id": 109,
+        "isRandom": 0,
+        "refreshTime": [
+            0
+        ],
+        "freeCounter": 0,
+        "refreshCost": [
+        ],
+        "openStatus": [
+        ]
+    },
+    {
+        "Id": 110,
+        "isRandom": 0,
+        "refreshTime": [
+            0
+        ],
+        "freeCounter": 0,
+        "refreshCost": [
+        ],
+        "openStatus": [
+        ]
+    },
+    {
+        "Id": 111,
+        "isRandom": 0,
+        "refreshTime": [
+            0
+        ],
+        "freeCounter": 0,
+        "refreshCost": [
+            {
+                "id": 10028,
+                "n": 200
+            }
+        ],
+        "openStatus": [
+            {
+                "statusId": 1,
+                "val": 40
+            }
+        ]
+    }
+]

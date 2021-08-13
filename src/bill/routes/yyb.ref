@@ -1,0 +1,336 @@
+
+var axios   = require('axios');
+var md5     = require('md5');
+var crypto  = require('crypto');
+var qs      = require('querystring');
+
+var dbpool  = require('../../lib/dbpool');
+var gtab    = require('../../models/gtab');
+var bill    = require('../../models/bill');
+
+// ============================================================================
+
+function cookie_init() {
+    return {};
+}
+
+function cookie_set(c, k, v) {
+    c[k] = v;
+}
+
+function cookie_tostring(c) {
+    return Object.keys(c).map(k=>`${k}=${qs.escape(c[k])}`).join(';');
+}
+
+// ============================================================================
+
+function get_prod_vccy_amt(prod_id) {
+    var conf_prod = gtab.bill_product[tonumber(prod_id)];
+    if (!conf_prod) return -1;
+
+    return conf_prod.price / 100 * 10;
+}
+
+function sig_verify(q) {
+    const KEY = 'KswJffEqYOb1L1cFTf46GO9k1dEWdy';
+
+    var sign = q.sign;
+    delete q.sign;
+
+    var sign2 = md5(`${Object.keys(q).sort().map(v=>`${v}=${q[v]}`).join('&')}${KEY}`);
+    return sign == sign2;
+}
+
+function gen_billno() {
+    return "billno-1";
+}
+
+function vccy_query(q, sdkobj) {
+}
+
+async function vccy_deduct(q, sdkobj) {
+    var url = `https://ysdk.qq.com/mpay/pay_m`;
+
+    // form
+    var form = {
+        openid:  q.openid,
+        openkey: q.openkey,
+        appid:   sdkobj.appid,
+        ts:      Math.floor(Date.now / 1000),
+        pf:      q.pf,
+        pfkey:   q.pfkey,
+        zoneid:  1,
+        amt:     q.amount,
+        billno:  q.billno,
+    };
+
+    var hmac = crypto.createHmac('SHA1', sdkobj.bill_key + '&');
+    hmac.update(`POST&${qs.escape('/v3/r/mpay/pay_m')}&${qs.escape(Object.keys(form).sort().map(v=>`${v}=${form[v]}`).join('&'))}`);
+    form.sig = hmac.digest('base64');
+
+    // cookie
+    var ck = cookie_init();
+
+    ck.cookie_set('session_id',   q.session_id);
+    ck.cookie_set('session_type', q.session_type);
+    ck.cookie_set('org_loc',      '/mpay/pay_m');
+
+    // post
+    try {
+        let res2 = await axios.post(url, form, {
+            headers: {
+                cookie: ck.cookie_tostring(),
+            },
+        });
+        let body2 = res2.data;
+        return body2;
+    } catch {
+        return;
+    }
+}
+
+async function vccy_refund(q, sdkobj) {
+    var url = `https://ysdk.qq.com/mpay/cancel_pay_m`;
+
+    // form
+    var form = {
+        openid:  q.openid,
+        openkey: q.openkey,
+        appid:   sdkobj.appid,
+        ts:      Math.floor(Date.now / 1000),
+        pf:      q.pf,
+        pfkey:   q.pfkey,
+        zoneid:  1,
+        amt:     q.amount,
+        billno:  q.billno,
+    };
+
+    var hmac = crypto.createHmac('SHA1', sdkobj.bill_key + '&');
+    hmac.update(`POST&${qs.escape('/v3/r/mpay/cancel_pay_m')}&${qs.escape(Object.keys(form).sort().map(v=>`${v}=${form[v]}`).join('&'))}`);
+    form.sig = hmac.digest('base64');
+
+    // cookie
+    var ck = cookie_init();
+
+    ck.cookie_set('session_id',   q.session_id);
+    ck.cookie_set('session_type', q.session_type);
+    ck.cookie_set('org_loc',      '/mpay/cancel_pay_m');
+
+    // post
+    let res2 = await axios.post(url, form, {
+        headers: {
+            cookie: ck.cookie_tostring(),
+        },
+    });
+    let body2 = res2.data;
+
+    return body2;
+}
+
+async function pay_callback(q, sdkobj) {
+    var sdk = q.sdk;
+
+    // orderid
+    var orderid = q.billno;
+    var key     = q.billkey;
+
+    // create order
+    var doc = {
+        _id:                key,
+        sdk:                sdk,
+        orderid:            orderid,
+        userid:             q.userid,
+        prod_id:            tonumber(q.prod_id),
+        amount:             tonumber(q.amount) * 10,
+        ccy:                "CNY",
+        discount:           1,
+        create_ts:          new Date(),
+        sync_ts:            new Date(),
+        status:             'payed',
+    };
+
+    try {
+        let db = dbpool.get("bill");
+        await db.collection('order').insertOne(doc);
+        await bill.give_items(doc);
+    } catch(e) {
+        if (e.code != 11000) return 'insert order error';
+    }
+
+    return '';
+}
+
+// ============================================================================
+
+async function query(q) {
+    return {};
+}
+
+async function buy(q) {
+    var q = req.body;
+
+    // check signature
+    if (!sig_verify(q)) {
+        return {err: "error sign"};
+    }
+
+    // check sdk
+    var sdk = q.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        return {err: "error sdk"};
+    }
+
+    // do it
+    try {
+        let db = dbpool.get('bill');
+
+        // create deduct record
+        q.amount = get_prod_vccy_amt(q.prod_id);
+        if (q.amount == -1) {
+            throw 'error prod_id';
+        }
+
+        q.billno  = gen_billno();
+        q.billkey = `${q.sdk}-${q.billno}`;
+
+        // insert
+        try {
+            await db.collection('yyb_deduct').insertOne({
+                _id:     q.billkey,
+                orderid: q.billno,
+                uid:     q.userid,
+                prod_id: q.prod_id,
+                status:  'init',
+            });
+        } catch {}
+
+        // try deduct
+        let body2 = await vccy_deduct(q, sdkobj);
+        if (!body2) {
+            // net-error
+            // try refunding when next login (client requests)
+            // do nothing here
+            throw 'refund next login';
+        } else if (body2.ret == 0) {
+            // ok
+        } else {
+            // failed
+            throw 'deduct failed';
+        }
+
+        // update deduct record
+        try {
+            await db.collection('yyb_deduct').updateOne(
+                {_id:  q.billkey},
+                {$set: {status: 'deducted'}},
+            );
+        } catch {}
+
+        // pay-callback
+        let err = await pay_callback(q, sdkobj);
+        if (err) throw err;
+
+        // update deduct record
+        try {
+            await db.collection('yyb_deduct').updateOne(
+                {_id:  q.billkey},
+                {$set: {status: 'ok'}},
+            );
+        } catch {}
+
+        // ok
+        return {err: ''};
+
+    } catch {
+        return {err: 'failed'};
+    }
+}
+
+async function fix(q) {
+    // check sdk
+    var sdk = q.sdk;
+    var sdkobj = gtab.sdk[sdk];
+    if (!sdkobj) {
+        return {err: 'error sdk'};
+    }
+
+    // do it
+    try {
+        let db = dbpool.get('bill');
+
+        
+    } catch {
+        return {err: ''};
+    }
+
+    async.waterfall([
+        // find deduct-records that should be refunded
+        function (cb) {
+            db.collection('yyb_deduct').aggregate([
+                {$match: {
+                    uid:    q.userid,
+                    status: {$ne: 'ok'},
+                }},
+                {$lookup: {
+                    from:         'order',
+                    localField:   '_id',
+                    foreignField: '_id',
+                    as:           'order',
+                }},
+                {$match: {
+                    order: [],
+                }},
+                {$project: {
+                    _id:     1,
+                    orderid: 1,
+                    prod_id: 1,
+                }},
+            ], (err, r) => {
+                cb(err, r);
+            });
+        },
+
+        // try refunding
+        function (docs, cb) {
+            async.eachSeries(docs, (doc, cb2) => {
+                q.billno = doc.orderid;
+                q.amount = get_prod_vccy_amt(doc.prod_id);
+
+                async.waterfall([
+                    // refund
+                    function (cb3) {
+                        if (q.amount == -1)
+                            cb3('invalid amount');
+
+                        vccy_refund(q, sdkobj, (body2) => {
+                            if (body2.ret == 0)
+                                cb3(null);
+                            else
+                                cb3('refund failed');
+                        });
+                    },
+
+                    // update deduct record
+                    function (cb3) {
+                        db.collection('yyb_deduct').deleteOne({_id: doc._id}, (err) => cb3(err));
+                    },
+                ], (err) => {
+                    cb2(null);
+                });
+            }, (err) => {
+                cb(err);
+            });
+        },
+    ], (err) => {
+        resp({err: ''});
+    });
+}
+
+// ============================================================================
+
+module.exports = {
+    query: query,
+    buy:   buy,
+    fix:   fix,
+}

@@ -1,0 +1,1209 @@
+
+var express = require('express');
+var router  = express.Router();
+
+var axios   = require('axios');
+var md5     = require('md5');
+var qs      = require('querystring');
+var crypto  = require('crypto');
+var xml2js  = require('xml2js');
+
+var config  = require('../../config.json');
+var gtab    = require('../models/gtab');
+
+// ============================================================================
+
+var Auth_SDK_Provider = {
+
+    "oursdk": async (q, sdkobj) => {
+        var url = '';
+
+        if (q.p1 == "guest")
+            return;
+
+        if (q.p1 == "ios") {
+            url = "http://domain:5005/api/auth/external/ios-gamecenter";
+        } else if (q.p1 == "google") {
+            url = "http://domain:5005/api/auth/external/google-play";
+        } else if (q.p1 == "facebook") {
+            url = "http://domain:5005/api/auth/external/facebook";
+        }
+
+        try {q.p2 = JSON.parse(q.p2)} catch(e) {}
+
+        let res2 = await axios.post(url, q.p2);
+        let body2 = res2.data;
+
+        if (body2.err == 0)
+            return;
+        else
+            throw body2;
+    },
+
+    "wx": async (q, sdkobj) => {
+        var url = 'https://api.weixin.qq.com/sns/jscode2session';
+
+        var qs = {
+            appid:      sdkobj.appid,
+            secret:     sdkobj.appkey,
+            js_code:    q.auth_token,
+            grant_type: 'authorization_code',
+        };
+
+        let res2 = await axios.get(url, {
+            params: qs
+        });
+        let body2 = res2.data;
+
+        if (!body2.errcode || body2.errcode == 0) {
+            return {authid: body2.openid};
+        } else {
+            throw body2;
+        }
+    },
+
+    "ly": async (q, sdkobj) => {
+        var p1 = {};
+        try {p1 = JSON.parse(q.p1)} catch(e) {}
+
+        const url = `http://g.linnyou.com/api/index`;
+
+        var form = {
+            data: q.auth_token,
+        };
+        form.sign = md5(`${form.data}${sdkobj[`auth_key_${p1.os}`]}`);
+
+        let res2 = await axios.post(url, form);
+        let body2 = res2.data;
+
+        if (body2.errno == 1000) {
+            return {authid: body2.data.uid};
+        } else {
+            throw body2;
+        };
+    },
+
+    "gk": async (q, sdkobj) => {
+        const url = `http://anysdk.guokehuyu.com/verify.php`;
+
+        var form = {
+            appID:  sdkobj.appid,
+            userId: q.auth_id,
+            token:  q.auth_token,
+        };
+        form.sign = md5(`${sdkobj.appid}${q.auth_token}${sdkobj.auth_key}`);
+
+        let res2 = await axios.post(url, form);
+        let body2 = res2.data;
+
+        if (body2.errorCode == 0) {
+            return {authid: body2.data.id};
+        } else {
+            throw body2;
+        }
+    },
+
+    "6kw": async (q, sdkobj) => {
+        const url = `http://us.6kw.com/`;
+
+        var form = {
+            service: "cp.login.secondCheck",
+            appID:   sdkobj.appid,
+            extension: JSON.stringify({token: q.auth_token}),
+        };
+        form.sign = md5(`${["service", "appID", "extension"].map(v=>`${v}=${form[v]}`).join("")}${sdkobj.auth_key}`);
+
+        let res2 = axios.post(url, form);
+        let body2 = res2.data;
+
+        if (body2.state.code == 1) {
+            return {authid: body2.data.uid};
+        } else {
+            throw body2;
+        }
+    },
+
+    "hw": async (q, sdkobj) => {
+        var p1 = {};
+        try {p1 = JSON.parse(q.p1)} catch(e) {}
+
+        const url = `https://gss-cn.game.hicloud.com/gameservice/api/gbClientApi`;
+
+        var form = {
+            method:      "external.hms.gs.checkPlayerSign",
+            appId:       sdkobj.appid,
+            cpId:        sdkobj.cpid,
+            ts:          p1.ts,
+            playerId:    p1.playerId,
+            playerLevel: p1.playerLevel,
+            playerSSign: p1.playerSSign,
+        };
+
+        // sign
+        var sign = crypto.createSign('RSA-SHA256');
+        sign.update(Object.keys(form).sort().map(k => `${k}=${qs.escape(form[k])}`).join('&'));
+        form.cpSign = sign.sign(sdkobj.auth_key, 'base64');
+
+        // auth
+        let res2 = axios.post(url, form);
+        let body2 = res2.data;
+
+        if (body2.rtnCode == 0) {
+            return;
+        } else {
+            throw body2;
+        }
+    },
+
+    "oppo": async (q, sdkobj) => {
+        const url = `http://i.open.game.oppomobile.com/gameopen/user/fileIdInfo`;
+
+        var qs = {
+            fileId: q.auth_id,
+            token:  q.auth_token,
+        };
+
+        var header = {
+            param: `oauthConsumerKey=${sdkobj.appkey}&oauthToken=${qs.escape(q.auth_token)}&oauthSignatureMethod=HMAC-SHA1&oauthTimestamp=${Math.floor(Date.now() / 1000)}&oauthNonce=${Math.floor(Math.random() * 1000000)}&oauthVersion=1.0&`,
+        };
+        header.oauthSignature = qs.escape(crypto.createHmac('sha1', sdkobj.auth_key + '&').update(header.param, 'latin1').digest('base64'));
+
+        let res2 = await axios.get(url, {
+            params: qs,
+            headers: header,
+        });
+        let body2 = res2.data;
+
+        if (body2.resultCode == 200 && body2.ssoid == q.auth_id) {
+            return {authid: body2.ssoid};
+        } else {
+            throw body2;
+        }
+    },
+
+    "vivo": async (q, sdkobj) => {
+        const url = `https://usrsys.vivo.com.cn/sdk/user/auth.do`;
+
+        var form = {
+            authtoken: q.auth_token,
+            from:      "from",
+        };
+
+        let res2 = await axios.post(url, form);
+        let body2 = res2.data;
+
+        if (body2.retcode == 0) {
+            return {authid: body2.data.openid};
+        } else {
+            throw body2;
+        }
+    },
+
+    "360": async (q, sdkobj) => {
+        const url = `https://openapi.360.cn/user/me.json`;
+
+        var qs = {
+            access_token: q.auth_token,
+        };
+
+        let res2 = await axios.get(url, {
+            params: qs
+        });
+        let body2 = res2.data;
+
+        if (body2.id) {
+            return {authid: body2.id};
+        } else {
+            throw body2;
+        }
+    },
+
+    "meizu": async (q, sdkobj) => {
+        const url = `https://api.game.meizu.com/game/security/checksession`;
+
+        var form = {
+            app_id:     sdkobj.appid,
+            session_id: q.auth_token,
+            uid:        q.auth_id,
+            ts:         Math.floor(Date.now() / 1000),
+            sign_type:  "md5",
+        };
+        form.sign = md5(`${["app_id", "session_id", "ts", "uid"].map(v=>`${v}=${form[v]}`).join("&")}:${sdkobj.auth_key}`);
+
+        let res2 = await axios.post(url, form);
+        let body2 = res2.data;
+
+        if (body2.code == 200) {
+            return;
+        } else {
+            throw body2;
+        }
+    },
+
+    "baidu": async (q, sdkobj) => {
+        const url = `http://query.u.duoku.com/query/cploginstatequery`;
+
+        var form = {
+            AppID:       sdkobj.appid,
+            AccessToken: q.auth_token,
+        };
+        form.Sign = md5(`${["AppID", "AccessToken"].map(v=>`${form[v]}`).join("")}${sdkobj.auth_key}`);
+
+        let res2 = await axios.post(url, form);
+        let body2 = res2.data;
+
+        if (body2.Content) {
+            var c = Buffer.from(body2.Content, 'base64').toString();
+            body2.UID = c.match(/"UID"\s*:\s*(\d+)/)[1];
+        }
+
+        if (body2.ResultCode == 1) {
+            return {authid: body2.UID};
+        } else {
+            throw body2;
+        }
+    },
+
+    "xiaomi": async (q, sdkobj) => {
+        const url = `http://mis.migc.xiaomi.com/api/biz/service/verifySession.do`;
+
+        var form = {
+            uid:     q.auth_id,
+            appId:   sdkobj.appid,
+            session: q.auth_token,
+        };
+
+        // gen sign
+        var str = Object.keys(form).sort().map(k => `${k}=${form[k]}`).join('&');
+        form.signature = crypto.createHmac('SHA1', sdkobj.auth_key).update(str).digest('hex');
+
+        // send
+        let res2 = await axios.get(url, {
+            params: form
+        });
+        let body2 = res2.data;
+
+        if (body2.errcode == 200) {
+            return;
+        } else {
+            throw body2;
+        }
+    },
+
+    "jinli": async (q, sdkobj) => {
+        let url = "https://id.gionee.com/account/verify.do";
+
+        var ts = Math.floor(Date.now()/1000);
+        var nonce = `${Math.random()}`.substr(2, 8);
+
+        var sign = crypto.createHmac('SHA1', sdkobj.auth_key);
+        sign.update(`${ts}\n${nonce}\nPOST\n/account/verify.do\nid.gionee.com\n443\n\n`);
+
+        var auth_str = `MAC id=${sdkobj.appid},ts=${ts},nonce=${nonce},mac=${sign.digest('base64')}`;
+
+        let res2 = await axios.post(url, q.auth_token, {
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: auth_str,
+            },
+        });
+        let body2 = res2.data;
+
+        if (!body2.r || body2.r == "0") {
+            return;
+        } else {
+            throw body2;
+        }
+    },
+
+    "coolpad": async (q, sdkobj) => {
+        // 1
+        let form = {
+            grant_type:    "authorization_code",
+            client_id:     sdkobj.appid,
+            client_secret: sdkobj.auth_key,
+            code:          q.auth_token,
+            redirect_uri:  sdkobj.auth_key,
+        };
+
+        let res2 = await axios.get("https://openapi.coolyun.com/oauth2/token", {
+            params: form
+        });
+        let body2 = res2.data;
+
+        let atoken = body2.access_token;
+        let openid = body2.openid;
+
+        // 2
+        form = {
+            access_token:       atoken,
+            oauth_consumer_key: sdkobj.appid,
+            openid:             openid,
+        };
+
+        res2 = await axios.get("https://openapi.coolyun.com/oauth2/api/get_user_info", {
+            params: form
+        });
+        body2 = res2.data;
+
+        let code = body2.rtn_code || "55";
+
+        // 3
+        if (code == "0") {
+            return {authid: openid, c1: atoken};
+        } else {
+            throw body2;
+        }
+    },
+
+    "lenovo": async (q, sdkobj) => {
+        let url = "http://passport.lenovo.com/interserver/authen/1.2/getaccountid";
+
+        let form = {
+            lpsust: q.auth_token,
+            realm: sdkobj.appid,
+        };
+
+        let res2 = await axios.get(url, {
+            params: form
+        });
+        let body2 = res2.data;
+
+        let r = await xml2js.parseStringPromise(body2);
+        if (r.IdentityInfo && r.IdentityInfo.verified == 1) {
+            return {authid: r.IdentityInfo.AccountID};
+        } else {
+            throw body2;
+        }
+    },
+
+    "37": async (q, sdkobj) => {
+        let url = "http://vt.api.m.37.com/verify/token/";
+
+        let form = {
+            pid: sdkobj.pid,
+            gid: sdkobj.gid,
+            time: Math.floor(Date.now()/1000),
+            token: q.auth_token,
+        };
+        form.sign = md5(`${form.gid}${form.time}${sdkobj.auth_key}`);
+
+        let res2 = await axios.get(url, {
+            params: form
+        });
+        let body2 = res2.data;
+
+        if (body2.state == 1 && body2.data) {
+            return {authid: body2.data.uid};
+        } else {
+            throw body2;
+        }
+    },
+
+    "yyb": async (q, sdkobj) => {
+        const url = `http://ysdk.qq.com/auth/${q.p1}_check_token`;
+
+        let form = {
+            appid:     sdkobj.appid,
+            openid:    q.openid,
+            openkey:   q.auth_token,
+            timestamp: Math.floor(Date.now() / 1000),
+        };
+        form.sig = md5(`${sdkobj[`appkey_${p1}`]}${timestamp}`);
+
+        let res2 = await axios.get(url, {
+            params: form
+        });
+        let body2 = res2.data;
+
+        if (body2.ret == 0) {
+            return;
+        } else {
+            throw body2;
+        }
+    },
+
+    "uc": async (q, sdkobj) => {
+        var url = "http://sdk.9game.cn/cp/account.verifySession";
+
+        var form = {
+            id:   Math.floor(Date.now() / 1000),
+            data: {sid: q.auth_token},
+            game: {gameId: sdkobj.appid},
+        };
+        form.sign = md5(`sid=${form.data.sid}${sdkobj.auth_key}`);
+
+        let res2 = await axios.post(url, form, {
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+        let body2 = res2.data;
+
+        if (body2.state.code == 1) {
+            return {authid: body2.data.accountId};
+        } else {
+            throw body2;
+        }
+    },
+
+    "hg": async (q, sdkobj) => {
+        var url = "http://anysdk.huguangame.com/verify.php";
+
+        var form = {
+            appID:  sdkobj.appid,
+            token:  q.auth_token,
+        };
+        form.sign = md5(`${form.appID}${form.token}${sdkobj.auth_key}`);
+
+        let res2 = await axios.post(url, form);
+        let body2 = res2.data;
+
+        if (body2.errorCode == 0) {
+            return {authid: body2.data.id};
+        } else {
+            throw body2;
+        }
+    },
+
+    "6kw_ios": async (q, sdkobj) => {
+        let url = "https://iqd.6kw.com/index.php";
+
+        var data = {sid: q.auth_token, username: q.auth_id};
+        var data_str = Object.keys(data).sort().map(k => `${k}=${data[k]}`).join('&');
+
+        var app_service = "sdk.game.checkenter";
+
+        let form = {
+            service: app_service,
+            appid: sdkobj.appid,
+            data: JSON.stringify(data),
+            sign: md5(qs.escape(`${sdkobj.appid}${app_service}${data_str}${sdkobj.auth_key}`)),
+        };
+
+        let res2 = await axios.post(url, form);
+        let body2 = res2.data;
+
+        if (body2.state && body2.state.code == 1) {
+            return {authid: body2.data.uid};
+        } else {
+            throw body2;
+        }
+    },
+
+    "jx_and": async (q, sdkobj) => {
+        var url = "http://fusion.5ussp.com/user/verify";
+
+        var form = {
+            ukey:  q.auth_id,
+            appid: q.p1,
+            token: q.auth_token,
+            time:  Math.floor(Date.now()/1000),
+        };
+
+        form.sign = md5(Object.keys(form).sort().map(k => `${k}=${form[k]}`).join('&') + "&appkey=" + sdkobj.bill_key);
+
+        let res2 = await axios.post(url, form);
+        let body2 = res2.data;
+
+        if (body2.code == 1) {
+            return;
+        } else {
+            throw body2;
+        }
+    },
+
+    "jx_ios": async (q, sdkobj) => {
+        let url = "https://isdk.5ussp.com/game/checktoken";
+
+        let form = {
+            userid: q.auth_id,
+            appid:  sdkobj.appid,
+            gameid: sdkobj.gameid,
+            accesstoken: q.auth_token,
+            time: Math.floor(Date.now()/1000),
+        };
+        form.sign = md5(Object.keys(form).sort().map(k => `${k}=${form[k]}`).join('&') + "&key=" + sdkobj.auth_key);
+
+        let res2 = await axios.post(url, form);
+        let body2 = res2.data;
+
+        if (body2.code == 1) {
+            return;
+        } else {
+            throw body2;
+        }
+    },
+
+    "mzyw": async (q, sdkobj) => {
+        var p1 = {};
+        try {p1 = JSON.parse(q.p1)} catch(e) {}
+
+        if (p1.sign == md5(`${p1.userid}${sdkobj.auth_key}${p1.timestamp}`)) {
+            return {authid: p1.userid};
+        } else {
+            throw q.p1;
+        }
+    },
+
+    "mzyw_ios": async (q, sdkobj) => {
+        var p1 = {};
+        try {p1 = JSON.parse(q.p1)} catch(e) {}
+
+        if (p1.sign == md5(`${p1.userid}${sdkobj.auth_key}${p1.timestamp}`)) {
+            return {authid: p1.userid};
+        } else {
+            throw q.p1;
+        }
+    },
+
+    "xunqu_and": async (q, sdkobj) => {
+        const url = `https://ioauth.hnxqgame.com/oauth/token`;
+
+        let form = {
+            authorize_code: q.auth_token,
+            app_key:        sdkobj.appkey,
+            time:           Math.floor(Date.now() / 1000),
+            jh_sign:        sdkobj.auth_key,
+        };
+        form.sign = md5(`${["authorize_code", "app_key", "jh_sign", "time"].map(v=>`${v}=${form[v]}`).join("&")}`);
+        delete form.jh_sign;
+
+        let res2 = await axios.post(url, form);
+        let body2 = res2.data;
+
+        if (body2.ret == 1) {
+            return {authid: body2.content.user_id, c1: body2.content.access_token};
+        } else {
+            throw body2;
+        }
+    },
+
+    "xunqu_ios": async (q, sdkobj) => {
+        const url = `https://ioauth.hnxqgame.com/oauth/token`;
+
+        var form = {
+            authorize_code: q.auth_token,
+            app_key:        sdkobj.appkey,
+            time:           Math.floor(Date.now() / 1000),
+            jh_sign:        sdkobj.auth_key,
+        };
+        form.sign = md5(`${["authorize_code", "app_key", "jh_sign", "time"].map(v=>`${v}=${form[v]}`).join("&")}`);
+        delete form.jh_sign;
+
+        let res2 = await axios.post(url, form);
+        let body2 = res2.data;
+
+        if (body2.ret == 1) {
+            return {authid: body2.content.user_id, c1: body2.content.access_token};
+        } else {
+            throw body2;
+        }
+    },
+
+    "dkm": async (q, sdkobj) => {
+        const url = `http://sdk.52wan.dkmol.net/`;
+
+        var form = {
+            m:       'Auth_AuthCheck',
+            session: q.auth_token,
+        };
+
+        let res2 = await axios.get(url, {
+            params: form,
+        });
+        let body2 = res2.data;
+
+        if (body2.state == 1) {
+            return {authid: body2.data.uid};
+        } else {
+            throw body2;
+        }
+    },
+
+    "ali_ios": async (q, sdkobj) => {
+        const url = `http://open.yrtsgame.cn/game/user/get_basic_info`;
+
+        var form = {
+            access_token: q.auth_token,
+            app_key:      sdkobj.appkey,
+        };
+        form.sign = md5(`${Object.keys(form).sort().map(k=>`${k}=${form[k]}`).join('&')}&app_secret=${sdkobj.auth_key}`.toLowerCase());
+
+        let res2 = await axios.get(url, {
+            params: form,
+        });
+        let body2 = res2.data;
+
+        if (body2.err_code == 0) {
+            return {authid: body2.result.user.openId};
+        } else {
+            throw body2;
+        }
+    },
+
+    "mlyol_and": async (q, sdkobj) => {
+        let p1 = {};
+        try {p1 = JSON.parse(q.p1)} catch(e) {}
+
+        if (p1.sign == md5(`${p1.userid}${sdkobj.auth_key}${p1.timestamp}`)) {
+            return {authid: p1.userid};
+        } else {
+            throw q.p1;
+        }
+    },
+
+    "korea": async (q, sdkobj) => {
+        let url = '';
+
+        if (q.p1 == "guest")
+            return;
+
+        if (q.p1 == "ios") {
+            url = "http://domain:5005/api/auth/external/ios-gamecenter";
+        } else if (q.p1 == "google") {
+            url = "http://domain:5005/api/auth/external/google-play";
+        } else if (q.p1 == "facebook") {
+            url = "http://domain:5005/api/auth/external/facebook";
+        }
+
+        try {q.p2 = JSON.parse(q.p2)} catch(e) {}
+
+        let res2 = await axios.post(url, q.p2);
+        let body2 = res2.data;
+
+        if (body2.err == 0) {
+            return;
+        } else {
+            throw body2;
+        }
+    },
+
+    "ali_ios_gc": async (q, sdkobj) => {
+        let url = `http://domain:5005/api/auth_external/ios-gamecenter`;
+
+        let p1 = {};
+        try {p1 = JSON.parse(q.p1)} catch(e) {}
+        p1.uid = q.auth_id;
+
+        let res2 = await axios.post(url, p1);
+        let body2 = res2.data;
+
+        if (body2.err == 0) {
+            return;
+        } else {
+            throw body2;
+        }
+    },
+
+    "jh_and": async (q, sdkobj) => {
+        const url = `http://sdktool.91muzhi.com:8080/MySDK/user/verifyAccount`;
+
+        let form = {
+            userID: q.auth_id,
+            token:  q.auth_token,
+        };
+
+        let str =`userID=${form.userID}token=${form.token}${sdkobj.appkey}`
+        form.sign = md5(str);
+
+        let res2 = await axios.post(url, form);
+        let body2 = res2.data;
+
+        if (body2.state == 1) {
+            return {authid: body2.data.userID};
+        } else {
+            throw body2;
+        }
+    },
+
+    "xuyang": async (q, sdkobj) => {
+        const url = `http://apisdk.ggxx.net/apiunionchannels/check_token.php?action=check&s_token=${q.auth_token}&s_uid=${q.auth_id}`;
+
+        let res2 = await axios.get(url);
+        let body2 = res2.data;
+
+        if (body2.code == 1 && body2.account_id) {
+            return {authid: body2.account_id};
+        } else {
+            throw body2;
+        }
+    },
+
+    "xuyang_ios": async (q, sdkobj) => {
+        const url = `http://apisdk.ggxx.net/api65/65api/65sdk/check_token.php?action=check&token=${q.auth_token}&uid=${q.auth_id}`;
+
+        let res2 = await axios.get(url);
+        let body2 = res2.data;
+
+        if (body2.code == '1' && body2.accountid) {
+            return {authid: body2.accountid};
+        } else {
+            throw body2;
+        }
+    },
+
+    "ylw_and": async (q, sdkobj) => {
+        let url = `http://api.yfysdk.com/login/s/gameAuthentication`;
+
+        let form = {
+            fuse_token  : q.auth_token,
+            app_key     : sdkobj.appkey,
+            extension   : q.sdk,
+            timestamp   : Math.trunc(  new Date().getTime() / 1000 ),
+        }
+
+        let str = Object.keys(form).sort().map(k =>`${k}=${form[k]}`).join('&')+`${sdkobj.auth_key}`;
+        form.sign = md5(str);
+
+        let res2 = await axios.post(url, form);
+        let body2 = res2.data;
+
+        if (body2.code == 200) {
+            return;
+        } else {
+            throw body2;
+        }
+    },
+
+    "zshd_and": async (q, sdkobj) => {
+        let url = `http://asdk.ay99.net:8081/loginvalid.php`;
+
+        let form = {
+            accountid   : q.auth_id,
+            sessionid   : q.auth_token,
+            gameid      : sdkobj.appid,
+        }
+
+        let str = Object.keys(form).sort().map(k =>`${k}=${form[k]}`).join('&')+`${sdkobj.auth_key}`;
+        form.sign = md5(str);
+
+        let res2 = await axios.post(url, form);
+        let body2 = res2.data;
+
+        if (body2.code == 0) {
+            return;
+        } else {
+            throw body2;
+        }
+    },
+
+    "zshd_ios": async (q, sdkobj) => {
+        let url = `http://asdk.ay99.net:8081/loginvalid.php`;
+
+        let form = {
+            accountid   : q.auth_id,
+            sessionid   : q.auth_token,
+            gameid      : sdkobj.appid,
+        }
+
+        let str = Object.keys(form).sort().map(k =>`${k}=${form[k]}`).join('&')+`${sdkobj.auth_key}`;
+        form.sign = md5(str);
+
+        let res2 = await axios.post(url, form);
+        let body2 = res2.data;
+
+        if (body2.code == 0) {
+            return;
+        } else {
+            throw body2;
+        }
+    },
+
+    "douyu_and": async (q, sdkobj) => {
+        let url = `https://apimgc.douyu.com/lapi/mgame/user/info`;
+
+        let form = {
+            oauth2id    : sdkobj.appkey,
+            secret      : sdkobj.auth_key,
+            sid         : q.auth_token,
+            sdk_version : q.p1,
+        }
+
+        let str = Object.keys(form).sort().map(k =>`${k}=${form[k]}`).join('&')+`&key=${sdkobj.auth_key}`;
+        form.sign = md5(str).toUpperCase();
+
+        let res2 = await axios.post(url, form);
+        let body2 = res2.data;
+
+        if (body2.code == 0) {
+            return {authid: body2.data.openid};
+        } else {
+            throw body2;
+        }
+    },
+
+    "douyu_ios": async (q, sdkobj) => {
+        let url = `https://api.youximax.com/newapi.php/User/check_login_token`;
+
+        let form = {
+            game_id : sdkobj.gameid,
+            uid     : q.auth_id,
+            token   : q.auth_token,
+        }
+
+        let res2 = await axios.get(url, {
+            params: form,
+        });
+        let body2 = res2.data;
+
+        if (body2.status == 1) {
+            return;
+        } else {
+            throw body2;
+        }
+    },
+
+    "zhishang_ios": async (q, sdkobj) => {
+        const url = `http://sdk.zs4game.com:8080/user/token`;
+
+        let form = {
+            app_id:  sdkobj.appid,
+            user_id: q.auth_id,
+            token:   q.auth_token,
+        };
+        form.sign = md5(`${["app_id", "token"].map(v=>form[v]).join("")}${sdkobj.auth_key}`);
+
+        let res2 = await axios.get(url, {
+            params: form,
+        });
+        let body2 = res2.data;
+
+        if (body2.result == "1") {
+            return;
+        } else {
+            throw body2;
+        }
+    },
+
+    "samsung": async (q, sdkobj) => {
+        const url = `https://siapcn1.ipengtai.com/api/oauth/get_token_info`;
+
+        var form = {
+            appid: sdkobj.appid,
+            token:  q.auth_token,
+        };
+
+        //sign
+        var sign = crypto.createSign('RSA-MD5');
+        sign.update(Object.keys(form).sort().map(k => `${k}=${qs.escape(form[k])}`).join('&'));
+        form.sign = sign.sign(sdkobj.auth_key, 'base64');
+
+        let res2 = await axios.post(url, form);
+        let body2 = res2.data;
+
+        try {body2.data = JSON.parse(body2.data)} catch(e) {body2.data = {}}
+
+        if (body2.code == "0" && body2.data.uid) {
+            return {authid: body2.data.uid};
+        } else {
+            throw body2;
+        }
+    },
+
+    "bili": async (q, sdkobj) => {
+        const url = `http://pnew.biligame.net/api/server/session.verify`;
+
+        let form = {
+            game_id:     sdkobj.appid,
+            merchant_id: sdkobj.cpid,
+            uid:         q.auth_id,
+            version:     "1",
+            timestamp:   Date.now(),
+            access_key:  q.auth_token,
+        };
+        form.sign = md5(`${Object.keys(form).sort().map(k=>form[k]).join('')}${sdkobj.auth_key}`);
+
+        let res2 = await axios.post(url, form, {
+            headers: {
+                "User-Agent": "Mozilla/5.0 GameServer",
+            },
+        });
+        let body2 = res2.data;
+
+        if (body2.code == 0) {
+            return {authid: body2.open_id};
+        } else {
+            throw body2;
+        }
+    },
+
+    "sogou": async (q, sdkobj) => {
+        let url = "http://gamesdk.sogou.com/api/v2/login/verify";       // normal
+        //let url = "http://dev.sdk.g.sogou.com/api/v2/login/verify";     // debug
+
+        let form = {
+            gid:        sdkobj.gameid,
+            userId:     q.auth_id,
+            sessionKey: q.auth_token,
+        };
+
+        let str = Object.keys(form).sort().map(k=>`${k}=${form[k]}`).join("&") + `&${sdkobj.auth_key}`;
+        form.auth = md5(str);
+
+        let res2 = await axios.post(url, form);
+        let body2 = res2.data;
+
+        if (body2.code == 0) {
+            return;
+        } else {
+            throw body2;
+        }
+    },
+
+    "nubia": async (q, sdkobj) => {
+        const url = `https://niugamecenter.nubia.com/VerifyAccount/CheckLogined`;
+
+        let form = {
+            uid:            q.auth_id,
+            data_timestamp: `${Math.floor(Date.now() / 1000)}`,
+            game_id:        q.p1,
+            session_id:     q.auth_token,
+        };
+        form.sign = md5(`${Object.keys(form).sort().map(k=>`${k}=${form[k]}`).join('&')}:${sdkobj.appid}:${sdkobj.auth_key}`);
+
+        let res2 = await axios.post(url, form);
+        let body2 = res2.data;
+
+        if (body2.code == 0) {
+            return;
+        } else {
+            throw body2;
+        }
+    },
+
+    "anzhi": async (q, sdkobj) => {
+        const url = q.p1;
+
+        let pad2 = v => `0${v}`.slice(-2);
+        let pad3 = v => `00${v}`.slice(-3);
+        let anzhi_now = () => {
+            let t = new Date();
+            return `${t.getFullYear()}${pad2(t.getMonth() + 1)}${pad2(t.getDate())}` +
+                   `${pad2(t.getHours())}${pad2(t.getMinutes())}${pad2(t.getSeconds())}${pad3(t.getMilliseconds())}`;
+        };
+
+        let form = {
+            time:     anzhi_now(),
+            appkey:   sdkobj.appid,
+            cptoken:  q.auth_token,
+            deviceid: q.p2,
+        };
+        form.sign = md5(`${["appkey", "cptoken"].map(k=>form[k]).join('')}${sdkobj.auth_key}`);
+
+        let res2 = await axios.post(url, form);
+        let body2 = res2.data;
+
+        if (body2.code == 1) {
+            body2.data = JSON.parse(Buffer.from(body2.data, 'base64').toString());
+            var d = crypto.createDecipheriv('des-ede3', sdkobj.auth_key, '');
+            var r = d.update(body2.data.uid, 'base64', 'utf8');
+            r += d.final('utf8');
+            body2.data.uid = r;
+
+            return {authid: body2.data.uid};
+        } else {
+            throw body2;
+        }
+    },
+
+    "jolo": async (q, sdkobj) => {
+        let account     = q.auth_id;
+        let accountSign = q.auth_token;
+
+        let verify = crypto.createVerify("RSA-SHA1");
+        verify.update(account);
+        let pass = verify.verify(sdkobj.appkey, accountSign, 'base64');
+        if (pass) {
+            let o = JSON.parse(account);
+            let user_code = o.user_code;
+
+            return {authid: user_code};
+        } else {
+            throw 'failed';
+        }
+    },
+
+    "songshu": async (q, sdkobj) => {
+        const url = `https://mergenat.songshugame.cn/api/checkToken2.html?token=${q.auth_token}`;
+
+        let res2 = await axios.get(url);
+        let body2 = res2.data;
+
+        if (body2.code == '1' && body2.data && body2.data.userId) {
+            return {authid: body2.userId};
+        } else {
+            throw body2;
+        }
+    },
+
+    "qingfeng": async (q, sdkobj) => {
+        const url = `http://qfdy.520cai.cn/user/verifyAccount`;
+
+        let form = {
+            userID: q.auth_id,
+            token:  q.auth_token,
+            sign:   q.p1,
+        };
+
+        let res2 = await axios.post(url, form);
+        let body2 = res2.data;
+
+        if (body2.state == 1) {
+            return;
+        } else {
+            throw body2;
+        }
+    },
+
+    "iqiyi": async (q, sdkobj) => {
+        let ts = q.p1;
+        sign = md5(`${q.auth_id}&${ts}&${sdkobj.auth_key}`);
+
+        if (q.auth_token === sign) {
+            return;
+        } else {
+            throw q;
+        }
+    },
+
+    "29_and": async (q, sdkobj) => {
+        let url = "http://qyapi.29game.com/Api/Member/CheckLogin";
+
+        let form = {
+            appid:      sdkobj.appid,
+            uid:        q.auth_id,
+            token:      q.auth_token,
+            time:       q.p1,
+            sessid:     q.p2,
+        };
+
+        let str = `${sdkobj.appid}${form.uid}${form.token}${form.sessid}${form.time}${sdkobj.appkey}`;
+        form.sign = md5(str).toLowerCase();
+
+        let res2 = await axios.post(url, form);
+        let body2 = res2.data;
+
+        if (body2 == "success") {
+            return;
+        } else {
+            throw body2;
+        }
+    },
+
+    "kuaishou": async (q, sdkobj) => {
+        const url = "https://open.kuaishou.com/game/user_info";
+
+        let form = {
+            game_token: q.auth_token,
+            game_id:    q.auth_id,
+            app_id:     sdkobj.appid,
+        };
+
+        let res2 = await axios.get(url, {
+            params: form,
+        });
+        let body2 = res2.data;
+
+        if (body2.result == 1) {
+            return;
+        } else {
+            throw body2;
+        }
+    },
+
+    "yinhu": async (q, sdkobj) => {
+        const url = "https://sdkapi.infoxgame.com/user/cptoken.do";
+
+        let form = {
+            token: q.auth_token,
+        };
+
+        let res2 = await axios.get(url, {
+            params: form,
+        });
+        let body2 = res2.data;
+
+        if (body2.code == "1") {
+            return;
+        } else {
+            throw body2;
+        }
+    },
+
+    "wufan": async (q, sdkobj) => {
+        let url = "https://sdk.5fun.cn/auth/check_token";
+
+        let form = {
+            app_key: sdkobj.appkey,
+            uid:     q.auth_id,
+            token:   q.auth_token,
+        };
+
+        let str = `${sdkobj.appkey}${sdkobj.auth_key}app_key=${sdkobj.appkey}&token=${q.auth_token}&uid=${q.auth_id}`;
+        form.sign = md5(str);
+
+        let res2 = await axios.post(url, form);
+        let body2 = res2.data;
+
+        if (body2.error == 0) {
+            return;
+        } else {
+            throw body2;
+        }
+    },
+
+}
+
+// ============================================================================
+
+router.post('/auth', _A_(async (req, res) => {
+    // simple response
+    let resp = (b) => {
+        res.json({err: b ? '' : 'failed'}).end();
+    }
+
+    // q
+    let q = req.body;
+
+    // check sdk
+    if (q.sdk == "soda.internal" && config.common.dev_mode) {
+        resp(true);
+        return;
+    }
+
+    let sdkobj = gtab.sdk[q.sdk];
+    if (!sdkobj) {
+        resp(false);
+        return;
+    }
+
+    // check provider
+    let pvd = q.sdk.match(/^[^-]+/)[0];
+    let h   = Auth_SDK_Provider[pvd];
+    if (!h) {
+        resp(false);
+        return;
+    }
+
+    // ok
+    try {
+        let ret = await h(q, sdkobj);
+
+        // check ret
+        ret = ret || {};
+        if (!ret.authid)
+            ret.authid = q.auth_id;
+
+        // response
+        res.json(ret).end();
+
+    } catch(e) {
+        resp(false);
+        console.error(`${q.sdk} auth-failed:`, e);
+    }
+}));
+
+// ============================================================================
+
+module.exports = router;
